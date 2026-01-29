@@ -1,0 +1,403 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DM Serif Display - Serif */
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('/font/DM_Serif_Display/DMSerifDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('/font/DM_Serif_Display/DMSerifDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Montserrat - Sans Serif */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat/static/Montserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Couleurs de base - Fond blanc */
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --foreground-muted: #6b7280;
+  
+  /* Couleur principale - Bleu du logo */
+  --accent: #003662;
+  --accent-hover: #004a7a;
+  --accent-light: #005a92;
+  
+  /* Couleur secondaire - Jaune du logo */
+  --accent-secondary: #f4ca3a;
+  --accent-secondary-hover: #f5d055;
+  
+  /* Couleur tertiaire - Vert du logo */
+  --accent-tertiary: #9fb620;
+  --accent-tertiary-hover: #a8c025;
+  
+  /* Couleurs neutres raffinées */
+  --neutral-50: #ffffff;
+  --neutral-100: #f7f7f7;
+  --neutral-200: #ffffff;
+  --neutral-300: #bdcad6;
+  --neutral-400: #9fb620;
+  --neutral-500: #868e96;
+  --neutral-600: #495057;
+  --neutral-700: #343a40;
+  --neutral-800: #212529;
+  --neutral-900: #0a0a0a;
+  
+  /* Polices */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: #ffffff;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Supprimer les rings et outlines colorés */
+header:focus,
+header:focus-visible,
+header *:focus,
+header *:focus-visible {
+  outline: none !important;
+  ring: none !important;
+  ring-offset: 0 !important;
+  box-shadow: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* Animations pour le fond animé */
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(50px, -50px) scale(1.1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(30px, 50px) scale(1.05);
+    opacity: 0.4;
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  25% {
+    transform: translate(-40px, 40px) scale(1.15);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(40px, -30px) scale(0.85);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(-20px, 60px) scale(1.1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(60px, -60px) scale(1.2);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50px, 40px) scale(0.8);
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(40px, 70px) scale(1.15);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(-50px, 50px) scale(1.1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(30px, -40px) scale(0.9);
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-30px, 50px) scale(1.05);
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .section-dark {
+    background: #ffffff;
+  }
+  
+  .section-light {
+    background: #ffffff;
+  }
+  
+  .section-accent {
+    background: rgba(0, 54, 98, 0.05);
+  }
+  
+  .hero-encart {
+    position: relative;
+    background: linear-gradient(135deg, #003662 0%, #004a7a 50%, #005a92 100%);
+    border-radius: 2rem;
+    margin: 2rem auto;
+    max-width: 1400px;
+    overflow: hidden;
+  }
+  
+  .hero-encart::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(0, 54, 98, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(244, 202, 58, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(159, 182, 32, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Encart produit : même fond que hero, presque full width avec marge */
+  .product-encart {
+    position: relative;
+    background: linear-gradient(135deg, #003662 0%, #004a7a 50%, #005a92 100%);
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+  .product-encart::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(0, 54, 98, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(244, 202, 58, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(159, 182, 32, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* Card glass : brillance + glow au survol */
+  .card-glass-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-glass-hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 65%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .card-glass-hover:hover::after {
+    animation: card-shine 0.7s ease-out forwards;
+  }
+  .card-glass-hover:hover {
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.18),
+      inset 0 1px 2px rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+      0 0 40px rgba(255, 255, 255, 0.15),
+      0 0 80px rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  @keyframes card-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
+  .glass:hover::before {
+    left: 100%;
+  }
+  
+  .glass-button {
+    background: rgba(0, 54, 98, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 54, 98, 0.5);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 54, 98, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glass-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 202, 58, 0.2),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+  
+  .glass-button:hover::before {
+    left: 100%;
+  }
+  
+  .glass-button:hover {
+    background: rgba(0, 54, 98, 0.4);
+    border-color: rgba(244, 202, 58, 0.4);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 54, 98, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+  
+  .glass-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 
+      0 1px 3px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 202, 58, 0.05),
+      transparent
+    );
+    transition: left 0.7s;
+  }
+  
+  .glass-card:hover::before {
+    left: 100%;
+  }
+  
+  .glass-card:hover {
+    border-color: rgba(244, 202, 58, 0.5);
+    box-shadow: 
+      0 10px 25px 0 rgba(0, 54, 98, 0.15),
+      0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+}
