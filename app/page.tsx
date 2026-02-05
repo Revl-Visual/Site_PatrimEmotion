@@ -7,31 +7,89 @@ export default function Home() {
     <>
       <Header />
       
-      {/* Hero Section - Encart sur fond blanc */}
-      <section className="-mt-2 md:-mt-3 pt-0 pb-6 md:pb-8 px-4">
-        <div className="hero-encart pt-24 pb-16 md:pt-32 md:pb-20 px-6 md:px-12">
+      {/* Hero Section - Inspiré Capital Explorer : gauche texte + CTA orange, droite visuel, bas stats */}
+      <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
+        <div className="hero-encart pt-16 pb-0 md:pt-20 md:pb-0 px-6 md:px-12">
           <div className="container mx-auto relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans text-white mb-6 leading-[1.1] tracking-tight">
-                  <span className="font-normal italic">La méthode qui remet </span><span className="font-serif font-normal">l&apos;humain</span><span className="font-normal italic"> au cœur des </span><span className="font-serif font-normal">décisions patrimoniales</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-                  Parce que les meilleurs choix ne sont pas seulement financiers : ils doivent être compatibles avec votre personnalité, vos émotions et votre vie.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/test"
-                    className="bg-white text-accent px-8 py-4 rounded-xl transition-all font-semibold text-lg hover:scale-105 hover:shadow-xl"
-                  >
-                    Faire le test / pré-diagnostic
-                  </Link>
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[420px] md:min-h-[480px]">
+                {/* Gauche : titre, description, CTA */}
+                <div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans text-white mb-5 leading-[1.15] tracking-tight">
+                    <span className="font-normal">La </span>
+                    <span className="font-bold text-[#f4ca3a]">méthode patrimoniale</span>
+                    <span className="font-normal"> qui remet l&apos;</span>
+                    <span className="font-bold text-[#f4ca3a]">humain</span>
+                    <span className="font-normal"> au cœur des décisions</span>
+                  </h1>
+                  <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl leading-relaxed">
+                    Qui simplifie vos choix, assure la cohérence avec votre personnalité et donne du sens à votre patrimoine.
+                  </p>
                   <Link
                     href="/contact"
-                    className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-xl transition-all font-semibold text-lg hover:bg-white/20 hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-lg transition-all text-base"
                   >
-                    Prendre RDV
+                    Demandez une démo personnalisée
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </Link>
+                  <p className="text-sm text-white/80 mt-4">
+                    Vous bénéficierez d&apos;un échange personnalisé sans engagement.
+                  </p>
+                </div>
+                {/* Droite : visuel type dashboard / ordinateur */}
+                <div className="hidden lg:flex justify-center items-center">
+                  <div className="relative w-full max-w-md">
+                    <div className="bg-white/95 rounded-2xl shadow-2xl overflow-hidden" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
+                      <div className="aspect-video bg-neutral-100 rounded-t-2xl p-4 flex flex-col gap-3">
+                        <div className="flex gap-2">
+                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
+                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
+                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 flex-1">
+                          <div className="bg-white rounded-lg p-3">
+                            <p className="text-xs font-medium text-[#003662] mb-2">Profil</p>
+                            <div className="h-12 w-12 rounded-full border-2 border-[#003662] border-t-[#f4ca3a] mx-auto" />
+                            <p className="text-center text-xs font-semibold text-[#003662] mt-2">PatrimEmotion®</p>
+                          </div>
+                          <div className="bg-white rounded-lg p-3">
+                            <p className="text-xs font-medium text-[#003662] mb-2">Priorités</p>
+                            <div className="space-y-1">
+                              <div className="h-1.5 rounded bg-[#f4ca3a]/80 w-full" />
+                              <div className="h-1.5 rounded bg-[#003662]/40 w-4/5" />
+                              <div className="h-1.5 rounded bg-[#003662]/30 w-3/5" />
+                            </div>
+                          </div>
+                          <div className="col-span-2 bg-white rounded-lg p-3">
+                            <p className="text-xs font-medium text-[#003662] mb-2">Résultat</p>
+                            <p className="text-xs text-[#003662]">Stratégie alignée avec vos émotions et objectifs</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="h-3 bg-neutral-200 rounded-b-2xl" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Barre de statistiques */}
+            <div className="border-t border-white/10 mt-12 md:mt-16 pt-8 pb-6 md:pb-8">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                  <div>
+                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+15</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">Années d&apos;expertise</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">500+</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">Profils réalisés</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">3</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">Solutions adaptées</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -39,39 +97,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 1 : Le problème - Modern style */}
+      {/* Section 1 : Le problème - Pourquoi ? - Fond blanc, texte bleu à gauche, encart bleu à droite */}
       <section className="section-dark py-24 md:py-32 transition-colors">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-neutral-900 mb-6 text-center leading-tight">
-              Trop d&apos;informations, trop de produits, trop de peur de se tromper
-            </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 mb-12 text-center max-w-3xl mx-auto leading-relaxed">
-              Vos décisions patrimoniales sont souvent reportées, prises au mauvais timing, ou génèrent un inconfort au moindre aléa de marché.
-            </p>
-            <div className="max-w-3xl mx-auto">
-              <h3 className="text-4xl md:text-5xl font-semibold text-neutral-900 mb-12 text-center">Pourquoi ?</h3>
-              <div className="space-y-0 border-t border-neutral-200">
-                <div className="py-6 border-b border-neutral-200">
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide mb-2">Au-delà du rationnel</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Parce que les choix financiers ne sont pas que rationnels
-                  </p>
-                </div>
-                <div className="py-6 border-b border-neutral-200">
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide mb-2">Vos repères personnels</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Parce que votre rapport à l&apos;argent, au risque, au temps influence tout
-                  </p>
-                </div>
-                <div className="py-6 border-b border-neutral-200">
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wide mb-2">Produits vs. stratégie</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Parce qu&apos;on vous vend des produits, pas une stratégie alignée avec qui vous êtes
-                  </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#003662] mb-6 leading-tight">
+                  Trop d&apos;informations, trop de produits, trop de <span className="text-[#f4ca3a]">peur de se tromper</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-[#003662]/90 leading-relaxed">
+                  Vos décisions patrimoniales sont souvent reportées, prises au mauvais timing, ou génèrent un inconfort au moindre aléa de marché.
+                </p>
+              </div>
+              <div className="bg-[#003662] rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-8"><span className="text-[#f4ca3a]">Pourquoi ?</span></h3>
+                <div className="space-y-0 border-t border-white/20">
+                  <div className="py-5 border-b border-white/20">
+                    <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-2">Au-delà du rationnel</p>
+                    <p className="text-lg text-white leading-relaxed">
+                      Parce que les choix financiers ne sont pas que rationnels
+                    </p>
+                  </div>
+                  <div className="py-5 border-b border-white/20">
+                    <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-2">Vos repères personnels</p>
+                    <p className="text-lg text-white leading-relaxed">
+                      Parce que votre rapport à l&apos;argent, au risque, au temps influence tout
+                    </p>
+                  </div>
+                  <div className="py-5 border-b border-white/20">
+                    <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-2">Produits vs. stratégie</p>
+                    <p className="text-lg text-white leading-relaxed">
+                      Parce qu&apos;on vous vend des produits, pas une stratégie alignée avec qui vous êtes
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,101 +138,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Encart produit : PatrimEmotion → Ce que vous recevez (même fond que hero, large) */}
-      <div className="mx-4 md:mx-6 lg:mx-8 my-6 md:my-8 product-encart">
-        <div className="relative z-10">
-          {/* Section 2 : La solution */}
-          <section className="py-24 md:py-32 transition-colors">
+      {/* Sections produit : alternance bleu / blanc */}
+      <div className="my-0">
+          {/* Section 2 : PatrimEmotion : le... - FOND BLEU */}
+          <section className="bg-[#003662] py-24 md:py-32 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-serif font-medium text-white mb-6 text-center leading-tight">
-                  PatrimEmotion® : le profilage émotionnel patrimonial qui transforme votre relation à votre patrimoine
-                </h2>
-                <p className="text-xl md:text-2xl text-white/90 mb-12 text-center max-w-3xl mx-auto leading-relaxed">
-                  <span className="font-bold">PatrimEmotion®</span> analyse votre <span className="font-bold">personnalité financière</span> et vos <span className="font-bold">émotions</span> pour les traduire en une <span className="font-bold">stratégie claire</span> :
-                </p>
-                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] hover:bg-white/20 transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                    <p className="relative z-10 text-lg md:text-xl text-white flex items-center gap-3">
-                      <span className="text-accent-secondary font-bold">✓</span>
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                  <div>
+                    <h2 className="text-4xl md:text-5xl font-serif font-medium text-white mb-6 leading-tight">
+                      <span className="text-[#f4ca3a]">PatrimEmotion® :</span> le profilage émotionnel patrimonial qui transforme votre relation à votre patrimoine
+                    </h2>
+                    <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                      PatrimEmotion® analyse votre <span className="text-[#f4ca3a] font-bold">personnalité financière</span> et vos <span className="text-[#f4ca3a] font-bold">émotions</span> pour les traduire en une <span className="font-bold">stratégie claire</span> :
+                    </p>
+                    <p className="text-xl md:text-2xl font-semibold text-white">
+                      <span className="text-[#f4ca3a]">Résultat :</span> des décisions que vous comprenez, que vous assumez, et qui vous ressemblent.
+                    </p>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
+                    <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
+                      <span className="text-[#f4ca3a] font-bold">✓</span>
                       Horizon de temps adapté
                     </p>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                    <p className="relative z-10 text-lg md:text-xl text-white flex items-center gap-3">
-                      <span className="text-accent-secondary font-bold">✓</span>
+                  <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
+                    <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
+                      <span className="text-[#f4ca3a] font-bold">✓</span>
                       Niveau de risque que vous vivrez bien
                     </p>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                    <p className="relative z-10 text-lg md:text-xl text-white flex items-center gap-3">
-                      <span className="text-accent-secondary font-bold">✓</span>
+                  <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
+                    <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
+                      <span className="text-[#f4ca3a] font-bold">✓</span>
                       Arbitrages cohérents avec vos valeurs
                     </p>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                    <p className="relative z-10 text-lg md:text-xl text-white flex items-center gap-3">
-                      <span className="text-accent-secondary font-bold">✓</span>
+                  <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
+                    <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
+                      <span className="text-[#f4ca3a] font-bold">✓</span>
                       Plan d&apos;actions concret
                     </p>
                   </div>
                 </div>
-                <p className="text-2xl md:text-3xl font-semibold text-white text-center">
-                  Résultat : des décisions que vous comprenez, que vous assumez, et qui vous ressemblent.
-                </p>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Section 3 : Nos 3 solutions */}
-          <section className="py-24 md:py-32 transition-colors">
+          {/* Section 3 : Nos 3 solutions - FOND BLANC */}
+          <section className="bg-white py-24 md:py-32 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-4xl md:text-6xl font-serif font-medium text-center text-white mb-4 leading-tight">
-                Nos 3 solutions
+              <h2 className="text-4xl md:text-6xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+                Nos <span className="text-[#f4ca3a]">3 solutions</span>
               </h2>
-              <p className="text-xl text-white/90 text-center mb-16 max-w-2xl mx-auto">
-                Choisissez la solution qui correspond à votre profil
+              <p className="text-xl text-[#003662] text-center mb-16 max-w-2xl mx-auto">
+                Choisissez la solution qui correspond à <span className="text-[#f4ca3a] font-semibold">votre profil</span>
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <Link href="/solutions/particuliers" className="relative flex flex-col rounded-2xl p-8 bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all group hover:bg-white/20 hover:scale-105 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover h-full">
+                <Link href="/solutions/particuliers" className="relative flex flex-col rounded-2xl p-8 bg-white shadow-lg transition-all group hover:shadow-xl hover:scale-105 h-full">
                   <div className="relative z-10 text-6xl mb-6">👤</div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4 group-hover:text-accent-secondary transition-colors">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4 group-hover:text-[#004a7a] transition-colors">
                     Particuliers & Dirigeants
                   </h3>
-                  <p className="relative z-10 text-white/90 mb-6 text-lg leading-relaxed flex-1">
+                  <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Un bilan patrimonial personnalisé qui révèle votre profil émotionnel
                   </p>
-                  <span className="relative z-10 text-accent-secondary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Découvrir
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
                 </Link>
-                <Link href="/solutions/professionnels" className="relative flex flex-col rounded-2xl p-8 bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all group hover:bg-white/20 hover:scale-105 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover h-full">
+                <Link href="/solutions/professionnels" className="relative flex flex-col rounded-2xl p-8 bg-white shadow-lg transition-all group hover:shadow-xl hover:scale-105 h-full">
                   <div className="relative z-10 text-6xl mb-6">💼</div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4 group-hover:text-accent-secondary transition-colors">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4 group-hover:text-[#004a7a] transition-colors">
                     Professionnels CGP/Courtiers
                   </h3>
-                  <p className="relative z-10 text-white/90 mb-6 text-lg leading-relaxed flex-1">
+                  <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Obtenez la licence PatrimEmotion® et différenciez votre conseil
                   </p>
-                  <span className="relative z-10 text-accent-secondary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Devenir licencié
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
                 </Link>
-                <Link href="/solutions/institutionnels" className="relative flex flex-col rounded-2xl p-8 bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all group hover:bg-white/20 hover:scale-105 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover h-full">
+                <Link href="/solutions/institutionnels" className="relative flex flex-col rounded-2xl p-8 bg-white shadow-lg transition-all group hover:shadow-xl hover:scale-105 h-full">
                   <div className="relative z-10 text-6xl mb-6">🏢</div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4 group-hover:text-accent-secondary transition-colors">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4 group-hover:text-[#004a7a] transition-colors">
                     Institutionnels & Réseaux
                   </h3>
-                  <p className="relative z-10 text-white/90 mb-6 text-lg leading-relaxed flex-1">
+                  <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Déployez la méthode en marque blanche dans votre organisation
                   </p>
-                  <span className="relative z-10 text-accent-secondary font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Découvrir les partenariats
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -184,46 +246,46 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 4 : Comment ça se passe */}
-          <section className="py-24 md:py-32 transition-colors">
+          {/* Section 4 : Comment ça se passe - FOND BLEU */}
+          <section className="bg-[#003662] py-24 md:py-32 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
               <h2 className="text-4xl md:text-6xl font-serif font-medium text-center text-white mb-4 leading-tight">
                 Comment ça se passe ?
               </h2>
               <p className="text-xl text-white/90 text-center mb-16 max-w-2xl mx-auto">
-                Un processus simple en 3 étapes pour transformer votre relation au patrimoine
+                Un processus simple en <span className="text-[#f4ca3a] font-semibold">3 étapes</span> pour transformer votre relation au patrimoine
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div className="relative text-center p-8 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                  <div className="relative z-10 bg-white/20 text-white rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border border-white/30">
+                <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     1
                   </div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
                     Entretien découverte
                   </h3>
-                  <p className="relative z-10 text-white/90 text-lg leading-relaxed">
+                  <p className="relative z-10 text-[#003662] text-lg leading-relaxed">
                     Un échange humain pour comprendre votre situation, vos objectifs, vos craintes.
                   </p>
                 </div>
-                <div className="relative text-center p-8 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                  <div className="relative z-10 bg-white/20 text-white rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border border-white/30">
+                <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     2
                   </div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
                     Profil + lecture
                   </h3>
-                  <p className="relative z-10 text-white/90 text-lg leading-relaxed">
+                  <p className="relative z-10 text-[#003662] text-lg leading-relaxed">
                     Votre profil émotionnel patrimonial est établi et décrypté avec vous.
                   </p>
                 </div>
-                <div className="relative text-center p-8 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
-                  <div className="relative z-10 bg-white/20 text-white rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border border-white/30">
+                <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     3
                   </div>
-                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-white mb-4">
+                  <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
                     Plan d&apos;actions + mise en œuvre
                   </h3>
-                  <p className="relative z-10 text-white/90 text-lg leading-relaxed">
+                  <p className="relative z-10 text-[#003662] text-lg leading-relaxed">
                     Un plan concret, des priorités claires, un suivi personnalisé.
                   </p>
                 </div>
@@ -231,38 +293,38 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 5 : Ce que vous recevez */}
-          <section className="py-24 md:py-32 transition-colors">
+          {/* Section 5 : Ce que vous recevez - FOND BLANC */}
+          <section className="bg-white py-24 md:py-32 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-4xl md:text-6xl font-serif font-medium text-center text-white mb-4 leading-tight">
-                Ce que vous recevez
+              <h2 className="text-4xl md:text-6xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+                Ce que vous <span className="text-[#f4ca3a]">recevez</span>
               </h2>
-              <p className="text-xl text-white/90 text-center mb-16 max-w-2xl mx-auto">
-                Un accompagnement complet pour transformer votre approche patrimoniale
+              <p className="text-xl text-[#003662] text-center mb-16 max-w-2xl mx-auto">
+                Un accompagnement <span className="text-[#f4ca3a] font-semibold">complet</span> pour transformer votre approche patrimoniale
               </p>
               <div className="max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
+                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-accent-secondary text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Une lecture synthétique (1 page) + une lecture détaillée</span>
                     </div>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
+                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-accent-secondary text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">3 priorités patrimoniales classées</span>
                     </div>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
+                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-accent-secondary text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Un plan d&apos;action concret</span>
                     </div>
                   </div>
-                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-white/15 border border-white/30 backdrop-blur-lg shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_2px_rgba(255,255,255,0.25),inset_0_-1px_0_rgba(0,0,0,0.1)] transition-all overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-transparent before:opacity-60 before:pointer-events-none hover:before:opacity-80 card-glass-hover hover:bg-white/20">
+                  <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-accent-secondary text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Un cadre de décision pour éviter les regrets</span>
                     </div>
                   </div>
@@ -270,30 +332,88 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </div>
       </div>
 
-      {/* Section 6 : Témoignages - Modern style */}
-      <section className="section-dark py-24 md:py-32 transition-colors">
+      {/* Section Demander une démo - Fond #003662 */}
+      <section className="section-alt py-24 md:py-32 transition-colors">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-center text-neutral-900 mb-4 leading-tight">
-            Preuves sociales
-          </h2>
-          <p className="text-xl text-neutral-600 text-center mb-16 max-w-2xl mx-auto">
-            Découvrez ce que nos clients disent de PatrimEmotion®
-          </p>
           <div className="max-w-4xl mx-auto">
-            <div className="p-10 rounded-2xl bg-neutral-50 border border-neutral-200">
-              <blockquote className="text-2xl md:text-3xl lg:text-4xl text-neutral-900 italic mb-8 leading-relaxed font-serif">
-                &quot;Grâce à PatrimEmotion®, j&apos;ai enfin compris pourquoi certaines décisions me mettaient mal à l&apos;aise. Aujourd&apos;hui, je sais où je vais.&quot;
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent-secondary/20 flex items-center justify-center text-accent-secondary font-bold text-lg">
-                  C
-                </div>
-                <div>
-                  <p className="text-neutral-900 font-semibold text-lg">Client particulier</p>
-                  <p className="text-neutral-600">48 ans</p>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight">
+                  Prêt à <span className="text-[#f4ca3a]">échanger ?</span>
+                </h2>
+                <p className="text-xl text-white/90 mb-6 leading-relaxed">
+                  Prenez rendez-vous avec un expert pour découvrir comment <span className="text-[#f4ca3a] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
+                </p>
+                <p className="text-white/80">
+                  Remplissez le formulaire et nous vous recontactons sous 48 h pour convenir d&apos;un créneau.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                <h3 className="text-xl font-semibold text-[#003662] mb-6">Demander une démo</h3>
+                <form className="space-y-4" action="#" method="post">
+                  <div>
+                    <label htmlFor="demo-entreprise" className="block text-sm font-medium text-[#003662] mb-1">Nom entreprise *</label>
+                    <input type="text" id="demo-entreprise" name="entreprise" required className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-effectif" className="block text-sm font-medium text-[#003662] mb-1">Effectif *</label>
+                    <input type="text" id="demo-effectif" name="effectif" required placeholder="Ex. 10-50 salariés" className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-activite" className="block text-sm font-medium text-[#003662] mb-1">Activité *</label>
+                    <input type="text" id="demo-activite" name="activite" required placeholder="Ex. Conseil en gestion de patrimoine" className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-dirigeant" className="block text-sm font-medium text-[#003662] mb-1">Nom du dirigeant *</label>
+                    <input type="text" id="demo-dirigeant" name="dirigeant" required className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-phone" className="block text-sm font-medium text-[#003662] mb-1">Téléphone *</label>
+                    <input type="tel" id="demo-phone" name="phone" required className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-email" className="block text-sm font-medium text-[#003662] mb-1">Email *</label>
+                    <input type="email" id="demo-email" name="email" required className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-dispo" className="block text-sm font-medium text-[#003662] mb-1">Dates de disponibilités *</label>
+                    <textarea id="demo-dispo" name="disponibilites" rows={3} required placeholder="Ex. Semaine du 15 mars, matinées uniquement" className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent resize-none" />
+                  </div>
+                  <button type="submit" className="w-full bg-[#003662] hover:bg-[#004a7a] text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                    Envoyer la demande
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6 : Preuves sociales - Encart */}
+      <section className="py-12 md:py-16 px-4">
+        <div className="max-w-5xl mx-auto rounded-2xl bg-[#003662] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)]">
+          <div className="px-6 md:px-12 pt-12 md:pt-16 pb-8">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold text-center text-white mb-4 leading-tight">
+              <span className="text-[#f4ca3a]">Preuves sociales</span>
+            </h2>
+            <p className="text-xl text-white/90 text-center mb-12 max-w-2xl mx-auto">
+              Découvrez ce que nos clients disent de <span className="text-[#f4ca3a] font-semibold">PatrimEmotion®</span>
+            </p>
+            <div className="max-w-4xl mx-auto">
+              <div className="p-8 md:p-10 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                <blockquote className="text-2xl md:text-3xl lg:text-4xl text-[#003662] italic mb-8 leading-relaxed font-serif">
+                  &quot;Grâce à <span className="text-[#f4ca3a] not-italic">PatrimEmotion®,</span> j&apos;ai enfin compris pourquoi certaines décisions me mettaient mal à l&apos;aise. Aujourd&apos;hui, je sais où je vais.&quot;
+                </blockquote>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#003662]/10 flex items-center justify-center text-[#003662] font-bold text-lg">
+                    C
+                  </div>
+                  <div>
+                    <p className="text-[#003662] font-semibold text-lg">Client particulier</p>
+                    <p className="text-[#003662]">48 ans</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -301,65 +421,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 7 : Pourquoi différent - même style que "Trop d'informations" */}
-      <section className="section-dark py-24 md:py-32 transition-colors">
+      {/* Section 7 : Pourquoi différent - Refonte cartes */}
+      <section className="section-alt-blue py-24 md:py-32 transition-colors">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-neutral-900 mb-6 text-center leading-tight">
-              Pourquoi PatrimEmotion est différent
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#003662] mb-4 text-center leading-tight">
+              Pourquoi PatrimEmotion est <span className="text-[#f4ca3a]">différent</span>
             </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 mb-12 text-center max-w-3xl mx-auto leading-relaxed">
-              PatrimEmotion® n&apos;est pas un simple questionnaire de risque réglementaire. C&apos;est une méthode structurée qui mesure :
+            <p className="text-lg md:text-xl text-[#003662] mb-4 text-center max-w-2xl mx-auto">
+              Pas un simple questionnaire de risque, mais une <span className="text-[#f4ca3a] font-semibold">méthode psychométrique</span> qui mesure ce qui compte vraiment pour vos décisions.
             </p>
-            <div className="max-w-5xl mx-auto">
-              <h3 className="text-4xl md:text-5xl font-semibold text-neutral-900 mb-12 text-center">Une approche psychométrique appliquée au patrimoine</h3>
-              <div className="grid md:grid-cols-2 gap-0 border-t border-neutral-200">
-                <div className="py-6 pr-6 md:pr-8 border-b border-r border-neutral-200">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Relation à l&apos;argent</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre relation émotionnelle à l&apos;argent
-                  </p>
-                </div>
-                <div className="py-6 pl-6 md:pl-8 border-b border-neutral-200">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Incertitude</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre capacité à supporter l&apos;incertitude
-                  </p>
-                </div>
-                <div className="py-6 pr-6 md:pr-8 border-b border-r border-neutral-200">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Contrôle / délégation</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre besoin de contrôle ou de délégation
-                  </p>
-                </div>
-                <div className="py-6 pl-6 md:pl-8 border-b border-neutral-200">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Intergénérationnel</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre projection intergénérationnelle
-                  </p>
-                </div>
-                <div className="py-6 pr-6 md:pr-8 border-b border-r border-neutral-200 md:border-b-0">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Résilience</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre capacité de résilience face aux crises
-                  </p>
-                </div>
-                <div className="py-6 pl-6 md:pl-8 border-b md:border-b-0 border-neutral-200">
-                  <p className="text-sm font-medium text-accent-secondary uppercase tracking-wide mb-2">Cohérence</p>
-                  <p className="text-xl md:text-2xl text-neutral-900 leading-relaxed flex items-start gap-3">
-                    <span className="text-neutral-900 shrink-0 mt-1" aria-hidden>→</span>
-                    Votre cohérence décisionnelle
-                  </p>
-                </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mt-12">
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Relation à l&apos;argent</p>
+                <p className="text-white leading-relaxed">Votre relation émotionnelle à l&apos;argent</p>
+              </div>
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Incertitude</p>
+                <p className="text-white leading-relaxed">Votre capacité à supporter l&apos;incertitude</p>
+              </div>
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Contrôle / délégation</p>
+                <p className="text-white leading-relaxed">Votre besoin de contrôle ou de délégation</p>
+              </div>
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Intergénérationnel</p>
+                <p className="text-white leading-relaxed">Votre projection intergénérationnelle</p>
+              </div>
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Résilience</p>
+                <p className="text-white leading-relaxed">Votre capacité de résilience face aux crises</p>
+              </div>
+              <div className="rounded-xl bg-[#003662] p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <p className="text-xs font-semibold text-[#f4ca3a] uppercase tracking-wider mb-2">Cohérence</p>
+                <p className="text-white leading-relaxed">Votre cohérence décisionnelle</p>
               </div>
             </div>
-            <p className="text-2xl md:text-3xl font-semibold text-neutral-900 text-center mt-12">
-              Résultat : un conseil patrimonial qui vous ressemble.
+            <p className="text-xl md:text-2xl font-semibold text-[#003662] text-center mt-12 max-w-2xl mx-auto">
+              <span className="text-[#f4ca3a]">Résultat :</span> un conseil patrimonial qui vous ressemble.
             </p>
           </div>
         </div>
