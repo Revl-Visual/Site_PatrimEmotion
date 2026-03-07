@@ -88,7 +88,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-white/90">
               <li>
-                <Link href="/solutions/particuliers" className="hover:text-white transition-colors">
+                <Link href="/solutions/particuliers" className="hover:text-[#9FB620] transition-colors">
                   Particuliers & Dirigeants
                 </Link>
               </li>
@@ -98,7 +98,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/institutionnels" className="hover:text-white transition-colors">
+                <Link href="/solutions/institutionnels" className="hover:text-[#9FB620] transition-colors">
                   Institutionnels & Réseaux
                 </Link>
               </li>
@@ -112,7 +112,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-white/90">
               <li>
-                <Link href="/methode" className="hover:text-white transition-colors">
+                <Link href="/methode" className="hover:text-[#9FB620] transition-colors">
                   Le concept
                 </Link>
               </li>
@@ -122,7 +122,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-[#9FB620] transition-colors">
                   Prendre rendez-vous
                 </Link>
               </li>
@@ -138,7 +138,7 @@ export default function Footer() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#f4ca3a] text-[#003662] hover:bg-[#f5d055] font-bold px-5 py-2.5 rounded-lg transition-colors text-sm mb-6"
             >
-              Demander une démo
+              Demander une démo <span className="text-xs font-normal">(15 min)</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

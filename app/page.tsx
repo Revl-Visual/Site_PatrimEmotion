@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -29,7 +30,7 @@ export default function Home() {
                     href="/contact"
                     className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-lg transition-all text-base"
                   >
-                    Demandez une démo personnalisée
+                    Demandez une démo personnalisée <span className="text-sm font-normal">(15 min)</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -38,37 +39,45 @@ export default function Home() {
                     Vous bénéficierez d&apos;un échange personnalisé sans engagement.
                   </p>
                 </div>
-                {/* Droite : visuel type dashboard / ordinateur */}
+                {/* Droite : effet computer dashboard — 2 fenêtres */}
                 <div className="hidden lg:flex justify-center items-center">
-                  <div className="relative w-full max-w-md">
-                    <div className="bg-white/95 rounded-2xl shadow-2xl overflow-hidden" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
-                      <div className="aspect-video bg-neutral-100 rounded-t-2xl p-4 flex flex-col gap-3">
-                        <div className="flex gap-2">
-                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
-                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
-                          <div className="w-2 h-2 rounded-full bg-neutral-300" />
+                  <div className="relative w-full max-w-md" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
+                    <div className="grid grid-cols-2 gap-2">
+                      {/* Fenêtre 1 : graphique */}
+                      <div className="bg-white/95 rounded-xl shadow-xl overflow-hidden border border-neutral-200/80">
+                        <div className="flex gap-1.5 px-2 py-1.5 bg-neutral-100 border-b border-neutral-200">
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                         </div>
-                        <div className="grid grid-cols-2 gap-3 flex-1">
-                          <div className="bg-white rounded-lg p-3">
-                            <p className="text-xs font-medium text-[#003662] mb-2">Profil</p>
-                            <div className="h-12 w-12 rounded-full border-2 border-[#003662] border-t-[#f4ca3a] mx-auto" />
-                            <p className="text-center text-xs font-semibold text-[#003662] mt-2">PatrimEmotion®</p>
-                          </div>
-                          <div className="bg-white rounded-lg p-3">
-                            <p className="text-xs font-medium text-[#003662] mb-2">Priorités</p>
-                            <div className="space-y-1">
-                              <div className="h-1.5 rounded bg-[#f4ca3a]/80 w-full" />
-                              <div className="h-1.5 rounded bg-[#003662]/40 w-4/5" />
-                              <div className="h-1.5 rounded bg-[#003662]/30 w-3/5" />
-                            </div>
-                          </div>
-                          <div className="col-span-2 bg-white rounded-lg p-3">
-                            <p className="text-xs font-medium text-[#003662] mb-2">Résultat</p>
-                            <p className="text-xs text-[#003662]">Stratégie alignée avec vos émotions et objectifs</p>
+                        <div className="p-2 flex flex-col justify-end h-[180px] bg-white">
+                          <div className="flex items-end gap-0.5 h-20">
+                            <div className="flex-1 rounded-t bg-[#003662]/80" style={{ height: "45%" }} />
+                            <div className="flex-1 rounded-t bg-[#003662]/60" style={{ height: "65%" }} />
+                            <div className="flex-1 rounded-t bg-[#f4ca3a]" style={{ height: "55%" }} />
+                            <div className="flex-1 rounded-t bg-[#9FB620]/80" style={{ height: "80%" }} />
+                            <div className="flex-1 rounded-t bg-[#003662]" style={{ height: "90%" }} />
+                            <div className="flex-1 rounded-t bg-[#f4ca3a]/90" style={{ height: "70%" }} />
                           </div>
                         </div>
                       </div>
-                      <div className="h-3 bg-neutral-200 rounded-b-2xl" />
+                      {/* Fenêtre 2 : silhouette */}
+                      <div className="bg-white/95 rounded-xl shadow-xl overflow-hidden border border-neutral-200/80">
+                        <div className="flex gap-1.5 px-2 py-1.5 bg-neutral-100 border-b border-neutral-200">
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                        </div>
+                        <div className="relative h-[180px] bg-white">
+                          <Image
+                            src="/Silhouette_Geo_Colors.png"
+                            alt=""
+                            fill
+                            className="object-contain object-center p-1"
+                            sizes="(max-width: 1024px) 0vw, 25vw"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -79,16 +88,16 @@ export default function Home() {
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+15</p>
-                    <p className="text-white/90 text-sm md:text-base mt-1">Années d&apos;expertise</p>
+                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+20</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">années d&apos;expertise</p>
                   </div>
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">500+</p>
-                    <p className="text-white/90 text-sm md:text-base mt-1">Profils réalisés</p>
+                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+500</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">profils réalisés</p>
                   </div>
                   <div>
                     <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">3</p>
-                    <p className="text-white/90 text-sm md:text-base mt-1">Solutions adaptées</p>
+                    <p className="text-white/90 text-sm md:text-base mt-1">niveaux de certification</p>
                   </div>
                 </div>
               </div>
@@ -159,25 +168,25 @@ export default function Home() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#f4ca3a] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-bold">✓</span>
                       Horizon de temps adapté
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#f4ca3a] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-bold">✓</span>
                       Niveau de risque que vous vivrez bien
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#f4ca3a] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-bold">✓</span>
                       Arbitrages cohérents avec vos valeurs
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#f4ca3a] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-bold">✓</span>
                       Plan d&apos;actions concret
                     </p>
                   </div>
@@ -205,7 +214,7 @@ export default function Home() {
                   <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Un bilan patrimonial personnalisé qui révèle votre profil émotionnel
                   </p>
-                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] group-hover:text-[#9FB620] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Découvrir
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -220,7 +229,7 @@ export default function Home() {
                   <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Obtenez la licence PatrimEmotion® et différenciez votre conseil
                   </p>
-                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] group-hover:text-[#9FB620] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Devenir licencié
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -235,7 +244,7 @@ export default function Home() {
                   <p className="relative z-10 text-[#003662] mb-6 text-lg leading-relaxed flex-1">
                     Déployez la méthode en marque blanche dans votre organisation
                   </p>
-                  <span className="relative z-10 text-[#003662] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
+                  <span className="relative z-10 text-[#003662] group-hover:text-[#9FB620] font-semibold flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
                     Découvrir les partenariats
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -306,25 +315,25 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Une lecture synthétique (1 page) + une lecture détaillée</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">3 priorités patrimoniales classées</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Un plan d&apos;action concret</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#f4ca3a] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
                       <span className="text-xl text-white">Un cadre de décision pour éviter les regrets</span>
                     </div>
                   </div>
@@ -334,17 +343,18 @@ export default function Home() {
           </section>
       </div>
 
-      {/* Section Demander une démo - Fond #003662 */}
-      <section className="section-alt py-24 md:py-32 transition-colors">
-        <div className="container mx-auto px-4">
+      {/* Section Demander une démo - Fond vert */}
+      <section className="pt-24 pb-32 md:pt-32 md:pb-40 mb-12 md:mb-16 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 92%, 0% 100%)' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight">
-                  Prêt à <span className="text-[#f4ca3a]">échanger ?</span>
+                  Prêt à <span className="text-[#003662]">échanger ?</span>
                 </h2>
                 <p className="text-xl text-white/90 mb-6 leading-relaxed">
-                  Prenez rendez-vous avec un expert pour découvrir comment <span className="text-[#f4ca3a] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
+                  Prenez rendez-vous avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
                 </p>
                 <p className="text-white/80">
                   Remplissez le formulaire et nous vous recontactons sous 48 h pour convenir d&apos;un créneau.
