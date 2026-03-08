@@ -152,7 +152,7 @@ export default function Header() {
             {/* CTA Button à droite */}
             <div className="hidden md:block">
               <Link
-                href="/contact"
+                href="/demande-demo"
                 className="bg-[#f4ca3a] text-[#003662] px-6 py-2.5 rounded-lg transition-all font-semibold text-base hover:bg-[#f5d055] shadow-sm outline-none focus:outline-none focus-visible:outline-none"
               >
                 Demander une démo <span className="text-xs font-normal">(15 min)</span>
@@ -236,7 +236,7 @@ export default function Header() {
                   Contact
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/demande-demo"
                   className="bg-[#f4ca3a] text-[#003662] px-6 py-3 rounded-lg hover:bg-[#f5d055] transition-colors font-semibold text-center text-base shadow-sm"
                 >
                   Demander une démo <span className="text-xs font-normal">(15 min)</span>

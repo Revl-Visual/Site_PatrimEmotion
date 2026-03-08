@@ -13,21 +13,23 @@ export default function CertificationLicencesPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center mb-4">
-              Certification et <span className="text-[#f4ca3a]">Licences</span>
-            </h1>
-            <p className="text-xl text-white/90 text-center max-w-3xl mx-auto">
-              Parcours de formation, niveaux de certification (Essentielle, Premium, Premium +) et offres commerciales LIGHT, CORE, PREMIUM.
-            </p>
+        <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
+          <div className="hero-encart pt-16 pb-12 md:pt-20 md:pb-16 px-6 md:px-12">
+            <div className="container mx-auto relative z-10">
+              <h1 className="text-4xl md:text-5xl font-serif font-semibold text-white text-center mb-4">
+                Certification et <span className="text-[#f4ca3a]">Licences</span>
+              </h1>
+              <p className="text-xl text-white/90 text-center max-w-3xl mx-auto">
+                Parcours de formation, niveaux de certification (Essentielle, Premium, Premium +) et offres commerciales LIGHT, CORE, PREMIUM.
+              </p>
+            </div>
           </div>
         </section>
 
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#003662] mb-12 text-center">
-              3 niveaux de <span className="text-[#f4ca3a]">licence</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#f4ca3a] mb-12 text-center">
+              3 niveaux de licence
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {/* Licence LIGHT — Essentielle / Badge Bronze */}
@@ -35,7 +37,7 @@ export default function CertificationLicencesPage() {
                 <div className="bg-[#003662] px-6 py-5 flex items-center gap-3">
                   <span className="text-3xl" aria-hidden>🥉</span>
                   <div>
-                    <h3 className="text-xl font-sans font-bold text-white">Licence LIGHT</h3>
+                    <h3 className="text-xl font-sans font-semibold text-white">Licence LIGHT</h3>
                     <p className="text-white/90 text-sm">Essentielle · Utilisateur Certifié · Badge Bronze</p>
                   </div>
                 </div>
@@ -76,7 +78,7 @@ export default function CertificationLicencesPage() {
                 <div className="bg-[#003662] px-6 py-5 flex items-center gap-3">
                   <span className="text-3xl" aria-hidden>🥈</span>
                   <div>
-                    <h3 className="text-xl font-sans font-bold text-white">Licence CORE</h3>
+                    <h3 className="text-xl font-sans font-semibold text-white">Licence CORE</h3>
                     <p className="text-white/90 text-sm">Premium · Praticien Confirmé · Badge Argent</p>
                   </div>
                 </div>
@@ -117,7 +119,7 @@ export default function CertificationLicencesPage() {
                 <div className="bg-[#003662] px-6 py-5 flex items-center gap-3">
                   <span className="text-3xl" aria-hidden>🥇</span>
                   <div>
-                    <h3 className="text-xl font-sans font-bold text-white">Licence PREMIUM</h3>
+                    <h3 className="text-xl font-sans font-semibold text-white">Licence PREMIUM</h3>
                     <p className="text-white/90 text-sm">Premium + · Cabinet Expert · Badge Or</p>
                   </div>
                 </div>
@@ -157,60 +159,46 @@ export default function CertificationLicencesPage() {
             <p className="text-[#003662]/70 text-xs md:text-sm text-center mt-8 max-w-2xl mx-auto">
               Certification interne délivrée par l&apos;éditeur de la méthode. Ne constitue pas une certification d&apos;État ni un agrément réglementaire.
             </p>
-            <p className="text-[#003662]/90 text-center mt-6 max-w-2xl mx-auto">
-              La grille tarifaire détaillée (V2026), les options et la licence Fondateur sont sur la page <Link href="/tarifs" className="text-[#003662] font-semibold underline decoration-[#f4ca3a] hover:text-[#f4ca3a] transition-colors">Tarifs</Link>.
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-serif font-bold text-white mb-8">
-              Certification
-            </h2>
-            <p className="text-white/90 leading-relaxed mb-6">
-              La certification PatrimEmotion® atteste de la maîtrise de la méthode et du cadre éthique et scientifique. Elle est délivrée après validation des épreuves et du parcours de formation. Les certifiés peuvent utiliser les outils et le positionnement PatrimEmotion® dans le respect du référentiel.
-            </p>
-            <p className="text-white/90 leading-relaxed">
-              Le renouvellement et la mise à jour des compétences sont assurés par des sessions de formation continue et l&apos;accès aux évolutions de la méthode.
-            </p>
+            <div className="flex justify-center mt-8">
+              <Link
+                href="/tarifs"
+                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-lg transition-colors"
+              >
+                Voir la grille tarifaire
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </section>
 
         <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-serif font-bold text-[#003662] mb-8">
-              Tarification
-            </h2>
-            <p className="text-[#003662] leading-relaxed mb-6">
-              La grille tarifaire officielle <strong>PatrimEmotion® V2026</strong> propose plusieurs offres adaptées à la taille de votre cabinet : <strong>Licence Fondateur</strong> (avantages Early Partners, 10 premiers cabinets), <strong>Licence LIGHT</strong> (cabinet indépendant, 1 conseiller), <strong>Licence CORE</strong> (2 à 5 conseillers, socle opérationnel), <strong>Licence PREMIUM</strong> (jusqu&apos;à 15 conseillers, version avancée) et <strong>Licence Institutionnelle / Embedded</strong> (banques, assureurs, fintech – non disponible pour le moment). Les tarifs sont indicatifs HT ; des options (utilisateur supplémentaire, formations, audits) complètent chaque offre.
-            </p>
-            <p className="text-[#003662] leading-relaxed mb-8">
-              Pour consulter les montants, les options et les conditions, rendez-vous sur la page Tarifs. Pour un devis personnalisé ou les modalités de prise en charge, contactez-nous via le formulaire de contact ou par email et téléphone.
-            </p>
-            <Link
-              href="/tarifs"
-              className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              Voir la grille tarifaire
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </section>
-
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-serif font-bold text-white mb-8">
-              Badges et épreuves
-            </h2>
-            <p className="text-white/90 leading-relaxed mb-6">
-              La certification s&apos;appuie sur des épreuves théoriques et pratiques : quiz de connaissance de la méthode, analyse de profils types et mise en situation d&apos;entretien. Les badges PatrimEmotion® permettent de valoriser les niveaux atteints (formation initiale, certification, expert).
-            </p>
-            <p className="text-white/90 leading-relaxed">
-              Les épreuves sont organisées à l&apos;issue du parcours de formation. Un accompagnement est proposé pour la préparation et le passage des épreuves.
-            </p>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-[#9FB620] rounded-2xl p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <h2 className="text-3xl font-serif font-semibold text-white mb-8">
+                  Certification
+                </h2>
+                <p className="text-white leading-relaxed mb-6">
+                  La certification PatrimEmotion® atteste de la maîtrise de la méthode et du cadre éthique et scientifique. Elle est délivrée après validation des épreuves et du parcours de formation. Les certifiés peuvent utiliser les outils et le positionnement PatrimEmotion® dans le respect du référentiel.
+                </p>
+                <p className="text-white leading-relaxed">
+                  Le renouvellement et la mise à jour des compétences sont assurés par des sessions de formation continue et l&apos;accès aux évolutions de la méthode.
+                </p>
+              </div>
+              <div className="bg-[#f4ca3a] rounded-2xl p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <h2 className="text-3xl font-serif font-semibold text-[#003662] mb-8">
+                  Badges et épreuves
+                </h2>
+                <p className="text-[#003662] leading-relaxed mb-6">
+                  La certification s&apos;appuie sur des épreuves théoriques et pratiques : quiz de connaissance de la méthode, analyse de profils types et mise en situation d&apos;entretien. Les badges PatrimEmotion® permettent de valoriser les niveaux atteints (formation initiale, certification, expert).
+                </p>
+                <p className="text-[#003662] leading-relaxed">
+                  Les épreuves sont organisées à l&apos;issue du parcours de formation. Un accompagnement est proposé pour la préparation et le passage des épreuves.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>

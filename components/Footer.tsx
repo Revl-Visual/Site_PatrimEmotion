@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Colonne Navigation */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
               Navigation
             </h4>
             <ul className="space-y-3 text-sm text-white/90">
@@ -51,7 +51,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="pt-2 mt-2 border-t border-white/20">
-                <span className="text-[#f4ca3a] font-sans font-bold text-xs uppercase tracking-wider">La méthode</span>
+                <span className="text-[#f4ca3a] font-sans font-semibold text-xs uppercase tracking-wider">La méthode</span>
               </li>
               <li>
                 <Link href="/methode" className="hover:text-white transition-colors">
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Colonne Solutions */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
               Nos solutions
             </h4>
             <ul className="space-y-3 text-sm text-white/90">
@@ -107,18 +107,13 @@ export default function Footer() {
 
           {/* Colonne Accompagnement */}
           <div className="lg:col-span-2">
-            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider text-[#f4ca3a] mb-4">
               Accompagnement
             </h4>
             <ul className="space-y-3 text-sm text-white/90">
               <li>
                 <Link href="/methode" className="hover:text-[#9FB620] transition-colors">
                   Le concept
-                </Link>
-              </li>
-              <li>
-                <Link href="/test" className="hover:text-white transition-colors">
-                  Faire le test
                 </Link>
               </li>
               <li>
@@ -135,8 +130,8 @@ export default function Footer() {
               La méthode qui remet l&apos;humain au cœur des décisions patrimoniales
             </p>
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#f4ca3a] text-[#003662] hover:bg-[#f5d055] font-bold px-5 py-2.5 rounded-lg transition-colors text-sm mb-6"
+              href="/demande-demo"
+              className="inline-flex items-center gap-2 bg-[#f4ca3a] text-[#003662] hover:bg-[#f5d055] font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm mb-6"
             >
               Demander une démo <span className="text-xs font-normal">(15 min)</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +149,7 @@ export default function Footer() {
                 aria-label="LinkedIn AM Courtage et Patrimoine"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
-                <span className="text-xs font-bold">in</span>
+                <span className="text-xs font-semibold">in</span>
               </a>
               <a
                 href="https://www.facebook.com/amcourtagepatrimoine"
@@ -163,7 +158,7 @@ export default function Footer() {
                 aria-label="Facebook AM Courtage et Patrimoine"
                 className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
-                <span className="text-sm font-bold">f</span>
+                <span className="text-sm font-semibold">f</span>
               </a>
               <a
                 href="https://www.youtube.com/@amcourtagepatrimoine"

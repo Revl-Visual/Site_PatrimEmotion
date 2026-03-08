@@ -14,7 +14,7 @@ export default function CookiesPage() {
       <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif font-semibold text-white text-center mb-4">
               Politique des <span className="text-[#f4ca3a]">cookies</span>
             </h1>
           </div>
@@ -27,7 +27,7 @@ export default function CookiesPage() {
                 Ce site utilise des cookies pour améliorer l&apos;expérience utilisateur.
               </p>
               <div>
-                <h2 className="text-2xl font-serif font-bold text-[#003662] mb-4">Types de cookies utilisés</h2>
+                <h2 className="text-2xl font-serif font-semibold text-[#003662] mb-4">Types de cookies utilisés</h2>
                 <p>Cookies techniques nécessaires au fonctionnement du site.</p>
               </div>
             </div>

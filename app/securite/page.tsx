@@ -14,7 +14,7 @@ export default function SecuritePage() {
       <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif font-semibold text-white text-center mb-4">
               <span className="text-[#f4ca3a]">Sécurité</span>
             </h1>
             <p className="text-xl text-white/90 text-center max-w-2xl mx-auto">
@@ -30,7 +30,7 @@ export default function SecuritePage() {
                 AM Courtage & Patrimoine (AMCP) met en œuvre tous les moyens nécessaires pour assurer la sécurité et la confidentialité de vos données.
               </p>
               <div>
-                <h2 className="text-2xl font-serif font-bold text-[#003662] mb-4">Mesures de sécurité</h2>
+                <h2 className="text-2xl font-serif font-semibold text-[#003662] mb-4">Mesures de sécurité</h2>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>Chiffrement des données</li>
                   <li>Accès sécurisé</li>

@@ -115,7 +115,7 @@ export default function TarifsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="rounded-2xl bg-white/10 border border-white/20 p-8 md:p-10">
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
                   Licence Fondateur <span className="text-[#f4ca3a]">(avantages Early Partners)</span>
                 </h2>
                 <p className="text-white/90 mb-4">Réservée aux 10 premiers cabinets – lancement réseau.</p>
@@ -151,7 +151,7 @@ export default function TarifsPage() {
               {/* LIGHT */}
               <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
                 <div className="bg-[#9FB620]/15 px-6 py-4 border-b border-[#9FB620]/30">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#003662]">Licence LIGHT</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#003662]">Licence LIGHT</h3>
                   <p className="text-[#003662]/80 text-sm mt-1">L&apos;essentiel pour démarrer</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -159,7 +159,7 @@ export default function TarifsPage() {
                     <span className="text-[#9FB620]">✓</span> Utilisation individuelle – cabinet indépendant
                   </p>
                   <div className="mb-4">
-                    <span className="text-2xl font-bold text-[#003662]">1 490 €</span>
+                    <span className="text-2xl font-semibold text-[#003662]">1 490 €</span>
                     <span className="text-[#003662]/70"> HT / an</span>
                     <p className="text-sm text-[#003662]/70 mt-0.5">ou 149 € HT / mois (engagement 12 mois)</p>
                   </div>
@@ -178,7 +178,7 @@ export default function TarifsPage() {
               <div className="flex flex-col rounded-2xl bg-[#003662] shadow-[0_4px_24px_rgba(0,54,98,0.2)] overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full relative">
                 <div className="absolute top-4 right-4 bg-[#f4ca3a] text-[#003662] px-3 py-1 rounded-full text-xs font-semibold">Populaire</div>
                 <div className="bg-[#f4ca3a]/20 px-6 py-4 border-b border-[#f4ca3a]/30">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-white">Licence CORE</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-white">Licence CORE</h3>
                   <p className="text-white/80 text-sm mt-1">Le socle opérationnel (standard pro)</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -186,7 +186,7 @@ export default function TarifsPage() {
                     <span className="text-[#9FB620]">✓</span> Cabinet structuré (2-5 conseillers)
                   </p>
                   <div className="mb-4">
-                    <span className="text-2xl font-bold text-[#f4ca3a]">3 900 €</span>
+                    <span className="text-2xl font-semibold text-[#f4ca3a]">3 900 €</span>
                     <span className="text-white/80"> HT / an</span>
                     <p className="text-sm text-white/70 mt-0.5">ou 390 € HT / mois (engagement 12 mois)</p>
                   </div>
@@ -204,13 +204,13 @@ export default function TarifsPage() {
               {/* PREMIUM */}
               <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
                 <div className="bg-[#003662]/10 px-6 py-4 border-b border-[#003662]/20">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#003662]">Licence PREMIUM</h3>
+                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#003662]">Licence PREMIUM</h3>
                   <p className="text-[#003662]/80 text-sm mt-1">La version avancée</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <p className="text-[#003662]/80 text-sm mb-3">Cabinet expert / multisites</p>
                   <div className="mb-4">
-                    <span className="text-2xl font-bold text-[#003662]">9 800 €</span>
+                    <span className="text-2xl font-semibold text-[#003662]">9 800 €</span>
                     <span className="text-[#003662]/70"> HT / an</span>
                     <p className="text-sm text-[#003662]/70 mt-0.5">ou 980 € HT / mois (engagement 12 mois)</p>
                   </div>
@@ -232,7 +232,7 @@ export default function TarifsPage() {
         <section className="bg-[#003662] py-16 md:py-20 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-serif font-bold text-white mb-2">Licence Institutionnelle / Embedded</h2>
+              <h2 className="text-2xl font-serif font-semibold text-white mb-2">Licence Institutionnelle / Embedded</h2>
               <p className="text-white/60 text-sm mb-4">Intégration au SI – non disponible pour le moment</p>
               <p className="text-white/90 mb-1">Banque / assureur / fintech / réseau national.</p>
               <p className="text-white/90 text-sm">Ticket d&apos;entrée 25 000 € à 75 000 € HT · Redevance annuelle 15 000 € à 60 000 € HT · Intégration moteur, UX, formation conformité, audit, documentation AMF/ACPR, badge « Licencié Formateur »</p>

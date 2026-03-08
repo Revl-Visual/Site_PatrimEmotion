@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Le concept | PatrimEmotion®",
-  description: "La méthode qui remet l'humain au cœur des décisions patrimoniales.",
+  description: "Remettons l'humain au cœur des décisions patrimoniales. Le concept PatrimEmotion®.",
 };
 
 export default function MethodePage() {
@@ -20,18 +20,18 @@ export default function MethodePage() {
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 {/* Colonne gauche : texte et CTA */}
                 <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-                La méthode qui remet <span className="text-[#f4ca3a]">l&apos;</span><span className="text-[#f4ca3a]">humain</span> au cœur des décisions patrimoniales.
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white mb-6 leading-tight">
+                Remettons <span className="text-[#f4ca3a]">l&apos;humain</span> au cœur des décisions patrimoniales.
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                Parce que les meilleurs choix ne sont pas seulement financiers : ils doivent être compatibles avec votre personnalité, vos émotions et votre vie.
+                Parce que les <span className="text-[#f4ca3a]">meilleurs choix</span> ne sont pas seulement <span className="text-[#f4ca3a]">financiers</span> : ils doivent être <span className="text-[#f4ca3a]">compatibles</span> avec <span className="text-[#f4ca3a]">votre personnalité, vos émotions, votre vie.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/test"
+                  href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-3.5 rounded-lg transition-all text-base"
                 >
-                  Faire le test / pré-diagnostic
+                  Nous contacter
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -60,54 +60,50 @@ export default function MethodePage() {
           </div>
         </section>
 
-        {/* Introduction */}
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="bg-[#003662] rounded-2xl p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
-              <div className="space-y-6 text-white/90 text-lg leading-relaxed">
-                <p>
-                  <span className="font-semibold text-white">PatrimEmotion®</span> est une méthode d&apos;analyse psychométrique appliquée au patrimoine.
-                </p>
-                <p>
-                  Elle vise à objectiver les dimensions émotionnelles et comportementales qui influencent les décisions financières et patrimoniales.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Le problème — inspi 2 colonnes : image ~40 %, fond bleu + texte ~60 % */}
-        <section className="min-h-[420px] flex">
+        <section className="min-h-[420px] flex bg-[#003662]">
           <div className="grid w-full md:grid-cols-[2fr_2.4fr] min-h-[420px]">
             {/* Zone image */}
-            <div className="relative h-[280px] md:h-auto md:min-h-[420px] bg-[#003662]/10" aria-hidden />
+            <div className="relative h-[280px] md:h-auto md:min-h-[420px] bg-[#003662] rounded-tr-2xl md:rounded-tr-3xl overflow-hidden" aria-hidden>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003662] via-[#004a7a] to-[#003662] flex items-center justify-center">
+                <div className="text-center px-6">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-xl bg-white/10 flex items-center justify-center border-2 border-dashed border-white/30">
+                    <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <p className="text-white/60 text-sm font-medium">Image à ajouter</p>
+                  <p className="text-white/40 text-xs mt-1">Le problème</p>
+                </div>
+              </div>
+            </div>
             <div className="bg-[#003662] flex items-center py-14 md:py-20 px-6 md:px-12 lg:px-16">
               <div className="w-full max-w-xl">
                 <span className="inline-block px-4 py-1.5 rounded-md border border-white/30 text-white/80 text-sm font-medium tracking-widest uppercase mb-6">
                   Contexte
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-10">
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-white mb-10">
                   <span className="text-[#f4ca3a]">Le</span> <span className="text-[#f4ca3a]">problème</span>
                 </h2>
                 <ul className="font-sans text-white/90 text-base md:text-lg space-y-0">
                   <li className="flex items-center gap-4 py-4 border-b border-white/20 first:pt-0">
-                    <span className="text-red-400 text-lg font-bold shrink-0">✗</span>
+                    <span className="text-red-400 text-lg font-semibold shrink-0">✗</span>
                     <span>Négligence de biais humains importants</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-red-400 text-lg font-bold shrink-0">✗</span>
+                    <span className="text-red-400 text-lg font-semibold shrink-0">✗</span>
                     <span>Rationnalité totale impossible</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-red-400 text-lg font-bold shrink-0">✗</span>
+                    <span className="text-red-400 text-lg font-semibold shrink-0">✗</span>
                     <span>Désalignement avec sa personne</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-red-400 text-lg font-bold shrink-0">✗</span>
+                    <span className="text-red-400 text-lg font-semibold shrink-0">✗</span>
                     <span>Stress, peur, perte de repères</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20 last:border-0">
-                    <span className="text-red-400 text-lg font-bold shrink-0">✗</span>
+                    <span className="text-red-400 text-lg font-semibold shrink-0">✗</span>
                     <span>Gestion patrimoniale non alignée</span>
                   </li>
                 </ul>
@@ -119,34 +115,46 @@ export default function MethodePage() {
         {/* La solution — même format */}
         <section className="min-h-[420px] flex bg-[#003662]">
           <div className="grid w-full md:grid-cols-[2fr_2.4fr] min-h-[420px]">
-            <div className="relative h-[280px] md:h-auto md:min-h-[420px] order-2 md:order-1 bg-white/15 rounded-br-2xl md:rounded-br-3xl overflow-hidden" aria-hidden />
+            <div className="relative h-[280px] md:h-auto md:min-h-[420px] order-2 md:order-1 bg-white/15 rounded-br-2xl md:rounded-br-3xl overflow-hidden" aria-hidden>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003662]/90 via-[#004a7a]/80 to-[#003662]/90 flex items-center justify-center">
+                <div className="text-center px-6">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-xl bg-white/10 flex items-center justify-center border-2 border-dashed border-white/30">
+                    <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <p className="text-white/60 text-sm font-medium">Image à ajouter</p>
+                  <p className="text-white/40 text-xs mt-1">La solution</p>
+                </div>
+              </div>
+            </div>
             <div className="bg-[#003662] flex items-center py-14 md:py-20 px-6 md:px-12 lg:px-16 order-1 md:order-2">
               <div className="w-full max-w-xl">
                 <span className="inline-block px-4 py-1.5 rounded-md border border-white/30 text-white/80 text-sm font-medium tracking-widest uppercase mb-6">
                   Notre approche
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-10">
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-white mb-10">
                   <span className="text-[#f4ca3a]">La</span> <span className="text-[#f4ca3a]">solution</span>
                 </h2>
                 <ul className="font-sans text-white/90 text-base md:text-lg space-y-0">
                   <li className="flex items-center gap-4 py-4 border-b border-white/20 first:pt-0">
-                    <span className="text-[#9FB620] text-lg font-bold shrink-0">✓</span>
+                    <span className="text-[#9FB620] text-lg font-semibold shrink-0">✓</span>
                     <span>Intégration des notions émotionnelles</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-[#9FB620] text-lg font-bold shrink-0">✓</span>
+                    <span className="text-[#9FB620] text-lg font-semibold shrink-0">✓</span>
                     <span>Acceptation de son profil au sein de sa gestion</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-[#9FB620] text-lg font-bold shrink-0">✓</span>
+                    <span className="text-[#9FB620] text-lg font-semibold shrink-0">✓</span>
                     <span>Alignement réel avec soi</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20">
-                    <span className="text-[#9FB620] text-lg font-bold shrink-0">✓</span>
+                    <span className="text-[#9FB620] text-lg font-semibold shrink-0">✓</span>
                     <span>Sérénité, satisfaction</span>
                   </li>
                   <li className="flex items-center gap-4 py-4 border-b border-white/20 last:border-0">
-                    <span className="text-[#9FB620] text-lg font-bold shrink-0">✓</span>
+                    <span className="text-[#9FB620] text-lg font-semibold shrink-0">✓</span>
                     <span>Gestion patrimoniale alignée</span>
                   </li>
                 </ul>
@@ -167,7 +175,7 @@ export default function MethodePage() {
             }}
           >
             <div className="container mx-auto px-4 max-w-4xl skew-y-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#003662] mb-8">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-8">
                 Fondements <span className="text-[#f4ca3a]">conceptuels</span>
               </h2>
               <p className="text-[#003662]/90 text-lg mb-6">
@@ -175,27 +183,27 @@ export default function MethodePage() {
               </p>
               <ul className="grid md:grid-cols-2 gap-4 text-[#003662]/90 text-lg">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>la psychologie comportementale</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>l&apos;analyse des biais cognitifs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>le rapport à l&apos;argent</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>la tolérance émotionnelle au risque</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>la projection dans le temps</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <span>le rapport au contrôle, à la délégation et à la transmission</span>
                 </li>
               </ul>
@@ -206,7 +214,7 @@ export default function MethodePage() {
         {/* Les profils PatrimEmotion® — fond bleu */}
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-6">
               Les profils <span className="text-[#f4ca3a]">PatrimEmotion®</span>
             </h2>
             <p className="text-white/90 text-lg mb-8 leading-relaxed">
@@ -214,7 +222,7 @@ export default function MethodePage() {
               Chaque profil traduit une manière singulière de percevoir l&apos;argent, le risque, le temps et la sécurité.
             </p>
 
-            <h3 className="text-2xl font-serif font-bold text-white mb-6">
+            <h3 className="text-2xl font-serif font-semibold text-white mb-6">
               Les 8 profils
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
@@ -282,15 +290,15 @@ export default function MethodePage() {
               </p>
               <ul className="space-y-3 text-white text-lg">
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>des moteurs émotionnels dominants</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>des forces naturelles</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>des points de vigilance patrimoniale</span>
                 </li>
               </ul>
@@ -305,7 +313,7 @@ export default function MethodePage() {
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="bg-[#9FB620] rounded-xl p-6 md:p-8">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-6">
                 Axes <span className="text-white">analysés</span>
               </h2>
               <p className="text-white text-lg mb-6">
@@ -313,27 +321,27 @@ export default function MethodePage() {
               </p>
               <ul className="grid md:grid-cols-2 gap-4 text-white text-lg">
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Rapport à l&apos;argent</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Tolérance émotionnelle au risque</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Vision et temporalité</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Rapport à la sécurité et au contrôle</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Délégation, confiance et décision</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-white text-xl font-bold shrink-0">✓</span>
+                  <span className="text-white text-xl font-semibold shrink-0">✓</span>
                   <span>Transmission, sens et valeurs</span>
                 </li>
               </ul>
@@ -347,26 +355,26 @@ export default function MethodePage() {
         {/* Restitution et lecture patrimoniale — fond blanc */}
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#003662] mb-8">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-8">
               Restitution et lecture <span className="text-[#f4ca3a]">patrimoniale</span>
             </h2>
 
-            <h3 className="text-2xl font-serif font-bold text-[#003662] mb-6">
-              Comment ça se passe ? <span className="text-[#f4ca3a]">3 étapes</span> :
+            <h3 className="text-2xl font-serif font-semibold text-[#003662] mb-6">
+              Comment ça se passe ? <span className="text-[#f4ca3a]">3 étapes :</span>
             </h3>
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="rounded-xl bg-[#003662] p-6 shadow-lg">
-                <div className="text-3xl font-bold text-[#f4ca3a] mb-3">1</div>
+                <div className="text-3xl font-semibold text-[#f4ca3a] mb-3">1</div>
                 <p className="text-white font-semibold mb-2">Entretien découverte</p>
                 <p className="text-white/90 text-sm">(humain)</p>
               </div>
               <div className="rounded-xl bg-[#003662] p-6 shadow-lg">
-                <div className="text-3xl font-bold text-[#f4ca3a] mb-3">2</div>
+                <div className="text-3xl font-semibold text-[#f4ca3a] mb-3">2</div>
                 <p className="text-white font-semibold mb-2">Profil + lecture</p>
                 <p className="text-white/90 text-sm">(clarté)</p>
               </div>
               <div className="rounded-xl bg-[#003662] p-6 shadow-lg">
-                <div className="text-3xl font-bold text-[#f4ca3a] mb-3">3</div>
+                <div className="text-3xl font-semibold text-[#f4ca3a] mb-3">3</div>
                 <p className="text-white font-semibold mb-2">Plan d&apos;actions + mise en œuvre / suivi</p>
                 <p className="text-white/90 text-sm">(concret)</p>
               </div>
@@ -377,19 +385,19 @@ export default function MethodePage() {
             </p>
             <ul className="space-y-3 text-[#003662]/90 text-lg mb-6">
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                 <span>un scoring multi-axes</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                 <span>l&apos;identification d&apos;un ou plusieurs profils dominants</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                 <span>l&apos;analyse des écarts et contradictions</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                 <span>une hiérarchisation des priorités patrimoniales</span>
               </li>
             </ul>
@@ -408,30 +416,30 @@ export default function MethodePage() {
             }}
           >
             <div className="container mx-auto px-4 max-w-4xl -skew-y-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-8">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-8">
                 Ce que vous <span className="text-[#f4ca3a]">recevez</span>
               </h2>
               <div className="space-y-6 text-white/90 text-lg leading-relaxed">
                 <div className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <p>
                     Une lecture synthétique (Score Emotionnel Patrimonial Global, Profil Emotionnel Patrimonial et Répartition Patrimoniale Alignée)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <p>
                     3 priorités + plan d&apos;action (Rapport Synthétique PatrimEmotion)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <p>
                     Un cadre de décision et des recommandations claires (pour éviter les regrets)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-[#9FB620] text-xl font-bold shrink-0">✓</span>
+                  <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
                   <p>
                     Sur option payante, un bilan PatrimEmotion complet avec le détail de la méthode et les conseils financiers et patrimoniaux alignés.
                   </p>
@@ -444,8 +452,8 @@ export default function MethodePage() {
         {/* Pourquoi PatrimEmotion — fond blanc */}
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#003662] mb-8">
-              Pourquoi <span className="text-[#f4ca3a]">PatrimEmotion</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-8">
+              D&apos;où vient <span className="text-[#f4ca3a]">PatrimEmotion</span> ?
             </h2>
             <div className="space-y-6 text-[#003662]/90 text-lg leading-relaxed">
               <p>

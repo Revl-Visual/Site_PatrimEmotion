@@ -18,16 +18,16 @@ export default function Home() {
                 <div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans text-white mb-5 leading-[1.15] tracking-tight">
                     <span className="font-normal">La </span>
-                    <span className="font-bold text-[#f4ca3a]">méthode patrimoniale</span>
+                    <span className="font-semibold text-[#f4ca3a]">méthode patrimoniale</span>
                     <span className="font-normal"> qui remet l&apos;</span>
-                    <span className="font-bold text-[#f4ca3a]">humain</span>
+                    <span className="font-semibold text-[#f4ca3a]">humain</span>
                     <span className="font-normal"> au cœur des décisions</span>
                   </h1>
                   <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl leading-relaxed">
                     Qui simplifie vos choix, assure la cohérence avec votre personnalité et donne du sens à votre patrimoine.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/demande-demo"
                     className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-lg transition-all text-base"
                   >
                     Demandez une démo personnalisée <span className="text-sm font-normal">(15 min)</span>
@@ -88,15 +88,15 @@ export default function Home() {
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+20</p>
+                    <p className="text-3xl md:text-4xl font-semibold text-[#f4ca3a]">+20</p>
                     <p className="text-white/90 text-sm md:text-base mt-1">années d&apos;expertise</p>
                   </div>
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">+500</p>
+                    <p className="text-3xl md:text-4xl font-semibold text-[#f4ca3a]">+500</p>
                     <p className="text-white/90 text-sm md:text-base mt-1">profils réalisés</p>
                   </div>
                   <div>
-                    <p className="text-3xl md:text-4xl font-bold text-[#f4ca3a]">3</p>
+                    <p className="text-3xl md:text-4xl font-semibold text-[#f4ca3a]">3</p>
                     <p className="text-white/90 text-sm md:text-base mt-1">niveaux de certification</p>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#003662] mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-[#003662] mb-6 leading-tight">
                   Trop d&apos;informations, trop de produits, trop de <span className="text-[#f4ca3a]">peur de se tromper</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-[#003662]/90 leading-relaxed">
@@ -125,7 +125,7 @@ export default function Home() {
                   <div className="py-5 border-b border-white/20">
                     <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-2">Au-delà du rationnel</p>
                     <p className="text-lg text-white leading-relaxed">
-                      Parce que les choix financiers ne sont pas que rationnels
+                      Parce que les choix financiers ne sont pas seulement rationnels
                     </p>
                   </div>
                   <div className="py-5 border-b border-white/20">
@@ -137,7 +137,7 @@ export default function Home() {
                   <div className="py-5 border-b border-white/20">
                     <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-2">Produits vs. stratégie</p>
                     <p className="text-lg text-white leading-relaxed">
-                      Parce qu&apos;on vous vend des produits, pas une stratégie alignée avec qui vous êtes
+                      Parce que le marché vous vend des produits, pas une stratégie alignée avec qui vous êtes
                     </p>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ export default function Home() {
                       <span className="text-[#f4ca3a]">PatrimEmotion® :</span> le profilage émotionnel patrimonial qui transforme votre relation à votre patrimoine
                     </h2>
                     <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
-                      PatrimEmotion® analyse votre <span className="text-[#f4ca3a] font-bold">personnalité financière</span> et vos <span className="text-[#f4ca3a] font-bold">émotions</span> pour les traduire en une <span className="font-bold">stratégie claire</span> :
+                      PatrimEmotion® analyse votre <span className="text-[#f4ca3a] font-semibold">personnalité financière</span> et vos <span className="text-[#f4ca3a] font-semibold">émotions</span> pour les traduire en une <span className="font-semibold">stratégie claire</span>
                     </p>
                     <p className="text-xl md:text-2xl font-semibold text-white">
                       <span className="text-[#f4ca3a]">Résultat :</span> des décisions que vous comprenez, que vous assumez, et qui vous ressemblent.
@@ -168,25 +168,25 @@ export default function Home() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#9FB620] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-semibold">✓</span>
                       Horizon de temps adapté
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#9FB620] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-semibold">✓</span>
                       Niveau de risque que vous vivrez bien
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#9FB620] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-semibold">✓</span>
                       Arbitrages cohérents avec vos valeurs
                     </p>
                   </div>
                   <div className="min-h-[88px] flex items-center p-6 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all hover:shadow-md">
                     <p className="text-lg md:text-xl text-[#003662] flex items-center gap-3">
-                      <span className="text-[#9FB620] font-bold">✓</span>
+                      <span className="text-[#9FB620] font-semibold">✓</span>
                       Plan d&apos;actions concret
                     </p>
                   </div>
@@ -266,7 +266,7 @@ export default function Home() {
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
-                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-semibold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     1
                   </div>
                   <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
@@ -277,7 +277,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
-                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-semibold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     2
                   </div>
                   <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
@@ -288,7 +288,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative text-center p-8 rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all hover:shadow-md">
-                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-bold mx-auto mb-6 border-2 border-[#f4ca3a]">
+                  <div className="relative z-10 bg-[#f4ca3a] text-[#003662] rounded-full w-24 h-24 flex items-center justify-center text-4xl font-semibold mx-auto mb-6 border-2 border-[#f4ca3a]">
                     3
                   </div>
                   <h3 className="relative z-10 text-2xl md:text-3xl font-serif font-medium text-[#003662] mb-4">
@@ -315,25 +315,25 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-semibold shrink-0">✓</span>
                       <span className="text-xl text-white">Une lecture synthétique (1 page) + une lecture détaillée</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-semibold shrink-0">✓</span>
                       <span className="text-xl text-white">3 priorités patrimoniales classées</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-semibold shrink-0">✓</span>
                       <span className="text-xl text-white">Un plan d&apos;action concret</span>
                     </div>
                   </div>
                   <div className="relative min-h-[88px] flex items-center p-6 rounded-xl bg-[#003662] transition-all hover:shadow-md">
                     <div className="relative z-10 flex items-center gap-4">
-                      <span className="text-[#9FB620] text-3xl font-bold shrink-0">✓</span>
+                      <span className="text-[#9FB620] text-3xl font-semibold shrink-0">✓</span>
                       <span className="text-xl text-white">Un cadre de décision pour éviter les regrets</span>
                     </div>
                   </div>
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-serif font-semibold text-white mb-4 leading-tight">
                   Prêt à <span className="text-[#003662]">échanger ?</span>
                 </h2>
                 <p className="text-xl text-white/90 mb-6 leading-relaxed">
@@ -401,41 +401,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6 : Preuves sociales - Encart */}
-      <section className="py-12 md:py-16 px-4">
-        <div className="max-w-5xl mx-auto rounded-2xl bg-[#003662] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)]">
-          <div className="px-6 md:px-12 pt-12 md:pt-16 pb-8">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-center text-white mb-4 leading-tight">
-              <span className="text-[#f4ca3a]">Preuves sociales</span>
-            </h2>
-            <p className="text-xl text-white/90 text-center mb-12 max-w-2xl mx-auto">
-              Découvrez ce que nos clients disent de <span className="text-[#f4ca3a] font-semibold">PatrimEmotion®</span>
-            </p>
-            <div className="max-w-4xl mx-auto">
-              <div className="p-8 md:p-10 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                <blockquote className="text-2xl md:text-3xl lg:text-4xl text-[#003662] italic mb-8 leading-relaxed font-serif">
-                  &quot;Grâce à <span className="text-[#f4ca3a] not-italic">PatrimEmotion®,</span> j&apos;ai enfin compris pourquoi certaines décisions me mettaient mal à l&apos;aise. Aujourd&apos;hui, je sais où je vais.&quot;
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#003662]/10 flex items-center justify-center text-[#003662] font-bold text-lg">
-                    C
-                  </div>
-                  <div>
-                    <p className="text-[#003662] font-semibold text-lg">Client particulier</p>
-                    <p className="text-[#003662]">48 ans</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7 : Pourquoi différent - Refonte cartes */}
+      {/* Section 6 : Pourquoi différent - Refonte cartes */}
       <section className="section-alt-blue py-24 md:py-32 transition-colors">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#003662] mb-4 text-center leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#003662] mb-4 text-center leading-tight">
               Pourquoi PatrimEmotion est <span className="text-[#f4ca3a]">différent</span>
             </h2>
             <p className="text-lg md:text-xl text-[#003662] mb-4 text-center max-w-2xl mx-auto">
