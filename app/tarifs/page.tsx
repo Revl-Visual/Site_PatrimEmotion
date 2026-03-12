@@ -44,19 +44,21 @@ export default function TarifsPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero — style accueil */}
-        <section className="bg-[#003662] py-24 md:py-32 transition-colors">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white mb-6 leading-tight">
-                <span className="text-[#f4ca3a]">Tarifs</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-4">
-                Grille tarifaire officielle PatrimEmotion® V2026. Licences professionnelles.
-              </p>
-              <p className="text-white/70 text-sm italic">
-                Tarifs indicatifs HT – hors formation présentielle spécifique et prestations sur devis
-              </p>
+        {/* Hero — style hero-encart comme les autres pages */}
+        <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
+          <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-16 px-6 md:px-12">
+            <div className="container mx-auto relative z-10">
+              <div className="max-w-4xl mx-auto text-center">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-white mb-4 leading-tight tracking-tight">
+                  <span className="text-[#f4ca3a]">Tarifs</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-4">
+                  Grille tarifaire officielle PatrimEmotion® V2026. Licences professionnelles.
+                </p>
+                <p className="text-white/70 text-sm italic">
+                  Tarifs indicatifs HT – hors formation présentielle spécifique et prestations sur devis
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -76,6 +78,7 @@ export default function TarifsPage() {
                   <table className="w-full text-left min-w-[640px]">
                     <thead>
                       <tr className="bg-[#003662] text-white">
+                        <th className="px-5 py-4 font-semibold text-base w-8"></th>
                         <th className="px-5 py-4 font-semibold text-base">Offre</th>
                         <th className="px-5 py-4 font-semibold text-base">Tarif annuel HT</th>
                         <th className="px-5 py-4 font-semibold text-base">Tarif mensuel HT</th>
@@ -85,18 +88,21 @@ export default function TarifsPage() {
                     </thead>
                     <tbody className="text-[#003662]">
                       {[
-                        ["Licence Fondateur", "2 900 €", "—", "12 mois", "Selon CORE"],
-                        ["Licence LIGHT", "1 490 €", "149 €", "12 mois", "1 nominatif"],
-                        ["Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
-                        ["Licence PREMIUM", "9 800 €", "980 €", "12 mois", "Jusqu'à 15"],
-                        ["Institutionnelle / Embedded", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
+                        ["#1a1a1a", "Licence Fondateur", "2 900 €", "—", "12 mois", "Selon CORE"],
+                        ["#9FB620", "Licence LIGHT", "1 490 €", "149 €", "12 mois", "1 nominatif"],
+                        ["#d4a808", "Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
+                        ["#003662", "Licence PREMIUM", "9 800 €", "980 €", "12 mois", "Jusqu'à 15"],
+                        ["#94a3b8", "Institutionnelle / Embedded", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
                       ].map((row, i) => (
                         <tr key={i} className="border-b border-[#003662]/10 last:border-0 hover:bg-[#003662]/5 transition-colors">
-                          <td className="px-5 py-4 font-medium">{row[0]}</td>
-                          <td className="px-5 py-4">{row[1]}</td>
+                          <td className="px-3 py-4 w-8">
+                            <span className="inline-block w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: row[0] }} aria-hidden />
+                          </td>
+                          <td className="px-5 py-4 font-medium">{row[1]}</td>
                           <td className="px-5 py-4">{row[2]}</td>
                           <td className="px-5 py-4">{row[3]}</td>
                           <td className="px-5 py-4">{row[4]}</td>
+                          <td className="px-5 py-4">{row[5]}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -110,28 +116,35 @@ export default function TarifsPage() {
           </div>
         </section>
 
-        {/* Licence Fondateur — encart bleu style accueil */}
-        <section className="bg-[#003662] py-24 md:py-32 transition-colors">
+        {/* Licence Fondateur — visuel noir (aligné page certifications-licences) */}
+        <section className="py-24 md:py-32 bg-slate-100">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl bg-white/10 border border-white/20 p-8 md:p-10">
-                <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
-                  Licence Fondateur <span className="text-[#f4ca3a]">(avantages Early Partners)</span>
-                </h2>
-                <p className="text-white/90 mb-4">Réservée aux 10 premiers cabinets – lancement réseau.</p>
-                <p className="text-white text-lg mb-6">
-                  <span className="text-[#f4ca3a] font-semibold">Tarif</span> 2 900 € HT / an (base CORE)
-                </p>
-                <ul className="space-y-2 text-white/90 mb-6">
-                  <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Licence CORE (« socle opérationnel »)</li>
-                  <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Badge « Licencié Fondateur »</li>
-                  <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Tarif bloqué 3 ans (voir règle Fondateur)</li>
-                  <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Intégration des évolutions V2026 (selon contrat)</li>
-                </ul>
-                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-                  <p className="text-white text-sm md:text-base leading-relaxed">
-                    <span className="font-semibold text-[#f4ca3a]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
+              <div className="rounded-2xl border-2 border-[#1a1a1a]/20 bg-white overflow-hidden shadow-xl">
+                <div className="bg-[#1a1a1a] px-6 py-5 flex items-center gap-3">
+                  <span className="text-2xl" aria-hidden>⚫</span>
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white">
+                      Licence Fondateur <span className="text-[#f4ca3a]">(Early Partners)</span>
+                    </h2>
+                    <p className="text-white/80 text-sm mt-1">Réservée aux 10 premiers cabinets – lancement réseau</p>
+                  </div>
+                </div>
+                <div className="p-8 md:p-10 text-[#003662]">
+                  <p className="text-lg font-semibold text-[#003662] mb-4">
+                    <span className="text-[#f4ca3a]">Tarif</span> 2 900 € HT / an (base CORE)
                   </p>
+                  <ul className="space-y-2 text-[#003662]/90 mb-6">
+                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Licence CORE (« socle opérationnel »)</li>
+                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Badge « Licencié Fondateur »</li>
+                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Tarif bloqué 3 ans (voir règle Fondateur)</li>
+                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Intégration des évolutions V2026 (selon contrat)</li>
+                  </ul>
+                  <div className="rounded-xl bg-slate-50 border border-[#003662]/10 p-5">
+                    <p className="text-[#003662]/90 text-sm md:text-base leading-relaxed">
+                      <span className="font-semibold text-[#003662]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -228,23 +241,33 @@ export default function TarifsPage() {
           </div>
         </section>
 
-        {/* Licence Institutionnelle — bandeau compact */}
-        <section className="bg-[#003662] py-16 md:py-20 transition-colors">
+        {/* Licence Institutionnelle — visuel gris, non disponible */}
+        <section className="py-16 md:py-20 bg-slate-200">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-serif font-semibold text-white mb-2">Licence Institutionnelle / Embedded</h2>
-              <p className="text-white/60 text-sm mb-4">Intégration au SI – non disponible pour le moment</p>
-              <p className="text-white/90 mb-1">Banque / assureur / fintech / réseau national.</p>
-              <p className="text-white/90 text-sm">Ticket d&apos;entrée 25 000 € à 75 000 € HT · Redevance annuelle 15 000 € à 60 000 € HT · Intégration moteur, UX, formation conformité, audit, documentation AMF/ACPR, badge « Licencié Formateur »</p>
+              <div className="rounded-2xl border-2 border-slate-300 bg-slate-50 overflow-hidden shadow-lg">
+                <div className="bg-slate-400 px-6 py-4 flex items-center gap-3">
+                  <span className="text-2xl" aria-hidden>⚪</span>
+                  <div>
+                    <h2 className="text-xl md:text-2xl font-serif font-semibold text-white">Licence Institutionnelle / Embedded</h2>
+                    <p className="text-white/90 text-sm">Non disponible pour le moment</p>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8 text-[#003662]">
+                  <p className="text-[#003662]/90 mb-2">Banque / assureur / fintech / réseau national.</p>
+                  <p className="text-[#003662]/80 text-sm">Ticket d&apos;entrée 25 000 € à 75 000 € HT · Redevance annuelle 15 000 € à 60 000 € HT · Intégration moteur, UX, formation conformité, audit, documentation AMF/ACPR, badge « Licencié Formateur ». Étude sur demande.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Options (HT) — table dans carte */}
-        <section className="bg-white py-24 md:py-32 transition-colors">
+        <section className="py-24 md:py-32 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+              <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-2">Compléments</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
                 Options <span className="text-[#f4ca3a]">(HT)</span>
               </h2>
               <p className="text-xl text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
@@ -289,21 +312,29 @@ export default function TarifsPage() {
           </div>
         </section>
 
-        {/* CTA — style accueil */}
-        <section className="bg-[#003662] py-24 md:py-32 transition-colors">
-          <div className="container mx-auto px-4 md:px-6 text-center">
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Besoin d&apos;un devis ou d&apos;échanger sur la formule adaptée à votre cabinet ?
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-lg transition-all text-lg shadow-lg"
-            >
-              Nous contacter
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+        {/* CTA — fond gris comme Options, bandeau vert au centre */}
+        <section className="bg-slate-50 pt-12 pb-24 md:pt-16 md:pb-32">
+          <div className="relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: "polygon(0 8%, 100% 0%, 100% 92%, 0% 100%)" }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
+            <div className="container mx-auto px-4 relative z-10 pt-24 pb-32 md:pt-32 md:pb-40">
+              <div className="max-w-2xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4 leading-tight">
+                  Besoin d&apos;un devis ou d&apos;échanger sur la formule adaptée à votre cabinet ?
+                </h2>
+                <p className="text-white/90 mb-8 text-lg">
+                  Demandez une démonstration ou recevez le dossier de licence.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02]"
+                >
+                  Nous contacter
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>

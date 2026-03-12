@@ -4,6 +4,10 @@ import Footer from "@/components/Footer";
 import ConstatInteractif from "@/components/ConstatInteractif";
 import type { Metadata } from "next";
 
+// Lien Google Forms du questionnaire — à remplacer par l'URL réelle
+const QUESTIONNAIRE_URL = "https://forms.google.com/";
+const SITE_AMCP_URL = "https://amcourtagepatrimoine.fr";
+
 export const metadata: Metadata = {
   title: "Particuliers & Dirigeants | PatrimEmotion®",
   description:
@@ -11,10 +15,70 @@ export const metadata: Metadata = {
 };
 
 const BENEFICES = [
-  "Mieux comprendre ses décisions financières",
-  "Mettre des mots sur ses hésitations ou blocages",
-  "Dialoguer plus efficacement avec son conseiller",
-  "Sécuriser ses choix dans la durée",
+  "mieux comprendre ses décisions financières",
+  "mettre des mots sur ses hésitations ou blocages",
+  "dialoguer plus efficacement avec son conseiller",
+  "sécuriser ses choix dans la durée",
+];
+
+const TROIS_BENEFICES = [
+  "Décider avec plus de clarté (moins d'hésitations, moins de regrets)",
+  "Comprendre ce qui vous freine ou vous stresse vraiment",
+  "Recevoir des recommandations qui vous ressemblent",
+];
+
+const POUR_QUI = [
+  "Vous hésitez souvent avant d'investir",
+  "Vous voulez sécuriser vos décisions (et votre sommeil)",
+  "Vous avez vécu une mauvaise expérience (perte, stress, pression)",
+  "Vous voulez construire une stratégie cohérente, durable",
+  "Vous souhaitez un conseil patrimonial plus humain",
+];
+
+const ETAPES = [
+  {
+    titre: "Étape 1 : Questionnaire (simple, guidé)",
+    texte: "Un questionnaire structuré permet d'explorer différentes dimensions liées à votre rapport à l'argent, à l'incertitude, au temps et aux décisions patrimoniales.",
+  },
+  {
+    titre: "Analyse et lecture des résultats",
+    texte: "Les réponses sont analysées selon plusieurs axes afin de faire apparaître certaines tendances comportementales et préférences décisionnelles.",
+  },
+  {
+    titre: "Restitution pédagogique (compréhension et déclic)",
+    texte: "Les résultats sont présentés sous la forme d'un profil émotionnel patrimonial et d'une lecture synthétique permettant de mieux comprendre votre manière d'aborder les décisions patrimoniales.",
+  },
+  {
+    titre: "Échanges et repères d'accompagnement adaptés à vous",
+    texte: "Cette restitution sert de base de dialogue afin d'éclairer la réflexion patrimoniale et d'identifier des repères utiles dans la structuration des décisions.",
+  },
+];
+
+const LIVRABLES = [
+  "Votre profil émotionnel patrimonial (dominant + secondaire)",
+  "Une synthèse claire et lisible",
+  "Les points de vigilance (ce qui peut vous faire dévier)",
+  "Vos leviers (ce qui vous rassure et vous aide à avancer)",
+  "Des recommandations de posture & de décisions et pistes d'actions.",
+];
+
+const FAQ = [
+  {
+    q: "Est-ce un test psychologique ?",
+    r: "Non. PatrimEmotion® est un outil d'aide à la compréhension et à la décision patrimoniale.",
+  },
+  {
+    q: "Est-ce que ça remplace un audit patrimonial ?",
+    r: "Non. Cela complète l'audit, on comprend comment vous décidez, pour adapter la stratégie.",
+  },
+  {
+    q: "Et si je n'aime pas mon profil ?",
+    r: "Il n'y a pas de « bon » ou « mauvais » profil. C'est une grille de lecture bienveillante.",
+  },
+  {
+    q: "Mes données sont-elles confidentielles ?",
+    r: "Oui. Elles sont traitées de manière confidentielle et dans le respect du RGPD.",
+  },
 ];
 
 export default function ParticuliersPage() {
@@ -22,7 +86,7 @@ export default function ParticuliersPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero — jaune dominant */}
+        {/* Hero — PatrimEmotion® : votre profil émotionnel patrimonial */}
         <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
           <div className="hero-encart pt-16 pb-12 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
@@ -30,16 +94,16 @@ export default function ParticuliersPage() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[320px] md:min-h-[360px]">
                   <div>
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-white mb-5 leading-tight">
-                      Particuliers & <span className="text-[#f4ca3a]">Dirigeants</span>
+                      PatrimEmotion® : votre <span className="text-[#f4ca3a]">profil émotionnel patrimonial</span>
                     </h1>
                     <p className="text-lg md:text-xl text-white/95 max-w-xl leading-relaxed">
-                      Un bilan patrimonial personnalisé qui révèle votre profil émotionnel et aligne vos choix avec qui vous êtes.
+                      Comprenez votre relation à l&apos;argent, au risque et à la décision pour construire un patrimoine aligné et durable.
                     </p>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-lg transition-all text-base mt-6"
+                      className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all text-base mt-6 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                     >
-                      Nous contacter
+                      Réserver mon Bilan Découverte
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -62,70 +126,231 @@ export default function ParticuliersPage() {
           </div>
         </section>
 
-        {/* Le constat — interactif (checkboxes + encart dynamique) */}
+        {/* Le constat — interactif (cases à cocher) */}
         <ConstatInteractif />
 
-        {/* PatrimEmotion® permet de — full width */}
-        <section className="py-16 md:py-24 bg-[#f4ca3a] w-full">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <header className="text-center mb-12 md:mb-14">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-[#003662] mb-4 tracking-tight">
-                PatrimEmotion® permet de
-              </h2>
-              <p className="text-[#003662]/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Reprendre la main sur votre patrimoine en clarifiant ce qui compte pour vous.
-              </p>
-            </header>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {/* PatrimEmotion® permet de + CTAs */}
+        <section className="py-16 md:py-24 bg-[#003662]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-8 text-center">
+              PatrimEmotion® permet de :
+            </h2>
+            <ul className="grid sm:grid-cols-2 gap-4 mb-12">
               {BENEFICES.map((benefice, i) => (
-                <li
-                  key={i}
-                  className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-white text-[#003662] shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 border border-[#003662]/10"
-                >
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#003662] text-[#f4ca3a] font-semibold text-xl mb-4">
-                    {i + 1}
-                  </span>
-                  <span className="font-semibold text-base md:text-lg leading-relaxed">{benefice}</span>
+                <li key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white/10 border border-white/20">
+                  <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
+                  <span className="text-white">{benefice}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-[#003662] text-center mt-10 text-lg font-medium">
-              Un bilan personnalisé pour des décisions alignées avec qui vous êtes.
-            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href={QUESTIONNAIRE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+              >
+                Répondre au questionnaire
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <a
+                href={SITE_AMCP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border-2 border-white/40 transition-all"
+              >
+                Site AM Courtage & Patrimoine — onglet PatrimEmotion
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* CTA principal + lien AMCP — encart */}
-        <section className="py-16 md:py-24 section-alt-blue">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <div className="rounded-2xl bg-[#003662] p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-l-4 border-[#f4ca3a] text-center">
-              <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-6">
-                Faire un bilan PatrimEmotion®
-              </h2>
-              <p className="text-white/90 mb-8 leading-relaxed">
-                Répondez au questionnaire et découvrez comment aligner votre patrimoine avec votre profil émotionnel.
+        {/* Pourquoi le patrimoine est souvent difficile */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">Contexte</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-8 text-center">
+              Pourquoi le patrimoine est souvent difficile … même quand « tout est clair » ?
+            </h2>
+            <div className="space-y-6 text-[#003662]/90 text-lg leading-relaxed">
+              <p>
+                Parce que les décisions patrimoniales ne sont pas uniquement rationnelles.
+                Elles touchent à la sécurité, au contrôle, à la peur de perdre, à la projection, à la famille, au temps… Elles sont aussi émotionnelles.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-lg transition-all text-lg"
-              >
-                Nous contacter
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <p className="mt-10 text-white/80 text-sm">
-                Retrouvez aussi PatrimEmotion® sur le site{" "}
+              <p>
+                Deux personnes avec le même patrimoine peuvent prendre des décisions opposées.
+                Ce n&apos;est pas un problème de chiffres. C&apos;est une question d&apos;émotions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* La solution PatrimEmotion® + 3 bénéfices */}
+        <section className="py-16 md:py-24 bg-[#003662]">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-6 text-center">
+              La solution <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+            </h2>
+            <p className="text-white/95 text-lg mb-4 leading-relaxed">
+              PatrimEmotion® est une méthode qui identifie votre profil émotionnel patrimonial pour vous aider à décider avec clarté et sérénité en vous indiquant notamment comment vous vivez la sécurité, le risque, la décision et la projection.
+            </p>
+            <p className="text-white/95 text-lg font-semibold mb-6">
+              PatrimEmotion® : comprendre la personne avant de conseiller le patrimoine.
+            </p>
+            <p className="text-white/90 text-lg mb-10">
+              Objectif : vous aider à prendre des décisions plus alignées, plus confortables, et plus cohérentes dans le temps.
+            </p>
+            <p className="text-[#f4ca3a] font-semibold text-xl md:text-2xl mb-6 text-center">3 bénéfices</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {TROIS_BENEFICES.map((b, i) => (
+                <div key={i} className="rounded-2xl bg-white/10 border border-white/20 p-6 md:p-8 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:shadow-xl">
+                  <div className="w-12 h-12 rounded-xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center text-xl font-bold mb-4">
+                    {i + 1}
+                  </div>
+                  <p className="text-white leading-relaxed font-medium">{b}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comment ça marche ? — 4 étapes */}
+        <section className="py-16 md:py-24 section-alt-blue">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">Le parcours</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-4 text-center">
+              Comment ça marche ?
+            </h2>
+            <h3 className="text-xl md:text-2xl font-serif font-medium text-[#003662]/90 mb-12 text-center">
+              Comment se déroule un Bilan PatrimEmotion® ?
+            </h3>
+            <div className="relative">
+              {/* Ligne verticale sur desktop */}
+              <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-[#003662]/20" />
+              <div className="space-y-8">
+                {ETAPES.map((etape, i) => (
+                  <div key={i} className="relative flex gap-6 md:gap-8 items-start">
+                    <div className="shrink-0 w-16 h-16 rounded-2xl bg-[#003662] text-white flex items-center justify-center text-2xl font-bold shadow-lg z-10">
+                      {i + 1}
+                    </div>
+                    <div className="flex-1 rounded-2xl bg-white border-2 border-[#003662]/10 p-6 md:p-8 shadow-md hover:shadow-lg hover:border-[#003662]/20 transition-all">
+                      <h4 className="text-xl md:text-2xl font-serif font-semibold text-[#003662] mb-3">{etape.titre}</h4>
+                      <p className="text-[#003662]/90 leading-relaxed text-lg">{etape.texte}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6 mt-14">
+              <div className="rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-6 text-center">
+                <p className="text-[#003662] font-semibold text-lg">✅ Sans jugement, sans pression</p>
+              </div>
+              <div className="rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-6 text-center">
+                <p className="text-[#003662] font-semibold text-lg">✅ Pédagogique, concret, applicable</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ce que vous recevez + CTA — encart vert */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="rounded-2xl bg-[#9FB620] p-8 md:p-12 shadow-xl border-2 border-[#8aa61d]/30">
+              <p className="text-center text-white/90 text-sm font-semibold uppercase tracking-widest mb-4">Vos livrables</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4 text-center">
+                Ce que vous recevez
+              </h2>
+              <p className="text-white/95 text-lg mb-8 text-center">
+                Vos livrables PatrimEmotion® :
+              </p>
+              <ul className="space-y-4 mb-10">
+                {LIVRABLES.map((livrable, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-white text-xl font-semibold shrink-0">✓</span>
+                    <span className="text-white/95 text-lg">{livrable}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex justify-center">
                 <a
-                  href="https://amcourtagepatrimoine.fr"
+                  href={QUESTIONNAIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#f4ca3a] font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
                 >
-                  AM Courtage & Patrimoine
+                  Recevoir mon Bilan PatrimEmotion
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </a>
-                , onglet PatrimEmotion.
-              </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* C'est pour vous */}
+        <section className="py-16 md:py-24 bg-[#003662]">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">C&apos;est pour vous</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4 text-center">
+              Pour qui / Pour quoi ?
+            </h2>
+            <h3 className="text-xl font-serif font-medium text-white/90 mb-12 text-center">
+              À qui s&apos;adresse PatrimEmotion® ?
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {POUR_QUI.map((item, i) => (
+                <div key={i} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-1rem)] min-w-0 rounded-2xl bg-white/10 border border-white/20 p-5 md:p-6 hover:bg-white/15 hover:border-white/30 transition-all duration-300 flex items-center gap-3">
+                  <span className="shrink-0 w-10 h-10 rounded-xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center font-bold text-lg">
+                    {i + 1}
+                  </span>
+                  <p className="text-white/95 text-base md:text-lg leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-24 section-alt-blue">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-10 text-center">
+              Questions fréquentes
+            </h2>
+            <div className="space-y-6">
+              {FAQ.map((item, i) => (
+                <div key={i} className="rounded-2xl bg-white border border-[#003662]/10 p-6 shadow-sm">
+                  <p className="font-semibold text-[#003662] mb-2">« {item.q} »</p>
+                  <p className="text-[#003662]/90">{item.r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RGPD + CTA final — fond vert */}
+        <section className="py-16 md:py-24 bg-[#9FB620]">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <p className="text-center text-white/90 text-sm font-semibold uppercase tracking-widest mb-4">Confidentialité</p>
+            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-6 text-center">
+              RGPD
+            </h2>
+            <p className="text-white/95 text-lg mb-10 text-center leading-relaxed">
+              PatrimEmotion® est un outil d&apos;aide à la décision et respecte la confidentialité des données.
+            </p>
+            <div className="rounded-2xl bg-[#003662] p-8 md:p-10 text-center shadow-xl">
+              <h3 className="text-2xl font-serif font-semibold text-white mb-4">
+                Prêt(e) à décider autrement ?
+              </h3>
+              <a
+                href={QUESTIONNAIRE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+              >
+                Réaliser mon bilan patrimonial émotionnel PatrimEmotion
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
             </div>
           </div>
         </section>
