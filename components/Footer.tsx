@@ -1,25 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+import { AMCP_CONTACT_URL } from "@/lib/amcp";
+import { LOGO_SRC } from "@/lib/branding";
 
 export default function Footer() {
   return (
     <footer className="bg-[#003662] text-white">
       <div className="container mx-auto px-4 py-14 md:py-20">
         {/* Bloc principal : logo + contenu en grille */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
           {/* Colonne marque : logo (gros) + slogan + contact */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-4 bg-white p-2 rounded-lg border-2 border-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f4ca3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#003662]">
               <Image
-                src="/Logo_PNG.png"
+                src={LOGO_SRC}
                 alt="PatrimEmotion"
                 width={320}
                 height={107}
                 className="h-16 sm:h-20 md:h-24 w-auto"
               />
             </Link>
-            <p className="text-white/95 text-base md:text-lg leading-relaxed max-w-sm mb-6">
-              Donner du sens à vos décisions patrimoniales
+            <p className="pe-body-lead text-white/95 max-w-sm mb-6">
+              <em>&quot;Vos émotions s&apos;alignent, votre patrimoine s&apos;élève&quot;</em>
             </p>
             <div className="space-y-2 text-sm md:text-base text-white/90">
               <p>
@@ -74,9 +76,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <a href={AMCP_CONTACT_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -117,60 +119,64 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#9FB620] transition-colors">
+                <a href={AMCP_CONTACT_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#9FB620] transition-colors">
                   Prendre rendez-vous
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Colonne CTA + Réseaux */}
-          <div className="lg:col-span-2 flex flex-col items-start lg:items-end">
+          <div className="lg:col-span-2 flex flex-col items-start lg:items-end h-full">
             <p className="text-sm text-white/90 max-w-[200px] lg:text-right mb-6">
               La méthode qui remet l&apos;humain au cœur des décisions patrimoniales
             </p>
-            <Link
-              href="/demande-demo"
+            <a
+              href={AMCP_CONTACT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#f4ca3a] text-[#003662] hover:bg-[#f5d055] font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm mb-6"
             >
-              Demander une démo <span className="text-xs font-normal">(15 min)</span>
+              Prendre contact
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
-            <p className="font-sans text-xs text-[#f4ca3a] font-semibold uppercase tracking-wider mb-2">
-              Suivez-nous
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="https://www.linkedin.com/company/am-courtage-et-patrimoine"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn AM Courtage et Patrimoine"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              >
-                <span className="text-xs font-semibold">in</span>
-              </a>
-              <a
-                href="https://www.facebook.com/amcourtagepatrimoine"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook AM Courtage et Patrimoine"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              >
-                <span className="text-sm font-semibold">f</span>
-              </a>
-              <a
-                href="https://www.youtube.com/@amcourtagepatrimoine"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube AM Courtage et Patrimoine"
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a>
+            </a>
+            <div className="mt-auto self-end">
+              <p className="font-sans text-xs text-[#f4ca3a] font-semibold uppercase tracking-wider mb-2">
+                Suivez-nous
+              </p>
+              <div className="flex gap-3 justify-end">
+                <a
+                  href="https://www.linkedin.com/company/am-courtage-et-patrimoine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn AM Courtage et Patrimoine"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                >
+                  <span className="text-xs font-semibold">in</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/amcourtagepatrimoine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook AM Courtage et Patrimoine"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                >
+                  <span className="text-sm font-semibold">f</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/@amcourtagepatrimoine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube AM Courtage et Patrimoine"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -190,6 +196,12 @@ export default function Footer() {
               </Link>
               <Link href="/politique-confidentialite" className="hover:text-white transition-colors">
                 Données personnelles
+              </Link>
+              <Link href="/charte-ia" className="hover:text-white transition-colors">
+                Charte IA
+              </Link>
+              <Link href="/charte-ethique" className="hover:text-white transition-colors">
+                Charte éthique
               </Link>
               <Link href="/cgu" className="hover:text-white transition-colors">
                 CGU

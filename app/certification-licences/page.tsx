@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
     "Intégrez une méthode patrimoniale premium : questionnaire, scoring, bilan, plan d'actions, dashboard. Licences LIGHT, CORE, PREMIUM, badges et cadre d'usage professionnel.",
 };
 
-const CONTACT_URL = "/contact";
 const TARIFS_URL = "/tarifs";
 
 const POINTS_CLES = [
@@ -36,28 +36,49 @@ const BENEFICES_PRO = [
   "Une meilleure traçabilité de certains échanges et validations pédagogiques",
 ];
 
-const CONTENU_LICENCE = [
-  "droit d'usage encadré de la marque PatrimEmotion®",
-  "accès à la méthode officielle PatrimEmotion®",
-  "questionnaire officiel",
-  "outil de scoring verrouillé",
-  "fiches profils et matrices pédagogiques",
-  "bilan PatrimEmotion®",
-  "plan d'actions PatrimEmotion®",
-  "dashboard Looker verrouillé selon formule",
-  "trames et supports de restitution",
-  "éléments de présentation et de communication professionnelle",
-  "mises à jour méthodologiques",
-  "support selon niveau de licence",
-  "options d'accompagnement, d'audit ou de formation",
-];
-
-const BADGES_ACTUELS = [
-  "Licencié Fondateur",
-  "Licencié Certifié",
-  "Licencié Confirmé",
-  "Licencié Expert",
-  "Licencié Formateur (ou mention institutionnelle spécifique selon les cas)",
+const CONTENU_LICENCE_GROUPES: {
+  titre: string;
+  titreAccent: string;
+  panelClass: string;
+  items: string[];
+}[] = [
+  {
+    titre: "Accès méthode et ",
+    titreAccent: "cadre d'usage",
+    panelClass:
+      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.05] to-transparent border border-[#003662]/10 px-5 py-7 md:px-8 md:py-8",
+    items: [
+      "droit d'usage encadré de la marque PatrimEmotion®",
+      "accès à la méthode officielle PatrimEmotion®",
+      "questionnaire officiel",
+      "outil de scoring verrouillé",
+      "fiches profils et matrices pédagogiques",
+    ],
+  },
+  {
+    titre: "Restitution et ",
+    titreAccent: "pilotage",
+    panelClass:
+      "rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent border border-[#9FB620]/25 px-5 py-7 md:px-8 md:py-8",
+    items: [
+      "bilan PatrimEmotion®",
+      "plan d'actions PatrimEmotion®",
+      "dashboard Looker verrouillé selon formule",
+      "trames et supports de restitution",
+      "éléments de présentation et de communication professionnelle",
+    ],
+  },
+  {
+    titre: "Évolutions et ",
+    titreAccent: "accompagnement",
+    panelClass:
+      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.06] to-[#9FB620]/[0.05] border border-[#003662]/10 px-5 py-7 md:px-8 md:py-8",
+    items: [
+      "mises à jour méthodologiques",
+      "support selon niveau de licence",
+      "options d'accompagnement, d'audit ou de formation",
+    ],
+  },
 ];
 
 const POUR_QUI = [
@@ -71,22 +92,30 @@ const POUR_QUI = [
   "structures souhaitant harmoniser leurs restitutions et améliorer l'adhésion client",
 ];
 
-const PREMIUM_BENEFICES = [
-  "Restitution homogène — Même structure, même niveau d'exigence, même logique pédagogique.",
-  "Traçabilité renforcée — Un cadre de validation plus lisible, plus documenté et plus cohérent dans le temps.",
-  "Production documentaire plus fluide — Une logique de restitution plus industrialisée pour les cabinets souhaitant standardiser certains supports.",
-];
+function PourQuiAudienceCard({ label }: { label: string }) {
+  const displayLabel =
+    label.length === 0
+      ? label
+      : label.charAt(0).toLocaleUpperCase("fr-FR") + label.slice(1);
 
-const PREMIUM_CONTENU = [
-  "scoring et priorisation",
-  "plans d'actions structurés",
-  "restitution enrichie",
-  "dashboard Looker verrouillé",
-  "reporting avancé",
-  "variantes de supports",
-  "logique de validation contradictoire selon process du cabinet",
-  "accompagnement plus poussé",
-];
+  return (
+    <div className="group relative flex h-full items-center overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white via-white to-slate-50/90 p-5 shadow-[0_14px_44px_-18px_rgba(0,54,98,0.42)] ring-1 ring-[#003662]/8 transition duration-300 hover:-translate-y-1 hover:border-[#f4ca3a]/55 hover:shadow-[0_22px_52px_-18px_rgba(0,54,98,0.48)] md:p-6">
+      <div className="flex w-full items-center gap-4 md:gap-4">
+        <span
+          className="relative flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#9FB620]/25 text-[#9FB620] ring-1 ring-[#9FB620]/35 shadow-md shadow-[#9FB620]/15 transition duration-300 group-hover:scale-105 group-hover:bg-[#9FB620]/35 md:size-12"
+          aria-hidden
+        >
+          <svg className="size-[1.15rem] md:size-5" fill="none" stroke="currentColor" strokeWidth={2.25} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+        <span className="relative min-w-0 flex-1 text-sm font-medium leading-snug text-[#003662] antialiased md:text-[0.95rem] md:leading-relaxed">
+          {displayLabel}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 const FAQ_ITEMS = [
   {
@@ -129,13 +158,13 @@ export default function CertificationLicencesPage() {
           <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-18 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-white mb-4 leading-[1.2] tracking-tight">
+                <h1 className="pe-heading-hero text-white mb-4 text-center text-balance">
                   Devenez <span className="text-[#f4ca3a]">Licencié PatrimEmotion®</span>
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 font-medium mb-6 leading-relaxed">
+                <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
                   Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client dans un cadre strictement pédagogique et professionnel.
                 </p>
-                <ul className="space-y-2 text-white/90 text-base md:text-lg text-left max-w-2xl mx-auto mb-10">
+                <ul className="space-y-2 text-white/90 pe-body-lead text-left max-w-2xl mx-auto mb-10 leading-relaxed">
                   {POINTS_CLES.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[#f4ca3a] shrink-0">•</span>
@@ -144,24 +173,17 @@ export default function CertificationLicencesPage() {
                   ))}
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href={CONTACT_URL}
+                  <a
+                    href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
                   >
                     Demander une démonstration professionnelle
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </Link>
-                  <Link
-                    href={CONTACT_URL}
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl transition-all border-2 border-white/30"
-                  >
-                    Recevoir le dossier de licence
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -169,38 +191,52 @@ export default function CertificationLicencesPage() {
         </section>
 
         {/* Section 1 — Le constat pro */}
-        <section className="section-dark py-24 md:py-32 transition-colors overflow-hidden">
+        <section className="section-dark pt-24 md:pt-32 pb-10 md:pb-12 transition-colors overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <p className="text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">Le constat pro</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-6 leading-tight">
+              <h2 className="pe-heading-section text-[#003662] mb-6 text-center text-balance">
                 Vos clients ne bloquent pas toujours sur la technique. Ils bloquent souvent sur la décision.
               </h2>
-              <p className="text-xl text-[#003662]/90 mb-8 leading-relaxed">
+              <p className="pe-body-lead text-[#003662]/90 mb-8 leading-relaxed">
                 Dans la pratique, de nombreux échanges s&apos;interrompent non pas par manque de compétence du professionnel, mais parce que le client hésite, temporise ou n&apos;arrive pas à se projeter :
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="mb-8 grid list-none gap-4 p-0 sm:grid-cols-2 sm:gap-5">
                 {CITATIONS_CLIENT.map((citation, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#003662]/50">—</span>
-                    <span className="text-[#003662] font-medium italic">{citation}</span>
+                  <li key={i}>
+                    <blockquote className="h-full rounded-2xl border border-[#003662]/12 bg-gradient-to-br from-slate-50 to-white py-5 pl-6 pr-5 shadow-[0_4px_24px_-6px_rgba(0,54,98,0.14)] md:py-6 md:pl-7 md:pr-6 border-l-4 border-l-[#f4ca3a]">
+                      <p className="font-serif text-lg font-semibold italic leading-snug text-[#003662] md:text-xl">
+                        {citation}
+                      </p>
+                    </blockquote>
                   </li>
                 ))}
               </ul>
               <div className="rounded-2xl bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8 border-l-4 border-[#f4ca3a]">
-                <p className="text-white/95 text-lg leading-relaxed">
+                <p className="pe-body-lead text-white/95 leading-relaxed">
                   PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution, la pédagogie de l&apos;échange et la lisibilité du dialogue patrimonial.
                 </p>
+              </div>
+              <div className="flex justify-center mt-8">
+                <a
+                  href={AMCP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                >
+                  Faire un devis
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </section>
 
         {/* Section 2 — Positionnement */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="pt-10 md:pt-12 pb-20 md:pb-28 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Positionnement</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-8 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-8 text-center text-balance">
               PatrimEmotion® : une méthode d&apos;éclairage comportemental appliquée à la relation patrimoniale
             </h2>
             <p className="text-[#003662]/85 mb-6 leading-[1.75]">
@@ -224,69 +260,128 @@ export default function CertificationLicencesPage() {
         </section>
 
         {/* Section 3 — Ce que PatrimEmotion® change */}
-        <section className="py-20 md:py-28 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-6 text-center">Bénéfices professionnels</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4 text-center">
+        <section className="flex flex-col justify-center bg-[#003662] py-20 md:min-h-[38rem] md:py-28 lg:min-h-[42rem]">
+          <div className="container mx-auto max-w-4xl px-4">
+            <h2 className="pe-heading-section text-white mb-4 text-center text-balance">
               Ce que PatrimEmotion® change dans votre pratique
             </h2>
-            <p className="text-white/85 text-center mb-10">
+            <p className="text-white/85 text-center mb-10 max-w-2xl mx-auto text-balance">
               Une méthode qui améliore la qualité de vos restitutions
             </p>
-            <ul className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto">
-              {BENEFICES_PRO.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-[#f4ca3a] shrink-0">✅</span>
-                  <span className="text-white/95 text-base">{item}</span>
-                </li>
-              ))}
+            <div className="mx-auto w-full max-w-3xl">
+            <ul className="mb-10 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 sm:items-stretch">
+              {BENEFICES_PRO.map((item, i) => {
+                const isLast = i === BENEFICES_PRO.length - 1;
+                const cardClass = [
+                  "group h-full w-full rounded-2xl border border-white/15 bg-white/[0.07] p-4 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.35)] ring-1 ring-white/10 transition duration-200 hover:border-[#9FB620]/50 hover:bg-white/[0.11] md:p-5",
+                  isLast
+                    ? "flex max-w-md flex-col items-center justify-center gap-4 text-center md:gap-5"
+                    : "flex items-center gap-4 md:gap-5",
+                ].join(" ");
+                return (
+                  <li
+                    key={i}
+                    className={
+                      isLast
+                        ? "flex h-full min-h-0 items-center justify-center sm:col-span-2"
+                        : "flex h-full min-h-0 items-stretch"
+                    }
+                  >
+                    <div className={cardClass}>
+                      <span className="flex size-11 shrink-0 items-center justify-center self-center rounded-xl bg-[#9FB620]/25 text-[#9FB620] shadow-inner shadow-black/10 transition group-hover:bg-[#9FB620]/35 md:size-12">
+                        <svg className="size-5 md:size-6" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span className="min-w-0 self-center text-base font-medium leading-snug text-white/95 md:text-lg">
+                        {item}
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
-          </div>
-        </section>
-
-        {/* Section 4 — Ce que contient la licence */}
-        <section className="py-20 md:py-28 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Contenu</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-4 text-center">
-              Ce que contient la licence
-            </h2>
-            <p className="text-[#003662]/80 text-center mb-8">
-              Licence PatrimEmotion® PRO — Selon le niveau de licence choisi, l&apos;environnement peut inclure tout ou partie des éléments suivants :
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 max-w-2xl mx-auto">
-              {CONTENU_LICENCE.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-[#003662]/40 shrink-0">—</span>
-                  <span className="text-[#003662]/85 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Section 5 — Visuels et badges */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Visuels & badges</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-8 text-center">
-              Un système clair : licence du cabinet + badge du professionnel
-            </h2>
-            <p className="text-[#003662]/85 mb-6 leading-[1.75]">
-              PatrimEmotion® distingue volontairement le <strong>niveau de licence</strong> (équipement et déploiement du cabinet) et le <strong>badge</strong> (niveau d&apos;habilitation du professionnel). Cette distinction permet une communication plus lisible et plus cohérente.
-            </p>
-            <div className="rounded-xl border border-[#003662]/15 bg-slate-50/80 p-6 mb-8">
-              <h3 className="text-[#003662] font-semibold mb-4">Correspondances actuelles</h3>
-              <ul className="space-y-2 text-sm text-[#003662]/85">
-                <li><strong>Licence Fondateur</strong> → visuel noir → Badge &quot;Licencié Fondateur&quot;</li>
-                <li><strong>Licence Light</strong> → visuel vert → Badge &quot;Licencié Certifié&quot;</li>
-                <li><strong>Licence Core</strong> → visuel jaune → Badge &quot;Licencié Confirmé&quot;</li>
-                <li><strong>Licence Premium</strong> → visuel bleu → Badge &quot;Licencié Expert&quot; + mention possible &quot;Cabinet Expert PatrimEmotion®&quot;</li>
-                <li><strong>Licence Institutionnelle / Embedded</strong> → visuel gris → Badge &quot;Licencié Formateur&quot; ou mention institutionnelle dédiée selon contrat</li>
-              </ul>
+            <div className="flex justify-center">
+              <a
+                href={AMCP_CONTACT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3.5 font-semibold text-[#003662] shadow-lg shadow-black/20 transition hover:scale-[1.02] hover:bg-[#f5d055]"
+              >
+                Je demande ma licence
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-            <p className="text-[#003662]/80 text-center text-sm italic">
-              Le visuel de licence valorise le statut du cabinet. Le badge valorise le niveau d&apos;usage reconnu dans le cadre PatrimEmotion®.
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4 — Ce que contient la licence (même esprit carte « Trois regards », page Méthode) */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="container mx-auto max-w-4xl px-4">
+            <div className="rounded-[2rem] bg-gradient-to-br from-[#9FB620] via-[#f4ca3a] to-[#9FB620] p-[3px] shadow-[0_28px_70px_rgba(0,54,98,0.14)]">
+              <div className="rounded-[calc(2rem-3px)] bg-white px-7 py-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] md:px-11 md:py-12 lg:px-14 lg:py-16">
+                <header className="mb-8 text-center md:mb-10">
+                  <h2 className="pe-heading-section mx-auto max-w-4xl text-balance text-[#003662]">
+                    Ce que contient la <span className="text-[#f4ca3a]">licence</span>
+                  </h2>
+                  <div
+                    aria-hidden
+                    className="mx-auto mt-5 h-[3px] w-24 rounded-full bg-gradient-to-r from-[#9FB620] via-[#f4ca3a] to-[#9FB620] shadow-[0_2px_12px_rgba(159,182,32,0.35)] sm:w-28 md:mt-7 md:w-32"
+                  />
+                </header>
+                <p className="mx-auto mb-8 max-w-2xl text-center text-balance text-base leading-relaxed text-[#003662]/90 md:mb-10 md:text-lg">
+                  Licence PatrimEmotion® PRO — Selon le niveau de licence choisi, l&apos;environnement peut inclure tout ou partie des éléments suivants :
+                </p>
+                <div className="space-y-10 md:space-y-12">
+                  {CONTENU_LICENCE_GROUPES.map((groupe, gi) => (
+                    <div key={gi} className={groupe.panelClass}>
+                      <h3 className="pe-heading-card-lg mb-6 text-center text-balance text-[#003662] md:mb-7">
+                        {groupe.titre}
+                        <span className="text-[#f4ca3a]">{groupe.titreAccent}</span>
+                      </h3>
+                      <ul
+                        className={`grid gap-3 md:gap-4 ${groupe.items.length > 4 ? "sm:grid-cols-2" : groupe.items.length === 3 ? "sm:grid-cols-1 md:grid-cols-3" : "sm:grid-cols-2"}`}
+                      >
+                        {groupe.items.map((item, i) => (
+                          <li
+                            key={`${gi}-${i}`}
+                            className="flex items-start gap-3 rounded-xl border border-[#003662]/10 bg-white/95 px-4 py-3.5 shadow-sm transition hover:border-[#9FB620]/35 hover:shadow-md md:px-5 md:py-4"
+                          >
+                            <span className="mt-0.5 shrink-0 text-lg font-semibold leading-none text-[#9FB620]">✓</span>
+                            <span className="text-sm leading-snug text-[#003662]/90 md:text-base">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5 — Visuels et badges (sans tableau des correspondances) */}
+        <section className="relative overflow-hidden bg-[#003662] py-20 md:py-28">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(244,202,58,0.1),transparent_55%)]"
+          />
+          <div className="container relative z-10 mx-auto max-w-3xl px-4 text-center">
+            <h2 className="pe-heading-section mb-8 text-balance text-white">
+              Un système clair - Certification PatrimEmotion
+            </h2>
+            <p className="mb-6 text-balance text-white/90 leading-[1.75]">
+              PatrimEmotion® distingue volontairement le <strong className="text-white">niveau de licence</strong>{" "}
+              (équipement et déploiement du cabinet) et le <strong className="text-white">badge</strong> (niveau
+              d&apos;habilitation du professionnel). Cette distinction permet une communication plus lisible et plus
+              cohérente.
+            </p>
+            <p className="text-balance text-sm italic leading-relaxed text-white/85 md:text-base">
+              Le visuel de licence valorise le statut du cabinet. Le badge valorise le niveau d&apos;usage reconnu dans
+              le cadre PatrimEmotion®.
             </p>
           </div>
         </section>
@@ -294,8 +389,7 @@ export default function CertificationLicencesPage() {
         {/* Section 6 — Niveaux de licence */}
         <section className="section-alt-blue py-24 md:py-32">
           <div className="container mx-auto px-4 max-w-6xl">
-            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">Licences V2026</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#003662] mb-4 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-4 text-center text-balance">
               Les différents niveaux de licence
             </h2>
             <p className="text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
@@ -304,11 +398,11 @@ export default function CertificationLicencesPage() {
 
             {/* Fondateur */}
             <div className="mb-10 rounded-2xl border-2 border-[#003662]/20 bg-white overflow-hidden shadow-lg">
-              <div className="bg-[#1a1a1a] px-6 py-4 flex items-center gap-3">
+              <div className="bg-[#1a1a1a] px-6 py-4 flex flex-col items-center text-center gap-2">
                 <span className="text-2xl" aria-hidden>⚫</span>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">LICENCE FONDATEUR — Early Partners</h3>
-                  <p className="text-white/80 text-sm">Les 10 premiers cabinets partenaires du lancement PatrimEmotion®</p>
+                  <h3 className="text-xl font-semibold text-white text-center text-balance">LICENCE FONDATEUR — Early Partners</h3>
+                  <p className="text-white/80 text-sm text-center text-balance">Les 10 premiers cabinets partenaires du lancement PatrimEmotion®</p>
                 </div>
               </div>
               <div className="p-6 md:p-8">
@@ -321,17 +415,17 @@ export default function CertificationLicencesPage() {
                   <li>• intégration des évolutions prévues au contrat</li>
                 </ul>
                 <p className="text-[#003662] font-semibold mb-2">Tarif : 2 900 € HT / an</p>
-                <Link href={CONTACT_URL} className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Candidater à l&apos;offre Fondateur →</Link>
+                <a href={AMCP_CONTACT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Candidater à l&apos;offre Fondateur →</a>
               </div>
             </div>
 
             {/* Light */}
             <div className="mb-10 rounded-2xl border-2 border-[#9FB620]/40 bg-white overflow-hidden shadow-lg">
-              <div className="bg-[#9FB620] px-6 py-4 flex items-center gap-3">
+              <div className="bg-[#9FB620] px-6 py-4 flex flex-col items-center text-center gap-2">
                 <span className="text-2xl" aria-hidden>🟢</span>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">LICENCE LIGHT — L&apos;essentiel pour démarrer</h3>
-                  <p className="text-white/90 text-sm">Cabinet indépendant ou professionnel individuel</p>
+                  <h3 className="text-xl font-semibold text-white text-center text-balance">LICENCE LIGHT — L&apos;essentiel pour démarrer</h3>
+                  <p className="text-white/90 text-sm text-center text-balance">Cabinet indépendant ou professionnel individuel</p>
                 </div>
               </div>
               <div className="p-6 md:p-8">
@@ -344,17 +438,17 @@ export default function CertificationLicencesPage() {
                 </ul>
                 <p className="text-[#003662] font-semibold mb-2">Tarif : 1 490 € HT / an ou 149 € HT / mois (engagement 12 mois)</p>
                 <p className="text-[#003662]/70 text-sm mb-2">Options : utilisateur supplémentaire 390 € HT/an, formation avancée 490 € HT, audit restitution 350 € HT</p>
-                <Link href={CONTACT_URL} className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</Link>
+                <a href={PATRIMEMOTION_QUESTIONNAIRE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</a>
               </div>
             </div>
 
             {/* Core */}
             <div className="mb-10 rounded-2xl border-2 border-[#f4ca3a]/50 bg-white overflow-hidden shadow-lg">
-              <div className="bg-[#d4a808] px-6 py-4 flex items-center gap-3">
+              <div className="bg-[#d4a808] px-6 py-4 flex flex-col items-center text-center gap-2">
                 <span className="text-2xl" aria-hidden>🟡</span>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">LICENCE CORE — Le socle opérationnel</h3>
-                  <p className="text-white/90 text-sm">Cabinet structuré 2 à 5 conseillers</p>
+                  <h3 className="text-xl font-semibold text-white text-center text-balance">LICENCE CORE — Le socle opérationnel</h3>
+                  <p className="text-white/90 text-sm text-center text-balance">Cabinet structuré 2 à 5 conseillers</p>
                 </div>
               </div>
               <div className="p-6 md:p-8">
@@ -366,17 +460,17 @@ export default function CertificationLicencesPage() {
                 </ul>
                 <p className="text-[#003662] font-semibold mb-2">Tarif : 3 900 € HT / an ou 390 € HT / mois (engagement 12 mois)</p>
                 <p className="text-[#003662]/70 text-sm mb-2">Options : utilisateur supplémentaire 490 € HT/an, formation équipe sur site (devis), audit conformité annuel 790 € HT</p>
-                <Link href={CONTACT_URL} className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</Link>
+                <a href={PATRIMEMOTION_QUESTIONNAIRE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</a>
               </div>
             </div>
 
             {/* Premium */}
             <div className="mb-10 rounded-2xl border-2 border-[#003662]/30 bg-white overflow-hidden shadow-lg">
-              <div className="bg-[#003662] px-6 py-4 flex items-center gap-3">
+              <div className="bg-[#003662] px-6 py-4 flex flex-col items-center text-center gap-2">
                 <span className="text-2xl" aria-hidden>🔵</span>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">LICENCE PREMIUM — Version avancée</h3>
-                  <p className="text-white/90 text-sm">Cabinet expert, multisites ou structure avancée</p>
+                  <h3 className="text-xl font-semibold text-white text-center text-balance">LICENCE PREMIUM — Version avancée</h3>
+                  <p className="text-white/90 text-sm text-center text-balance">Cabinet expert, multisites ou structure avancée</p>
                 </div>
               </div>
               <div className="p-6 md:p-8">
@@ -388,17 +482,17 @@ export default function CertificationLicencesPage() {
                 </ul>
                 <p className="text-[#003662] font-semibold mb-2">Tarif : 9 800 € HT / an ou 980 € HT / mois (engagement 12 mois)</p>
                 <p className="text-[#003662]/70 text-sm mb-2">Options : utilisateur supplémentaire 590 € HT/an, intervention événement cabinet (devis), audit méthodologique 1 200 € HT</p>
-                <Link href={CONTACT_URL} className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</Link>
+                <a href={PATRIMEMOTION_QUESTIONNAIRE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors">Demander une démo →</a>
               </div>
             </div>
 
             {/* Institutionnelle */}
             <div className="rounded-2xl border-2 border-slate-300 bg-slate-50 overflow-hidden">
-              <div className="bg-slate-400 px-6 py-4 flex items-center gap-3">
+              <div className="bg-slate-400 px-6 py-4 flex flex-col items-center text-center gap-2">
                 <span className="text-2xl" aria-hidden>⚪</span>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">LICENCE INSTITUTIONNELLE / EMBEDDED</h3>
-                  <p className="text-white/90 text-sm">(non disponible pour le moment)</p>
+                  <h3 className="text-xl font-semibold text-white text-center text-balance">LICENCE INSTITUTIONNELLE / EMBEDDED</h3>
+                  <p className="text-white/90 text-sm text-center text-balance">(non disponible pour le moment)</p>
                 </div>
               </div>
               <div className="p-6 md:p-8">
@@ -416,127 +510,52 @@ export default function CertificationLicencesPage() {
           </div>
         </section>
 
-        {/* Section 7 — Formation et reconnaissance */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Formation & badges</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-8 text-center">
-              Formation initiale, accompagnement et badges
-            </h2>
-            <p className="text-[#003662]/85 mb-6 leading-[1.75]">
-              L&apos;usage homogène de PatrimEmotion® suppose un cadre commun de compréhension, de vocabulaire et de restitution. Selon le niveau de licence et le parcours suivi, des formations et audits peuvent être proposés pour une bonne appropriation de la méthode, une utilisation homogène des supports et le respect des limites d&apos;usage.
+        {/* Section 7 — Pour qui ? (fond vert en biseau diagonal haut / bas) */}
+        <section
+          className="relative overflow-hidden bg-[#9FB620] py-24 md:py-32 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]"
+        >
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,rgba(255,255,255,0.22),transparent_55%)]"
+          />
+          <div className="container relative z-10 mx-auto max-w-5xl px-4">
+            <header className="mb-10 text-center md:mb-12">
+              <h2 className="pe-heading-section mx-auto max-w-3xl text-balance">
+                <span className="text-white">À qui s&apos;adresse </span>
+                <span className="text-[#f4ca3a]">PatrimEmotion® ?</span>
+              </h2>
+              <div
+                aria-hidden
+                className="mx-auto mt-5 h-[3px] w-20 rounded-full bg-gradient-to-r from-white/50 via-white to-white/50 shadow-[0_2px_12px_rgba(0,54,98,0.2)] sm:w-24 md:mt-6 md:w-28"
+              />
+            </header>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-base leading-relaxed text-white/95 md:mb-11 md:text-lg">
+              PatrimEmotion® s&apos;adresse aux professionnels et structures souhaitant enrichir la qualité de leur
+              relation client dans un cadre méthodologique structuré :
             </p>
-            <p className="text-[#003662]/85 mb-4 leading-[1.75]">
-              Les badges PatrimEmotion® sont des signes internes d&apos;usage encadré. Ils ne constituent ni une certification d&apos;État, ni un agrément réglementaire, ni une validation AMF.
-            </p>
-            <div className="rounded-lg border border-[#003662]/15 bg-slate-50/80 p-4 text-sm text-[#003662]/80 italic mb-6">
-              &quot;Badge interne délivré dans le cadre de la méthode PatrimEmotion®. Il ne constitue ni une certification d&apos;État, ni un agrément réglementaire, ni une validation AMF.&quot;
-            </div>
-            <p className="text-[#003662]/80 text-sm">Badges actuellement utilisés : {BADGES_ACTUELS.join(", ")}.</p>
-          </div>
-        </section>
-
-        {/* Section 8 — Pour qui ? */}
-        <section className="py-20 md:py-28 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Cibles</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-8 text-center">
-              À qui s&apos;adresse PatrimEmotion® ?
-            </h2>
-            <p className="text-[#003662]/85 mb-6 leading-[1.75] text-center">
-              PatrimEmotion® s&apos;adresse aux professionnels et structures souhaitant enrichir la qualité de leur relation client dans un cadre méthodologique structuré :
-            </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {POUR_QUI.map((item, i) => (
-                <span key={i} className="inline-block px-4 py-2 rounded-lg bg-white border border-[#003662]/10 text-[#003662]/90 text-sm font-medium">
-                  {item}
-                </span>
+            <ul className="mx-auto grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+              {POUR_QUI.slice(0, 6).map((item, i) => (
+                <li key={i} className="h-full min-h-0">
+                  <PourQuiAudienceCard label={item} />
+                </li>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 9 — Version Premium */}
-        <section className="py-20 md:py-28 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-6 text-center">Niveau avancé</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4 text-center">
-              Version Premium : ce que le niveau avancé apporte
-            </h2>
-            <p className="text-white/85 text-center mb-10">
-              PatrimEmotion® Premium — Standardisez vos restitutions clients
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
-              {PREMIUM_BENEFICES.map((item, i) => (
-                <div key={i} className="p-5 rounded-xl bg-white/10 border border-white/20">
-                  <span className="text-[#f4ca3a] block mb-2">✅</span>
-                  <p className="text-white/95 text-sm leading-relaxed">{item}</p>
+              <li className="col-span-full h-full min-h-0 sm:col-span-2 lg:col-span-3">
+                <div className="mx-auto flex h-full w-full max-w-3xl flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5 sm:items-stretch">
+                  {POUR_QUI.slice(6).map((item, i) => (
+                    <div key={i + 6} className="h-full w-full min-h-0 sm:max-w-sm">
+                      <PourQuiAudienceCard label={item} />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <p className="text-white/85 text-center mb-4">Ce que contient le Premium :</p>
-            <ul className="flex flex-wrap justify-center gap-2">
-              {PREMIUM_CONTENU.map((item, i) => (
-                <li key={i} className="px-3 py-1.5 rounded-lg bg-white/10 text-white/90 text-sm">{item}</li>
-              ))}
+              </li>
             </ul>
           </div>
         </section>
 
-        {/* Section 10 — Comment ça marche */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">Processus</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-10 text-center">
-              Comment ça marche ?
-            </h2>
-            <p className="text-[#003662]/80 text-center mb-10">Un parcours simple en 3 étapes</p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 rounded-2xl bg-slate-50 border border-[#003662]/10">
-                <div className="w-14 h-14 rounded-full bg-[#f4ca3a] text-[#003662] font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
-                <h3 className="text-lg font-semibold text-[#003662] mb-2">Le client répond au questionnaire</h3>
-                <p className="text-[#003662]/80 text-sm">Les axes et indicateurs sont structurés par la méthode.</p>
-              </div>
-              <div className="text-center p-6 rounded-2xl bg-slate-50 border border-[#003662]/10">
-                <div className="w-14 h-14 rounded-full bg-[#f4ca3a] text-[#003662] font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
-                <h3 className="text-lg font-semibold text-[#003662] mb-2">Le professionnel réalise sa restitution</h3>
-                <p className="text-[#003662]/80 text-sm">Il utilise les supports PatrimEmotion® dans le respect du cadre d&apos;usage.</p>
-              </div>
-              <div className="text-center p-6 rounded-2xl bg-slate-50 border border-[#003662]/10">
-                <div className="w-14 h-14 rounded-full bg-[#f4ca3a] text-[#003662] font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
-                <h3 className="text-lg font-semibold text-[#003662] mb-2">Le cabinet produit un support clair</h3>
-                <p className="text-[#003662]/80 text-sm">Bilan, plan d&apos;actions, restitution enrichie, selon le niveau de licence.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 11 — Encadré conformité */}
-        <section className="py-20 md:py-28 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-6">Cadre d&apos;usage</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-8 text-center">
-              Cadre d&apos;usage et conformité
-            </h2>
-            <p className="text-[#003662]/85 mb-6 leading-[1.75]">
-              PatrimEmotion® est une méthode pédagogique d&apos;aide à l&apos;entretien et à la restitution. Elle vise à améliorer la compréhension du client, la qualité des échanges et la cohérence de certains supports de restitution.
-            </p>
-            <p className="text-[#003662]/85 mb-4 font-medium">Elle ne constitue pas :</p>
-            <ul className="space-y-2 mb-6 text-[#003662]/85">
-              <li>• une recommandation personnalisée automatisée</li>
-              <li>• un outil de profil de risque réglementaire</li>
-              <li>• un dispositif se substituant aux obligations de connaissance client</li>
-              <li>• un mécanisme d&apos;adéquation ou de recommandations au sens réglementaire</li>
-            </ul>
-            <p className="text-[#003662]/85 font-medium">Le professionnel demeure seul responsable de ses obligations réglementaires, de ses analyses, de ses recommandations et du cadre juridique applicable à son activité.</p>
-          </div>
-        </section>
-
-        {/* Section 12 — FAQ */}
+        {/* Section 8 — FAQ */}
         <section className="py-20 md:py-28 bg-white">
           <div className="container mx-auto px-4 max-w-2xl">
-            <p className="text-center text-[#f4ca3a] text-sm font-semibold uppercase tracking-widest mb-4">FAQ Pro</p>
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-10 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-10 text-center text-balance">
               Questions fréquentes
             </h2>
             <div className="space-y-2">
@@ -545,9 +564,9 @@ export default function CertificationLicencesPage() {
                   key={i}
                   className="group rounded-xl border border-[#003662]/15 bg-slate-50/50 overflow-hidden"
                 >
-                  <summary className="px-5 py-4 cursor-pointer list-none font-semibold text-[#003662] flex items-center justify-between gap-2">
-                    <span>{item.q}</span>
-                    <span className="text-[#003662]/50 group-open:rotate-180 transition-transform shrink-0">
+                  <summary className="px-5 py-4 pr-11 cursor-pointer list-none font-semibold text-[#003662] relative flex items-center justify-center text-center">
+                    <span className="text-balance">{item.q}</span>
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#003662]/50 group-open:rotate-180 transition-transform shrink-0 pointer-events-none" aria-hidden>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                     </span>
                   </summary>
@@ -556,40 +575,6 @@ export default function CertificationLicencesPage() {
                   </div>
                 </details>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 13 — SEO / Conclusion + CTA final */}
-        <section className="py-20 md:py-28 bg-slate-50">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-6">
-              Pourquoi rejoindre PatrimEmotion® ?
-            </h2>
-            <p className="text-[#003662]/85 mb-8 leading-[1.75]">
-              Rejoindre PatrimEmotion®, c&apos;est intégrer une méthode patrimoniale premium pensée pour les professionnels qui veulent mieux structurer leurs restitutions, fluidifier certains échanges sensibles, apporter plus de pédagogie à leur pratique, se différencier avec une démarche haut de gamme, tout en conservant un cadre d&apos;usage clair et rigoureux.
-            </p>
-            <div className="rounded-2xl border-2 border-[#003662]/15 bg-white p-8 md:p-10 shadow-lg">
-              <h3 className="text-xl font-serif font-semibold text-[#003662] mb-4">Demandez une démonstration et recevez le dossier de licence</h3>
-              <p className="text-[#003662]/80 mb-6">
-                Découvrez les niveaux de licence PatrimEmotion®, les visuels associés, les badges, les conditions d&apos;accès et le cadre d&apos;usage professionnel.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href={CONTACT_URL}
-                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all"
-                >
-                  Demander une démonstration professionnelle
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </Link>
-                <Link
-                  href={CONTACT_URL}
-                  className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-6 py-3.5 rounded-xl transition-all"
-                >
-                  Recevoir le dossier complet
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </Link>
-              </div>
             </div>
           </div>
         </section>

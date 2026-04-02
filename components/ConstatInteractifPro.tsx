@@ -46,15 +46,15 @@ export default function ConstatInteractifPro() {
         <div className="rounded-2xl bg-[#003662] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-l-4 border-[#f4ca3a]">
           <h2
             id="constat-pro-title"
-            className="text-2xl md:text-3xl font-serif font-semibold text-white mb-2"
+            className="pe-heading-section text-white mb-2"
           >
             Quelle est votre situation ?
           </h2>
-          <p className="text-white/90 text-base md:text-lg">
+          <p className="pe-body-lead text-white/90 leading-relaxed">
             De nombreuses situations complexes sont courantes, nous sommes là pour vous accompagner.
           </p>
         </div>
-        <p className="text-[#003662] text-lg mb-6">
+        <p className="pe-body-lead text-[#003662] mb-6 leading-relaxed">
           Cochez ce qui vous parle :
         </p>
 
@@ -89,7 +89,7 @@ export default function ConstatInteractifPro() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-[#003662] text-center mb-3">
+                <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   Identifiez ce qui vous concerne
                 </h3>
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed">
@@ -105,7 +105,7 @@ export default function ConstatInteractifPro() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-[#003662] text-center mb-3">
+                <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   {titreHumain}
                 </h3>
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">

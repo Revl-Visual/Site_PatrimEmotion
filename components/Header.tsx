@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { AMCP_CONTACT_URL } from "@/lib/amcp";
+import { LOGO_SRC } from "@/lib/branding";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +53,7 @@ export default function Header() {
           <div className="flex flex-col items-center gap-2 md:gap-3">
             <Link href="/" className="hover:opacity-80 transition-opacity outline-none focus:outline-none focus-visible:outline-none">
               <Image
-                src="/Logo_PNG.png"
+                src={LOGO_SRC}
                 alt="PatrimEmotion"
                 width={300}
                 height={100}
@@ -69,7 +71,7 @@ export default function Header() {
 
       {/* Bandeau 3 : Navigation (sticky) */}
       <header
-        className={`sticky top-0 z-50 w-full bg-white transition-all duration-300 ${
+        className={`sticky top-0 z-[100] w-full bg-white transition-all duration-300 ${
           isScrolled ? "shadow-lg shadow-neutral-900/10" : ""
         }`}
       >
@@ -80,13 +82,10 @@ export default function Header() {
               <Link href="/" className="text-[#003662] hover:text-[#002a4a] font-semibold transition-colors text-base outline-none focus:outline-none focus-visible:outline-none">
                 Accueil
               </Link>
-              {/* La méthode dropdown */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setMethodeOpen(true)}
-                onMouseLeave={() => setMethodeOpen(false)}
-              >
+              {/* La méthode — group-hover (le parent n’agrandit pas sa boîte avec les enfants absolute ; onMouseLeave fermait le menu trop tôt) */}
+              <div className="relative group">
                 <button
+                  type="button"
                   className="text-[#003662] hover:text-[#002a4a] font-semibold flex items-center gap-1 transition-colors text-base outline-none focus:outline-none focus-visible:outline-none"
                 >
                   La méthode
@@ -94,11 +93,8 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {methodeOpen && (
-                  <div
-                    className="absolute left-0 pt-2 top-full w-56"
-                  >
-                    <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+                <div className="absolute left-0 top-full z-[110] hidden w-56 pt-2 group-hover:block group-focus-within:block">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
                     <Link href="/methode" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Le concept
                     </Link>
@@ -108,18 +104,13 @@ export default function Header() {
                     <Link href="/cadre-ethique-scientifique" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Cadre Éthique et Scientifique
                     </Link>
-                    </div>
                   </div>
-                )}
+                </div>
               </div>
 
-              {/* Solutions dropdown */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
-              >
-                <button 
+              <div className="relative group">
+                <button
+                  type="button"
                   className="text-[#003662] hover:text-[#002a4a] font-semibold flex items-center gap-1 transition-colors text-base outline-none focus:outline-none focus-visible:outline-none"
                 >
                   Solutions
@@ -127,9 +118,8 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {solutionsOpen && (
-                  <div className="absolute left-0 pt-2 top-full w-48">
-                    <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+                <div className="absolute left-0 top-full z-[110] hidden w-48 pt-2 group-hover:block group-focus-within:block">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
                     <Link href="/solutions/particuliers" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Particuliers
                     </Link>
@@ -139,9 +129,8 @@ export default function Header() {
                     <Link href="/solutions/institutionnels" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Institutionnels
                     </Link>
-                    </div>
                   </div>
-                )}
+                </div>
               </div>
 
               <Link href="/tarifs" className="text-[#003662] hover:text-[#002a4a] font-semibold transition-colors text-base outline-none focus:outline-none focus-visible:outline-none">
@@ -151,16 +140,19 @@ export default function Header() {
             
             {/* CTA Button à droite */}
             <div className="hidden md:block">
-              <Link
-                href="/demande-demo"
+              <a
+                href={AMCP_CONTACT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#f4ca3a] text-[#003662] px-6 py-2.5 rounded-lg transition-all font-semibold text-base hover:bg-[#f5d055] shadow-sm outline-none focus:outline-none focus-visible:outline-none"
               >
-                Demander une démo <span className="text-xs font-normal">(15 min)</span>
-              </Link>
+                Prendre contact
+              </a>
             </div>
 
             {/* Mobile menu button (visible uniquement sur mobile) */}
-            <button 
+            <button
+              type="button"
               className="md:hidden text-[#003662] outline-none focus:outline-none focus-visible:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -183,6 +175,7 @@ export default function Header() {
                 </Link>
                 <div>
                   <button
+                    type="button"
                     className="text-[#003662] hover:text-[#002a4a] flex items-center gap-2 w-full text-base font-semibold"
                     onClick={() => setMethodeOpen(!methodeOpen)}
                   >
@@ -206,7 +199,8 @@ export default function Header() {
                   )}
                 </div>
                 <div>
-                  <button 
+                  <button
+                    type="button"
                     className="text-[#003662] hover:text-[#002a4a] flex items-center gap-2 w-full text-base font-semibold"
                     onClick={() => setSolutionsOpen(!solutionsOpen)}
                   >
@@ -232,15 +226,22 @@ export default function Header() {
                 <Link href="/tarifs" className="text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
                   Tarifs
                 </Link>
-                <Link href="/contact" className="text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
+                <a
+                  href={AMCP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold"
+                >
                   Contact
-                </Link>
-                <Link
-                  href="/demande-demo"
+                </a>
+                <a
+                  href={AMCP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#f4ca3a] text-[#003662] px-6 py-3 rounded-lg hover:bg-[#f5d055] transition-colors font-semibold text-center text-base shadow-sm"
                 >
-                  Demander une démo <span className="text-xs font-normal">(15 min)</span>
-                </Link>
+                  Prendre contact
+                </a>
               </div>
             </div>
           )}

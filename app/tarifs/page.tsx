@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -49,10 +50,10 @@ export default function TarifsPage() {
           <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-white mb-4 leading-tight tracking-tight">
+                <h1 className="pe-heading-hero text-white mb-4">
                   <span className="text-[#f4ca3a]">Tarifs</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-4">
+                <p className="pe-body-lead text-white/90 leading-relaxed mb-4">
                   Grille tarifaire officielle PatrimEmotion® V2026. Licences professionnelles.
                 </p>
                 <p className="text-white/70 text-sm italic">
@@ -67,10 +68,10 @@ export default function TarifsPage() {
         <section className="bg-white py-24 md:py-32 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
                 Vue d&apos;ensemble des <span className="text-[#f4ca3a]">licences</span>
               </h2>
-              <p className="text-xl text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
+              <p className="pe-body-lead text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Choisissez la formule adaptée à la taille et aux besoins de votre cabinet
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
@@ -124,24 +125,24 @@ export default function TarifsPage() {
                 <div className="bg-[#1a1a1a] px-6 py-5 flex items-center gap-3">
                   <span className="text-2xl" aria-hidden>⚫</span>
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white">
+                    <h2 className="pe-heading-section text-white">
                       Licence Fondateur <span className="text-[#f4ca3a]">(Early Partners)</span>
                     </h2>
                     <p className="text-white/80 text-sm mt-1">Réservée aux 10 premiers cabinets – lancement réseau</p>
                   </div>
                 </div>
                 <div className="p-8 md:p-10 text-[#003662]">
-                  <p className="text-lg font-semibold text-[#003662] mb-4">
+                  <p className="pe-body-lead font-semibold text-[#003662] mb-4 leading-relaxed">
                     <span className="text-[#f4ca3a]">Tarif</span> 2 900 € HT / an (base CORE)
                   </p>
-                  <ul className="space-y-2 text-[#003662]/90 mb-6">
+                  <ul className="space-y-2 pe-body-lead text-[#003662]/90 mb-6 leading-relaxed">
                     <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Licence CORE (« socle opérationnel »)</li>
                     <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Badge « Licencié Fondateur »</li>
                     <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Tarif bloqué 3 ans (voir règle Fondateur)</li>
                     <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Intégration des évolutions V2026 (selon contrat)</li>
                   </ul>
                   <div className="rounded-xl bg-slate-50 border border-[#003662]/10 p-5">
-                    <p className="text-[#003662]/90 text-sm md:text-base leading-relaxed">
+                    <p className="pe-body-lead text-[#003662]/90 leading-relaxed">
                       <span className="font-semibold text-[#003662]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
                     </p>
                   </div>
@@ -154,17 +155,17 @@ export default function TarifsPage() {
         {/* 3 licences en cartes — style "Nos 3 solutions" */}
         <section className="bg-white py-24 md:py-32 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+            <h2 className="pe-heading-section text-center text-[#003662] mb-4">
               Choisissez votre <span className="text-[#f4ca3a]">licence</span>
             </h2>
-            <p className="text-xl text-[#003662]/80 text-center mb-16 max-w-2xl mx-auto">
+            <p className="pe-body-lead text-[#003662]/80 text-center mb-16 max-w-2xl mx-auto leading-relaxed">
               LIGHT, CORE ou PREMIUM selon la taille de votre cabinet et vos besoins
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* LIGHT */}
               <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
                 <div className="bg-[#9FB620]/15 px-6 py-4 border-b border-[#9FB620]/30">
-                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#003662]">Licence LIGHT</h3>
+                  <h3 className="pe-heading-card text-[#003662]">Licence LIGHT</h3>
                   <p className="text-[#003662]/80 text-sm mt-1">L&apos;essentiel pour démarrer</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -191,7 +192,7 @@ export default function TarifsPage() {
               <div className="flex flex-col rounded-2xl bg-[#003662] shadow-[0_4px_24px_rgba(0,54,98,0.2)] overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full relative">
                 <div className="absolute top-4 right-4 bg-[#f4ca3a] text-[#003662] px-3 py-1 rounded-full text-xs font-semibold">Populaire</div>
                 <div className="bg-[#f4ca3a]/20 px-6 py-4 border-b border-[#f4ca3a]/30">
-                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-white">Licence CORE</h3>
+                  <h3 className="pe-heading-card text-white">Licence CORE</h3>
                   <p className="text-white/80 text-sm mt-1">Le socle opérationnel (standard pro)</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -217,7 +218,7 @@ export default function TarifsPage() {
               {/* PREMIUM */}
               <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
                 <div className="bg-[#003662]/10 px-6 py-4 border-b border-[#003662]/20">
-                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#003662]">Licence PREMIUM</h3>
+                  <h3 className="pe-heading-card text-[#003662]">Licence PREMIUM</h3>
                   <p className="text-[#003662]/80 text-sm mt-1">La version avancée</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -249,7 +250,7 @@ export default function TarifsPage() {
                 <div className="bg-slate-400 px-6 py-4 flex items-center gap-3">
                   <span className="text-2xl" aria-hidden>⚪</span>
                   <div>
-                    <h2 className="text-xl md:text-2xl font-serif font-semibold text-white">Licence Institutionnelle / Embedded</h2>
+                    <h2 className="pe-heading-section text-white">Licence Institutionnelle / Embedded</h2>
                     <p className="text-white/90 text-sm">Non disponible pour le moment</p>
                   </div>
                 </div>
@@ -266,11 +267,10 @@ export default function TarifsPage() {
         <section className="py-24 md:py-32 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <p className="text-center text-[#003662]/50 text-xs font-medium tracking-[0.2em] uppercase mb-2">Compléments</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium text-center text-[#003662] mb-4 leading-tight">
+              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
                 Options <span className="text-[#f4ca3a]">(HT)</span>
               </h2>
-              <p className="text-xl text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
+              <p className="pe-body-lead text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Complétez votre licence selon vos besoins
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
@@ -318,21 +318,36 @@ export default function TarifsPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
             <div className="container mx-auto px-4 relative z-10 pt-24 pb-32 md:pt-32 md:pb-40">
               <div className="max-w-2xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4 leading-tight">
+                <h2 className="pe-heading-section text-white mb-4">
                   Besoin d&apos;un devis ou d&apos;échanger sur la formule adaptée à votre cabinet ?
                 </h2>
-                <p className="text-white/90 mb-8 text-lg">
+                <p className="pe-body-lead text-white/90 mb-8 leading-relaxed">
                   Demandez une démonstration ou recevez le dossier de licence.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02]"
-                >
-                  Nous contacter
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02]"
+                  >
+                    Demander une démo ou le dossier
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href={AMCP_CONTACT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02] border-2 border-white/30"
+                  >
+                    Devis et contact
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

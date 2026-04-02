@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { AMCP_CONTACT_URL } from "@/lib/amcp";
 
 const CONSTATS = [
   "Trop d'informations, trop de produits",
@@ -47,15 +47,15 @@ export default function ConstatInteractif() {
         <div className="rounded-2xl bg-[#f4ca3a] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
           <h2
             id="constat-title"
-            className="text-2xl md:text-3xl font-serif font-semibold text-[#003662] mb-2"
+            className="pe-heading-section text-[#003662] mb-2"
           >
             Quelle est votre situation ?
           </h2>
-          <p className="text-[#003662]/90 text-base md:text-lg">
+          <p className="pe-body-lead text-[#003662]/90 leading-relaxed">
             De nombreuses situations complexes sont courantes, nous sommes là pour vous accompagner.
           </p>
         </div>
-        <p className="text-[#003662]/90 text-lg mb-6">
+        <p className="pe-body-lead text-[#003662]/90 mb-6 leading-relaxed">
           Cochez ce qui vous parle :
         </p>
 
@@ -92,7 +92,7 @@ export default function ConstatInteractif() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-[#003662] text-center mb-3">
+                <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   Identifiez ce qui vous concerne
                 </h3>
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed">
@@ -108,18 +108,20 @@ export default function ConstatInteractif() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-[#003662] text-center mb-3">
+                <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   {titreHumain}
                 </h3>
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
-                <Link
-                  href="/contact"
+                <a
+                  href={AMCP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full text-center bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold py-3.5 px-6 rounded-lg transition-colors"
                 >
                   Nous contacter
-                </Link>
+                </a>
               </>
             )}
           </div>
