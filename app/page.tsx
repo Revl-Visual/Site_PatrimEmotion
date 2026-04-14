@@ -101,7 +101,7 @@ export default function Home() {
                       </div>
                       <div className="relative flex-1 min-h-[100px] bg-white">
                         <Image
-                          src="/Silhouette_Geo_Colors.png"
+                          src="/images/Silhouette_Geo_Colors.png"
                           alt=""
                           fill
                           className="object-contain object-center p-1"
