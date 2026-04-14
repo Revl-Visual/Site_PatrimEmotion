@@ -36,7 +36,7 @@ export default function CertificationsPage() {
                   Un système clair
                 </h2>
                 <p className="pe-body-lead text-white/90 max-w-3xl mx-auto">
-                  PatrimEmotion distingue le niveau de licence (équipement du cabinet) et le badge (niveau d'habilitation
+                  PatrimEmotion distingue le niveau de licence (équipement du cabinet) et le badge (niveau d&apos;habilitation
                   du professionnel). Cette distinction garantit une communication plus lisible et plus cohérente.
                 </p>
               </div>

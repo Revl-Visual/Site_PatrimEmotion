@@ -143,7 +143,7 @@ export default function LicencesPage() {
                   Devenez <span className="text-[#f4ca3a]">Licencié PatrimEmotion®</span>
                 </h1>
                 <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
-                  Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l'adhésion du client.
+                  Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
                 </p>
                 <ul className="space-y-2 text-white/90 pe-body-lead text-left max-w-2xl mx-auto mb-10 leading-relaxed">
                   {POINTS_CLES.map((item) => (
@@ -175,7 +175,7 @@ export default function LicencesPage() {
                 Vos clients ne bloquent pas toujours sur la technique. Ils bloquent souvent sur la décision.
               </h2>
               <p className="pe-body-lead text-[#003662]/90 mb-8 leading-relaxed">
-                Dans la pratique, de nombreux échanges s'interrompent parce que le client hésite, temporise ou n'arrive pas à se projeter :
+                Dans la pratique, de nombreux échanges s&apos;interrompent parce que le client hésite, temporise ou n&apos;arrive pas à se projeter :
               </p>
               <ul className="mb-8 grid list-none gap-4 p-0 sm:grid-cols-2 sm:gap-5">
                 {CITATIONS_CLIENT.map((citation) => (
@@ -188,7 +188,7 @@ export default function LicencesPage() {
               </ul>
               <div className="rounded-2xl bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8 border-l-4 border-[#f4ca3a]">
                 <p className="pe-body-lead text-white/95 leading-relaxed">
-                  PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d'améliorer la qualité de la restitution et la pédagogie de l'échange.
+                  PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution et la pédagogie de l&apos;échange.
                 </p>
               </div>
               <div className="flex justify-center mt-8">
@@ -208,15 +208,15 @@ export default function LicencesPage() {
         <section className="pt-16 md:pt-20 pb-20 md:pb-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center text-balance">
-              PatrimEmotion® : une méthode d'éclairage comportemental appliquée à la relation patrimoniale
+              PatrimEmotion® : une méthode d&apos;éclairage comportemental appliquée à la relation patrimoniale
             </h2>
             <p className="text-[#003662]/85 mb-6 leading-[1.75]">
-              PatrimEmotion® est une méthode structurée d'aide à l'entretien et à la restitution, destinée aux professionnels souhaitant adapter leur pédagogie et leur posture.
+              PatrimEmotion® est une méthode structurée d&apos;aide à l&apos;entretien et à la restitution, destinée aux professionnels souhaitant adapter leur pédagogie et leur posture.
             </p>
             <div className="rounded-xl border-2 border-[#f4ca3a]/40 bg-[#f4ca3a]/5 p-6">
               <p className="text-[#003662] font-semibold mb-2">Important</p>
               <p className="text-[#003662]/90 text-sm leading-relaxed">
-                PatrimEmotion® s'inscrit dans une logique pédagogique et méthodologique. Le professionnel demeure seul responsable de ses obligations réglementaires.
+                PatrimEmotion® s&apos;inscrit dans une logique pédagogique et méthodologique. Le professionnel demeure seul responsable de ses obligations réglementaires.
               </p>
             </div>
           </div>
@@ -287,7 +287,7 @@ export default function LicencesPage() {
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="pe-heading-section text-[#003662] mb-4 text-center text-balance">Les différents niveaux de licence</h2>
             <p className="text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
-              Un système de licences professionnelles graduées pour garantir l'homogénéité de la méthode.
+              Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
             </p>
             <div className="text-center mt-10">
               <Link href={TARIFS_URL} className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-colors">
@@ -301,7 +301,7 @@ export default function LicencesPage() {
           <div className="container relative z-10 mx-auto max-w-5xl px-4">
             <header className="mb-10 text-center md:mb-12">
               <h2 className="pe-heading-section mx-auto max-w-3xl text-balance">
-                <span className="text-white">À qui s'adresse </span>
+                <span className="text-white">À qui s&apos;adresse </span>
                 <span className="text-[#f4ca3a]">PatrimEmotion® ?</span>
               </h2>
             </header>
