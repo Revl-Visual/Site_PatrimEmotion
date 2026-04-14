@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractif from "@/components/ConstatInteractif";
@@ -96,7 +97,7 @@ export default function ParticuliersPage() {
           <div className="hero-encart pt-16 pb-12 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[320px] md:min-h-[360px]">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[260px] md:min-h-[320px]">
                   <div>
                     <h1 className="pe-heading-hero text-white mb-5">
                       PatrimEmotion® : votre <span className="text-[#f4ca3a]">profil émotionnel patrimonial</span>
@@ -117,14 +118,16 @@ export default function ParticuliersPage() {
                     </a>
                   </div>
                   <div className="hidden lg:flex justify-center items-center">
-                    <div className="w-full max-w-sm rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-8 shadow-xl">
-                      <p className="pe-body-lead text-white font-semibold text-center mb-4">Bilan PatrimEmotion®</p>
-                      <div className="space-y-3">
-                        <div className="h-2 rounded-full bg-[#f4ca3a]" style={{ width: "90%" }} />
-                        <div className="h-2 rounded-full bg-[#f4ca3a]/80" style={{ width: "75%" }} />
-                        <div className="h-2 rounded-full bg-[#f4ca3a]/60" style={{ width: "85%" }} />
+                    <div className="w-full max-w-sm rounded-2xl bg-white/10 p-1 overflow-hidden">
+                      <div className="relative w-full aspect-square">
+                        <Image
+                          src="/images/Rond_8_profils.png"
+                          alt="Rond des 8 profils PatrimEmotion"
+                          fill
+                          className="object-contain scale-[1.08]"
+                          sizes="(max-width: 1024px) 0vw, 380px"
+                        />
                       </div>
-                      <p className="text-white text-sm text-center mt-4">Profil · Priorités · Stratégie</p>
                     </div>
                   </div>
                 </div>
@@ -155,18 +158,9 @@ export default function ParticuliersPage() {
                 href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
               >
                 Répondre au questionnaire
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-              <a
-                href={AMCP_PATRIMEMOTION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border-2 border-white/40 transition-all"
-              >
-                Fondateur de la méthode
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
@@ -287,7 +281,7 @@ export default function ParticuliersPage() {
                   href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
                 >
                   Recevoir mon Bilan PatrimEmotion
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -315,6 +309,26 @@ export default function ParticuliersPage() {
                   <p className="pe-body-lead text-white/95 leading-relaxed">{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA — encart avant FAQ */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <div className="rounded-2xl bg-[#003662] p-8 md:p-10 text-center shadow-xl">
+              <h3 className="pe-heading-card-lg text-white mb-4">
+                Prêt(e) à décider autrement ?
+              </h3>
+              <a
+                href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+              >
+                Réaliser mon bilan patrimonial émotionnel PatrimEmotion
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
             </div>
           </div>
         </section>
@@ -370,20 +384,6 @@ export default function ParticuliersPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="rounded-2xl bg-[#003662] p-8 md:p-10 text-center shadow-xl max-w-3xl mx-auto">
-              <h3 className="pe-heading-card-lg text-white mb-4">
-                Prêt(e) à décider autrement ?
-              </h3>
-              <a
-                href={PATRIMEMOTION_QUESTIONNAIRE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
-              >
-                Réaliser mon bilan patrimonial émotionnel PatrimEmotion
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
             </div>
           </div>
         </section>

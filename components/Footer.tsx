@@ -61,8 +61,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/certification-licences" className="hover:text-white transition-colors">
-                  Certification et Licences
+                <Link href="/licences" className="hover:text-white transition-colors">
+                  Licences
+                </Link>
+              </li>
+              <li>
+                <Link href="/certifications" className="hover:text-white transition-colors">
+                  Certifications
                 </Link>
               </li>
               <li>

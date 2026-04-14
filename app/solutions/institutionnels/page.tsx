@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_DEVIS_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     "PatrimEmotion® pour institutionnels : une approche comportementale structurée et intégrable au service de la relation patrimoniale.",
 };
 
-const LICENCES_URL = "/certification-licences";
+const LICENCES_URL = "/licences";
 const METHODE_SCIENTIFIQUE_URL = "/methode";
 
 const METHODE_STRUCTUREE = [
@@ -92,13 +93,6 @@ const METHODE_REPRODUCTIBLE = [
   "des supports de dialogue patrimonial",
 ];
 
-const PAVES_CTA = [
-  { question: "Vous souhaitez en savoir plus sur nos différentes licences ?", cta: "Devenir licencié PatrimEmotion", href: LICENCES_URL },
-  { question: "Vous souhaitez réaliser un devis ?", cta: "Demander une tarification", href: AMCP_CONTACT_URL },
-  { question: "Vous souhaitez une démo (15 minutes) ?", cta: "Demander une démo (15 minutes)", href: PATRIMEMOTION_QUESTIONNAIRE_URL },
-  { question: "Vous souhaitez en savoir plus sur l'intégration de PatrimEmotion® dans votre organisation ?", cta: "Nous contacter", href: AMCP_CONTACT_URL },
-];
-
 export default function InstitutionnelsPage() {
   return (
     <>
@@ -106,7 +100,7 @@ export default function InstitutionnelsPage() {
       <main className="min-h-screen">
         {/* Hero */}
         <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
-          <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-18 px-6 md:px-12">
+          <div className="hero-encart pt-14 pb-10 md:pt-18 md:pb-14 px-5 md:px-10">
             <div className="container mx-auto relative z-10">
               <div className="max-w-3xl mx-auto text-center">
                 <h1 className="pe-heading-hero text-white mb-4">
@@ -137,7 +131,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Une méthode structurée et intégrable — fond blanc */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Une méthode structurée et intégrable
@@ -171,7 +165,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Une lecture comportementale — fond gris très léger */}
-        <section className="py-20 md:py-28 bg-slate-50">
+        <section className="py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
               Une lecture comportementale du patrimoine
@@ -194,7 +188,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Une restitution pédagogique — fond bleu */}
-        <section className="py-20 md:py-28 bg-[#003662]">
+        <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-white mb-8 text-center">
               Une restitution pédagogique et structurée
@@ -213,11 +207,21 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               La restitution constitue un support pédagogique permettant d&apos;éclairer la réflexion patrimoniale et de faciliter les échanges entre le professionnel et son client.
             </p>
+            <div className="mt-10 text-center">
+              <a
+                href={PATRIMEMOTION_DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-[#f5d055]"
+              >
+                Demander une démo
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Positionnement — fond blanc */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-2xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Positionnement de la méthode PatrimEmotion®
@@ -231,7 +235,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Sciences comportementales — fond gris léger */}
-        <section className="py-20 md:py-28 bg-slate-50">
+        <section className="py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
               Une approche inspirée des sciences comportementales
@@ -260,7 +264,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Méthode propriétaire — fond bleu */}
-        <section className="py-20 md:py-28 bg-[#003662]">
+        <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-white mb-8 text-center">
               Une méthode propriétaire structurée
@@ -279,11 +283,19 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               Cette approche permet de proposer un cadre d&apos;analyse reproductible et adaptable à différents environnements professionnels.
             </p>
+            <div className="mt-10 text-center">
+              <Link
+                href="/tarifs"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-white/95"
+              >
+                Licence institutionnelle
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* Méthode complémentaire — fond blanc */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-2xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Une méthode complémentaire du conseil patrimonial
@@ -306,7 +318,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Innovation — fond gris léger */}
-        <section className="py-20 md:py-28 bg-slate-50">
+        <section className="py-16 md:py-24 bg-slate-50">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
               Une innovation au service du conseil patrimonial
@@ -325,11 +337,19 @@ export default function InstitutionnelsPage() {
             <p className="text-[#003662]/80 text-center leading-[1.75]">
               La méthode contribue ainsi à renforcer la dimension humaine du conseil patrimonial dans un environnement financier de plus en plus complexe.
             </p>
+            <div className="mt-10 text-center">
+              <Link
+                href="/tarifs"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#002a4a]"
+              >
+                Voir les tarifs
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* Acteurs institutionnels — fond bleu */}
-        <section className="py-20 md:py-28 bg-[#003662]">
+        <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-white mb-8 text-center">
               Une approche adaptée aux acteurs institutionnels
@@ -347,11 +367,21 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               L&apos;objectif est d&apos;apporter une lecture comportementale complémentaire dans les parcours clients et les démarches d&apos;accompagnement patrimonial.
             </p>
+            <div className="mt-10 text-center">
+              <a
+                href={PATRIMEMOTION_DEVIS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-[#f5d055]"
+              >
+                Demander un devis en marque blanche
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Outil compréhension client — fond blanc */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 max-w-2xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Un outil au service de la compréhension client
@@ -467,65 +497,31 @@ export default function InstitutionnelsPage() {
                 <p className="text-[#003662]/90">PatrimEmotion® propose d&apos;intégrer cette dimension comportementale afin d&apos;améliorer la compréhension des mécanismes décisionnels et d&apos;enrichir la relation entre le professionnel et son client.</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* 4 Pavés : image, question, CTA */}
-        <section className="py-16 md:py-24 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-white mb-12 text-center">
-              Comment aller plus loin ?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {PAVES_CTA.map((pave, i) => (
-                <div key={i} className="rounded-2xl bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
-                  {/* Emplacement image — remplacer par <Image> ou img avec le chemin souhaité */}
-                  <div className="aspect-video bg-[#003662]/10 flex items-center justify-center text-[#003662]/40 text-sm font-medium">
-                    Image à insérer
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <p className="pe-body-lead text-[#003662] font-semibold mb-4 leading-relaxed">{pave.question}</p>
-                    {pave.href.startsWith("http") ? (
-                      <a
-                        href={pave.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-5 py-2.5 rounded-xl transition-all text-sm"
-                      >
-                        {pave.cta}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                      </a>
-                    ) : (
-                      <Link
-                        href={pave.href}
-                        className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-5 py-2.5 rounded-xl transition-all text-sm"
-                      >
-                        {pave.cta}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              ))}
+            <div className="mt-12 text-center">
+              <a
+                href={PATRIMEMOTION_DEVIS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-8 py-3.5 font-semibold text-white transition-colors hover:bg-[#002a4a]"
+              >
+                Demander ma licence institutionnelle
+              </a>
             </div>
           </div>
         </section>
 
-        {/* CTA final */}
         <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <div className="rounded-2xl border-2 border-[#003662]/15 bg-white shadow-lg p-8 md:p-10 text-center">
-              <h2 className="pe-heading-section text-[#003662] mb-6">Intégrer PatrimEmotion® dans votre organisation</h2>
-              <p className="text-[#003662]/90 mb-8 leading-relaxed">Vous souhaitez en savoir plus sur les modalités de déploiement ou prendre contact ?</p>
-              <a
-                href={AMCP_CONTACT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
-              >
-                Prendre contact
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="rounded-2xl overflow-hidden bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
+              <div className="relative w-full aspect-[16/10]">
+                <Image
+                  src="/images/Carte_mentale_zone_secu_institutionnels.png"
+                  alt="Carte mentale zone sécu institutionnels"
+                  fill
+                  className="object-contain bg-white"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+                />
+              </div>
             </div>
           </div>
         </section>

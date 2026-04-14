@@ -112,7 +112,7 @@ export default function ConstatInteractifPro() {
                   {messageAdapte}
                 </p>
                 <Link
-                  href="/certification-licences"
+                  href="/licences"
                   className="block w-full text-center bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold py-3.5 px-6 rounded-lg transition-colors"
                 >
                   Découvrir la licence PatrimEmotion®

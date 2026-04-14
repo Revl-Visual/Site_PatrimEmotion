@@ -98,8 +98,11 @@ export default function Header() {
                     <Link href="/methode" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Le concept
                     </Link>
-                    <Link href="/certification-licences" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
-                      Certification et Licences
+                    <Link href="/licences" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
+                      Licences
+                    </Link>
+                    <Link href="/certifications" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
+                      Certifications
                     </Link>
                     <Link href="/cadre-ethique-scientifique" className="block px-4 py-2 text-[#003662] hover:text-[#002a4a] hover:bg-neutral-50 transition-colors text-base font-semibold outline-none focus:outline-none focus-visible:outline-none">
                       Cadre Éthique et Scientifique
@@ -189,8 +192,11 @@ export default function Header() {
                       <Link href="/methode" className="block text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
                         Le concept
                       </Link>
-                      <Link href="/certification-licences" className="block text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
-                        Certification et Licences
+                      <Link href="/licences" className="block text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
+                        Licences
+                      </Link>
+                      <Link href="/certifications" className="block text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
+                        Certifications
                       </Link>
                       <Link href="/cadre-ethique-scientifique" className="block text-[#003662] hover:text-[#002a4a] transition-colors text-base font-semibold">
                         Cadre Éthique et Scientifique

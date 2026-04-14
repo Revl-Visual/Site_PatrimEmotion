@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -41,6 +40,12 @@ const PREMIUM_FEATURES = [
 ];
 
 export default function TarifsPage() {
+  const LICENCE_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfYua3beU09XUzd2DqzM-eQA8eHeRCDeZ3NwvHwZX0dZFBKUg/viewform";
+  const DEVIS_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
+  const CONTACT_URL = "https://www.am-courtage-et-patrimoine.fr/contact";
+
   return (
     <>
       <Header />
@@ -76,7 +81,7 @@ export default function TarifsPage() {
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left min-w-[640px]">
+                  <table className="w-full text-left min-w-[560px]">
                     <thead>
                       <tr className="bg-[#003662] text-white">
                         <th className="px-5 py-4 font-semibold text-base w-8"></th>
@@ -113,6 +118,16 @@ export default function TarifsPage() {
                   Institutionnelle / Embedded (non disponible pour le moment)
                 </p>
               </div>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href={DEVIS_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003662] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#003662]/20 transition-all duration-200 hover:scale-[1.02] hover:bg-[#004a7a] hover:shadow-xl"
+                >
+                  Faire un devis
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -146,6 +161,16 @@ export default function TarifsPage() {
                       <span className="font-semibold text-[#003662]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
                     </p>
                   </div>
+                  <div className="mt-6 flex justify-center">
+                    <a
+                      href={CONTACT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1a1a1a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2a2a2a]"
+                    >
+                      Être contacté
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,10 +188,15 @@ export default function TarifsPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* LIGHT */}
-              <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
-                <div className="bg-[#9FB620]/15 px-6 py-4 border-b border-[#9FB620]/30">
-                  <h3 className="pe-heading-card text-[#003662]">Licence LIGHT</h3>
-                  <p className="text-[#003662]/80 text-sm mt-1">L&apos;essentiel pour démarrer</p>
+              <a
+                href={LICENCE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col rounded-2xl bg-white shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full cursor-pointer"
+              >
+                <div className="bg-[#9FB620] px-6 py-4 border-b border-[#8aa61d]">
+                  <h3 className="pe-heading-card text-white">Licence LIGHT</h3>
+                  <p className="text-white/90 text-sm mt-1">L&apos;essentiel pour démarrer</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <p className="text-[#003662]/80 text-sm mb-3 flex items-center gap-2">
@@ -186,14 +216,18 @@ export default function TarifsPage() {
                   <p className="text-[#003662] text-sm font-medium">1 conseiller nominatif</p>
                   <p className="text-[#003662]/80 text-xs mt-2">Options : utilisateur supp. 390 €/an, formation avancée 490 €, audit restitution 350 €</p>
                 </div>
-              </div>
+              </a>
 
               {/* CORE — mise en avant */}
-              <div className="flex flex-col rounded-2xl bg-[#003662] shadow-[0_4px_24px_rgba(0,54,98,0.2)] overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full relative">
-                <div className="absolute top-4 right-4 bg-[#f4ca3a] text-[#003662] px-3 py-1 rounded-full text-xs font-semibold">Populaire</div>
-                <div className="bg-[#f4ca3a]/20 px-6 py-4 border-b border-[#f4ca3a]/30">
-                  <h3 className="pe-heading-card text-white">Licence CORE</h3>
-                  <p className="text-white/80 text-sm mt-1">Le socle opérationnel (standard pro)</p>
+              <a
+                href={LICENCE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col rounded-2xl bg-[#003662] shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full relative cursor-pointer"
+              >
+                <div className="bg-[#f4ca3a] px-6 py-4 border-b border-[#dcb026]">
+                  <h3 className="pe-heading-card text-[#003662]">Licence CORE</h3>
+                  <p className="text-[#003662]/85 text-sm mt-1">Le socle opérationnel (standard pro)</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <p className="text-white/90 text-sm mb-3 flex items-center gap-2">
@@ -213,13 +247,18 @@ export default function TarifsPage() {
                   <p className="text-white/90 text-sm font-medium">Jusqu&apos;à 5 conseillers</p>
                   <p className="text-white/70 text-xs mt-2">Options : utilisateur supp. 490 €/an, formation sur site sur devis, audit conformité 790 €</p>
                 </div>
-              </div>
+              </a>
 
               {/* PREMIUM */}
-              <div className="flex flex-col rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full">
-                <div className="bg-[#003662]/10 px-6 py-4 border-b border-[#003662]/20">
-                  <h3 className="pe-heading-card text-[#003662]">Licence PREMIUM</h3>
-                  <p className="text-[#003662]/80 text-sm mt-1">La version avancée</p>
+              <a
+                href={LICENCE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col rounded-2xl bg-white shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full cursor-pointer"
+              >
+                <div className="bg-[#003662] px-6 py-4 border-b border-[#002949]">
+                  <h3 className="pe-heading-card text-white">Licence PREMIUM</h3>
+                  <p className="text-white/85 text-sm mt-1">La version avancée</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <p className="text-[#003662]/80 text-sm mb-3">Cabinet expert / multisites</p>
@@ -237,13 +276,23 @@ export default function TarifsPage() {
                   <p className="text-[#003662] text-sm font-medium">Jusqu&apos;à 15 conseillers</p>
                   <p className="text-[#003662]/80 text-xs mt-2">Options : utilisateur supp. 590 €/an, intervention événement sur devis, audit méthodologique 1 200 €</p>
                 </div>
-              </div>
+              </a>
+            </div>
+            <div className="mt-10 flex justify-center">
+              <a
+                href={LICENCE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg shadow-[#f4ca3a]/25 transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl"
+              >
+                Demander ma licence
+              </a>
             </div>
           </div>
         </section>
 
         {/* Licence Institutionnelle — visuel gris, non disponible */}
-        <section className="py-16 md:py-20 bg-slate-200">
+        <section className="py-20 md:py-28 bg-slate-200">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="rounded-2xl border-2 border-slate-300 bg-slate-50 overflow-hidden shadow-lg">
@@ -275,7 +324,7 @@ export default function TarifsPage() {
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left min-w-[480px]">
+                  <table className="w-full text-left min-w-[420px]">
                     <thead>
                       <tr className="bg-[#003662] text-white">
                         <th className="px-5 py-4 font-semibold text-base">Option</th>
@@ -312,46 +361,6 @@ export default function TarifsPage() {
           </div>
         </section>
 
-        {/* CTA — fond gris comme Options, bandeau vert au centre */}
-        <section className="bg-slate-50 pt-12 pb-24 md:pt-16 md:pb-32">
-          <div className="relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: "polygon(0 8%, 100% 0%, 100% 92%, 0% 100%)" }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
-            <div className="container mx-auto px-4 relative z-10 pt-24 pb-32 md:pt-32 md:pb-40">
-              <div className="max-w-2xl mx-auto text-center">
-                <h2 className="pe-heading-section text-white mb-4">
-                  Besoin d&apos;un devis ou d&apos;échanger sur la formule adaptée à votre cabinet ?
-                </h2>
-                <p className="pe-body-lead text-white/90 mb-8 leading-relaxed">
-                  Demandez une démonstration ou recevez le dossier de licence.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a
-                    href={PATRIMEMOTION_QUESTIONNAIRE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02]"
-                  >
-                    Demander une démo ou le dossier
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href={AMCP_CONTACT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-8 py-4 rounded-xl transition-all text-lg shadow-lg hover:scale-[1.02] border-2 border-white/30"
-                  >
-                    Devis et contact
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

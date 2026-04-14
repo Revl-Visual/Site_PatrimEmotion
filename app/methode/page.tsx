@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
-// URL du site AM Courtage & Patrimoine (onglet PatrimEmotion) — à adapter si besoin
-const SITE_AMCP_URL = "https://amcourtagepatrimoine.fr";
+// URL du site AM Courtage & Patrimoine (onglet PatrimEmotion)
+const SITE_AMCP_URL = "https://www.am-courtage-et-patrimoine.fr/patrimemotion";
 
 /** Schéma des 8 profils — `public/images/8_profils.{png|jpg|webp}` (adapter l’extension si besoin). */
 const HUIT_PROFILS_IMAGE = "/images/8_profils.png";
@@ -70,16 +70,17 @@ export default function MethodePage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(244,202,58,0.08),transparent)] pointer-events-none" />
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="pe-heading-hero w-full xl:text-[3.25rem] text-white mb-10 md:mb-12 text-center">
-              La méthode qui relie les <span className="text-[#f4ca3a]">émotions</span> aux{" "}
+              La méthode qui relie les <span className="text-[#f4ca3a]">émotions</span> aux
+              <br />
               <span className="text-[#f4ca3a]">décisions patrimoniales</span>
             </h1>
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div>
                   <p className="max-w-2xl mx-auto pe-body-lead lg:text-[1.35rem] text-white font-medium leading-relaxed text-center mb-8 md:mb-10 rounded-2xl border border-white/20 bg-white/[0.07] px-6 py-6 md:px-8 md:py-7 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-[2px]">
-                    Parce que les choix patrimoniaux ne sont pas uniquement financiers : ils doivent aussi être cohérents avec votre personnalité, votre manière de décider et votre parcours de vie.
+                    Parce que les choix patrimoniaux ne sont pas uniquement financiers, ils doivent aussi être cohérents avec votre personnalité, votre manière de décider et votre parcours de vie.
                   </p>
-                  <div className="flex justify-center w-full">
+                  <div className="flex justify-center w-full flex-col sm:flex-row gap-3">
                     <a
                       href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                       target="_blank"
@@ -89,12 +90,27 @@ export default function MethodePage() {
                       Faire le test / pré-diagnostic
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>
+                    <a
+                      href="/Docs/Base_scientifique_r%C3%A9elle_de_PatrimEmotion.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base border border-white/35"
+                    >
+                      Base scientifique réelle
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
                   </div>
                 </div>
-                <div className="hidden lg:block">
-                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-xl border border-white/10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620]/20 to-[#003662]/20 flex items-center justify-center">
-                      <p className="text-white/50 text-sm">Image à ajouter</p>
+                <div className="block">
+                  <div className="relative w-full max-w-[34rem] mx-auto">
+                    <div className="relative w-full aspect-square overflow-hidden rounded-2xl bg-white shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+                      <Image
+                        src="/images/Silhouette_Geo_Colors.png"
+                        alt="Silhouette colorée PatrimEmotion"
+                        fill
+                        className="object-contain object-bottom scale-[1.12]"
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                      />
                     </div>
                   </div>
                 </div>
@@ -104,7 +120,7 @@ export default function MethodePage() {
         </section>
 
         {/* Une approche comportementale */}
-        <section className="bg-white pt-16 md:pt-24 pb-10 md:pb-12">
+        <section className="bg-white pt-16 md:pt-20 pb-16 md:pb-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
               Une approche comportementale appliquée aux décisions patrimoniales
@@ -124,7 +140,7 @@ export default function MethodePage() {
         </section>
 
         {/* Carte : trois regards (constat, démarche, fondements) */}
-        <section className="pt-10 md:pt-12 pb-20 md:pb-28 bg-white">
+        <section className="pt-16 md:pt-20 pb-20 md:pb-24 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="rounded-[2rem] p-[3px] bg-gradient-to-br from-[#9FB620] via-[#f4ca3a] to-[#9FB620] shadow-[0_28px_70px_rgba(0,54,98,0.14)]">
               <div className="rounded-[calc(2rem-3px)] bg-white px-7 py-10 md:px-11 md:py-12 lg:px-14 lg:py-16 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)]">
@@ -258,6 +274,19 @@ export default function MethodePage() {
                   <p className="pe-body-lead text-[#003662]/90 text-center max-w-2xl mx-auto">
                     Ces éléments permettent d&apos;observer certaines dynamiques décisionnelles liées aux choix patrimoniaux.
                   </p>
+                  <div className="flex justify-center pt-6">
+                    <a
+                      href="/Docs/LIVRE_BLANC_PATRIMEMOTION.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
+                    >
+                      Voir le livre blanc
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
               </div>
@@ -294,7 +323,7 @@ export default function MethodePage() {
                     tabIndex={0}
                     aria-labelledby={`${descId}-title`}
                     aria-describedby={descId}
-                    className="group relative flex h-[13rem] flex-col overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-b from-white/[0.14] to-white/[0.06] shadow-lg shadow-black/25 outline-none ring-1 ring-white/10 transition-all duration-300 hover:border-[#f4ca3a]/40 hover:shadow-xl hover:shadow-black/30 hover:ring-[#f4ca3a]/30 focus-visible:ring-2 focus-visible:ring-[#f4ca3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#003662] sm:h-[12.75rem] lg:h-[13rem]"
+                    className="group relative flex min-h-[12.75rem] flex-col overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-b from-white/[0.14] to-white/[0.06] shadow-lg shadow-black/25 outline-none ring-1 ring-white/10 transition-all duration-300 hover:border-[#f4ca3a]/40 hover:shadow-xl hover:shadow-black/30 hover:ring-[#f4ca3a]/30 focus-visible:ring-2 focus-visible:ring-[#f4ca3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#003662] lg:min-h-[13rem]"
                   >
                     <span
                       className="pointer-events-none absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-lg bg-[#f4ca3a]/90 text-xs font-bold text-[#003662] shadow-sm"
@@ -321,7 +350,7 @@ export default function MethodePage() {
                     </div>
                     <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl bg-[#001f3d]/98 px-2.5 py-3 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
                       <p
-                        className="mx-auto max-w-[95%] text-center text-balance font-sans text-[0.8125rem] font-normal leading-snug text-white/95 sm:text-sm sm:leading-snug"
+                        className="mx-auto max-w-[95%] text-center text-balance font-sans text-[0.8125rem] font-normal italic leading-snug text-white/95 sm:text-sm sm:leading-snug"
                         aria-hidden
                       >
                         {def}
@@ -332,7 +361,7 @@ export default function MethodePage() {
               })}
             </div>
 
-            <figure className="mb-10 overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-xl shadow-black/20">
+            <figure className="mb-10 mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-xl shadow-black/20">
               <Image
                 src={HUIT_PROFILS_IMAGE}
                 alt="Repérage des huit profils émotionnels patrimoniaux PatrimEmotion"
@@ -340,6 +369,7 @@ export default function MethodePage() {
                 height={788}
                 className="h-auto w-full object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
+                priority
               />
             </figure>
 
@@ -413,8 +443,17 @@ export default function MethodePage() {
               L&apos;analyse croisée de ces dimensions permet de mettre en évidence certaines cohérences ou tensions dans la manière d&apos;aborder les décisions patrimoniales.
             </p>
             {/* Image Radar Emotionnel PatrimEmotion — à insérer */}
-            <div className="rounded-2xl bg-[#003662]/5 border-2 border-dashed border-[#003662]/20 p-12 flex items-center justify-center min-h-[280px]">
-              <p className="text-[#003662]/60 text-sm">Image du Radar Emotionnel PatrimEmotion à insérer</p>
+            <div className="mx-auto w-fit rounded-2xl bg-white p-3 md:p-4">
+              <div className="relative w-full max-w-3xl overflow-hidden rounded-xl">
+                <Image
+                  src="/images/radar_patrimonial.png"
+                  alt="Radar patrimonial PatrimEmotion"
+                  width={1240}
+                  height={820}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 768px) 100vw, 900px"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -481,16 +520,15 @@ export default function MethodePage() {
             <p className="pe-body-lead text-[#003662]/90 mb-10 leading-relaxed text-center max-w-3xl mx-auto">
               Elle vise à fournir un cadre de compréhension et de dialogue autour des décisions patrimoniales.
             </p>
-            {/* Image site AM Courtage & Patrimoine + lien onglet PatrimEmotion */}
-            <div className="rounded-2xl bg-[#003662]/5 border-2 border-dashed border-[#003662]/20 p-12 flex flex-col items-center justify-center min-h-[200px] gap-4">
-              <p className="text-[#003662]/60 text-sm">Image du site AM Courtage & Patrimoine à insérer</p>
+            {/* CTA vers le site AMCP */}
+            <div className="rounded-2xl border border-[#003662]/15 bg-[#003662]/5 p-8 md:p-10 flex flex-col items-center justify-center min-h-[200px] gap-4">
               <a
                 href={SITE_AMCP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#003662] font-semibold hover:text-[#f4ca3a] transition-colors inline-flex items-center gap-2"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#004a7a]"
               >
-                Découvrir l&apos;onglet PatrimEmotion sur le site AMCP
+                Découvrir un modèle de restitution PatrimEmotion sur le site AMCP
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>

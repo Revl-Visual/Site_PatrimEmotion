@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PATRIMEMOTION_DEMO_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -212,8 +213,10 @@ export default function CadreEthiqueScientifiquePage() {
               <p className="pe-body-lead text-white leading-relaxed mb-6">
                 PatrimEmotion® utilise une mécanique psychométrique classique : <strong className="text-[#f4ca3a]">questionnaire à échelle de Likert</strong> (réponses graduées), <strong className="text-[#f4ca3a]">scores agrégés par dimensions</strong> (axes thématiques), <strong className="text-[#f4ca3a]">normalisation</strong> (mise à l&apos;échelle commune) et <strong className="text-[#f4ca3a]">classification par dominantes</strong> pour dégager un profil de fonctionnement et un style d&apos;accompagnement.
               </p>
-              <p className="pe-body-lead text-[#f4ca3a] font-semibold mb-4 leading-relaxed">
-                En bref : mesure graduée → scores par axes → mise à l&apos;échelle → lecture par dominantes.
+              <p className="pe-body-lead text-[#f4ca3a] mb-4 leading-relaxed">
+                <strong className="font-bold">
+                  En bref : mesure graduée → scores par axes → mise à l&apos;échelle → lecture par dominantes.
+                </strong>
               </p>
               <p className="pe-body-lead text-white/90 leading-relaxed">
                 Cette chaîne correspond aux <strong className="text-[#f4ca3a]">standards usuels</strong> de la psychométrie appliquée et garantit une approche <strong className="text-[#f4ca3a]">structurée, interprétable et reproductible</strong>.
@@ -320,6 +323,38 @@ export default function CadreEthiqueScientifiquePage() {
               <p className="pe-body-lead text-white leading-relaxed">
                 L&apos;objectif : permettre au conseiller d&apos;<strong className="text-[#9FB620]">intégrer la dimension émotionnelle</strong> sans alourdir le processus d&apos;accompagnement, tout en offrant au client une <strong className="text-[#9FB620]">expérience claire et valorisante</strong>.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* En savoir plus */}
+        <section className="bg-white py-16 md:py-24">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
+              En savoir plus
+            </h2>
+            <p className="pe-body-lead text-[#003662]/85 mb-8 text-center max-w-3xl mx-auto">
+              Consultez la présentation complète du cadre éthique et scientifique PatrimEmotion®.
+            </p>
+
+            <div className="rounded-2xl overflow-hidden border border-[#003662]/15 bg-[#003662]/5 shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
+              <iframe
+                src="/Docs/Powerpoint_page_ethique_et_scientifique.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                title="L&apos;équilibre des forces"
+                className="h-[70vh] min-h-[520px] w-full"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <a
+                href={PATRIMEMOTION_DEMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg shadow-[#f4ca3a]/25 transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl"
+              >
+                Demander une démo
+              </a>
             </div>
           </div>
         </section>

@@ -3,7 +3,11 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReportModelMarquee from "@/components/ReportModelMarquee";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import {
+  AMCP_CONTACT_URL,
+  PATRIMEMOTION_DEMO_URL,
+  PATRIMEMOTION_QUESTIONNAIRE_URL,
+} from "@/lib/amcp";
 
 /** Présentation vidéo — `public/video/video_prez_patrim_emotion.{mp4|webm|mov}` */
 const VIDEO_PREZ_PATRIM_EMOTION = "/video/video_prez_patrim_emotion.mp4";
@@ -20,8 +24,8 @@ export default function Home() {
             <div className="max-w-6xl mx-auto">
               <div className="grid gap-12 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0 lg:grid-rows-[auto_auto_auto_auto_auto] lg:items-start">
                 {/* Ligne 1 : baseline (largeur = contenu) */}
-                <span className="pe-eyebrow w-fit max-w-full px-4 py-2 rounded-full bg-[#f4ca3a]/20 text-[#f4ca3a] mb-6 lg:col-start-1 lg:row-start-1">
-                  Vos émotions s&apos;alignent, votre patrimoine s&apos;élève
+                <span className="pe-eyebrow w-fit max-w-full px-4 py-2 rounded-full bg-[#f4ca3a]/20 text-[#f4ca3a] mb-6 italic lg:col-start-1 lg:row-start-1">
+                  &quot;Vos émotions s&apos;alignent, votre patrimoine s&apos;élève&quot;
                 </span>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-1" aria-hidden />
                 {/* Ligne 2 : titre */}
@@ -150,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Section 1 : Pourquoi PatrimEmotion® existe ? (remontée pour apparaître en partie sous le hero) */}
-      <section className="section-dark relative z-10 -mt-16 md:-mt-24 pt-28 pb-24 md:pt-36 md:pb-32 transition-colors overflow-hidden">
+      <section className="section-dark relative z-10 -mt-8 md:-mt-12 pt-24 pb-20 md:pt-28 md:pb-24 transition-colors overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -195,7 +199,7 @@ export default function Home() {
       {/* Sections produit : alternance bleu / blanc */}
       <div className="my-0">
           {/* Section 2 : Ce que permet PatrimEmotion® - FOND BLEU */}
-          <section className="relative bg-[#003662] py-24 md:py-32 transition-colors overflow-hidden">
+          <section className="relative bg-[#003662] py-16 md:py-24 transition-colors overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(244,202,58,0.08),transparent)] pointer-events-none" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="max-w-6xl mx-auto">
@@ -309,7 +313,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-12 flex justify-center">
+              <div className="mt-8 flex justify-center">
                 <a
                   href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                   target="_blank"
@@ -326,7 +330,7 @@ export default function Home() {
           </section>
 
           {/* Section 3 : À qui s'adresse PatrimEmotion® ? + Navigation (3 cartes) - FOND BLANC */}
-          <section className="bg-white py-24 md:py-32 transition-colors">
+          <section className="bg-white py-16 md:py-24 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
               <h2 className="pe-heading-section text-center text-[#003662] mb-4">
                 À qui s&apos;adresse <span className="text-[#f4ca3a]">PatrimEmotion® ?</span>
@@ -398,7 +402,7 @@ export default function Home() {
               </div>
               <div className="mt-14 flex justify-center md:mt-16">
                 <a
-                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                  href={PATRIMEMOTION_DEMO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl md:text-lg rounded-xl"
@@ -415,7 +419,7 @@ export default function Home() {
       </div>
 
       {/* Section Demander une démo - Fond vert */}
-      <section className="pt-24 pb-40 md:pt-32 md:pb-48 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
+      <section className="py-16 md:py-24 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -446,7 +450,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href={AMCP_CONTACT_URL}
                 target="_blank"
@@ -454,6 +458,14 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
               >
                 Prendre RDV
+              </a>
+              <a
+                href="https://www.am-courtage-et-patrimoine.fr/a-propos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white/90 px-10 py-4 font-semibold text-[#003662] transition-all duration-200 hover:scale-[1.02] hover:bg-white rounded-xl"
+              >
+                Fondateur de la méthode
               </a>
             </div>
           </div>
@@ -487,7 +499,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="-mt-16 relative z-50">
+      <div className="-mt-8 relative z-50">
         <Footer />
       </div>
     </>

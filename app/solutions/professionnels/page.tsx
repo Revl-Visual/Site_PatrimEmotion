@@ -2,7 +2,10 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractifPro from "@/components/ConstatInteractifPro";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import {
+  PATRIMEMOTION_DEMO_URL,
+  PATRIMEMOTION_DEVIS_URL,
+} from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -77,7 +80,7 @@ export default function ProfessionnelsPage() {
           <div className="hero-encart pt-16 pb-12 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[320px] md:min-h-[360px]">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[260px] md:min-h-[320px]">
                   <div>
                     <h1 className="pe-heading-hero text-white mb-5">
                       <span className="text-[#f4ca3a]">PatrimEmotion®</span>
@@ -89,21 +92,13 @@ export default function ProfessionnelsPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                        href={PATRIMEMOTION_DEMO_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all text-base shadow-lg hover:scale-[1.02]"
                       >
                         Demander une démo
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                      </a>
-                      <a
-                        href={AMCP_CONTACT_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border-2 border-white/40 transition-all text-base"
-                      >
-                        Demander un devis
                       </a>
                     </div>
                   </div>
@@ -154,6 +149,16 @@ export default function ProfessionnelsPage() {
                 <p className="text-[#003662]/90 text-sm mb-4">L&apos;approche comportementale permet d&apos;apporter des repères utiles.</p>
                 <p className="text-[#003662] font-semibold text-sm">PatrimEmotion® intègre cette dimension dans la relation client.</p>
               </div>
+            </div>
+            <div className="mt-10 flex justify-center">
+              <a
+                href={PATRIMEMOTION_DEVIS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#002a4a] text-white font-semibold px-6 py-3.5 rounded-xl border-2 border-[#003662] transition-all text-base"
+              >
+                Demander un devis
+              </a>
             </div>
           </div>
         </section>
@@ -281,6 +286,14 @@ export default function ProfessionnelsPage() {
                 ))}
               </div>
             </div>
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/licences"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003662] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#002a4a]"
+              >
+                Voir les licences
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -354,29 +367,6 @@ export default function ProfessionnelsPage() {
           </div>
         </section>
 
-        {/* CTA final — fond blanc derrière l'encart */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <div className="rounded-2xl border-2 border-[#003662]/15 bg-white shadow-lg p-8 md:p-10 text-center">
-              <h2 className="pe-heading-section text-[#003662] mb-6">Découvrir la licence PatrimEmotion®</h2>
-              <p className="text-[#003662]/90 mb-8 leading-relaxed">Formez-vous à la méthode et intégrez le profilage émotionnel patrimonial dans votre pratique.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
-                >
-                  Demander une démo
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </a>
-                <Link href="/certification-licences" className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#003662]/90 text-white font-semibold px-8 py-4 rounded-xl border-2 border-[#003662] transition-all">
-                  Voir les licences
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>
