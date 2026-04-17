@@ -339,14 +339,14 @@ export default function CadreEthiqueScientifiquePage() {
 
             <div className="rounded-2xl overflow-hidden border border-[#003662]/15 bg-[#003662]/5 shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
               <iframe
-                src="/Docs/Powerpoint_page_ethique_et_scientifique.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                src="/Docs/Prez_methode_PatrimEmotion_Site_Internet.pdf#toolbar=0&navpanes=0&scrollbar=0"
                 title="L&apos;équilibre des forces"
                 className="h-[70vh] min-h-[520px] w-full"
                 loading="lazy"
               />
             </div>
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 md:mt-10 flex min-h-[7rem] md:min-h-[8rem] items-center justify-center">
               <a
                 href={PATRIMEMOTION_DEMO_URL}
                 target="_blank"

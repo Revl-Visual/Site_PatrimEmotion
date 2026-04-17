@@ -3,7 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractif from "@/components/ConstatInteractif";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 const AMCP_PATRIMEMOTION_URL = "https://www.am-courtage-et-patrimoine.fr/patrimemotion";
@@ -106,7 +106,7 @@ export default function ParticuliersPage() {
                       Comprenez votre relation à l&apos;argent, au risque et à la décision pour construire un patrimoine aligné et durable.
                     </p>
                     <a
-                      href={AMCP_CONTACT_URL}
+                      href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all text-base mt-6 shadow-lg hover:shadow-xl hover:scale-[1.02]"
@@ -153,7 +153,7 @@ export default function ParticuliersPage() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                 target="_blank"

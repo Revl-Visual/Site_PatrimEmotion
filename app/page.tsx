@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReportModelMarquee from "@/components/ReportModelMarquee";
 import {
-  AMCP_CONTACT_URL,
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_QUESTIONNAIRE_URL,
 } from "@/lib/amcp";
@@ -181,7 +180,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mt-12 md:mt-16 flex justify-center">
+            <div className="mt-24 md:mt-32 flex justify-center">
               <Link
                 href="/cadre-ethique-scientifique"
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 text-base shadow-md shadow-[#003662]/15 hover:shadow-lg hover:scale-[1.02]"
@@ -252,15 +251,15 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 4 : Votre accompagnement - FOND VERT */}
+          {/* Section 4 : Notre accompagnement - FOND VERT */}
           <section className="relative py-24 md:py-32 transition-colors overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <h2 className="pe-heading-section text-center text-white mb-4">
-                Votre accompagnement
+                Notre accompagnement
               </h2>
               <p className="pe-body-lead text-white/90 text-center mb-16 max-w-2xl mx-auto">
-                Un processus simple en <span className="text-[#f4ca3a] font-semibold">4 étapes</span> pour transformer votre relation au patrimoine
+                Un processus simple en <span className="text-[#003662] font-semibold">4 étapes</span> pour transformer votre relation au patrimoine
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
@@ -313,12 +312,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-8 flex justify-center">
+              <div className="mt-24 md:mt-32 flex justify-center">
                 <a
                   href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#f4ca3a]/25 hover:shadow-xl hover:shadow-[#f4ca3a]/30 hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a85] text-[#f4ca3a] font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/25 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
                 >
                   Répondre au questionnaire
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -400,7 +399,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="mt-14 flex justify-center md:mt-16">
+              <div className="mt-24 md:mt-32 flex justify-center">
                 <a
                   href={PATRIMEMOTION_DEMO_URL}
                   target="_blank"
@@ -450,9 +449,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-24 md:mt-32 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href={AMCP_CONTACT_URL}
+                href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
@@ -460,30 +459,27 @@ export default function Home() {
                 Prendre RDV
               </a>
               <a
-                href="https://www.am-courtage-et-patrimoine.fr/a-propos"
+                href="https://www.am-courtage-et-patrimoine.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/90 px-10 py-4 font-semibold text-[#003662] transition-all duration-200 hover:scale-[1.02] hover:bg-white rounded-xl"
               >
-                Fondateur de la méthode
+                Fondatrice de la méthode
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Découvrir la méthode — vidéo */}
+      {/* Présentation PatrimEmotion en vidéo */}
       <section className="relative z-20 bg-white py-16 md:py-24" aria-labelledby="decouvrir-methode-title">
         <div className="container mx-auto px-4 md:px-6">
           <h2
             id="decouvrir-methode-title"
-            className="pe-heading-section mb-4 text-center text-balance text-[#003662] md:mb-8"
+            className="pe-heading-section mb-8 text-center text-balance text-[#003662] text-4xl md:text-5xl"
           >
-            Découvrir la <span className="text-[#f4ca3a]">méthode</span>
+            Présentation <span className="text-[#f4ca3a]">PatrimEmotion</span> en vidéo
           </h2>
-          <p className="pe-body-lead mx-auto mb-8 max-w-2xl text-center text-balance text-[#003662]/85">
-            Présentation de l&apos;approche PatrimEmotion® en vidéo.
-          </p>
           <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
             <video
               className="aspect-video w-full bg-black object-contain"

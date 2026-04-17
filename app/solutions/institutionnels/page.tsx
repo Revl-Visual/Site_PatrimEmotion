@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_DEVIS_URL } from "@/lib/amcp";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -207,7 +207,7 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               La restitution constitue un support pédagogique permettant d&apos;éclairer la réflexion patrimoniale et de faciliter les échanges entre le professionnel et son client.
             </p>
-            <div className="mt-10 text-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <a
                 href={PATRIMEMOTION_DEMO_URL}
                 target="_blank"
@@ -283,7 +283,7 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               Cette approche permet de proposer un cadre d&apos;analyse reproductible et adaptable à différents environnements professionnels.
             </p>
-            <div className="mt-10 text-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <Link
                 href="/tarifs"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-white/95"
@@ -337,7 +337,7 @@ export default function InstitutionnelsPage() {
             <p className="text-[#003662]/80 text-center leading-[1.75]">
               La méthode contribue ainsi à renforcer la dimension humaine du conseil patrimonial dans un environnement financier de plus en plus complexe.
             </p>
-            <div className="mt-10 text-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <Link
                 href="/tarifs"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#002a4a]"
@@ -367,9 +367,9 @@ export default function InstitutionnelsPage() {
             <p className="text-white/85 text-center leading-[1.75]">
               L&apos;objectif est d&apos;apporter une lecture comportementale complémentaire dans les parcours clients et les démarches d&apos;accompagnement patrimonial.
             </p>
-            <div className="mt-10 text-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <a
-                href={PATRIMEMOTION_DEVIS_URL}
+                href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-[#f5d055]"
@@ -392,7 +392,7 @@ export default function InstitutionnelsPage() {
             <p className="text-[#003662]/80 text-center mb-10 leading-[1.75]">
               PatrimEmotion® propose une approche structurée permettant d&apos;intégrer cette dimension comportementale dans l&apos;accompagnement des clients.
             </p>
-            <div className="rounded-lg border border-[#003662]/15 bg-slate-50/50 p-8 text-center">
+            <div className="rounded-lg border border-[#003662]/15 bg-slate-50/50 p-8 text-center min-h-[14rem] md:min-h-[16rem] flex flex-col items-center justify-center">
               <p className="pe-body-lead text-[#003662] font-medium mb-5 leading-relaxed">
                 Vous souhaitez intégrer PatrimEmotion® dans votre organisation ou en savoir plus sur les modalités de déploiement ?
               </p>
@@ -499,7 +499,7 @@ export default function InstitutionnelsPage() {
             </div>
             <div className="mt-12 text-center">
               <a
-                href={PATRIMEMOTION_DEVIS_URL}
+                href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-8 py-3.5 font-semibold text-white transition-colors hover:bg-[#002a4a]"

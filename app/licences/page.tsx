@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import {
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_DEVIS_URL,
-  PATRIMEMOTION_QUESTIONNAIRE_URL,
+  PATRIMEMOTION_LICENCE_FORM_URL,
 } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -191,7 +191,7 @@ export default function LicencesPage() {
                   PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution et la pédagogie de l&apos;échange.
                 </p>
               </div>
-              <div className="flex justify-center mt-8">
+              <div className="mt-24 md:mt-32 flex justify-center">
                 <a
                   href={PATRIMEMOTION_DEVIS_URL}
                   target="_blank"
@@ -268,9 +268,9 @@ export default function LicencesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-10 flex justify-center">
+                <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
                   <a
-                    href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                    href={PATRIMEMOTION_LICENCE_FORM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3.5 font-semibold text-[#003662] shadow-lg shadow-black/20 transition hover:scale-[1.02] hover:bg-[#f5d055]"

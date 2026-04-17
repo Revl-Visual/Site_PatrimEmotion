@@ -12,3 +12,7 @@ export const PATRIMEMOTION_DEMO_URL =
 /** Formulaire de demande de devis (Gmail) */
 export const PATRIMEMOTION_DEVIS_URL =
   "https://mail.google.com/mail/u/2/?ogbl#label/Suivi+client/FMfcgzQgLPKBMQmCgZbXjRFdSXxRBVrP";
+
+/** Formulaire d'etude du besoin pour les licences PatrimEmotion® */
+export const PATRIMEMOTION_LICENCE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";

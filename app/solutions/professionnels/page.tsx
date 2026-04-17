@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ConstatInteractifPro from "@/components/ConstatInteractifPro";
 import {
   PATRIMEMOTION_DEMO_URL,
-  PATRIMEMOTION_DEVIS_URL,
+  PATRIMEMOTION_LICENCE_FORM_URL,
 } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 };
 
 const PERMET_DE = [
-  "structurer la relation client",
-  "objectiver l'émotionnel dans le conseil",
-  "renforcer la pertinence des stratégies proposées",
-  "se différencier durablement",
+  "Structurer la relation client",
+  "Objectiver l'émotionnel dans le conseil",
+  "Renforcer la pertinence des stratégies proposées",
+  "Se différencier durablement",
 ];
 
 const METHODE_COMPLEMENTAIRE = [
@@ -61,13 +61,6 @@ const CREDIBILITE = [
   "Méthode propriétaire basée sur une expérience de plus de 20 ans dans le domaine de la gestion de patrimoine et des affaires dans le milieu des banques et assurances et en tant qu'indépendante, sur une clientèle de particuliers et chefs d'entreprise.",
   "Marque et licence déposées auprès de l'INPI.",
   "Activité exercée dans le cadre réglementaire applicable aux Conseillers en Investissements Financiers, sous le contrôle de l'Autorité des Marchés Financiers. PatrimEmotion® est exploitée par des cabinets partenaires selon un cadre contractuel strict. Toute demande de bilan ou de licence est soumise à validation.",
-];
-
-const FAQ_PRO = [
-  {
-    q: "Pourquoi les clients prennent parfois de mauvaises décisions patrimoniales ?",
-    r: "Dans la pratique, les décisions patrimoniales ne sont jamais uniquement rationnelles.",
-  },
 ];
 
 export default function ProfessionnelsPage() {
@@ -123,7 +116,7 @@ export default function ProfessionnelsPage() {
         <ConstatInteractifPro />
 
         {/* Contexte — 3 cartes pour alléger la lecture */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="pt-8 md:pt-10 pb-16 md:pb-24 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="pe-heading-section text-[#003662] mb-12 text-center">
               Comprendre les mécanismes qui influencent vos clients
@@ -150,9 +143,9 @@ export default function ProfessionnelsPage() {
                 <p className="text-[#003662] font-semibold text-sm">PatrimEmotion® intègre cette dimension dans la relation client.</p>
               </div>
             </div>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <a
-                href={PATRIMEMOTION_DEVIS_URL}
+                href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#002a4a] text-white font-semibold px-6 py-3.5 rounded-xl border-2 border-[#003662] transition-all text-base"
@@ -286,7 +279,7 @@ export default function ProfessionnelsPage() {
                 ))}
               </div>
             </div>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <Link
                 href="/licences"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003662] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#002a4a]"
@@ -348,21 +341,6 @@ export default function ProfessionnelsPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 md:py-24 section-alt-blue">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="pe-heading-section text-[#003662] mb-10 text-center">Questions fréquentes</h2>
-            <div className="space-y-6">
-              {FAQ_PRO.map((item, i) => (
-                <div key={i} className="rounded-2xl bg-white border border-[#003662]/10 p-6 shadow-sm">
-                  <p className="font-semibold text-[#003662] mb-2">« {item.q} »</p>
-                  <p className="text-[#003662]/90">{item.r}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

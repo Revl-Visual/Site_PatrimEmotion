@@ -41,7 +41,7 @@ const PREMIUM_FEATURES = [
 
 export default function TarifsPage() {
   const LICENCE_FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSfYua3beU09XUzd2DqzM-eQA8eHeRCDeZ3NwvHwZX0dZFBKUg/viewform";
+    "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
   const DEVIS_FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
   const CONTACT_URL = "https://www.am-courtage-et-patrimoine.fr/contact";
@@ -118,7 +118,7 @@ export default function TarifsPage() {
                   Institutionnelle / Embedded (non disponible pour le moment)
                 </p>
               </div>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
                 <a
                   href={DEVIS_FORM_URL}
                   target="_blank"
@@ -278,7 +278,7 @@ export default function TarifsPage() {
                 </div>
               </a>
             </div>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-24 md:mt-32 flex justify-center">
               <a
                 href={LICENCE_FORM_URL}
                 target="_blank"
