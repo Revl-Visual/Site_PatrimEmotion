@@ -2,55 +2,62 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProfilsFlipCards from "@/components/ProfilsFlipCards";
 import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
-// URL du site AM Courtage & Patrimoine (onglet PatrimEmotion)
-const SITE_AMCP_URL = "https://www.am-courtage-et-patrimoine.fr/patrimemotion";
+/** Ancienne vidéo d’accueil — `public/video/video_prez_patrim_emotion.mp4` */
+const VIDEO_PREZ_PATRIM_EMOTION = "/video/video_prez_patrim_emotion.mp4";
 
-/** Schéma des 8 profils — `public/images/8_profils.{png|jpg|webp}` (adapter l’extension si besoin). */
-const HUIT_PROFILS_IMAGE = "/images/8_profils.png";
-
+/** Visuels par profil — `public/images/8_Profils/` (sensible à la casse sous Linux). */
 const PROFILS_EMOTIONNELS = [
   {
     main: "Sécuritaire",
     sub: "Harmonieux",
     def: "Tendance prudente et stable, besoin de repères, priorité à la protection et à la sérénité.",
+    image: "/images/8_Profils/securitaire_harmonieux.png",
   },
   {
     main: "Visionnaire",
     sub: "Structuré",
     def: "Se projette, planifie, recherche cohérence et clarté des étapes ; besoin de cadre.",
+    image: "/images/8_Profils/visionnaire_structure.png",
   },
   {
     main: "Explorateur",
     sub: "Raisonné",
     def: "Curieux et ouvert, besoin de comprendre ; avance avec méthode et vérifications.",
+    image: "/images/8_Profils/explorateur_raisonne.png",
   },
   {
     main: "Protecteur",
     sub: "Engagé",
     def: "Priorité aux proches, sens du devoir ; décisions guidées par protection et cohérence familiale.",
+    image: "/images/8_Profils/Protecteur_engage.png",
   },
   {
     main: "Décideur",
     sub: "Contrôlant",
     def: "Besoin de maîtrise, décisions structurées ; recherche de contrôle et de visibilité.",
+    image: "/images/8_Profils/decideur_controlant.png",
   },
   {
     main: "Prudent",
     sub: "Ambivalent",
     def: "Hésitant(e) face au risque, besoin d’être rassuré(e) ; avance mieux avec paliers et repères.",
+    image: "/images/8_Profils/prudent_ambivalent.png",
   },
   {
     main: "Résilient",
     sub: "Adaptatif",
     def: "Flexible, s’adapte, avance malgré l’incertitude ; sait ajuster en cours de route.",
+    image: "/images/8_Profils/resilient_adaptatif.png",
   },
   {
     main: "Visionnaire",
     sub: "Intuitif",
     def: "Décide vite à l’intuition, vision long terme ; besoin d’un cadre léger pour sécuriser.",
+    image: "/images/8_Profils/visionnaire_intuitif.png",
   },
 ] as const;
 
@@ -92,7 +99,7 @@ export default function MethodePage() {
                     </a>
                     <a
                       href="/cadre-ethique-scientifique"
-                      className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base border border-white/35"
+                      className="mt-2 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base border border-white/35 md:mt-3"
                     >
                       Base scientifique
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -190,7 +197,7 @@ export default function MethodePage() {
                   </p>
                   <div className="flex justify-center pt-6">
                     <Link
-                      href="/#decouvrir-methode-title"
+                      href="#presentation-patrimemotion-video"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
                     >
                       Présentation en vidéo
@@ -274,7 +281,9 @@ export default function MethodePage() {
                   </p>
                   <div className="flex justify-center pt-6">
                     <a
-                      href="/demander-livre-blanc"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
                     >
                       Demander le livre blanc
@@ -307,67 +316,9 @@ export default function MethodePage() {
               La méthode identifie 8 profils émotionnels patrimoniaux :
             </p>
             <p className="mx-auto mb-6 max-w-2xl text-balance text-sm text-white/80">
-              Survolez une carte pour afficher la définition courte.
+              Cliquez sur une carte pour la retourner et lire la définition sur le verso.
             </p>
-            <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-              {PROFILS_EMOTIONNELS.map(({ main, sub, def }, i) => {
-                const label = `${main} ${sub}`;
-                const descId = `profil-pe-def-${i}`;
-                return (
-                  <article
-                    key={`${main}-${sub}-${i}`}
-                    tabIndex={0}
-                    aria-labelledby={`${descId}-title`}
-                    aria-describedby={descId}
-                    className="group relative flex min-h-[12.75rem] flex-col overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-b from-white/[0.14] to-white/[0.06] shadow-lg shadow-black/25 outline-none ring-1 ring-white/10 transition-all duration-300 hover:border-[#f4ca3a]/40 hover:shadow-xl hover:shadow-black/30 hover:ring-[#f4ca3a]/30 focus-visible:ring-2 focus-visible:ring-[#f4ca3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#003662] lg:min-h-[13rem]"
-                  >
-                    <span
-                      className="pointer-events-none absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-lg bg-[#f4ca3a]/90 text-xs font-bold text-[#003662] shadow-sm"
-                      aria-hidden
-                    >
-                      {i + 1}
-                    </span>
-                    <span id={`${descId}-title`} className="sr-only">
-                      {label}
-                    </span>
-                    <span id={descId} className="sr-only">
-                      {def}
-                    </span>
-                    <div className="flex h-full flex-col items-center justify-center px-4 pb-3 pt-9 text-center transition-opacity duration-300 group-hover:pointer-events-none group-hover:opacity-0 group-focus-within:pointer-events-none group-focus-within:opacity-0">
-                      <p
-                        className="mb-1 font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[#f4ca3a] sm:text-sm"
-                        aria-hidden
-                      >
-                        {main}
-                      </p>
-                      <p className="font-serif text-base font-medium text-white sm:text-lg" aria-hidden>
-                        {sub}
-                      </p>
-                    </div>
-                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl bg-[#001f3d]/98 px-2.5 py-3 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
-                      <p
-                        className="mx-auto max-w-[95%] text-center text-balance font-sans text-[0.8125rem] font-normal italic leading-snug text-white/95 sm:text-sm sm:leading-snug"
-                        aria-hidden
-                      >
-                        {def}
-                      </p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            <figure className="mb-10 mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-xl shadow-black/20">
-              <Image
-                src={HUIT_PROFILS_IMAGE}
-                alt="Repérage des huit profils émotionnels patrimoniaux PatrimEmotion"
-                width={1400}
-                height={788}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
-                priority
-              />
-            </figure>
+            <ProfilsFlipCards profiles={PROFILS_EMOTIONNELS} />
 
             <div className="mb-6 rounded-2xl bg-[#9FB620] p-6 text-center md:p-8">
               <p className="pe-body-lead mx-auto mb-4 max-w-3xl text-balance font-semibold text-white">
@@ -483,50 +434,30 @@ export default function MethodePage() {
           </div>
         </section>
 
-        {/* La restitution PatrimEmotion® */}
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
-              La restitution <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+        {/* Présentation PatrimEmotion en vidéo (anciennement sur l’accueil) */}
+        <section
+          id="presentation-patrimemotion-video"
+          className="relative z-20 bg-white py-16 md:py-24"
+          aria-labelledby="presentation-patrimemotion-video-title"
+        >
+          <div className="container mx-auto px-4 md:px-6">
+            <h2
+              id="presentation-patrimemotion-video-title"
+              className="pe-heading-section mb-8 text-center text-balance text-[#003662] text-4xl md:text-5xl"
+            >
+              Présentation <span className="text-[#f4ca3a]">PatrimEmotion</span> en vidéo
             </h2>
-            <p className="pe-body-lead text-[#003662]/90 mb-6 text-center max-w-2xl mx-auto">
-              La restitution repose notamment sur :
-            </p>
-            <ul className="space-y-3 pe-body-lead text-[#003662]/90 mb-8 max-w-3xl mx-auto">
-              <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                <span>une analyse multi-axes</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                <span>l&apos;identification d&apos;un ou plusieurs profils dominants</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                <span>l&apos;observation de certaines cohérences ou tensions décisionnelles</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                <span>la mise en évidence de repères pour structurer la réflexion patrimoniale</span>
-              </li>
-            </ul>
-            <p className="pe-body-lead text-[#003662]/90 mb-4 leading-relaxed text-center max-w-3xl mx-auto">
-              La méthode ne propose pas de produits financiers.
-            </p>
-            <p className="pe-body-lead text-[#003662]/90 mb-10 leading-relaxed text-center max-w-3xl mx-auto">
-              Elle vise à fournir un cadre de compréhension et de dialogue autour des décisions patrimoniales.
-            </p>
-            {/* CTA vers le site AMCP */}
-            <div className="rounded-2xl border border-[#003662]/15 bg-[#003662]/5 p-8 md:p-10 flex flex-col items-center justify-center min-h-[200px] gap-4">
-              <a
-                href={SITE_AMCP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#004a7a]"
+            <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
+              <video
+                className="aspect-video w-full bg-black object-contain"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Vidéo de présentation de la méthode PatrimEmotion"
               >
-                Découvrir un modèle de restitution PatrimEmotion sur le site AMCP
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
+                <source src={VIDEO_PREZ_PATRIM_EMOTION} type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+              </video>
             </div>
           </div>
         </section>

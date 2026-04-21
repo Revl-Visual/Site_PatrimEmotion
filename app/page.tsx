@@ -8,8 +8,9 @@ import {
   PATRIMEMOTION_QUESTIONNAIRE_URL,
 } from "@/lib/amcp";
 
-/** Présentation vidéo — `public/video/video_prez_patrim_emotion.{mp4|webm|mov}` */
-const VIDEO_PREZ_PATRIM_EMOTION = "/video/video_prez_patrim_emotion.mp4";
+/** Accueil — `public/video/Émotion_&_Conseil_Patrimonial.mp4` */
+const VIDEO_EMOTION_CONSEIL_PATRIMONIAL =
+  "/video/" + encodeURIComponent("Émotion_&_Conseil_Patrimonial.mp4");
 
 export default function Home() {
   return (
@@ -471,14 +472,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Présentation PatrimEmotion en vidéo */}
-      <section className="relative z-20 bg-white py-16 md:py-24" aria-labelledby="decouvrir-methode-title">
+      {/* Émotion & conseil patrimonial — vidéo */}
+      <section className="relative z-20 bg-white py-16 md:py-24" aria-labelledby="emotion-conseil-patrimonial-title">
         <div className="container mx-auto px-4 md:px-6">
           <h2
-            id="decouvrir-methode-title"
+            id="emotion-conseil-patrimonial-title"
             className="pe-heading-section mb-8 text-center text-balance text-[#003662] text-4xl md:text-5xl"
           >
-            Présentation <span className="text-[#f4ca3a]">PatrimEmotion</span> en vidéo
+            Émotion <span className="text-[#f4ca3a]">{'& '}conseil patrimonial</span>
           </h2>
           <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
             <video
@@ -486,9 +487,9 @@ export default function Home() {
               controls
               playsInline
               preload="metadata"
-              aria-label="Vidéo de présentation de la méthode PatrimEmotion"
+              aria-label="Vidéo Émotion et conseil patrimonial"
             >
-              <source src={VIDEO_PREZ_PATRIM_EMOTION} type="video/mp4" />
+              <source src={VIDEO_EMOTION_CONSEIL_PATRIMONIAL} type="video/mp4" />
               Votre navigateur ne prend pas en charge la lecture de cette vidéo.
             </video>
           </div>
