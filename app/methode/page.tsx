@@ -98,10 +98,12 @@ export default function MethodePage() {
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>
                     <a
-                      href="/cadre-ethique-scientifique"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-2 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base border border-white/35 md:mt-3"
                     >
-                      Base scientifique
+                      Recevoir mon livre
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>
                   </div>
@@ -286,7 +288,7 @@ export default function MethodePage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
                     >
-                      Demander le livre blanc
+                      Base scientifique
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
@@ -348,6 +350,19 @@ export default function MethodePage() {
             <p className="pe-body-lead mx-auto max-w-3xl text-balance leading-relaxed text-white/95">
               Les profils ne sont ni figés ni exclusifs : ils peuvent évoluer avec l&apos;âge, les projets de vie ou le contexte patrimonial.
             </p>
+            <div className="mt-8 flex justify-center translate-y-4 md:translate-y-6">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055]"
+              >
+                Demander le livre blanc
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </section>
 

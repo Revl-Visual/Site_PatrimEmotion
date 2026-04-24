@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 
 const LICENCES_URL = "/licences";
 const METHODE_SCIENTIFIQUE_URL = "/methode";
+const PATRIMEMOTION_ARTICLE_URL =
+  "https://www.linkedin.com/posts/%E2%AD%90%EF%B8%8Faur%C3%A9lie-monteil%E2%AD%90%EF%B8%8F-a74165154_activity-7430188629987221504-OEGS/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACUK2bgBS4HC6DmWyEaGOoP-tzaC0YWxd1o";
 
 const METHODE_STRUCTUREE = [
   "structurée et reproductible",
@@ -116,12 +118,12 @@ export default function InstitutionnelsPage() {
                 </div>
                 <div className="mt-10">
                   <a
-                    href={AMCP_CONTACT_URL}
+                    href={PATRIMEMOTION_ARTICLE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-white text-[#003662] hover:bg-white/95 font-semibold px-7 py-3.5 rounded-lg transition-colors text-sm tracking-wide"
                   >
-                    Prendre contact
+                    Lire l&apos;article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
                 </div>
@@ -150,16 +152,18 @@ export default function InstitutionnelsPage() {
             <p className="text-[#003662]/80 text-center mb-10 leading-[1.75] max-w-2xl mx-auto">
               Elle peut être utilisée comme un outil pédagogique d&apos;aide à la compréhension du comportement patrimonial, venant compléter les dispositifs de connaissance client existants.
             </p>
-            <div className="text-center">
-              <a
-                href={AMCP_CONTACT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#003662] hover:bg-[#002a4a] text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm"
-              >
-                Prendre contact
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
+            <div className="mx-auto mt-4 max-w-5xl">
+              <div className="rounded-[2rem] overflow-hidden bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
+                <div className="relative w-full aspect-[16/10]">
+                  <Image
+                    src="/images/Carte_mentale_zone_secu_institutionnels.png"
+                    alt="Carte mentale zone sécu institutionnels"
+                    fill
+                    className="object-contain bg-white"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -510,21 +514,6 @@ export default function InstitutionnelsPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="rounded-2xl overflow-hidden bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
-              <div className="relative w-full aspect-[16/10]">
-                <Image
-                  src="/images/Carte_mentale_zone_secu_institutionnels.png"
-                  alt="Carte mentale zone sécu institutionnels"
-                  fill
-                  className="object-contain bg-white"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

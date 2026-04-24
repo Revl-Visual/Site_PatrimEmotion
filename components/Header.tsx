@@ -76,9 +76,9 @@ export default function Header() {
         }`}
       >
         <nav className="container mx-auto px-4 py-3 md:py-4">
-          <div className="flex items-center">
-            {/* Navigation centrée */}
-            <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
+          <div className="flex items-center justify-between md:justify-center">
+            {/* Bloc desktop unique centré : navigation + CTA */}
+            <div className="hidden md:flex items-center gap-8">
               <Link href="/" className="text-[#003662] hover:text-[#002a4a] font-semibold transition-colors text-base outline-none focus:outline-none focus-visible:outline-none">
                 Accueil
               </Link>
@@ -139,15 +139,12 @@ export default function Header() {
               <Link href="/tarifs" className="text-[#003662] hover:text-[#002a4a] font-semibold transition-colors text-base outline-none focus:outline-none focus-visible:outline-none">
                 Tarifs
               </Link>
-            </div>
-            
-            {/* CTA Button à droite */}
-            <div className="hidden md:block">
+
               <a
                 href={AMCP_CONTACT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#f4ca3a] text-[#003662] px-6 py-2.5 rounded-lg transition-all font-semibold text-base hover:bg-[#f5d055] shadow-sm outline-none focus:outline-none focus-visible:outline-none"
+                className="ml-12 bg-[#f4ca3a] text-[#003662] px-6 py-2.5 rounded-lg transition-all font-semibold text-base hover:bg-[#f5d055] shadow-sm outline-none focus:outline-none focus-visible:outline-none"
               >
                 Prendre contact
               </a>

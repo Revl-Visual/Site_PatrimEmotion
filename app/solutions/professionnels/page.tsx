@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractifPro from "@/components/ConstatInteractifPro";
@@ -96,14 +97,17 @@ export default function ProfessionnelsPage() {
                     </div>
                   </div>
                   <div className="hidden lg:flex justify-center items-center">
-                    <div className="w-full max-w-sm rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-8 shadow-xl">
-                      <p className="pe-body-lead text-white font-semibold text-center mb-4">Licence PatrimEmotion®</p>
-                      <div className="space-y-3">
-                        <div className="h-2 rounded-full bg-[#f4ca3a]" style={{ width: "90%" }} />
-                        <div className="h-2 rounded-full bg-[#f4ca3a]/80" style={{ width: "75%" }} />
-                        <div className="h-2 rounded-full bg-[#f4ca3a]/60" style={{ width: "85%" }} />
+                    <div className="w-full max-w-sm">
+                      <div className="overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
+                        <Image
+                          src="/images/licences_PatrimEmotion.png"
+                          alt="Licence PatrimEmotion"
+                          width={640}
+                          height={480}
+                          className="h-auto w-full"
+                          sizes="(max-width: 1024px) 0px, 384px"
+                        />
                       </div>
-                      <p className="text-white text-sm text-center mt-4">Relation client · Stratégie · Différenciation</p>
                     </div>
                   </div>
                 </div>
