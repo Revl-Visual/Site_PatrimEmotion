@@ -193,7 +193,7 @@ export default function LicencesPage() {
               </div>
               <div className="mt-24 md:mt-32 flex justify-center">
                 <a
-                  href={PATRIMEMOTION_DEVIS_URL}
+                  href="https://www.am-courtage-et-patrimoine.fr/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02]"

@@ -289,7 +289,7 @@ export default function InstitutionnelsPage() {
             </p>
             <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
               <Link
-                href="/tarifs"
+                href="/tarifs#licence-institutionnelle"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#003662] transition-colors hover:bg-white/95"
               >
                 Licence institutionnelle

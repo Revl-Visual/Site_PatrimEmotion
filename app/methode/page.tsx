@@ -73,9 +73,9 @@ export default function MethodePage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative bg-[#003662] py-16 md:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(244,202,58,0.08),transparent)] pointer-events-none" />
-          <div className="container mx-auto px-4 relative z-10">
+        <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
+          <div className="hero-encart pt-14 pb-10 md:pt-16 md:pb-12 px-6 md:px-12">
+            <div className="container mx-auto relative z-10">
             <h1 className="pe-heading-hero w-full xl:text-[3.25rem] text-white mb-10 md:mb-12 text-center">
               La méthode qui relie les <span className="text-[#f4ca3a]">émotions</span> aux
               <br />
@@ -122,6 +122,7 @@ export default function MethodePage() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -200,7 +201,7 @@ export default function MethodePage() {
                   <div className="flex justify-center pt-6">
                     <Link
                       href="#presentation-patrimemotion-video"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f7d45c] md:text-base"
                     >
                       Présentation en vidéo
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -283,9 +284,7 @@ export default function MethodePage() {
                   </p>
                   <div className="flex justify-center pt-6">
                     <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/cadre-ethique-scientifique"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
                     >
                       Base scientifique
