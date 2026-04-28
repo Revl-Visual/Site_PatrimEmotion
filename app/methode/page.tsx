@@ -351,7 +351,7 @@ export default function MethodePage() {
             </p>
             <div className="mt-8 flex justify-center translate-y-4 md:translate-y-6">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
+                href="https://forms.gle/CbJhpd3Ph4GjSGji7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055]"
