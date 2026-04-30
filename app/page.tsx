@@ -3,10 +3,6 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReportModelMarquee from "@/components/ReportModelMarquee";
-import {
-  PATRIMEMOTION_DEMO_URL,
-  PATRIMEMOTION_QUESTIONNAIRE_URL,
-} from "@/lib/amcp";
 
 /** Accueil — `public/video/Émotion_&_Conseil_Patrimonial.mp4` */
 const VIDEO_EMOTION_CONSEIL_PATRIMONIAL =
@@ -30,7 +26,10 @@ export default function Home() {
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-1" aria-hidden />
                 {/* Ligne 2 : titre */}
                 <h1 className="pe-heading-hero text-white mb-4 lg:col-start-1 lg:row-start-2">
-                  <span className="font-medium text-[#f4ca3a]">PatrimEmotion®</span>
+                  <span className="font-medium">
+                    <span className="text-[#9FB620]">Patrim</span>
+                    <span className="text-[#f4ca3a]">Emotion®</span>
+                  </span>
                 </h1>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-2" aria-hidden />
                 {/* Lignes 3–4 : texte blanc + mockups alignés sur ce bloc uniquement */}
@@ -38,58 +37,25 @@ export default function Home() {
                   La méthode qui relie personnalité, émotions et décisions patrimoniales.
                 </p>
                 <div
-                  className="hidden lg:flex lg:col-start-2 lg:row-start-3 lg:row-span-2 justify-center items-stretch min-h-0 self-stretch w-full max-w-md justify-self-end"
+                  className="hidden lg:flex lg:col-start-2 lg:row-start-3 lg:row-span-2 justify-center items-stretch min-h-0 self-stretch w-full max-w-xl justify-self-end"
                   style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}
                 >
-                  <div className="grid grid-cols-2 gap-2 w-full min-h-0 h-full">
-                    {/* Fenêtre 1 : graphique (flèche au-dessus des barres) */}
+                  <div className="grid grid-cols-2 gap-3 w-full min-h-0 h-full">
+                    {/* Fenêtre 1 : graphique */}
                     <div className="bg-white/95 rounded-xl shadow-xl overflow-hidden border border-neutral-200/80 flex flex-col min-h-0 h-full">
                       <div className="flex gap-1.5 px-2 py-1.5 bg-neutral-100 border-b border-neutral-200 shrink-0">
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                       </div>
-                      <div className="p-2 flex flex-col flex-1 min-h-[100px] bg-white">
-                        {/* Courbe jaune = ligne brisée sur les sommets des barres (28→88 % de hauteur) */}
-                        <div className="relative flex flex-1 min-h-[3.5rem] items-end gap-0.5">
-                          <div className="flex-1 rounded-t bg-[#003662]/70" style={{ height: "28%" }} />
-                          <div className="flex-1 rounded-t bg-[#003662]/75" style={{ height: "40%" }} />
-                          <div className="flex-1 rounded-t bg-[#003662]/80" style={{ height: "52%" }} />
-                          <div className="flex-1 rounded-t bg-[#f4ca3a]/90" style={{ height: "64%" }} />
-                          <div className="flex-1 rounded-t bg-[#9FB620]/85" style={{ height: "76%" }} />
-                          <div className="flex-1 rounded-t bg-[#003662]" style={{ height: "88%" }} />
-                          <svg
-                            className="absolute inset-0 h-full w-full pointer-events-none text-[#f4ca3a] overflow-visible"
-                            viewBox="0 0 100 100"
-                            preserveAspectRatio="none"
-                            style={{ transform: "translateY(-25px)" }}
-                            aria-hidden
-                          >
-                            <defs>
-                              <marker
-                                id="heroTrendArrow"
-                                markerWidth="4"
-                                markerHeight="4"
-                                refX="3.8"
-                                refY="2"
-                                orient="auto"
-                              >
-                                <path d="M0,0 L4,2 L0,4 Z" fill="currentColor" />
-                              </marker>
-                            </defs>
-                            {/* Centres des 6 barres ; y = 100 - hauteur% (origine en haut du bloc graphique) */}
-                            <path
-                              d="M 8.33 70 L 25 58 L 41.67 46 L 58.33 34 L 75 22 L 91.67 10"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="butt"
-                              strokeLinejoin="round"
-                              markerEnd="url(#heroTrendArrow)"
-                              opacity={0.92}
-                            />
-                          </svg>
-                        </div>
+                      <div className="relative flex-1 min-h-[130px] bg-white">
+                        <Image
+                          src="/images/Hero_chart.jpg"
+                          alt="Graphique PatrimEmotion"
+                          fill
+                          className="object-cover object-center"
+                          sizes="(max-width: 1024px) 0vw, 25vw"
+                        />
                       </div>
                     </div>
                     {/* Fenêtre 2 : silhouette */}
@@ -99,19 +65,19 @@ export default function Home() {
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                         <div className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
                       </div>
-                      <div className="relative flex-1 min-h-[100px] bg-white">
+                      <div className="relative flex-1 min-h-[130px] bg-white">
                         <Image
                           src="/images/Silhouette_Geo_Colors.png"
                           alt=""
                           fill
-                          className="object-contain object-center p-1"
+                          className="object-cover object-center"
                           sizes="(max-width: 1024px) 0vw, 25vw"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="pe-body-lead text-white/90 mb-8 max-w-xl lg:col-start-1 lg:row-start-4 lg:self-start">
+                <p className="pe-body-lead text-white/90 mb-8 max-w-xl text-justify lg:col-start-1 lg:row-start-4 lg:self-start">
                   PatrimEmotion® est une méthode d&apos;analyse psychométrique appliquée au patrimoine.
                   Elle permet de mieux comprendre le rapport à l&apos;argent, les mécanismes émotionnels et les comportements décisionnels afin de construire des stratégies patrimoniales cohérentes, durables et assumées.
                 </p>
@@ -154,15 +120,15 @@ export default function Home() {
       </section>
 
       {/* Section 1 : Pourquoi PatrimEmotion® existe ? (remontée pour apparaître en partie sous le hero) */}
-      <section className="section-dark relative z-10 -mt-8 md:-mt-12 pt-24 pb-20 md:pt-28 md:pb-24 transition-colors overflow-hidden">
+      <section className="section-dark relative z-10 -mt-12 md:-mt-16 pt-20 pb-12 md:pt-24 md:pb-14 transition-colors overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-6">
-                  Pourquoi PatrimEmotion® existe ?
+                  Pourquoi <span className="text-[#9FB620]">Patrim</span><span className="text-[#f4ca3a]">Emotion®</span> existe ?
                 </h2>
-                <p className="pe-body-lead text-[#003662]/90">
+                <p className="pe-body-lead text-[#003662]/90 text-justify">
                   Les décisions patrimoniales ne sont jamais uniquement rationnelles.
                   Elles sont influencées par l&apos;histoire personnelle, les émotions, les biais cognitifs, la perception du risque, la temporalité et le besoin de sécurité ou de liberté.
                 </p>
@@ -176,12 +142,26 @@ export default function Home() {
                 <p className="pe-kicker text-[#f4ca3a] mb-3">
                   La méthode PatrimEmotion® est née<br />de ce constat :
                 </p>
-                <p className="pe-body-lead font-semibold text-white">
+                <p className="pe-body-lead font-semibold text-white text-justify">
                   Un patrimoine mal aligné avec la personnalité et les émotions génère des arbitrages incohérents, de l&apos;anxiété, des renoncements… et souvent de mauvaises décisions dans le temps.
                 </p>
               </div>
             </div>
-            <div className="mt-24 md:mt-32 flex justify-center">
+            <div className="mt-10 md:mt-12">
+              <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
+                <video
+                  className="aspect-video w-full bg-black object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label="Vidéo Émotion et conseil patrimonial"
+                >
+                  <source src={VIDEO_EMOTION_CONSEIL_PATRIMONIAL} type="video/mp4" />
+                  Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                </video>
+              </div>
+            </div>
+            <div className="mt-10 md:mt-12 flex justify-center">
               <Link
                 href="/cadre-ethique-scientifique"
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 text-base shadow-md shadow-[#003662]/15 hover:shadow-lg hover:scale-[1.02]"
@@ -253,11 +233,11 @@ export default function Home() {
           </section>
 
           {/* Section 4 : Notre accompagnement - FOND VERT */}
-          <section className="relative py-24 md:py-32 transition-colors overflow-hidden">
+          <section className="relative pt-24 pb-12 md:pt-32 md:pb-14 transition-colors overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <h2 className="pe-heading-section text-center text-white mb-4">
-                Notre accompagnement
+                Découvrir le méthode
               </h2>
               <p className="pe-body-lead text-white/90 text-center mb-16 max-w-2xl mx-auto">
                 Un processus simple en <span className="text-[#003662] font-semibold">4 étapes</span> pour transformer votre relation au patrimoine
@@ -313,9 +293,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-24 md:mt-32 flex justify-center">
+              <div className="mt-12 md:mt-14 flex justify-center">
                 <a
-                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScJDYDqoi6B59UMs-f2Oj1PzTqHgIjwUTkJgYbvFzhRTtJpTA/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a85] text-[#f4ca3a] font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/25 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
@@ -333,9 +313,9 @@ export default function Home() {
           <section className="bg-white py-16 md:py-24 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
               <h2 className="pe-heading-section text-center text-[#003662] mb-4">
-                À qui s&apos;adresse <span className="text-[#f4ca3a]">PatrimEmotion® ?</span>
+                À qui s&apos;adresse <span className="text-[#9FB620]">Patrim</span><span className="text-[#f4ca3a]">Emotion® ?</span>
               </h2>
-              <p className="pe-body-lead text-[#003662]/80 text-center mb-16 max-w-3xl mx-auto">
+              <p className="pe-body-lead text-[#003662]/80 text-center text-justify mb-16 max-w-3xl mx-auto">
                 PatrimEmotion® s&apos;adresse à différents publics souhaitant intégrer une lecture comportementale et émotionnelle dans la compréhension des décisions patrimoniales.
               </p>
               <div className="max-w-6xl mx-auto space-y-6">
@@ -345,10 +325,10 @@ export default function Home() {
                   </div>
                   <div className="lg:col-span-9">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Particuliers, dirigeants et professions libérales</h3>
-                    <p className="pe-body text-[#003662]/90 mb-2">
+                    <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les personnes souhaitant mieux comprendre la manière dont leurs émotions influencent leurs décisions patrimoniales.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90">
+                    <p className="pe-body-small text-[#003662]/90 text-justify">
                       La démarche PatrimEmotion® permet de mettre en lumière vos préférences décisionnelles et votre rapport à l&apos;incertitude, à la sécurité et à la projection dans le temps. Selon l&apos;accompagnement choisi : Indice et Profil Émotionnel Patrimonial, Rapport PatrimEmotion® ou Bilan complet — un outil pédagogique pour éclairer vos décisions.
                     </p>
                   </div>
@@ -365,10 +345,10 @@ export default function Home() {
                   </div>
                   <div className="lg:col-span-9">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Professionnels du patrimoine</h3>
-                    <p className="pe-body text-[#003662]/90 mb-2">
+                    <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les conseillers, CGP, assureurs, experts-comptables souhaitant intégrer une lecture comportementale structurée et une prise en compte des biais dans la relation client.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90">
+                    <p className="pe-body-small text-[#003662]/90 text-justify">
                       La licence PatrimEmotion® enrichit la connaissance client et améliore la qualité du dialogue patrimonial, avec plusieurs niveaux selon vos besoins.
                     </p>
                   </div>
@@ -385,10 +365,10 @@ export default function Home() {
                   </div>
                   <div className="lg:col-span-9">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Institutions et plateformes</h3>
-                    <p className="pe-body text-[#003662]/90 mb-2">
+                    <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les acteurs institutionnels, réseaux patrimoniaux ou plateformes souhaitant une approche comportementale structurée et reproductible dans leurs parcours clients.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90">
+                    <p className="pe-body-small text-[#003662]/90 text-justify">
                       Déploiement en solution intégrée, licence marque blanche ou module d&apos;aide — pour compléter vos outils existants avec un éclairage comportemental et pédagogique.
                     </p>
                   </div>
@@ -400,14 +380,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="mt-24 md:mt-32 flex justify-center">
+              <div className="mt-12 md:mt-14 flex justify-center">
                 <a
-                  href={PATRIMEMOTION_DEMO_URL}
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl md:text-lg rounded-xl"
                 >
-                  Demander une démo (15 min)
+                  Recevoir le livre PatrimEmotion
                   <svg className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -431,9 +411,6 @@ export default function Home() {
                 <p className="pe-body-lead text-white/90 mb-6">
                   Prenez rendez-vous avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
                 </p>
-                <p className="text-white/80">
-                  Choisissez votre créneau et échangeons avec un expert.
-                </p>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                 <div className="relative h-72 sm:h-[22rem] md:h-[28rem] w-full">
@@ -450,14 +427,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-24 md:mt-32 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-12 md:mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
+                href="https://www.am-courtage-et-patrimoine.fr/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
               >
-                Prendre RDV
+                Prenez contact avec un expert
               </a>
               <a
                 href="https://www.am-courtage-et-patrimoine.fr/"
@@ -465,33 +442,9 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/90 px-10 py-4 font-semibold text-[#003662] transition-all duration-200 hover:scale-[1.02] hover:bg-white rounded-xl"
               >
-                Fondatrice de la méthode
+                La fondatrice
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Émotion & conseil patrimonial — vidéo */}
-      <section className="relative z-20 bg-white py-16 md:py-24" aria-labelledby="emotion-conseil-patrimonial-title">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2
-            id="emotion-conseil-patrimonial-title"
-            className="pe-heading-section mb-8 text-center text-balance text-[#003662] text-4xl md:text-5xl"
-          >
-            Émotion <span className="text-[#f4ca3a]">{'& '}conseil patrimonial</span>
-          </h2>
-          <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
-            <video
-              className="aspect-video w-full bg-black object-contain"
-              controls
-              playsInline
-              preload="metadata"
-              aria-label="Vidéo Émotion et conseil patrimonial"
-            >
-              <source src={VIDEO_EMOTION_CONSEIL_PATRIMONIAL} type="video/mp4" />
-              Votre navigateur ne prend pas en charge la lecture de cette vidéo.
-            </video>
           </div>
         </div>
       </section>

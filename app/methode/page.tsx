@@ -87,7 +87,7 @@ export default function MethodePage() {
                   <p className="max-w-2xl mx-auto pe-body-lead lg:text-[1.35rem] text-white font-medium leading-relaxed text-center mb-8 md:mb-10 rounded-2xl border border-white/20 bg-white/[0.07] px-6 py-6 md:px-8 md:py-7 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-[2px]">
                     Parce que les choix patrimoniaux ne sont pas uniquement financiers, ils doivent aussi être cohérents avec votre personnalité, votre manière de décider et votre parcours de vie.
                   </p>
-                  <div className="flex justify-center items-center w-full flex-col gap-3">
+                  <div className="mt-3 md:mt-4 flex justify-center items-center w-full flex-col gap-3">
                     <a
                       href="/Docs/Prez_methode_PatrimEmotion_Site_Internet.pdf"
                       target="_blank"
@@ -131,11 +131,11 @@ export default function MethodePage() {
         <section className="bg-white py-10 md:py-14">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
-              Une approche comportementale appliquée aux décisions patrimoniales
+              Une approche <span className="text-[#f4ca3a]">compertementale</span> appliquée aux <span className="text-[#9FB620]">décisions patrimoniales</span>
             </h2>
             <div className="space-y-6 pe-body-lead text-[#003662]/90 leading-relaxed">
               <p className="text-center">
-                <strong className="text-[#003662]">PatrimEmotion®</strong> est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
+                <strong><span className="text-[#003662]">Patrim</span><span className="text-[#f4ca3a]">EmotionR</span></strong> est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
               </p>
               <p className="text-center">
                 Elle vise à mettre en lumière les dimensions émotionnelles et décisionnelles qui peuvent influencer la manière d&apos;aborder l&apos;argent, le risque, le temps et les projets patrimoniaux.
@@ -155,7 +155,7 @@ export default function MethodePage() {
               <header className="mb-10 md:mb-14 text-center">
                 <h2 className="pe-heading-section text-[#003662] max-w-4xl mx-auto">
                   Trois regards sur notre{" "}
-                  <span className="text-[#f4ca3a]">méthode</span>
+                  <span className="text-[#003662]">méthode</span>
                 </h2>
                 <div
                   aria-hidden
@@ -168,9 +168,8 @@ export default function MethodePage() {
                   <h3 className="pe-heading-feature text-[#003662] mb-6 text-center">
                     Le constat
                   </h3>
-                  <p className="pe-body-lead text-[#003662]/90 mb-8 leading-relaxed text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 mb-3 leading-relaxed text-left max-w-2xl mx-auto">
                     Les décisions patrimoniales ne reposent pas uniquement sur des raisonnements financiers.
-                    <br />
                     De nombreux facteurs interviennent dans les arbitrages :
                   </p>
                   <ul className="space-y-3 pe-body-lead text-[#003662]/90 mb-8 max-w-xl mx-auto">
@@ -195,10 +194,10 @@ export default function MethodePage() {
                       <span>biais cognitifs et émotionnels</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#003662]/90 leading-relaxed text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 leading-relaxed text-left max-w-2xl mx-auto">
                     Ces éléments peuvent expliquer les écarts entre les décisions théoriquement optimales et les décisions réellement prises.
                   </p>
-                  <div className="flex justify-center pt-6">
+                  <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
                     <Link
                       href="#presentation-patrimemotion-video"
                       className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f7d45c] md:text-base"
@@ -211,34 +210,33 @@ export default function MethodePage() {
 
                 <div className="rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent border border-[#9FB620]/25 px-5 py-7 md:px-8 md:py-8">
                   <h3 className="pe-heading-feature text-[#003662] mb-6 text-center">
-                    La démarche <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+                    <span className="text-[#f4ca3a]">La démarche</span> <span className="text-[#003662]">Patrim</span>Emotion®
                   </h3>
-                  <p className="pe-body-lead text-[#003662]/90 mb-8 leading-relaxed text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 mb-3 leading-relaxed text-left max-w-2xl mx-auto">
                     La méthode PatrimEmotion® vise à apporter une lecture structurée de ces dimensions comportementales afin d&apos;éclairer les décisions patrimoniales.
-                    <br />
                     Elle permet notamment de :
                   </p>
                   <ul className="space-y-3 pe-body-lead text-[#003662]/90 mb-8 max-w-xl mx-auto">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
                       <span>mieux comprendre la manière dont les décisions patrimoniales sont abordées</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
                       <span>identifier certaines préférences décisionnelles</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
                       <span>apporter des repères pour structurer la réflexion patrimoniale</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#003662]/90 leading-relaxed text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 leading-relaxed text-left max-w-2xl mx-auto">
                     PatrimEmotion® constitue ainsi un outil pédagogique d&apos;aide à la compréhension et au dialogue patrimonial.
                   </p>
-                  <div className="flex justify-center pt-6">
+                  <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
                     <Link
                       href="/#modele-rapport"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#9FB620] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#a8c025] md:text-base"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055] md:text-base"
                     >
                       Modèle de rapport
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -246,11 +244,11 @@ export default function MethodePage() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-gradient-to-br from-[#003662]/[0.06] to-[#9FB620]/[0.05] border border-[#003662]/10 px-5 py-7 md:px-8 md:py-8">
-                  <h3 className="pe-heading-feature text-[#003662] mb-6 text-center">
+                <div className="rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.18] to-[#9FB620]/[0.08] border border-[#9FB620]/35 px-5 py-7 md:px-8 md:py-8">
+                  <h3 className="pe-heading-feature text-[#9FB620] mb-6 text-center">
                     Les fondements de la méthode
                   </h3>
-                  <p className="pe-body-lead text-[#003662]/90 mb-6 text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 mb-3 text-left max-w-2xl mx-auto">
                     La méthode s&apos;appuie notamment sur des approches issues :
                   </p>
                   <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#003662]/90 mb-8">
@@ -268,7 +266,7 @@ export default function MethodePage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                      <span>de la perception émotionnelle du risque</span>
+                      <span>de la gestion de l&apos;incertitude</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
@@ -279,13 +277,13 @@ export default function MethodePage() {
                       <span>des mécanismes de décision et de délégation</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#003662]/90 text-center max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#003662]/90 text-left max-w-2xl mx-auto">
                     Ces éléments permettent d&apos;observer certaines dynamiques décisionnelles liées aux choix patrimoniaux.
                   </p>
-                  <div className="flex justify-center pt-6">
+                  <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
                     <a
                       href="/cadre-ethique-scientifique"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a] md:text-base"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#9FB620] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#a8c025] md:text-base"
                     >
                       Base scientifique
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -304,7 +302,7 @@ export default function MethodePage() {
         <section id="profils" className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto max-w-6xl px-4 text-center">
             <h2 className="pe-heading-section mb-6 text-balance text-white">
-              Les profils <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+              Les profils <span className="text-[#9FB620]">Patrim</span><span className="text-[#f4ca3a]">Emotion®</span>
             </h2>
             <p className="pe-body-lead mx-auto mb-4 max-w-3xl text-balance leading-relaxed text-white/95">
               Il n&apos;existe ni bon ni mauvais profil patrimonial.
@@ -356,7 +354,7 @@ export default function MethodePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055]"
               >
-                Demander le livre blanc
+                Recevoir le livre blanc
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -369,7 +367,7 @@ export default function MethodePage() {
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
-              Les axes d&apos;analyse
+              Les 6 axes d&apos;analyse
             </h2>
             <p className="pe-body-lead text-[#003662]/90 mb-6 text-center">
               La méthode PatrimEmotion® s&apos;appuie sur plusieurs axes d&apos;observation, notamment :
@@ -381,7 +379,7 @@ export default function MethodePage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                <span>la perception émotionnelle de l&apos;incertitude</span>
+                <span>la gestion de l&apos;incertitude</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
@@ -420,35 +418,35 @@ export default function MethodePage() {
         </section>
 
         {/* Comment se déroule l'accompagnement ? */}
-        <section className="bg-[#003662] py-16 md:py-24">
+        <section className="bg-[#9FB620] py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-white mb-4 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-4 text-center">
               Comment se déroule l&apos;accompagnement ?
             </h2>
-            <p className="pe-body-lead text-white/90 mb-12 text-center max-w-2xl mx-auto">
+            <p className="pe-body-lead text-[#003662]/90 mb-12 text-center max-w-2xl mx-auto">
               La démarche PatrimEmotion® se déroule généralement en trois étapes :
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-16">
-              <div className="rounded-2xl bg-white/10 border border-white/20 p-6 md:p-8 text-center">
+              <div className="rounded-2xl bg-[#b9cf4e] shadow-[0_10px_28px_rgba(0,54,98,0.18)] p-6 md:p-8 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                <h3 className="pe-heading-card text-white mb-2 text-center">Questionnaire Patrim&apos;Emotion</h3>
-                <p className="text-white/90 text-sm leading-relaxed">36 questions psychométriques permettant de déterminer votre profil émotionnel patrimonial.</p>
+                <h3 className="pe-heading-card text-[#003662] mb-2 text-center">Questionnaire Patrim&apos;Emotion</h3>
+                <p className="text-[#003662]/90 text-sm leading-relaxed">36 questions psychométriques permettant de déterminer votre profil émotionnel patrimonial.</p>
               </div>
-              <div className="rounded-2xl bg-white/10 border border-white/20 p-6 md:p-8 text-center">
+              <div className="rounded-2xl bg-[#b9cf4e] shadow-[0_10px_28px_rgba(0,54,98,0.18)] p-6 md:p-8 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                <h3 className="pe-heading-card text-white mb-2 text-center">Analyse et restitution avec un conseiller</h3>
-                <p className="text-white/90 text-sm leading-relaxed">Présentation du profil émotionnel patrimonial et des principaux repères issus de l&apos;analyse.</p>
+                <h3 className="pe-heading-card text-[#003662] mb-2 text-center">Analyse et restitution avec un conseiller</h3>
+                <p className="text-[#003662]/90 text-sm leading-relaxed">Présentation du profil émotionnel patrimonial et des principaux repères issus de l&apos;analyse.</p>
               </div>
-              <div className="rounded-2xl bg-white/10 border border-white/20 p-6 md:p-8 text-center">
+              <div className="rounded-2xl bg-[#b9cf4e] shadow-[0_10px_28px_rgba(0,54,98,0.18)] p-6 md:p-8 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                <h3 className="pe-heading-card text-white mb-2 text-center">Échanges et structuration de la réflexion patrimoniale</h3>
-                <p className="text-white/90 text-sm leading-relaxed">Mise en perspective des éléments identifiés afin d&apos;éclairer les décisions patrimoniales futures.</p>
+                <h3 className="pe-heading-card text-[#003662] mb-2 text-center">Échanges et structuration de la réflexion patrimoniale</h3>
+                <p className="text-[#003662]/90 text-sm leading-relaxed">Mise en perspective des éléments identifiés afin d&apos;éclairer les décisions patrimoniales futures.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Présentation PatrimEmotion en vidéo (anciennement sur l’accueil) */}
+        {/* Présentation PatrimEmotion en vidéo */}
         <section
           id="presentation-patrimemotion-video"
           className="relative z-20 bg-white py-16 md:py-24"
@@ -461,17 +459,18 @@ export default function MethodePage() {
             >
               Présentation <span className="text-[#f4ca3a]">PatrimEmotion</span> en vidéo
             </h2>
-            <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
-              <video
-                className="aspect-video w-full bg-black object-contain"
-                controls
-                playsInline
-                preload="metadata"
-                aria-label="Vidéo de présentation de la méthode PatrimEmotion"
+            <div className="mx-auto flex max-w-5xl justify-center overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 px-6 py-10 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
+              <a
+                href="https://www.youtube.com/watch?v=hl4XuN-ezho"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3.5 text-base font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a]"
               >
-                <source src={VIDEO_PREZ_PATRIM_EMOTION} type="video/mp4" />
-                Votre navigateur ne prend pas en charge la lecture de cette vidéo.
-              </video>
+                Ouvrir la vidéo dans un nouvel onglet
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
         </section>
