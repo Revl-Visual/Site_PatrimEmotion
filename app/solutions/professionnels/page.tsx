@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractifPro from "@/components/ConstatInteractifPro";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import {
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_LICENCE_FORM_URL,
@@ -84,17 +85,18 @@ export default function ProfessionnelsPage() {
                     <p className="pe-body-lead text-white/95 max-w-xl leading-relaxed mb-6">
                       PatrimEmotion® est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales. Elle permet d&apos;apporter un éclairage complémentaire sur la manière dont les clients perçoivent l&apos;argent, le risque, le temps et l&apos;incertitude.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <a
+                    <CtaRow spacing="none" className="gap-3 sm:justify-start">
+                      <CtaButton
                         href={PATRIMEMOTION_DEMO_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all text-base shadow-lg hover:scale-[1.02]"
+                        variant="yellow-elevated"
+                        className="text-base font-semibold"
                       >
                         Demander une démo
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                      </a>
-                    </div>
+                      </CtaButton>
+                    </CtaRow>
                   </div>
                   <div className="hidden lg:flex justify-center items-center">
                     <div className="w-full max-w-sm">
@@ -147,16 +149,17 @@ export default function ProfessionnelsPage() {
                 <p className="text-[#003662] font-semibold text-sm">PatrimEmotion® intègre cette dimension dans la relation client.</p>
               </div>
             </div>
-            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
-              <a
+            <CtaRow>
+              <CtaButton
                 href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#002a4a] text-white font-semibold px-6 py-3.5 rounded-xl border-2 border-[#003662] transition-all text-base"
+                variant="outline-navy"
+                className="text-base font-semibold"
               >
                 Demander un devis
-              </a>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
@@ -283,14 +286,11 @@ export default function ProfessionnelsPage() {
                 ))}
               </div>
             </div>
-            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
-              <Link
-                href="/licences"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003662] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#002a4a]"
-              >
+            <CtaRow>
+              <CtaButton href="/licences" variant="blue-navy" className="text-base font-semibold">
                 Voir les licences
-              </Link>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 

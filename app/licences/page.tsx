@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import {
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_DEVIS_URL,
@@ -153,16 +154,17 @@ export default function LicencesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
+                <CtaRow spacing="none">
+                  <CtaButton
                     href={PATRIMEMOTION_DEMO_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                    variant="yellow-elevated"
+                    className="font-semibold"
                   >
                     Demander une démonstration professionnelle
-                  </a>
-                </div>
+                  </CtaButton>
+                </CtaRow>
               </div>
             </div>
           </div>
@@ -191,16 +193,17 @@ export default function LicencesPage() {
                   PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution et la pédagogie de l&apos;échange.
                 </p>
               </div>
-              <div className="mt-24 md:mt-32 flex justify-center">
-                <a
+              <CtaRow>
+                <CtaButton
                   href="https://www.am-courtage-et-patrimoine.fr/contact"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                  variant="yellow-elevated"
+                  className="font-semibold"
                 >
                   Prendre contact
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -268,16 +271,17 @@ export default function LicencesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
-                  <a
+                <CtaRow>
+                  <CtaButton
                     href={PATRIMEMOTION_LICENCE_FORM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3.5 font-semibold text-[#003662] shadow-lg shadow-black/20 transition hover:scale-[1.02] hover:bg-[#f5d055]"
+                    variant="yellow-elevated"
+                    className="font-semibold shadow-black/20"
                   >
                     Demander ma licence
-                  </a>
-                </div>
+                  </CtaButton>
+                </CtaRow>
               </div>
             </div>
           </div>
@@ -289,11 +293,11 @@ export default function LicencesPage() {
             <p className="text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
               Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
             </p>
-            <div className="text-center mt-10">
-              <Link href={TARIFS_URL} className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-colors">
+            <CtaRow spacing="none" className="mt-10 md:mt-12 text-center">
+              <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
                 Voir la grille tarifaire
-              </Link>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 

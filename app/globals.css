@@ -120,6 +120,59 @@ input[type="checkbox"] {
   text-wrap: pretty;
 }
 
+/*
+  Rich text global:
+  - Mobile/tablette compacte: alignement à gauche (évite les "rivières")
+  - Desktop (md+): justification pour les blocs textuels en lecture
+  - Les zones centrées/droites gardent leur alignement
+*/
+.richtext main :where(p, li) {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .richtext main :where(p) {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}
+
+.richtext main :where(li) {
+  text-align: left;
+}
+
+.richtext main .text-center :where(p, li),
+.richtext main :where(p, li).text-center {
+  text-align: center;
+}
+
+.richtext main .text-right :where(p, li),
+.richtext main :where(p, li).text-right {
+  text-align: right;
+}
+
+/*
+  Rythme global des sections:
+  - Uniformise les espacements verticaux entre sections sur tout le site
+  - Conserve les exceptions évidentes:
+    * hero = première section de <main> (non ciblée)
+    * footer = hors <main>
+*/
+.site-root main > section:not(:first-of-type) {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .site-root main > section:not(:first-of-type) {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
 /* Supprimer les rings et outlines colorés */
 header:focus,
 header:focus-visible,

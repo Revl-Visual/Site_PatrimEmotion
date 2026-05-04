@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { AMCP_CONTACT_URL } from "@/lib/amcp";
@@ -110,14 +112,17 @@ export default function CertificationsPage() {
               <p className="text-[#003662]/85 mb-8">
                 Vous souhaitez cadrer un parcours certifiant pour votre structure ?
               </p>
-              <a
-                href={AMCP_CONTACT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-[#003662] px-8 py-3.5 font-semibold text-white transition-colors hover:bg-[#004a7a]"
-              >
-                Être contacté
-              </a>
+              <CtaRow spacing="none">
+                <CtaButton
+                  href={AMCP_CONTACT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="blue"
+                  className="text-base font-semibold"
+                >
+                  Être contacté
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>

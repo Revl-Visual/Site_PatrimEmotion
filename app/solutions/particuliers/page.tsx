@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractif from "@/components/ConstatInteractif";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -105,17 +106,20 @@ export default function ParticuliersPage() {
                     <p className="pe-body-lead text-white/95 max-w-xl leading-relaxed">
                       Comprenez votre relation à l&apos;argent, au risque et à la décision pour construire un patrimoine aligné et durable.
                     </p>
-                    <a
-                      href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all text-base mt-6 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-                    >
-                      Réserver mon Bilan Découverte
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </a>
+                    <div className="mt-6">
+                      <CtaButton
+                        href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant="yellow-elevated"
+                        className="text-base font-semibold"
+                      >
+                        Réserver mon Bilan Découverte
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </CtaButton>
+                    </div>
                   </div>
                   <div className="hidden lg:flex justify-center items-center">
                     <div className="w-full max-w-sm rounded-2xl bg-white/10 p-1 overflow-hidden">
@@ -153,17 +157,18 @@ export default function ParticuliersPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+            <CtaRow>
+              <CtaButton
                 href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                variant="yellow-elevated"
+                className="text-base font-semibold"
               >
                 Répondre au questionnaire
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
@@ -276,17 +281,18 @@ export default function ParticuliersPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex justify-center">
-                <a
+              <CtaRow spacing="none">
+                <CtaButton
                   href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-white/95 text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                  variant="white"
+                  className="text-base font-semibold"
                 >
                   Recevoir mon Bilan PatrimEmotion
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -320,15 +326,16 @@ export default function ParticuliersPage() {
               <h3 className="pe-heading-card-lg text-white mb-4">
                 Prêt(e) à décider autrement ?
               </h3>
-              <a
+              <CtaButton
                 href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 md:px-8 md:py-4 rounded-xl transition-all shadow-lg hover:scale-[1.02]"
+                variant="yellow-elevated"
+                className="text-base font-semibold"
               >
                 Réaliser mon bilan patrimonial émotionnel PatrimEmotion
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
+              </CtaButton>
             </div>
           </div>
         </section>

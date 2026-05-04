@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AMCP_CONTACT_URL } from "@/lib/amcp";
+import { CtaButton } from "@/components/CtaButton";
 
 const CONSTATS = [
   "Trop d'informations, trop de produits",
@@ -114,14 +115,16 @@ export default function ConstatInteractif() {
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
-                <a
+                <CtaButton
                   href={AMCP_CONTACT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold py-3.5 px-6 rounded-lg transition-colors"
+                  variant="yellow"
+                  fullWidth
+                  className="text-center font-semibold"
                 >
                   Nous contacter
-                </a>
+                </CtaButton>
               </>
             )}
           </div>

@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfilsFlipCards from "@/components/ProfilsFlipCards";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -87,26 +88,28 @@ export default function MethodePage() {
                   <p className="max-w-2xl mx-auto pe-body-lead lg:text-[1.35rem] text-white font-medium leading-relaxed text-center mb-8 md:mb-10 rounded-2xl border border-white/20 bg-white/[0.07] px-6 py-6 md:px-8 md:py-7 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-[2px]">
                     Parce que les choix patrimoniaux ne sont pas uniquement financiers, ils doivent aussi être cohérents avec votre personnalité, votre manière de décider et votre parcours de vie.
                   </p>
-                  <div className="mt-3 md:mt-4 flex justify-center items-center w-full flex-col gap-3">
-                    <a
+                  <CtaRow spacing="none" className="mt-3 md:mt-4 w-full flex-col gap-3">
+                    <CtaButton
                       href="/Docs/Prez_methode_PatrimEmotion_Site_Internet.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 bg-[#9FB620] hover:bg-[#a8c025] text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                      variant="green"
+                      className="text-base font-semibold"
                     >
                       Présentation de la méthode
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                    <a
+                    </CtaButton>
+                    <CtaButton
                       href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base border border-white/35 md:mt-3"
+                      variant="ghost-on-blue"
+                      className="text-base font-semibold md:mt-1"
                     >
                       Recevoir mon livre
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                  </div>
+                    </CtaButton>
+                  </CtaRow>
                 </div>
                 <div className="block">
                   <div className="relative w-full max-w-[34rem] mx-auto">
@@ -131,11 +134,11 @@ export default function MethodePage() {
         <section className="bg-white py-10 md:py-14">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
-              Une approche <span className="text-[#f4ca3a]">compertementale</span> appliquée aux <span className="text-[#9FB620]">décisions patrimoniales</span>
+              Une approche <span className="text-[#f4ca3a]">comportementale</span> appliquée aux <span className="text-[#9FB620]">décisions patrimoniales</span>
             </h2>
             <div className="space-y-6 pe-body-lead text-[#003662]/90 leading-relaxed">
               <p className="text-center">
-                <strong><span className="text-[#003662]">Patrim</span><span className="text-[#f4ca3a]">EmotionR</span></strong> est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
+                <strong><span className="text-[#003662]">Patrim</span><span className="text-[#f4ca3a]">Emotion®</span></strong> est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
               </p>
               <p className="text-center">
                 Elle vise à mettre en lumière les dimensions émotionnelles et décisionnelles qui peuvent influencer la manière d&apos;aborder l&apos;argent, le risque, le temps et les projets patrimoniaux.
@@ -198,19 +201,22 @@ export default function MethodePage() {
                     Ces éléments peuvent expliquer les écarts entre les décisions théoriquement optimales et les décisions réellement prises.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
-                    <Link
-                      href="#presentation-patrimemotion-video"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f7d45c] md:text-base"
+                    <CtaButton
+                      href="https://youtu.be/hl4XuN-ezho"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="blue"
+                      className="text-sm font-semibold md:text-base"
                     >
                       Présentation en vidéo
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+                    </CtaButton>
                   </div>
                 </div>
 
                 <div className="rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent border border-[#9FB620]/25 px-5 py-7 md:px-8 md:py-8">
                   <h3 className="pe-heading-feature text-[#003662] mb-6 text-center">
-                    <span className="text-[#f4ca3a]">La démarche</span> <span className="text-[#003662]">Patrim</span>Emotion®
+                    <span className="text-[#f4ca3a]">La démarche</span> <span className="text-[#003662]">Patrim</span><span className="text-[#f4ca3a]">Emotion®</span>
                   </h3>
                   <p className="pe-body-lead text-[#003662]/90 mb-3 leading-relaxed text-left max-w-2xl mx-auto">
                     La méthode PatrimEmotion® vise à apporter une lecture structurée de ces dimensions comportementales afin d&apos;éclairer les décisions patrimoniales.
@@ -234,13 +240,10 @@ export default function MethodePage() {
                     PatrimEmotion® constitue ainsi un outil pédagogique d&apos;aide à la compréhension et au dialogue patrimonial.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
-                    <Link
-                      href="/#modele-rapport"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055] md:text-base"
-                    >
+                    <CtaButton href="/#modele-rapport" variant="yellow" className="text-sm font-semibold md:text-base">
                       Modèle de rapport
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+                    </CtaButton>
                   </div>
                 </div>
 
@@ -281,15 +284,12 @@ export default function MethodePage() {
                     Ces éléments permettent d&apos;observer certaines dynamiques décisionnelles liées aux choix patrimoniaux.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
-                    <a
-                      href="/cadre-ethique-scientifique"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#9FB620] px-5 py-2.5 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#a8c025] md:text-base"
-                    >
+                    <CtaButton href="/cadre-ethique-scientifique" variant="green-dark-text" className="text-sm font-semibold md:text-base">
                       Base scientifique
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </a>
+                    </CtaButton>
                   </div>
                 </div>
               </div>
@@ -347,19 +347,20 @@ export default function MethodePage() {
             <p className="pe-body-lead mx-auto max-w-3xl text-balance leading-relaxed text-white/95">
               Les profils ne sont ni figés ni exclusifs : ils peuvent évoluer avec l&apos;âge, les projets de vie ou le contexte patrimonial.
             </p>
-            <div className="mt-8 flex justify-center translate-y-4 md:translate-y-6">
-              <a
+            <CtaRow className="-mb-1">
+              <CtaButton
                 href="https://forms.gle/CbJhpd3Ph4GjSGji7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055]"
+                variant="yellow"
+                className="text-base font-semibold"
               >
                 Recevoir le livre blanc
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-              </a>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
@@ -446,34 +447,6 @@ export default function MethodePage() {
           </div>
         </section>
 
-        {/* Présentation PatrimEmotion en vidéo */}
-        <section
-          id="presentation-patrimemotion-video"
-          className="relative z-20 bg-white py-16 md:py-24"
-          aria-labelledby="presentation-patrimemotion-video-title"
-        >
-          <div className="container mx-auto px-4 md:px-6">
-            <h2
-              id="presentation-patrimemotion-video-title"
-              className="pe-heading-section mb-8 text-center text-balance text-[#003662] text-4xl md:text-5xl"
-            >
-              Présentation <span className="text-[#f4ca3a]">PatrimEmotion</span> en vidéo
-            </h2>
-            <div className="mx-auto flex max-w-5xl justify-center overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 px-6 py-10 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
-              <a
-                href="https://www.youtube.com/watch?v=hl4XuN-ezho"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#003662] px-6 py-3.5 text-base font-semibold text-white shadow-md transition-colors hover:bg-[#004a7a]"
-              >
-                Ouvrir la vidéo dans un nouvel onglet
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

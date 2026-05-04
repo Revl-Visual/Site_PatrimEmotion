@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -118,16 +120,17 @@ export default function TarifsPage() {
                   Institutionnelle / Embedded (non disponible pour le moment)
                 </p>
               </div>
-              <div className="mt-10 md:mt-12 flex min-h-[5rem] md:min-h-[6rem] items-center justify-center">
-                <a
+              <CtaRow>
+                <CtaButton
                   href={DEVIS_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003662] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#003662]/20 transition-all duration-200 hover:scale-[1.02] hover:bg-[#004a7a] hover:shadow-xl"
+                  variant="blue"
+                  className="text-base font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:scale-[1.02]"
                 >
                   Faire un devis
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -161,16 +164,17 @@ export default function TarifsPage() {
                       <span className="font-semibold text-[#003662]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
                     </p>
                   </div>
-                  <div className="mt-6 flex justify-center">
-                    <a
+                  <CtaRow spacing="none" className="mt-6">
+                    <CtaButton
                       href={CONTACT_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1a1a1a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2a2a2a]"
+                      variant="dark"
+                      className="text-sm font-semibold"
                     >
                       Être contacté
-                    </a>
-                  </div>
+                    </CtaButton>
+                  </CtaRow>
                 </div>
               </div>
             </div>
@@ -278,16 +282,17 @@ export default function TarifsPage() {
                 </div>
               </a>
             </div>
-            <div className="mt-24 md:mt-32 flex justify-center">
-              <a
+            <CtaRow>
+              <CtaButton
                 href={LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg shadow-[#f4ca3a]/25 transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl"
+                variant="yellow-elevated"
+                className="text-base font-semibold"
               >
                 Demander ma licence
-              </a>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 

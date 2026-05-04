@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,8 +24,8 @@ export default function CadreEthiqueScientifiquePage() {
         <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
           <div className="hero-encart pt-14 pb-10 md:pt-16 md:pb-12 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
-              <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[300px] md:min-h-[340px]">
+              <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-12 items-center min-h-[300px] md:min-h-[340px]">
                   <div>
                     <h1 className="pe-heading-hero text-white mb-5">
                       Cadre <span className="text-[#9FB620]">éthique</span> et <span className="text-[#f4ca3a]">scientifique</span>
@@ -33,15 +35,15 @@ export default function CadreEthiqueScientifiquePage() {
                     </p>
                   </div>
                   <div className="hidden lg:flex justify-center items-center">
-                    <div className="relative w-full max-w-md" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#9FB620] p-5 flex flex-col items-center justify-center min-h-[160px] text-center">
+                    <div className="relative w-full max-w-xl" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#9FB620] p-6 flex flex-col items-center justify-center min-h-[210px] text-center">
                           <p className="text-[#003662] font-semibold text-base mb-1.5">Éthique</p>
                           <p className="text-[#003662]/90 text-xs leading-snug">
                             <strong>Respect</strong> de la personne, <strong>confidentialité</strong>, neutralité. Au cœur de la relation conseiller–client.
                           </p>
                         </div>
-                        <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#f4ca3a] p-5 flex flex-col items-center justify-center min-h-[160px] text-center">
+                        <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#f4ca3a] p-6 flex flex-col items-center justify-center min-h-[210px] text-center">
                           <p className="text-[#003662] font-semibold text-base mb-1.5">Scientifique</p>
                           <p className="text-[#003662]/90 text-xs leading-snug">
                             <strong>4 piliers</strong> : psychologie des traits, <strong>finance comportementale</strong>, décision sous incertitude, scoring.
@@ -322,19 +324,20 @@ export default function CadreEthiqueScientifiquePage() {
               <p className="pe-body-lead text-white leading-relaxed">
                 L&apos;objectif : permettre au conseiller d&apos;<strong className="text-[#9FB620]">intégrer la dimension émotionnelle</strong> sans alourdir le processus d&apos;accompagnement, tout en offrant au client une <strong className="text-[#9FB620]">expérience claire et valorisante</strong>.
               </p>
-              <div className="mt-8 flex justify-center">
-                <a
+              <CtaRow spacing="none" className="mt-10 md:mt-12">
+                <CtaButton
                   href="/Docs/Prez_methode_PatrimEmotion_Site_Internet.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#f4ca3a] px-6 py-3 text-sm font-semibold text-[#003662] shadow-md transition-colors hover:bg-[#f5d055] md:text-base"
+                  variant="yellow"
+                  className="text-sm font-semibold md:text-base"
                 >
                   En savoir plus
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>

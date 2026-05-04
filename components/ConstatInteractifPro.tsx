@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { CtaButton } from "@/components/CtaButton";
 
 const CONSTATS_PRO = [
   "Le client ne connaît pas les termes financiers",
@@ -111,12 +111,9 @@ export default function ConstatInteractifPro() {
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
-                <Link
-                  href="/licences"
-                  className="block w-full text-center bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold py-3.5 px-6 rounded-lg transition-colors"
-                >
+                <CtaButton href="/licences" variant="yellow" fullWidth className="text-center font-semibold">
                   Découvrir la licence PatrimEmotion®
-                </Link>
+                </CtaButton>
               </>
             )}
           </div>

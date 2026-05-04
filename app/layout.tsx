@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <body className="relative bg-white pe-protect-content" suppressHydrationWarning>
         <ContentProtection />
-        <div className="site-root relative z-10">
+        <div className="site-root richtext relative z-10">
           {children}
         </div>
       </body>

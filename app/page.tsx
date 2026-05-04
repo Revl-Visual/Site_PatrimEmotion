@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReportModelMarquee from "@/components/ReportModelMarquee";
+import { CtaButton } from "@/components/CtaButton";
+import { CtaRow } from "@/components/CtaRow";
 
 /** Accueil — `public/video/Émotion_&_Conseil_Patrimonial.mp4` */
 const VIDEO_EMOTION_CONSEIL_PATRIMONIAL =
@@ -83,15 +84,12 @@ export default function Home() {
                 </p>
                 {/* Ligne 5 : CTA */}
                 <div className="lg:col-start-1 lg:row-start-5">
-                  <Link
-                    href="/methode"
-                    className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 text-base shadow-lg shadow-[#f4ca3a]/25 hover:shadow-xl hover:shadow-[#f4ca3a]/30 hover:scale-[1.02]"
-                  >
+                  <CtaButton href="/methode" variant="yellow-elevated" className="text-base font-semibold">
                     Découvrir la méthode
                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </Link>
+                  </CtaButton>
                 </div>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-5" aria-hidden />
               </div>
@@ -161,17 +159,14 @@ export default function Home() {
                 </video>
               </div>
             </div>
-            <div className="mt-10 md:mt-12 flex justify-center">
-              <Link
-                href="/cadre-ethique-scientifique"
-                className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 text-base shadow-md shadow-[#003662]/15 hover:shadow-lg hover:scale-[1.02]"
-              >
+            <CtaRow>
+              <CtaButton href="/cadre-ethique-scientifique" variant="blue" className="text-base font-semibold">
                 Approche scientifique
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </div>
       </section>
@@ -293,19 +288,20 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-12 md:mt-14 flex justify-center">
-                <a
+              <CtaRow>
+                <CtaButton
                   href="https://docs.google.com/forms/d/e/1FAIpQLScJDYDqoi6B59UMs-f2Oj1PzTqHgIjwUTkJgYbvFzhRTtJpTA/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a85] text-[#f4ca3a] font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/25 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
+                  variant="blue-accent"
+                  className="text-base font-semibold"
                 >
-                  Répondre au questionnaire
+                  Demander une démo
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </section>
 
@@ -333,10 +329,10 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end">
-                    <Link href="/solutions/particuliers" className="inline-flex items-center gap-2 bg-[#f4ca3a] hover:bg-[#f5d055] text-[#003662] font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02]">
+                    <CtaButton href="/solutions/particuliers" variant="yellow" className="font-semibold">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+                    </CtaButton>
                   </div>
                 </div>
                 <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-neutral-50/80 border-l-4 border-[#9FB620] border border-neutral-100 hover:border-[#9FB620]/50 hover:shadow-lg hover:shadow-[#9FB620]/10 transition-all duration-300">
@@ -353,10 +349,10 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end">
-                    <Link href="/solutions/professionnels" className="inline-flex items-center gap-2 bg-[#9FB620] hover:bg-[#a8c025] text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02]">
+                    <CtaButton href="/solutions/professionnels" variant="green" className="font-semibold">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+                    </CtaButton>
                   </div>
                 </div>
                 <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-neutral-50/80 border-l-4 border-[#003662] border border-neutral-100 hover:border-[#003662]/50 hover:shadow-lg hover:shadow-[#003662]/10 transition-all duration-300">
@@ -373,33 +369,34 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end">
-                    <Link href="/solutions/institutionnels" className="inline-flex items-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02]">
+                    <CtaButton href="/solutions/institutionnels" variant="blue-navy" className="font-semibold shadow-md hover:shadow-lg hover:scale-[1.02]">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+                    </CtaButton>
                   </div>
                 </div>
               </div>
-              <div className="mt-12 md:mt-14 flex justify-center">
-                <a
+              <CtaRow>
+                <CtaButton
                   href="https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#f4ca3a] px-8 py-4 text-base font-semibold text-[#003662] shadow-lg transition-all duration-200 hover:scale-[1.02] hover:bg-[#f5d055] hover:shadow-xl md:text-lg rounded-xl"
+                  variant="yellow-elevated"
+                  className="text-base font-semibold md:text-lg"
                 >
                   Recevoir le livre PatrimEmotion
                   <svg className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
-              </div>
+                </CtaButton>
+              </CtaRow>
             </div>
           </section>
 
       </div>
 
       {/* Section Demander une démo - Fond vert */}
-      <section className="py-16 md:py-24 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
+      <section className="-mt-4 md:-mt-6 py-16 md:py-24 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -409,7 +406,7 @@ export default function Home() {
                   Prêt à <span className="text-[#003662]">échanger ?</span>
                 </h2>
                 <p className="pe-body-lead text-white/90 mb-6">
-                  Prenez rendez-vous avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
+                  Prenez contact avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
@@ -427,24 +424,26 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-12 md:mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
+            <CtaRow layout="split">
+              <CtaButton
                 href="https://www.am-courtage-et-patrimoine.fr/contact"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#003662] hover:bg-[#004a7a] text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30 hover:scale-[1.02]"
+                variant="blue"
+                className="text-base font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30"
               >
                 Prenez contact avec un expert
-              </a>
-              <a
+              </CtaButton>
+              <CtaButton
                 href="https://www.am-courtage-et-patrimoine.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/90 px-10 py-4 font-semibold text-[#003662] transition-all duration-200 hover:scale-[1.02] hover:bg-white rounded-xl"
+                variant="white-muted"
+                className="text-base font-semibold"
               >
                 La fondatrice
-              </a>
-            </div>
+              </CtaButton>
+            </CtaRow>
           </div>
         </div>
       </section>

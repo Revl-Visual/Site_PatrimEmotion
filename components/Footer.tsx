@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CtaButton } from "@/components/CtaButton";
 import Image from "next/image";
 import { AMCP_CONTACT_URL } from "@/lib/amcp";
 import { LOGO_SRC } from "@/lib/branding";
@@ -136,17 +137,18 @@ export default function Footer() {
             <p className="text-sm text-white/90 max-w-[200px] lg:text-right mb-6">
               La méthode qui remet l&apos;humain au cœur des décisions patrimoniales
             </p>
-            <a
+            <CtaButton
               href={AMCP_CONTACT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#f4ca3a] text-[#003662] hover:bg-[#f5d055] font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm mb-6"
+              variant="yellow"
+              className="mb-6 text-sm font-semibold"
             >
               Prendre contact
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </CtaButton>
             <div className="mt-auto self-end">
               <p className="font-sans text-xs text-[#f4ca3a] font-semibold uppercase tracking-wider mb-2">
                 Suivez-nous
