@@ -130,11 +130,15 @@ input[type="checkbox"] {
   text-align: left;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .richtext main :where(p) {
     text-align: justify;
-    text-justify: inter-word;
+    text-justify: auto;
+    text-align-last: left;
     hyphens: auto;
+    word-spacing: normal;
+    letter-spacing: normal;
+    overflow-wrap: break-word;
   }
 }
 
@@ -152,6 +156,10 @@ input[type="checkbox"] {
   text-align: right;
 }
 
+.richtext main .no-justify :where(p, li) {
+  text-align: left !important;
+}
+
 /*
   Rythme global des sections:
   - Uniformise les espacements verticaux entre sections sur tout le site
@@ -160,16 +168,16 @@ input[type="checkbox"] {
     * footer = hors <main>
 */
 .site-root main > section:not(:first-of-type) {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
   .site-root main > section:not(:first-of-type) {
-    padding-top: 6rem !important;
-    padding-bottom: 6rem !important;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 

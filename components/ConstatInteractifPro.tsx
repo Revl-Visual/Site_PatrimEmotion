@@ -41,7 +41,7 @@ export default function ConstatInteractifPro() {
         : "Quand plusieurs de ces points se croisent, une approche méthodique fait la différence. La licence PatrimEmotion® vous donne les outils pour accompagner vos clients avec plus de pertinence et de légitimité.";
 
   return (
-    <section className="py-16 md:py-24 bg-[#003662]/5" aria-labelledby="constat-pro-title">
+    <section className="no-justify py-16 md:py-24 bg-[#003662]/5" aria-labelledby="constat-pro-title">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="rounded-2xl bg-[#003662] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-l-4 border-[#f4ca3a]">
           <h2

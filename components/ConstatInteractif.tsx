@@ -43,7 +43,7 @@ export default function ConstatInteractif() {
         : "Quand plusieurs de ces points nous concernent, il est utile de prendre du recul. Le bilan PatrimEmotion® vous aide à structurer votre réflexion et à dialoguer plus sereinement avec votre conseiller.";
 
   return (
-    <section className="py-16 md:py-24 section-alt-blue" aria-labelledby="constat-title">
+    <section className="no-justify py-16 md:py-24 section-alt-blue" aria-labelledby="constat-title">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="rounded-2xl bg-[#f4ca3a] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
           <h2
