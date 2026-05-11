@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,8 +16,8 @@ export default function CharteEthiquePage() {
       <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-center text-white/80 text-sm uppercase tracking-wider mb-4 font-semibold">
-              Méthode PatrimEmotion®
+            <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
+              Méthode <PatrimEmotionMark />
             </p>
             <h1 className="pe-heading-hero text-white text-center text-balance">
               Charte <span className="text-[#f4ca3a]">éthique</span>

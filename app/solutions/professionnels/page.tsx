@@ -2,12 +2,9 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractifPro from "@/components/ConstatInteractifPro";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
-import {
-  PATRIMEMOTION_DEMO_URL,
-  PATRIMEMOTION_LICENCE_FORM_URL,
-} from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,20 +20,38 @@ const APPROCHE_STRUCTUREE = [
   "Une restitution pédagogique pour éclairer la réflexion patrimoniale",
 ];
 
-const BENEFICES_CABINET_UNIFIES = [
-  "Renforcer la qualité de la découverte client et des entretiens.",
-  "Faciliter la pédagogie patrimoniale avec des supports lisibles.",
-  "Mieux comprendre les réactions des clients face à l'incertitude.",
-  "Structurer les échanges autour des projets patrimoniaux.",
-  "Apporter une approche différenciante dans la relation de conseil.",
-  "Soutenir des décisions plus cohérentes dans la durée.",
+const APPORTS_PROFESSIONNELS = [
+  "Un outil de découverte client enrichi.",
+  "Un support pédagogique de dialogue patrimonial.",
+  "Un levier de différenciation dans la relation de conseil.",
+  "Une meilleure continuité entre diagnostic, restitution et accompagnement.",
+  "Une méthode structurée, personnalisable et facilement intégrable.",
 ];
 
-const BENEFICES_CABINET_POINTS = [
-  "un outil de découverte client enrichi",
-  "un support pédagogique de dialogue patrimonial",
-  "un levier de différenciation dans la relation de conseil",
-  "une meilleure continuité entre diagnostic, restitution et accompagnement",
+const IMPACTS_ORGANISATIONNELS = [
+  "Renforcer la qualité de l'entretien découverte client",
+  "Structurer le parcours client",
+  "Faciliter la pédagogie patrimoniale avec des supports livrables",
+  "Soutenir des décisions plus cohérentes dans la durée et faciliter le suivi client",
+  "Plan d'actions formalisé dans le temps",
+  "Une méthode facilement intégrable et personnalisable",
+];
+
+const IMPACTS_RELATIONNELS = [
+  "Fluidifier le discours client",
+  "Objectiver l'émotionnel dans l'approche des besoins, des objectifs et des solutions possibles",
+  "Lever les freins et les objections pour faciliter la prise de décision",
+  "Renforcer la qualité de la relation",
+  "Définir le style d'accompagnement propre au client",
+];
+
+const IMPACTS_STRATEGIQUES = [
+  "Renforcer la notoriété du cabinet par une méthode unique",
+  "Renforcer la pertinence des stratégies proposées",
+  "Se différencier durablement",
+  "Créer un effet de levier sur l'ensemble des solutions possibles",
+  "Adopter une approche pédagogique pour renforcer son image",
+  "Garder une avance sur l'IA",
 ];
 
 const CADRE_SUR = [
@@ -44,6 +59,14 @@ const CADRE_SUR = [
   "Marque et licence déposées auprès de l'INPI.",
   "Utilisation dans le cadre réglementaire applicable ; PatrimEmotion® complète l’analyse du professionnel sans s’y substituer.",
 ];
+
+const LIVRE_BLANC_PRO_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform";
+const DEMO_PRO_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScJDYDqoi6B59UMs-f2Oj1PzTqHgIjwUTkJgYbvFzhRTtJpTA/viewform";
+const DEVIS_PRO_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
+const CARTE_ZONE_SECURITE_URL = "/images/Carte_mentale_zone_secu_institutionnels.png";
 
 export default function ProfessionnelsPage() {
   return (
@@ -57,23 +80,23 @@ export default function ProfessionnelsPage() {
               <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[260px] md:min-h-[320px]">
                   <div>
-                    <h1 className="pe-heading-hero text-white mb-5">
-                      <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+                    <h1 className="pe-heading-hero mb-5 text-white">
+                      <PatrimEmotionMark />
                       <br />
-                      Une méthode pour enrichir la relation client patrimoniale pour les professionnels du patrimoine
+                      Une méthode pour enrichir la relation client
                     </h1>
                     <p className="pe-body-lead text-white/95 max-w-xl leading-relaxed mb-6">
                       PatrimEmotion® est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales. Elle permet d&apos;apporter un éclairage complémentaire sur la manière dont les clients perçoivent l&apos;argent, le risque, le temps et l&apos;incertitude.
                     </p>
                     <CtaRow spacing="none" className="gap-3 sm:justify-start">
                       <CtaButton
-                        href={PATRIMEMOTION_DEMO_URL}
+                        href={LIVRE_BLANC_PRO_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="yellow-elevated"
                         className="text-base font-semibold"
                       >
-                        Demander une démo
+                        Recevoir le livre blanc professionnel
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </CtaButton>
                     </CtaRow>
@@ -82,8 +105,8 @@ export default function ProfessionnelsPage() {
                     <div className="w-full max-w-sm">
                       <div className="overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
                         <Image
-                          src="/images/licences_PatrimEmotion.png"
-                          alt="Licence PatrimEmotion"
+                          src="/images/badges/badges_PatrimEmotion.png"
+                          alt="Badges de certification PatrimEmotion"
                           width={640}
                           height={480}
                           className="h-auto w-full"
@@ -133,103 +156,151 @@ export default function ProfessionnelsPage() {
             </div>
             <CtaRow spacing="none" className="mt-6 md:mt-8 -mb-16">
               <CtaButton
-                href={PATRIMEMOTION_LICENCE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/cadre-ethique-scientifique"
                 variant="outline-navy"
                 className="text-base font-semibold"
               >
-                Demander un devis
+                Cadre éthique et scientifique
               </CtaButton>
             </CtaRow>
           </div>
         </section>
 
-        {/* Comment ça marche */}
+        {/* Section 4 : Approche structurelle */}
         <section className="-mt-8 md:-mt-10 pt-4 pb-10 md:pt-6 md:pb-14 section-alt-blue">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="rounded-[2rem] border-2 border-[#003662]/15 bg-white p-6 md:p-10 shadow-[0_18px_40px_-18px_rgba(0,54,98,0.35)]">
-              <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
-                Comment ça marche ?
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="rounded-[2rem] border-2 border-[#9FB620]/35 bg-[#9FB620] p-6 md:p-10 shadow-[0_18px_40px_-18px_rgba(0,54,98,0.35)]">
+              <h2 className="pe-heading-section text-white mb-4 text-center">
+                Une approche structurelle et reproductible
               </h2>
-              <p className="pe-body-lead text-[#003662]/90 mb-10 text-center leading-relaxed">
-                Une approche structurée et reproductible, en quatre étapes.
-              </p>
-              <p className="text-[#003662]/85 mb-8 text-center leading-relaxed max-w-3xl mx-auto">
+              <p className="pe-body-lead pe-lead-centered text-white mb-10 text-center leading-relaxed md:text-[1.2rem] max-w-4xl mx-auto">
                 L&apos;objectif est d&apos;intégrer la lecture comportementale dans votre pratique sans alourdir l&apos;expérience client, avec un parcours clair, séquencé et directement exploitable en rendez-vous.
               </p>
-              <div className="relative">
-                <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-[#003662]/20" />
-                <div className="space-y-8">
-                  {APPROCHE_STRUCTUREE.map((item, i) => (
-                    <div key={i} className="relative flex gap-6 md:gap-8 items-start">
-                      <div className="shrink-0 w-16 h-16 rounded-2xl bg-[#003662] text-white flex items-center justify-center text-2xl font-bold shadow-lg z-10">{i + 1}</div>
-                      <div className="flex-1 rounded-2xl bg-white border-2 border-[#003662]/10 p-6 md:p-8 shadow-md hover:shadow-lg transition-all">
-                        <p className="pe-body-lead text-[#003662] leading-relaxed">{item}</p>
+              <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+                <div className="rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
+                  <h3 className="pe-heading-card text-[#003662] mb-6 text-center">Une approche en 4 étapes</h3>
+                  <div className="space-y-4">
+                    {APPROCHE_STRUCTUREE.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3 rounded-xl bg-[#f7fbe8] border border-[#9FB620]/25 p-4">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#9FB620] text-white font-bold">
+                          {i + 1}
+                        </span>
+                        <p className="pe-body-lead !text-left [text-align-last:auto] text-[#003662] leading-relaxed">{item}</p>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
+                  <h3 className="pe-heading-card text-[#003662] mb-6 text-center">
+                    Ce que PatrimEmotion® apporte aux professionnels
+                  </h3>
+                  <ul className="space-y-3">
+                    {APPORTS_PROFESSIONNELS.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                        <span className="pe-body-lead !text-left [text-align-last:auto] text-[#003662]/90 leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
+              <CtaRow spacing="none" className="mt-8 md:mt-10">
+                <CtaButton
+                  href={DEVIS_PRO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="white"
+                  className="text-base font-semibold"
+                >
+                  Demander un devis
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
 
-        {/* Bénéfices cabinet (fusionné) */}
-        <section className="py-16 md:py-24 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-[#f4ca3a] mb-8 text-center">
+        {/* Section 5 : Impacts */}
+        <section className="!pt-8 !pb-10 md:!pt-12 md:!pb-14 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
               Les bénéfices pour votre cabinet
             </h2>
-            <p className="pe-body-lead text-white/90 text-center max-w-3xl mx-auto mb-10">
-              PatrimEmotion® aide à mieux qualifier les besoins, fluidifier la restitution et renforcer la valeur perçue de l&apos;accompagnement patrimonial.
+            <p className="pe-body-lead pe-lead-centered text-[#003662]/90 text-center max-w-4xl mx-auto mb-10">
+              PatrimEmotion® aide à mieux qualifier les besoins, fluidifier le discours et renforcer la valeur perçue de l&apos;accompagnement patrimonial.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {BENEFICES_CABINET_UNIFIES.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl bg-white/10 border border-white/20 p-5 md:p-6 transition-all hover:bg-white/15 hover:border-white/30"
-                >
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f4ca3a] text-[#003662] font-bold">
-                      {i + 1}
-                    </span>
-                    <p className="text-white/95 font-medium">Impact opérationnel</p>
-                  </div>
-                  <p className="text-white/90 leading-relaxed">{item}</p>
-                </div>
-              ))}
+            <div className="grid lg:grid-cols-3 gap-6">
+              <div className="rounded-2xl border border-[#003662]/12 bg-[#003662]/[0.03] p-6 md:p-7">
+                <h3 className="pe-heading-card text-[#003662] mb-4">Impacts organisationnels</h3>
+                <ul className="space-y-3">
+                  {IMPACTS_ORGANISATIONNELS.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[#003662]/12 bg-[#003662]/[0.03] p-6 md:p-7">
+                <h3 className="pe-heading-card text-[#003662] mb-4">Impacts relationnels</h3>
+                <ul className="space-y-3">
+                  {IMPACTS_RELATIONNELS.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-[#003662]/12 bg-[#003662]/[0.03] p-6 md:p-7">
+                <h3 className="pe-heading-card text-[#003662] mb-4">Impacts stratégiques</h3>
+                <ul className="space-y-3">
+                  {IMPACTS_STRATEGIQUES.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="mt-10 rounded-2xl border border-white/20 bg-white/5 p-6 md:p-8">
-              <h3 className="pe-heading-tight text-white mb-4 text-center">En pratique pour vos équipes</h3>
-              <ul className="grid sm:grid-cols-2 gap-3">
-                {BENEFICES_CABINET_POINTS.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#f4ca3a] shrink-0 font-semibold">•</span>
-                    <span className="text-white/90">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <CtaRow spacing="none" className="mt-10">
+              <CtaButton href="/tarifs" variant="blue" className="text-base font-semibold">
+                Voir les licences
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
         {/* Cadre sûr / conformité */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="!pt-4 !pb-24 md:!pt-6 md:!pb-32 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="rounded-2xl bg-[#9FB620] p-8 md:p-12 shadow-xl border-2 border-[#8aa61d]/30">
               <h2 className="pe-heading-section text-white mb-6 text-center">Un cadre sûr</h2>
-              <p className="text-white/95 text-center leading-relaxed mb-6 max-w-3xl mx-auto">
+              <p className="pe-body-lead !text-left [text-align-last:auto] text-white mb-4">
+                Une méthode AMF Safe
+              </p>
+              <p className="pe-body-lead !text-left [text-align-last:auto] text-white/95 leading-relaxed mb-6">
                 La méthode s&apos;inscrit dans un usage professionnel encadré. Elle complète votre analyse patrimoniale sans se substituer à vos obligations réglementaires ni à votre responsabilité de conseil.
               </p>
               <ul className="space-y-4">
                 {CADRE_SUR.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#1a3310] text-xl font-semibold shrink-0">✓</span>
+                    <span className="text-white text-xl font-semibold shrink-0">✓</span>
                     <span className="pe-body-lead text-white/95 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
+              <CtaRow spacing="none" className="mt-8 md:mt-10">
+                <CtaButton
+                  href={CARTE_ZONE_SECURITE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="white"
+                  className="text-base font-semibold"
+                >
+                  La carte zone de sécurité
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -237,17 +308,12 @@ export default function ProfessionnelsPage() {
         {/* CTA final */}
         <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="pe-heading-section text-white mb-4">
-              Prêt à déployer PatrimEmotion® dans
-              <br />
-              votre cabinet ?
-            </h2>
-            <p className="pe-body-lead text-white/90 max-w-2xl mx-auto">
+            <h2 className="pe-heading-section mb-6 text-white max-w-2xl mx-auto">
               Échangeons sur votre contexte pour identifier le bon niveau de licence et le cadre de mise en œuvre.
-            </p>
+            </h2>
             <CtaRow layout="split">
               <CtaButton
-                href={PATRIMEMOTION_LICENCE_FORM_URL}
+                href={DEVIS_PRO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="yellow-elevated"

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReportModelMarquee from "@/components/ReportModelMarquee";
+import VideoCoverPlayer from "@/components/VideoCoverPlayer";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
 
@@ -28,8 +30,7 @@ export default function Home() {
                 {/* Ligne 2 : titre */}
                 <h1 className="pe-heading-hero text-white mb-4 lg:col-start-1 lg:row-start-2">
                   <span className="font-medium">
-                    <span className="text-[#9FB620]">Patrim</span>
-                    <span className="text-[#f4ca3a]">Emotion®</span>
+                    <PatrimEmotionMark />
                   </span>
                 </h1>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-2" aria-hidden />
@@ -124,7 +125,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-6">
-                  Pourquoi <span className="text-[#9FB620]">Patrim</span><span className="text-[#f4ca3a]">Emotion®</span> existe ?
+                  Pourquoi <PatrimEmotionMark /> existe ?
                 </h2>
                 <p className="pe-body-lead text-[#003662]/90 text-justify">
                   Les décisions patrimoniales ne sont jamais uniquement rationnelles.
@@ -146,17 +147,11 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-10 md:mt-12">
-              <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
-                <video
-                  className="aspect-video w-full bg-black object-contain"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  aria-label="Vidéo Émotion et conseil patrimonial"
-                >
-                  <source src={VIDEO_EMOTION_CONSEIL_PATRIMONIAL} type="video/mp4" />
-                  Votre navigateur ne prend pas en charge la lecture de cette vidéo.
-                </video>
+              <div className="mx-auto max-w-5xl aspect-video overflow-hidden rounded-2xl border border-[#003662]/10 bg-[#003662]/5 shadow-[0_12px_40px_-8px_rgba(0,54,98,0.2)]">
+                <VideoCoverPlayer
+                  src={VIDEO_EMOTION_CONSEIL_PATRIMONIAL}
+                  ariaLabel="Video Emotion et conseil patrimonial"
+                />
               </div>
             </div>
             <CtaRow>
@@ -178,8 +173,8 @@ export default function Home() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(244,202,58,0.08),transparent)] pointer-events-none" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="max-w-6xl mx-auto">
-                <h2 className="pe-heading-section text-white mb-16 text-center">
-                  Ce que permet PatrimEmotion®
+                <h2 className="pe-heading-section mb-16 text-center text-white">
+                  Ce que permet <PatrimEmotionMark />
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
                   <div className="group p-6 md:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/15 hover:border-white/30 hover:shadow-xl hover:shadow-black/10 hover:-translate-y-1">
@@ -308,8 +303,8 @@ export default function Home() {
           {/* Section 3 : À qui s'adresse PatrimEmotion® ? + Navigation (3 cartes) - FOND BLANC */}
           <section className="bg-white py-16 md:py-24 transition-colors">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
-                À qui s&apos;adresse <span className="text-[#9FB620]">Patrim</span><span className="text-[#f4ca3a]">Emotion® ?</span>
+              <h2 className="pe-heading-section mb-4 text-center text-[#003662]">
+                À qui s&apos;adresse <PatrimEmotionMark suffix=" ?" />
               </h2>
               <p className="pe-body-lead text-[#003662]/80 text-center text-justify mb-16 max-w-3xl mx-auto">
                 PatrimEmotion® s&apos;adresse à différents publics souhaitant intégrer une lecture comportementale et émotionnelle dans la compréhension des décisions patrimoniales.
@@ -319,16 +314,16 @@ export default function Home() {
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 shadow-sm flex items-center justify-center text-2xl shrink-0">👤</div>
                   </div>
-                  <div className="lg:col-span-9">
+                  <div className="lg:col-span-9 lg:pr-6">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Particuliers, dirigeants et professions libérales</h3>
                     <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les personnes souhaitant mieux comprendre la manière dont leurs émotions influencent leurs décisions patrimoniales.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90 text-justify">
-                      La démarche PatrimEmotion® permet de mettre en lumière vos préférences décisionnelles et votre rapport à l&apos;incertitude, à la sécurité et à la projection dans le temps. Selon l&apos;accompagnement choisi : Indice et Profil Émotionnel Patrimonial, Rapport PatrimEmotion® ou Bilan complet — un outil pédagogique pour éclairer vos décisions.
+                    <p className="pe-body text-[#003662]/90 text-justify">
+                      La démarche PatrimEmotion® permet de mettre en lumière vos préférences décisionnelles et votre rapport à l&apos;incertitude, à la sécurité et à la projection dans le temps. Selon l&apos;accompagnement choisi, Indice et Profil Émotionnel Patrimonial, Rapport PatrimEmotion® ou Bilan complet, un outil pédagogique pour éclairer vos décisions.
                     </p>
                   </div>
-                  <div className="lg:col-span-2 flex justify-center lg:justify-end">
+                  <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
                     <CtaButton href="/solutions/particuliers" variant="yellow" className="font-semibold">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -339,16 +334,16 @@ export default function Home() {
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#9FB620]/20 border-2 border-[#9FB620]/40 shadow-sm flex items-center justify-center text-2xl shrink-0">💼</div>
                   </div>
-                  <div className="lg:col-span-9">
+                  <div className="lg:col-span-9 lg:pr-6">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Professionnels du patrimoine</h3>
                     <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les conseillers, CGP, assureurs, experts-comptables souhaitant intégrer une lecture comportementale structurée et une prise en compte des biais dans la relation client.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90 text-justify">
+                    <p className="pe-body text-[#003662]/90 text-justify">
                       La licence PatrimEmotion® enrichit la connaissance client et améliore la qualité du dialogue patrimonial, avec plusieurs niveaux selon vos besoins.
                     </p>
                   </div>
-                  <div className="lg:col-span-2 flex justify-center lg:justify-end">
+                  <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
                     <CtaButton href="/solutions/professionnels" variant="green" className="font-semibold">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -359,16 +354,16 @@ export default function Home() {
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#003662]/10 border-2 border-[#003662]/30 shadow-sm flex items-center justify-center text-2xl shrink-0">🏢</div>
                   </div>
-                  <div className="lg:col-span-9">
+                  <div className="lg:col-span-9 lg:pr-6">
                     <h3 className="pe-heading-card text-[#003662] mb-2">Institutions et plateformes</h3>
                     <p className="pe-body text-[#003662]/90 mb-2 text-justify">
                       Pour les acteurs institutionnels, réseaux patrimoniaux ou plateformes souhaitant une approche comportementale structurée et reproductible dans leurs parcours clients.
                     </p>
-                    <p className="pe-body-small text-[#003662]/90 text-justify">
-                      Déploiement en solution intégrée, licence marque blanche ou module d&apos;aide — pour compléter vos outils existants avec un éclairage comportemental et pédagogique.
+                    <p className="pe-body text-[#003662]/90 text-justify">
+                      Déploiement en solution intégrée, licence marque blanche ou module d&apos;aide pour compléter vos outils existants avec un éclairage comportemental et pédagogique.
                     </p>
                   </div>
-                  <div className="lg:col-span-2 flex justify-center lg:justify-end">
+                  <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
                     <CtaButton href="/solutions/institutionnels" variant="blue-navy" className="font-semibold shadow-md hover:shadow-lg hover:scale-[1.02]">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -378,7 +373,7 @@ export default function Home() {
               </div>
               <CtaRow>
                 <CtaButton
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfPknfoAKF-t-O4L_Bv9pIuh7l_t1AbCywGbes-zCKCtg1qOg/viewform"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="yellow-elevated"

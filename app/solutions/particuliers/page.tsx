@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConstatInteractif from "@/components/ConstatInteractif";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
 import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
@@ -100,8 +101,9 @@ export default function ParticuliersPage() {
               <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[260px] md:min-h-[320px]">
                   <div>
-                    <h1 className="pe-heading-hero text-white mb-5">
-                      PatrimEmotion® : votre <span className="text-[#f4ca3a]">profil émotionnel patrimonial</span>
+                    <h1 className="pe-heading-hero mb-5 text-white">
+                      <PatrimEmotionMark /> : votre{" "}
+                      <span className="text-white">profil émotionnel patrimonial</span>
                     </h1>
                     <p className="pe-body-lead text-white/95 max-w-xl leading-relaxed">
                       Comprenez votre relation à l&apos;argent, au risque et à la décision pour construire un patrimoine aligné et durable.
@@ -114,7 +116,7 @@ export default function ParticuliersPage() {
                         variant="yellow-elevated"
                         className="text-base font-semibold"
                       >
-                        Réserver mon Bilan Découverte
+                        Réaliser un entretien découverte
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
@@ -146,14 +148,14 @@ export default function ParticuliersPage() {
         {/* PatrimEmotion® permet de + CTAs */}
         <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-white mb-8 text-center">
-              PatrimEmotion® permet de :
+            <h2 className="pe-heading-section mb-10 text-center text-white md:mb-12">
+              <PatrimEmotionMark /> permet de :
             </h2>
-            <ul className="grid sm:grid-cols-2 gap-4 mb-12">
+            <ul className="grid sm:grid-cols-2 gap-4 mb-12 md:mb-14">
               {BENEFICES.map((benefice, i) => (
-                <li key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white/10 border border-white/20">
+                <li key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/10 border border-white/20">
                   <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                  <span className="text-white">{benefice}</span>
+                  <span className="pe-body-lead text-white leading-relaxed">{benefice}</span>
                 </li>
               ))}
             </ul>
@@ -162,10 +164,10 @@ export default function ParticuliersPage() {
                 href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="yellow-elevated"
+                variant="white"
                 className="text-base font-semibold"
               >
-                Répondre au questionnaire
+                Recevoir mon bilan PatrimEmotion
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </CtaButton>
             </CtaRow>
@@ -194,26 +196,28 @@ export default function ParticuliersPage() {
         {/* La solution PatrimEmotion® + 3 bénéfices */}
         <section className="py-16 md:py-24 bg-[#003662]">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="pe-heading-section text-white mb-6 text-center">
-              La solution <span className="text-[#f4ca3a]">PatrimEmotion®</span>
+            <h2 className="pe-heading-section mb-6 text-center text-white">
+              La solution <PatrimEmotionMark />
             </h2>
-            <p className="pe-body-lead text-white/95 mb-4 leading-relaxed">
-              PatrimEmotion® est une méthode qui identifie votre profil émotionnel patrimonial pour vous aider à décider avec clarté et sérénité en vous indiquant notamment comment vous vivez la sécurité, le risque, la décision et la projection.
-            </p>
-            <p className="pe-body-lead text-white/95 font-semibold mb-6">
-              PatrimEmotion® : comprendre la personne avant de conseiller le patrimoine.
-            </p>
-            <p className="pe-body-lead text-white/90 mb-10">
-              Objectif : vous aider à prendre des décisions plus alignées, plus confortables, et plus cohérentes dans le temps.
-            </p>
-            <h3 className="pe-heading-card text-[#f4ca3a] mb-6 text-center">3 bénéfices</h3>
+            <div className="mx-auto mb-10 max-w-3xl space-y-4">
+              <p className="pe-body-lead text-white/95 leading-relaxed text-left lg:text-justify [text-align-last:left]">
+                PatrimEmotion® est une méthode qui identifie votre profil émotionnel patrimonial pour vous aider à décider avec clarté et sérénité en vous indiquant notamment comment vous vivez la sécurité, le risque, la décision et la projection.
+              </p>
+              <p className="pe-body-lead text-white/95 font-semibold leading-relaxed text-left lg:text-justify [text-align-last:left]">
+                PatrimEmotion® : comprendre la personne avant de conseiller le patrimoine.
+              </p>
+              <p className="pe-body-lead text-white/90 leading-relaxed text-left lg:text-justify [text-align-last:left]">
+                Objectif : vous aider à prendre des décisions plus alignées, plus confortables, et plus cohérentes dans le temps.
+              </p>
+            </div>
+            <h3 className="pe-heading-section text-[#9FB620] mb-8 text-center">3 bénéfices</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {TROIS_BENEFICES.map((b, i) => (
                 <div key={i} className="rounded-2xl bg-white/10 border border-white/20 p-6 md:p-8 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:shadow-xl">
-                  <div className="w-12 h-12 rounded-xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center text-xl font-bold mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#9FB620] text-white flex items-center justify-center text-xl font-bold mb-4">
                     {i + 1}
                   </div>
-                  <p className="pe-body-lead text-white leading-relaxed font-medium">{b}</p>
+                  <p className="pe-body-lead !text-left [text-align-last:auto] text-white leading-relaxed">{b}</p>
                 </div>
               ))}
             </div>
@@ -221,21 +225,28 @@ export default function ParticuliersPage() {
         </section>
 
         {/* Comment ça marche ? — 4 étapes */}
-        <section className="py-16 md:py-24 section-alt-blue">
+        <section className="!pt-4 !pb-16 md:!pt-8 md:!pb-24 section-alt-blue">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-[#003662] mb-4 text-center">
-              Comment ça marche ?
+            <h2 className="pe-heading-section mb-12 text-center text-[#003662]">
+              Comment se déroule un Bilan <PatrimEmotionMark /> ?
             </h2>
-            <h3 className="pe-heading-card text-[#003662]/90 mb-12 text-center">
-              Comment se déroule un Bilan PatrimEmotion® ?
-            </h3>
             <div className="relative">
               {/* Ligne verticale sur desktop */}
               <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-[#003662]/20" />
               <div className="space-y-8">
                 {ETAPES.map((etape, i) => (
                   <div key={i} className="relative flex gap-6 md:gap-8 items-start">
-                    <div className="shrink-0 w-16 h-16 rounded-2xl bg-[#003662] text-white flex items-center justify-center text-2xl font-bold shadow-lg z-10">
+                    <div
+                      className={`shrink-0 z-10 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-bold shadow-lg ${
+                        i === 0
+                          ? "bg-[#fff8df] text-[#f4ca3a]"
+                          : i === 1
+                            ? "bg-[#eaf2ff] text-[#003662]"
+                            : i === 2
+                              ? "bg-[#eef5df] text-[#9FB620]"
+                              : "bg-[#f2f2f2] text-[#1a1a1a]"
+                      }`}
+                    >
                       {i + 1}
                     </div>
                     <div className="flex-1 rounded-2xl bg-white border-2 border-[#003662]/10 p-6 md:p-8 shadow-md hover:shadow-lg hover:border-[#003662]/20 transition-all">
@@ -264,32 +275,29 @@ export default function ParticuliersPage() {
         </section>
 
         {/* Ce que vous recevez + CTA — encart vert */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="!pt-8 !pb-24 md:!pt-12 md:!pb-28 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="rounded-2xl bg-[#9FB620] p-8 md:p-12 shadow-xl border-2 border-[#8aa61d]/30">
-              <h2 className="pe-heading-section text-white mb-4 text-center">
+              <h2 className="pe-heading-section text-white mb-5 text-center">
                 Ce que vous recevez
               </h2>
-              <p className="pe-body-lead text-white/95 mb-8 text-center">
-                Vos livrables PatrimEmotion® :
-              </p>
               <ul className="space-y-4 mb-10">
                 {LIVRABLES.map((livrable, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#1a3310] text-xl font-semibold shrink-0">✓</span>
+                    <span className="text-white text-xl font-semibold shrink-0">✓</span>
                     <span className="pe-body-lead text-white/95">{livrable}</span>
                   </li>
                 ))}
               </ul>
               <CtaRow spacing="none">
                 <CtaButton
-                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScfyKONfI4nxClkt696i9sMqUhOizkgqlCVnuvmIaqtgcp6kA/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="white"
                   className="text-base font-semibold"
                 >
-                  Recevoir mon Bilan PatrimEmotion
+                  Réaliser mon bilan PatrimEmotion
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </CtaButton>
               </CtaRow>
@@ -297,51 +305,8 @@ export default function ParticuliersPage() {
           </div>
         </section>
 
-        {/* C'est pour vous */}
-        <section className="py-16 md:py-24 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="pe-heading-section text-white mb-4 text-center">
-              Pour qui / Pour quoi ?
-            </h2>
-            <h3 className="pe-heading-card text-white/90 mb-12 text-center">
-              À qui s&apos;adresse PatrimEmotion® ?
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              {POUR_QUI.map((item, i) => (
-                <div key={i} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-1rem)] min-w-0 rounded-2xl bg-white/10 border border-white/20 p-5 md:p-6 hover:bg-white/15 hover:border-white/30 transition-all duration-300 flex items-center gap-3">
-                  <span className="shrink-0 w-10 h-10 rounded-xl bg-[#f4ca3a] text-[#003662] flex items-center justify-center font-bold text-lg">
-                    {i + 1}
-                  </span>
-                  <p className="pe-body-lead text-white/95 leading-relaxed">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA — encart avant FAQ */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <div className="rounded-2xl bg-[#003662] p-8 md:p-10 text-center shadow-xl">
-              <h3 className="pe-heading-card-lg text-white mb-4">
-                Prêt(e) à décider autrement ?
-              </h3>
-              <CtaButton
-                href={PATRIMEMOTION_QUESTIONNAIRE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="yellow-elevated"
-                className="text-base font-semibold"
-              >
-                Réaliser mon bilan patrimonial émotionnel PatrimEmotion
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </CtaButton>
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
-        <section className="py-16 md:py-24 section-alt-blue">
+        <section className="!pt-8 !pb-16 md:!pt-12 md:!pb-24 section-alt-blue">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Questions fréquentes

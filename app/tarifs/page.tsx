@@ -43,7 +43,7 @@ const PREMIUM_FEATURES = [
 
 export default function TarifsPage() {
   const LICENCE_FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
+    "https://docs.google.com/forms/d/e/1FAIpQLSfYua3beU09XUzd2DqzM-eQA8eHeRCDeZ3NwvHwZX0dZFBKUg/viewform";
   const DEVIS_FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";
   const CONTACT_URL = "https://www.am-courtage-et-patrimoine.fr/contact";
@@ -324,7 +324,7 @@ export default function TarifsPage() {
               <h2 className="pe-heading-section text-center text-[#003662] mb-4">
                 Options <span className="text-[#f4ca3a]">(HT)</span>
               </h2>
-              <p className="pe-body-lead text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="pe-body-lead pe-lead-centered text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Complétez votre licence selon vos besoins
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">

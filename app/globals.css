@@ -160,6 +160,13 @@ input[type="checkbox"] {
   text-align: left !important;
 }
 
+/* Chapô / accroche centrée : neutralise justify + text-align-last du bloc lg au-dessus */
+.richtext main p.pe-lead-centered {
+  text-align: center !important;
+  text-align-last: center !important;
+  hyphens: manual;
+}
+
 /*
   Rythme global des sections:
   - Uniformise les espacements verticaux entre sections sur tout le site

@@ -52,12 +52,9 @@ export default function ConstatInteractif() {
           >
             Quelle est votre situation ?
           </h2>
-          <p className="pe-body-lead text-[#003662]/90 leading-relaxed">
-            De nombreuses situations complexes sont courantes, nous sommes là pour vous accompagner.
-          </p>
         </div>
         <p className="pe-body-lead text-[#003662]/90 mb-6 leading-relaxed">
-          Cochez ce qui vous parle :
+          Cochez ce qui vous concerne :
         </p>
 
         <div className="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-10 items-start">
@@ -74,7 +71,8 @@ export default function ConstatInteractif() {
                   type="checkbox"
                   checked={checked[i]}
                   onChange={() => toggle(i)}
-                  className="h-5 w-5 rounded border-2 border-[#003662]/40 text-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0"
+                  className="h-5 w-5 rounded border-2 border-[#003662]/40 text-[#f4ca3a] accent-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0"
+                  style={{ accentColor: "#f4ca3a" }}
                   aria-label={texte}
                 />
                 <span className="text-[#003662] leading-relaxed select-none">{texte}</span>
@@ -94,9 +92,9 @@ export default function ConstatInteractif() {
                   </div>
                 </div>
                 <h3 className="pe-heading-card text-[#003662] text-center mb-3">
-                  Identifiez ce qui vous concerne
+                  Identifiez ce qui vous correspond
                 </h3>
-                <p className="text-[#003662]/80 text-sm text-center leading-relaxed">
+                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed">
                   Cochez les affirmations qui résonnent avec votre situation. L&apos;encart à droite s&apos;adaptera pour vous guider.
                 </p>
               </>
@@ -112,7 +110,7 @@ export default function ConstatInteractif() {
                 <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   {titreHumain}
                 </h3>
-                <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
+                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
                 <CtaButton

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,8 +16,8 @@ export default function CharteIAPage() {
       <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-center text-white/80 text-sm uppercase tracking-wider mb-4 font-semibold">
-              Méthode PatrimEmotion®
+            <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
+              Méthode <PatrimEmotionMark />
             </p>
             <h1 className="pe-heading-hero text-white text-center text-balance">
               Charte d&apos;utilisation de l&apos;<span className="text-[#f4ca3a]">intelligence artificielle</span>
@@ -44,7 +45,9 @@ export default function CharteIAPage() {
 
               {/* 2 */}
               <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">2. Positionnement de l&apos;IA dans PatrimEmotion®</h2>
+                <h2 className="pe-heading-section mb-4 text-[#003662]">
+                  2. Positionnement de l&apos;IA dans <PatrimEmotionMark />
+                </h2>
                 <p className="mb-4">
                   L&apos;intelligence artificielle intervient exclusivement comme un outil d&apos;assistance pédagogique et rédactionnelle.
                 </p>
@@ -189,7 +192,9 @@ export default function CharteIAPage() {
 
               {/* 8 */}
               <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">8. Nature pédagogique de PatrimEmotion®</h2>
+                <h2 className="pe-heading-section mb-4 text-[#003662]">
+                  8. Nature pédagogique de <PatrimEmotionMark />
+                </h2>
                 <p className="mb-3">PatrimEmotion® est :</p>
                 <ul className="list-disc pl-6 space-y-2 mb-6">
                   <li>un outil d&apos;accompagnement</li>

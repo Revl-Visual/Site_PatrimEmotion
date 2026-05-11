@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
 import {
+  AMCP_CONTACT_URL,
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_DEVIS_URL,
   PATRIMEMOTION_LICENCE_FORM_URL,
@@ -116,14 +118,14 @@ const FAQ_ITEMS = [
 function PourQuiAudienceCard({ label }: { label: string }) {
   const displayLabel = label.charAt(0).toLocaleUpperCase("fr-FR") + label.slice(1);
   return (
-    <div className="group relative flex h-full items-center overflow-hidden rounded-2xl border border-white/80 bg-gradient-to-br from-white via-white to-slate-50/90 p-5 shadow-[0_14px_44px_-18px_rgba(0,54,98,0.42)] ring-1 ring-[#003662]/8 transition duration-300 hover:-translate-y-1 hover:border-[#f4ca3a]/55 hover:shadow-[0_22px_52px_-18px_rgba(0,54,98,0.48)] md:p-6">
+    <div className="group relative flex h-full items-center overflow-hidden rounded-2xl border border-[#9FB620]/25 bg-[#e4efd4] p-5 shadow-[0_14px_44px_-18px_rgba(0,54,98,0.16)] ring-1 ring-[#9FB620]/15 transition duration-300 hover:-translate-y-1 hover:border-[#9FB620]/40 hover:bg-[#d8e9c4] hover:shadow-[0_22px_52px_-18px_rgba(0,54,98,0.2)] md:p-6">
       <div className="flex w-full items-center gap-4 md:gap-4">
-        <span className="relative flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#9FB620]/25 text-[#9FB620] ring-1 ring-[#9FB620]/35 shadow-md shadow-[#9FB620]/15 transition duration-300 group-hover:scale-105 group-hover:bg-[#9FB620]/35 md:size-12">
+        <span className="relative flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#c4db98] text-[#003662] ring-1 ring-[#9FB620]/35 shadow-sm transition duration-300 group-hover:scale-105 group-hover:bg-[#b8d388] md:size-12">
           <svg className="size-[1.15rem] md:size-5" fill="none" stroke="currentColor" strokeWidth={2.25} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </span>
-        <span className="relative min-w-0 flex-1 text-sm font-medium leading-snug text-[#003662] antialiased md:text-[0.95rem] md:leading-relaxed">
+        <span className="pe-body-lead relative min-w-0 flex-1 font-medium leading-relaxed text-[#003662] antialiased">
           {displayLabel}
         </span>
       </div>
@@ -140,18 +142,16 @@ export default function LicencesPage() {
           <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-18 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="pe-heading-hero text-white mb-4 text-center text-balance">
-                  Devenez <span className="text-[#f4ca3a]">Licencié PatrimEmotion®</span>
+                <h1 className="pe-heading-hero mb-4 text-center text-balance">
+                  <span className="text-white">Devenez Licencié </span>
+                  <PatrimEmotionMark />
                 </h1>
-                <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
+                <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl text-white/90 font-medium mb-6 leading-relaxed">
                   Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
                 </p>
-                <ul className="space-y-2 text-white/90 pe-body-lead text-left max-w-2xl mx-auto mb-10 leading-relaxed">
+                <ul className="mx-auto mb-10 max-w-2xl list-none space-y-2 pe-body-lead leading-relaxed text-center text-white/90">
                   {POINTS_CLES.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
-                      <span>{item}</span>
-                    </li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
                 <CtaRow spacing="none">
@@ -162,7 +162,7 @@ export default function LicencesPage() {
                     variant="yellow-elevated"
                     className="font-semibold"
                   >
-                    Demander une démonstration professionnelle
+                    Demander une démo (15 min)
                   </CtaButton>
                 </CtaRow>
               </div>
@@ -170,66 +170,101 @@ export default function LicencesPage() {
           </div>
         </section>
 
-        <section className="section-dark pt-24 md:pt-32 pb-16 md:pb-20 transition-colors overflow-hidden">
+        <section className="relative overflow-hidden bg-[#9FB620] py-16 md:py-24 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
+          <div className="container relative z-10 mx-auto max-w-5xl px-4">
+            <header className="mb-8 text-center md:mb-10">
+              <h2 className="pe-heading-section mx-auto max-w-3xl text-balance text-[#003662]">
+                À qui s&apos;adresse PatrimEmotion® ?
+              </h2>
+            </header>
+            <ul className="mx-auto grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+              {POUR_QUI.slice(0, 6).map((item) => (
+                <li key={item} className="h-full min-h-0">
+                  <PourQuiAudienceCard label={item} />
+                </li>
+              ))}
+              <li className="col-span-full h-full min-h-0 sm:col-span-2 lg:col-span-3">
+                <div className="mx-auto flex h-full w-full max-w-3xl flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-center sm:gap-5">
+                  {POUR_QUI.slice(6).map((item) => (
+                    <div key={item} className="h-full w-full min-h-0 sm:max-w-sm">
+                      <PourQuiAudienceCard label={item} />
+                    </div>
+                  ))}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="section-dark pb-0 pt-24 transition-colors md:pt-32">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="pe-heading-section text-[#003662] mb-6 text-center text-balance">
                 Vos clients ne bloquent pas toujours sur la technique. Ils bloquent souvent sur la décision.
               </h2>
-              <p className="pe-body-lead text-[#003662]/90 mb-8 leading-relaxed">
+              <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl text-[#003662]/90 mb-8 leading-relaxed">
                 Dans la pratique, de nombreux échanges s&apos;interrompent parce que le client hésite, temporise ou n&apos;arrive pas à se projeter :
               </p>
               <ul className="mb-8 grid list-none gap-4 p-0 sm:grid-cols-2 sm:gap-5">
                 {CITATIONS_CLIENT.map((citation) => (
                   <li key={citation}>
-                    <blockquote className="h-full rounded-2xl border border-[#003662]/12 bg-gradient-to-br from-slate-50 to-white py-5 pl-6 pr-5 shadow-[0_4px_24px_-6px_rgba(0,54,98,0.14)] md:py-6 md:pl-7 md:pr-6 border-l-4 border-l-[#f4ca3a]">
+                    <blockquote className="h-full rounded-2xl border border-[#003662]/12 bg-gradient-to-br from-slate-50 to-white py-5 pl-6 pr-5 shadow-[0_4px_24px_-6px_rgba(0,54,98,0.14)] md:py-6 md:pl-7 md:pr-6 border-l-4 border-l-[#9FB620]">
                       <p className="font-serif text-lg font-semibold italic leading-snug text-[#003662] md:text-xl">{citation}</p>
                     </blockquote>
                   </li>
                 ))}
               </ul>
-              <div className="rounded-2xl bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8 border-l-4 border-[#f4ca3a]">
+              <div className="rounded-2xl border-l-4 border-l-[#9FB620] bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8">
                 <p className="pe-body-lead text-white/95 leading-relaxed">
                   PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution et la pédagogie de l&apos;échange.
                 </p>
               </div>
               <CtaRow>
                 <CtaButton
-                  href="https://www.am-courtage-et-patrimoine.fr/contact"
+                  href={AMCP_CONTACT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="yellow-elevated"
+                  variant="green"
                   className="font-semibold"
                 >
-                  Prendre contact
+                  Formulaire de contact
                 </CtaButton>
               </CtaRow>
             </div>
           </div>
-        </section>
 
-        <section className="pt-16 md:pt-20 pb-20 md:pb-24 bg-white">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="pe-heading-section text-[#003662] mb-8 text-center text-balance">
-              PatrimEmotion® : une méthode d&apos;éclairage comportemental appliquée à la relation patrimoniale
-            </h2>
-            <p className="text-[#003662]/85 mb-6 leading-[1.75]">
-              PatrimEmotion® est une méthode structurée d&apos;aide à l&apos;entretien et à la restitution, destinée aux professionnels souhaitant adapter leur pédagogie et leur posture.
-            </p>
-            <div className="rounded-xl border-2 border-[#f4ca3a]/40 bg-[#f4ca3a]/5 p-6">
-              <p className="text-[#003662] font-semibold mb-2">Important</p>
-              <p className="text-[#003662]/90 text-sm leading-relaxed">
-                PatrimEmotion® s&apos;inscrit dans une logique pédagogique et méthodologique. Le professionnel demeure seul responsable de ses obligations réglementaires.
+          {/* Suite immédiate sous le CTA : même section pour supprimer l’écart entre deux <section> */}
+          <div className="bg-white pb-10 pt-20 md:pb-12 md:pt-24">
+            <div className="container mx-auto max-w-3xl px-4">
+              <h2 className="pe-heading-section mb-8 text-center text-balance text-[#003662]">
+                <PatrimEmotionMark />
+                <span className="text-[#f4ca3a]"> : </span>
+                une méthode
+                <span className="text-[#f4ca3a]"> d&apos;</span>
+                <span className="text-[#f4ca3a]">éclairage comportemental</span> appliquée à la relation patrimoniale
+              </h2>
+              <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl mb-6 text-center leading-relaxed text-[#003662]/90">
+                PatrimEmotion® est une méthode structurée d&apos;aide à l&apos;entretien et à la restitution, destinée aux professionnels souhaitant adapter leur pédagogie et leur posture.
               </p>
+              <div className="rounded-xl border-2 border-[#f4ca3a]/40 bg-[#f4ca3a]/5 p-6 text-center">
+                <p className="mb-2 font-semibold text-[#003662]">Important</p>
+                <p className="pe-body-lead leading-relaxed text-[#003662]/90">
+                  PatrimEmotion® s&apos;inscrit dans une logique pédagogique et méthodologique. Le professionnel demeure seul responsable de ses obligations réglementaires.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="flex flex-col justify-center bg-[#003662] py-16 md:min-h-[32rem] md:py-24 lg:min-h-[36rem]">
           <div className="container mx-auto max-w-4xl px-4">
-            <h2 className="pe-heading-section text-white mb-4 text-center text-balance">Ce que PatrimEmotion® change dans votre pratique</h2>
-            <p className="text-white/85 text-center mb-10 max-w-2xl mx-auto text-balance">
-              Une méthode qui améliore la qualité de vos restitutions
+            <h2 className="pe-heading-section mb-5 text-center text-balance text-white md:mb-6">
+              Ce que <PatrimEmotionMark /> change dans votre pratique
+            </h2>
+            <p className="pe-body-lead pe-lead-centered mx-auto mb-10 max-w-4xl leading-relaxed text-white/90">
+              Une méthode qui renforce la qualité de vos restitutions,
+              <br />
+              fluidifie la relation client et valorise votre accompagnement
             </p>
             <ul className="mb-10 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 sm:items-stretch">
               {BENEFICES_PRO.map((item, i) => (
@@ -244,100 +279,104 @@ export default function LicencesPage() {
           </div>
         </section>
 
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto max-w-4xl px-4">
-            <div className="rounded-[2rem] bg-gradient-to-br from-[#9FB620] via-[#f4ca3a] to-[#9FB620] p-[3px] shadow-[0_28px_70px_rgba(0,54,98,0.14)]">
-              <div className="rounded-[calc(2rem-3px)] bg-white px-7 py-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] md:px-11 md:py-12 lg:px-14 lg:py-16">
-                <header className="mb-8 text-center md:mb-10">
-                  <h2 className="pe-heading-section mx-auto max-w-4xl text-balance text-[#003662]">
-                    Ce que contient la <span className="text-[#f4ca3a]">licence</span>
-                  </h2>
-                </header>
-                <div className="space-y-10 md:space-y-12">
-                  {CONTENU_LICENCE_GROUPES.map((groupe) => (
-                    <div key={groupe.titreAccent} className={groupe.panelClass}>
-                      <h3 className="pe-heading-card-lg mb-6 text-center text-balance text-[#003662] md:mb-7">
-                        {groupe.titre}
-                        <span className="text-[#f4ca3a]">{groupe.titreAccent}</span>
-                      </h3>
-                      <ul className={`grid gap-3 md:gap-4 ${groupe.items.length > 4 ? "sm:grid-cols-2" : "sm:grid-cols-2"}`}>
-                        {groupe.items.map((item) => (
-                          <li key={item} className="flex items-center gap-3.5 rounded-xl border border-[#003662]/10 bg-white/95 px-4 py-3.5 shadow-sm">
-                            <span className="shrink-0 text-lg font-semibold leading-none text-[#9FB620]">✓</span>
-                            <span className="text-sm leading-relaxed text-[#003662]/90 md:text-base">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+        {/* Une seule section : évite le double padding global (site-root main > section) entre tarifs et contenu licence */}
+        <section
+          className="section-alt-blue"
+          style={{ paddingTop: 0, paddingBottom: 0 }}
+        >
+          <div className="pt-24 pb-12 md:pt-32 md:pb-14">
+            <div className="container mx-auto max-w-6xl px-4">
+              <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
+                Les différents niveaux de licence
+              </h2>
+              <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-2xl text-[#003662]/80 md:mb-10">
+                Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
+              </p>
+              <CtaRow spacing="none" className="text-center">
+                <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
+                  Voir la grille tarifaire
+                </CtaButton>
+              </CtaRow>
+            </div>
+          </div>
+          <div className="bg-white pb-20 pt-12 md:pb-28 md:pt-14">
+            <div className="container mx-auto max-w-4xl px-4">
+              <div className="rounded-[2rem] bg-gradient-to-br from-[#9FB620] via-[#f4ca3a] to-[#9FB620] p-[3px] shadow-[0_28px_70px_rgba(0,54,98,0.14)]">
+                <div className="rounded-[calc(2rem-3px)] bg-white px-7 py-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] md:px-11 md:py-12 lg:px-14 lg:py-16">
+                  <header className="mb-8 text-center md:mb-10">
+                    <h2 className="pe-heading-section mx-auto max-w-4xl text-balance text-[#003662]">
+                      Ce que contient la licence
+                    </h2>
+                  </header>
+                  <div className="space-y-10 md:space-y-12">
+                    {CONTENU_LICENCE_GROUPES.map((groupe, index) => (
+                      <div key={groupe.titreAccent} className={groupe.panelClass}>
+                        <h3
+                          className={`pe-heading-card-lg mb-6 text-center text-balance md:mb-7 ${
+                            index === 0
+                              ? "text-[#003662]"
+                              : index === 1
+                                ? "text-[#f4ca3a]"
+                                : "text-[#9FB620]"
+                          }`}
+                        >
+                          {groupe.titre}
+                          {groupe.titreAccent}
+                        </h3>
+                        <ul className={`grid gap-3 md:gap-4 ${groupe.items.length > 4 ? "sm:grid-cols-2" : "sm:grid-cols-2"}`}>
+                          {groupe.items.map((item) => (
+                            <li key={item} className="flex items-center gap-3.5 rounded-xl border border-[#003662]/10 bg-white/95 px-4 py-3.5 shadow-sm">
+                              <span className="shrink-0 text-lg font-semibold leading-none text-[#9FB620]">✓</span>
+                              <span className="text-sm leading-relaxed text-[#003662]/90 md:text-base">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                  <CtaRow>
+                    <CtaButton
+                      href={PATRIMEMOTION_LICENCE_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="blue"
+                      className="font-semibold"
+                    >
+                      Demander ma licence
+                    </CtaButton>
+                  </CtaRow>
                 </div>
-                <CtaRow>
-                  <CtaButton
-                    href={PATRIMEMOTION_LICENCE_FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="yellow-elevated"
-                    className="font-semibold shadow-black/20"
-                  >
-                    Demander ma licence
-                  </CtaButton>
-                </CtaRow>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section-alt-blue py-24 md:py-32">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="pe-heading-section text-[#003662] mb-4 text-center text-balance">Les différents niveaux de licence</h2>
-            <p className="text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto">
-              Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
-            </p>
-            <CtaRow spacing="none" className="mt-10 md:mt-12 text-center">
-              <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
-                Voir la grille tarifaire
-              </CtaButton>
-            </CtaRow>
-          </div>
-        </section>
-
-        <section className="relative overflow-hidden bg-[#9FB620] py-24 md:py-32 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
-          <div className="container relative z-10 mx-auto max-w-5xl px-4">
-            <header className="mb-10 text-center md:mb-12">
-              <h2 className="pe-heading-section mx-auto max-w-3xl text-balance">
-                <span className="text-white">À qui s&apos;adresse </span>
-                <span className="text-[#f4ca3a]">PatrimEmotion® ?</span>
-              </h2>
-            </header>
-            <ul className="mx-auto grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-              {POUR_QUI.slice(0, 6).map((item) => (
-                <li key={item} className="h-full min-h-0">
-                  <PourQuiAudienceCard label={item} />
-                </li>
-              ))}
-              <li className="col-span-full h-full min-h-0 sm:col-span-2 lg:col-span-3">
-                <div className="mx-auto flex h-full w-full max-w-3xl flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5 sm:items-stretch">
-                  {POUR_QUI.slice(6).map((item) => (
-                    <div key={item} className="h-full w-full min-h-0 sm:max-w-sm">
-                      <PourQuiAudienceCard label={item} />
-                    </div>
-                  ))}
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <h2 className="pe-heading-section text-[#003662] mb-10 text-center text-balance">La FAQ</h2>
-            <div className="space-y-2">
+        <section className="!pt-0 bg-white !pb-20 md:!pt-2 md:!pb-24">
+          <div className="container mx-auto max-w-3xl px-4">
+            <h2 className="pe-heading-section mb-8 text-center text-balance text-[#003662] md:mb-10">
+              La FAQ
+            </h2>
+            <div className="space-y-3 md:space-y-4">
               {FAQ_ITEMS.map((item) => (
-                <details key={item.q} className="group rounded-xl border border-[#003662]/15 bg-slate-50/50 overflow-hidden">
-                  <summary className="px-5 py-4 pr-11 cursor-pointer list-none font-semibold text-[#003662] relative flex items-center justify-center text-center">
-                    <span className="text-balance">{item.q}</span>
+                <details
+                  key={item.q}
+                  className="group overflow-hidden rounded-2xl border border-[#003662]/10 bg-white shadow-[0_4px_20px_-4px_rgba(0,54,98,0.08)] transition-shadow open:border-[#003662]/18 open:shadow-[0_8px_28px_-6px_rgba(0,54,98,0.12)]"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 pe-body-lead font-semibold leading-snug text-[#003662] outline-none transition-colors hover:bg-slate-50/80 md:p-6 [&::-webkit-details-marker]:hidden focus-visible:ring-2 focus-visible:ring-[#9FB620]/50 focus-visible:ring-offset-2">
+                    <span className="min-w-0 flex-1 text-pretty pr-2 text-left">{item.q}</span>
+                    <svg
+                      className="h-5 w-5 shrink-0 text-[#9FB620] transition-transform duration-200 group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                   </summary>
-                  <div className="px-5 pb-4 pt-0 text-[#003662]/85 text-sm leading-relaxed border-t border-[#003662]/10">{item.a}</div>
+                  <div className="border-t border-[#003662]/10 px-5 pb-5 pt-0 md:px-6 md:pb-6">
+                    <p className="pe-body-lead pe-lead-centered pt-4 leading-relaxed text-[#003662]/90">{item.a}</p>
+                  </div>
                 </details>
               ))}
             </div>

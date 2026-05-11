@@ -43,19 +43,16 @@ export default function ConstatInteractifPro() {
   return (
     <section className="no-justify py-16 md:py-24 bg-[#003662]/5" aria-labelledby="constat-pro-title">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="rounded-2xl bg-[#003662] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-l-4 border-[#f4ca3a]">
+        <div className="rounded-2xl bg-[#f4ca3a] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
           <h2
             id="constat-pro-title"
-            className="pe-heading-section text-white mb-2"
+            className="pe-heading-section text-[#003662]"
           >
             Quelle est votre situation ?
           </h2>
-          <p className="pe-body-lead text-white/90 leading-relaxed">
-            De nombreuses situations complexes sont courantes, nous sommes là pour vous accompagner.
-          </p>
         </div>
         <p className="pe-body-lead text-[#003662] mb-6 leading-relaxed">
-          Cochez ce qui vous parle :
+          Cochez ce qui vous concerne :
         </p>
 
         <div className="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-10 items-start">
@@ -71,7 +68,8 @@ export default function ConstatInteractifPro() {
                   type="checkbox"
                   checked={checked[i]}
                   onChange={() => toggle(i)}
-                  className="h-5 w-5 rounded border-2 border-[#003662]/40 text-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0"
+                  className="h-5 w-5 rounded border-2 border-[#003662]/40 text-[#f4ca3a] accent-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0"
+                  style={{ accentColor: "#f4ca3a" }}
                   aria-label={texte}
                 />
                 <span className="text-[#003662] leading-relaxed select-none">{texte}</span>
@@ -111,8 +109,15 @@ export default function ConstatInteractifPro() {
                 <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
-                <CtaButton href="/licences" variant="yellow" fullWidth className="text-center font-semibold">
-                  Découvrir la licence PatrimEmotion®
+                <CtaButton
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScJDYDqoi6B59UMs-f2Oj1PzTqHgIjwUTkJgYbvFzhRTtJpTA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="yellow"
+                  fullWidth
+                  className="text-center font-semibold"
+                >
+                  Demander une démo
                 </CtaButton>
               </>
             )}
