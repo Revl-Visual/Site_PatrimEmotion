@@ -394,7 +394,7 @@ export default function Home() {
                   variant="yellow-elevated"
                   className="text-base font-semibold md:text-lg"
                 >
-                  Recevoir le livre PatrimEmotion
+                  Recevoir le livre éditeur PatrimEmotion
                   <svg className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -410,7 +410,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
                 <h2 className="pe-heading-section text-white mb-4">
                   Prêt à <span className="text-[#003662]">échanger ?</span>
@@ -418,42 +418,45 @@ export default function Home() {
                 <p className="pe-body-lead text-white/90 mb-6">
                   Prenez contact avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.
                 </p>
+                <div className="flex justify-start">
+                  <CtaButton
+                    href="https://www.am-courtage-et-patrimoine.fr/contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="blue"
+                    className="text-base font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30"
+                  >
+                    Prenez contact avec un expert
+                  </CtaButton>
+                </div>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                <div className="relative h-72 sm:h-[22rem] md:h-[28rem] w-full">
-                  <Image
-                    src="/images/AMCP_shooting_studio_01.jpg"
-                    alt="Studio photo AMCP"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
-                    quality={92}
-                    priority
-                  />
+              <div className="flex flex-col items-center w-full">
+                <div className="rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] w-full max-w-xl">
+                  <div className="relative h-72 sm:h-[22rem] md:h-[28rem] w-full">
+                    <Image
+                      src="/images/AMCP_shooting_studio_01.jpg"
+                      alt="Studio photo AMCP"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
+                      quality={92}
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className="mt-6 flex justify-center w-full">
+                  <CtaButton
+                    href="https://www.am-courtage-et-patrimoine.fr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="white-muted"
+                    className="text-base font-semibold"
+                  >
+                    La fondatrice
+                  </CtaButton>
                 </div>
               </div>
             </div>
-
-            <CtaRow layout="split">
-              <CtaButton
-                href="https://www.am-courtage-et-patrimoine.fr/contact"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="blue"
-                className="text-base font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl hover:shadow-[#003662]/30"
-              >
-                Prenez contact avec un expert
-              </CtaButton>
-              <CtaButton
-                href="https://www.am-courtage-et-patrimoine.fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="white-muted"
-                className="text-base font-semibold"
-              >
-                La fondatrice
-              </CtaButton>
-            </CtaRow>
           </div>
         </div>
       </section>

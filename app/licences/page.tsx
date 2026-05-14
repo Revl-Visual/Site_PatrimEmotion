@@ -9,7 +9,14 @@ import {
   PATRIMEMOTION_DEMO_URL,
   PATRIMEMOTION_LICENCE_FORM_URL,
   PATRIMEMOTION_LIVRE_BLANC_URL,
+  PATRIMEMOTION_LIVRE_EDITEUR_FORM_URL,
 } from "@/lib/amcp";
+import {
+  LICENCE_HERO_BADGE_FRAME_CLASS,
+  LICENCE_HERO_ROW_FONDATEUR,
+  LICENCE_HERO_ROW_INSTITUTIONNEL,
+  LICENCE_HERO_ROW_TROIS,
+} from "@/lib/licenceHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,39 +26,6 @@ export const metadata: Metadata = {
 };
 
 const TARIFS_URL = "/tarifs";
-
-/** Visuels hero — `public/images/licences/` */
-const LICENCE_HERO_IMAGES = [
-  {
-    src: "/images/licences/Licencie_fondateur.png",
-    alt: "Licencié fondateur PatrimEmotion®",
-  },
-  {
-    src: "/images/licences/licencie_certifie.png",
-    alt: "Licencié certifié PatrimEmotion®",
-  },
-  {
-    src: "/images/licences/licencie_confirme.png",
-    alt: "Licencié confirmé PatrimEmotion®",
-  },
-  {
-    src: "/images/licences/cabinet_expert.png",
-    alt: "Cabinet expert PatrimEmotion®",
-  },
-  {
-    src: "/images/licences/licencie_institutionnel.png",
-    alt: "Licencié institutionnel PatrimEmotion®",
-  },
-] as const;
-
-/** Hero : 1) fondateur seul, 2) certifié / confirmé / expert, 3) institutionnel seul */
-const LICENCE_HERO_ROW_FONDATEUR = LICENCE_HERO_IMAGES[0];
-const LICENCE_HERO_ROW_TROIS = LICENCE_HERO_IMAGES.slice(1, 4);
-const LICENCE_HERO_ROW_INSTITUTIONNEL = LICENCE_HERO_IMAGES[4];
-
-/** Même taille pour tous les badges hero (alignée sur la ligne centrale à 3 colonnes) */
-const LICENCE_HERO_BADGE_FRAME_CLASS =
-  "relative h-[92px] w-full max-w-[120px] sm:h-[112px] sm:max-w-[168px] md:h-[124px] md:max-w-[190px] lg:h-[132px] lg:max-w-[200px]";
 
 const POINTS_CLES = [
   "Une méthode structurée et homogène",
@@ -82,7 +56,7 @@ const CONTENU_LICENCE_GROUPES = [
     titre: "Accès méthode et ",
     titreAccent: "cadre d'usage",
     panelClass:
-      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.05] to-transparent border border-[#003662]/10 px-5 py-7 md:px-8 md:py-8",
+      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.06] to-transparent border border-[#003662]/12 px-5 py-7 md:px-8 md:py-8",
     items: [
       "Droit d'usage encadré de la marque PatrimEmotion®",
       "Accès à la méthode officielle PatrimEmotion®",
@@ -96,7 +70,7 @@ const CONTENU_LICENCE_GROUPES = [
     titre: "Restitution et ",
     titreAccent: "pilotage",
     panelClass:
-      "rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent border border-[#9FB620]/25 px-5 py-7 md:px-8 md:py-8",
+      "rounded-2xl bg-gradient-to-br from-[#f4ca3a]/[0.14] to-[#f4ca3a]/[0.04] border border-[#f4ca3a]/30 px-5 py-7 md:px-8 md:py-8",
     items: [
       "Bilan PatrimEmotion®",
       "Plan d'actions PatrimEmotion®",
@@ -110,7 +84,7 @@ const CONTENU_LICENCE_GROUPES = [
     titre: "Évolutions et ",
     titreAccent: "accompagnement",
     panelClass:
-      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.06] to-[#9FB620]/[0.05] border border-[#003662]/10 px-5 py-7 md:px-8 md:py-8",
+      "rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.14] to-[#9FB620]/[0.04] border border-[#9FB620]/30 px-5 py-7 md:px-8 md:py-8",
     items: [
       "Mises à jour méthodologiques",
       "Support selon niveau de licence",
@@ -181,8 +155,8 @@ export default function LicencesPage() {
                   <PatrimEmotionMark />
                 </h1>
 
-                <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
-                  <div className="flex h-full min-h-0 flex-col text-left">
+                <div className="grid grid-cols-1 gap-x-10 gap-y-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-8 xl:gap-x-14">
+                  <div className="flex min-h-0 flex-col text-left lg:h-full">
                     <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
                       Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
                     </p>
@@ -194,7 +168,7 @@ export default function LicencesPage() {
                   </div>
 
                   <div
-                    className="flex h-full min-h-0 w-full flex-col justify-between gap-6 sm:gap-7 lg:gap-8 lg:mx-0 lg:max-w-none"
+                    className="flex min-h-0 w-full flex-col gap-6 sm:gap-7 lg:h-full lg:gap-8 lg:mx-0 lg:max-w-none"
                     role="group"
                     aria-label="Formules de licence PatrimEmotion"
                   >
@@ -239,34 +213,36 @@ export default function LicencesPage() {
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <CtaRow spacing="none" layout="split" className="mt-10 justify-center md:mt-12">
-                  <CtaButton
-                    href={PATRIMEMOTION_DEMO_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="yellow-elevated"
-                    className="font-semibold"
-                  >
-                    Demander une démo (15 min)
-                  </CtaButton>
-                  <CtaButton
-                    href={PATRIMEMOTION_LICENCE_FORM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="green"
-                    className="font-semibold"
-                  >
-                    Faire un devis
-                  </CtaButton>
-                </CtaRow>
+                  <div className="flex justify-center lg:items-center">
+                    <CtaButton
+                      href={PATRIMEMOTION_DEMO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="yellow-elevated"
+                      className="font-semibold"
+                    >
+                      Demander une démo (15 min)
+                    </CtaButton>
+                  </div>
+                  <div className="flex justify-center lg:items-center">
+                    <CtaButton
+                      href={PATRIMEMOTION_LICENCE_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="green"
+                      className="font-semibold"
+                    >
+                      Faire un devis
+                    </CtaButton>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#9FB620] !pb-10 !pt-16 md:!pb-14 md:!pt-24 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
+        <section className="relative overflow-hidden bg-[#9FB620] !pb-16 !pt-16 md:!pb-24 md:!pt-24 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
           <div className="container relative z-10 mx-auto max-w-5xl px-4">
             <header className="mb-8 text-center md:mb-10">
               <h2 className="pe-heading-section mx-auto max-w-3xl text-balance text-[#003662]">
@@ -350,7 +326,7 @@ export default function LicencesPage() {
                 <PatrimEmotionMark />
                 <span className="text-[#003662]"> : </span>
                 une méthode
-                <span className="text-[#003662]"> d&apos;</span>
+                <span className="text-[#003662]"> d&apos; </span>
                 <span className="text-[#f4ca3a]">éclairage comportemental</span> appliquée à la relation patrimoniale
               </h2>
               <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl mb-6 text-center leading-relaxed text-[#003662]/90">
@@ -363,8 +339,14 @@ export default function LicencesPage() {
                 </p>
               </div>
               <CtaRow spacing="none" className="mt-8 justify-center md:mt-10">
-                <CtaButton href={`${TARIFS_URL}#licences`} variant="blue" className="group font-semibold">
-                  Les différentes licences
+                <CtaButton
+                  href={PATRIMEMOTION_LIVRE_EDITEUR_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="blue"
+                  className="group font-semibold"
+                >
+                  Demander le livre éditeur PatrimEmotion
                   <svg className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -384,7 +366,7 @@ export default function LicencesPage() {
               <br />
               fluidifie la relation client et valorise votre accompagnement
             </p>
-            <ul className="mb-10 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 sm:items-stretch">
+            <ul className="mb-14 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 sm:gap-5 sm:items-stretch md:mb-16">
               {BENEFICES_PRO.map((item, i) => (
                 <li key={item} className={i === BENEFICES_PRO.length - 1 ? "flex h-full min-h-0 items-center justify-center sm:col-span-2" : "flex h-full min-h-0 items-stretch"}>
                   <div className={`group h-full w-full rounded-2xl border border-white/15 bg-white/[0.07] p-4 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.35)] ring-1 ring-white/10 transition duration-200 hover:border-[#9FB620]/50 hover:bg-white/[0.11] md:p-5 ${i === BENEFICES_PRO.length - 1 ? "flex max-w-md flex-col items-center justify-center gap-4 text-center" : "flex items-center gap-4"}`}>
@@ -426,30 +408,46 @@ export default function LicencesPage() {
                     </h2>
                   </header>
                   <div className="space-y-10 md:space-y-12">
-                    {CONTENU_LICENCE_GROUPES.map((groupe, index) => (
+                    {CONTENU_LICENCE_GROUPES.map((groupe, index) => {
+                      const titleClass =
+                        index === 0
+                          ? "text-[#003662]"
+                          : index === 1
+                            ? "text-[#f4ca3a]"
+                            : "text-[#9FB620]";
+                      const itemLiClass =
+                        index === 0
+                          ? "border-[#003662]/15 bg-white/95"
+                          : index === 1
+                            ? "border-[#f4ca3a]/35 bg-white/95"
+                            : "border-[#9FB620]/35 bg-white/95";
+                      const checkClass =
+                        index === 0 ? "text-[#003662]" : index === 1 ? "text-[#f4ca3a]" : "text-[#9FB620]";
+                      const itemTextClass =
+                        index === 0
+                          ? "text-[#003662]/90"
+                          : index === 1
+                            ? "text-[#003662]/90"
+                            : "text-[#003662]/90";
+                      return (
                       <div key={groupe.titreAccent} className={groupe.panelClass}>
                         <h3
-                          className={`pe-heading-card-lg mb-6 text-center text-balance md:mb-7 ${
-                            index === 0
-                              ? "text-[#003662]"
-                              : index === 1
-                                ? "text-[#f4ca3a]"
-                                : "text-[#9FB620]"
-                          }`}
+                          className={`pe-heading-card-lg mb-6 text-center text-balance md:mb-7 ${titleClass}`}
                         >
                           {groupe.titre}
                           {groupe.titreAccent}
                         </h3>
                         <ul className={`grid gap-3 md:gap-4 ${groupe.items.length > 4 ? "sm:grid-cols-2" : "sm:grid-cols-2"}`}>
                           {groupe.items.map((item) => (
-                            <li key={item} className="flex items-center gap-3.5 rounded-xl border border-[#003662]/10 bg-white/95 px-4 py-3.5 shadow-sm">
-                              <span className="shrink-0 text-lg font-semibold leading-none text-[#9FB620]">✓</span>
-                              <span className="text-sm leading-relaxed text-[#003662]/90 md:text-base">{item}</span>
+                            <li key={item} className={`flex items-center gap-3.5 rounded-xl border px-4 py-3.5 shadow-sm ${itemLiClass}`}>
+                              <span className={`shrink-0 text-lg font-semibold leading-none ${checkClass}`}>✓</span>
+                              <span className={`text-sm leading-relaxed md:text-base ${itemTextClass}`}>{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   <CtaRow>
                     <CtaButton
@@ -466,7 +464,7 @@ export default function LicencesPage() {
               </div>
             </div>
           </div>
-          <div className="pb-12 pt-16 md:pb-14 md:pt-20">
+          <div className="pb-20 pt-16 md:pb-32 md:pt-20">
             <div className="container mx-auto max-w-6xl px-4">
               <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
                 Les différents niveaux de licence
@@ -476,7 +474,7 @@ export default function LicencesPage() {
               </p>
               <CtaRow spacing="none" className="text-center">
                 <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
-                  Voir la grille tarifaire
+                  Licences et tarifs
                 </CtaButton>
               </CtaRow>
             </div>

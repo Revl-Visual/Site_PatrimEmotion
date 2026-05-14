@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,9 +15,6 @@ export default function CharteEthiquePage() {
       <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
-              Méthode <PatrimEmotionMark />
-            </p>
             <h1 className="pe-heading-hero text-white text-center text-balance">
               Charte <span className="text-[#f4ca3a]">éthique</span>
             </h1>
@@ -28,7 +24,7 @@ export default function CharteEthiquePage() {
         <section className="section-alt-blue py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="rounded-xl border border-[#003662]/15 bg-white p-6 md:p-8 shadow-sm mb-12 text-sm md:text-base text-[#003662]/90 leading-relaxed">
-              <p className="font-semibold text-[#003662] mb-2">Version : V1 – Date : 09/02/2026</p>
+              <p className="font-semibold text-[#003662] mb-2">Version : V1 – Date : 14/05/2026</p>
               <p>
                 <span className="font-semibold text-[#003662]">Objet :</span> encadrer l&apos;usage de
                 PatrimEmotion® comme approche psychométrique appliquée au conseil patrimonial et financier.

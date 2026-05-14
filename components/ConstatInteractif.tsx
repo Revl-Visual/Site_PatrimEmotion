@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AMCP_CONTACT_URL } from "@/lib/amcp";
+import { AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL } from "@/lib/amcp";
 import { CtaButton } from "@/components/CtaButton";
 
 const CONSTATS = [
@@ -94,9 +94,19 @@ export default function ConstatInteractif() {
                 <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   Identifiez ce qui vous correspond
                 </h3>
-                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed">
+                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed mb-6">
                   Cochez les affirmations qui résonnent avec votre situation. L&apos;encart à droite s&apos;adaptera pour vous guider.
                 </p>
+                <CtaButton
+                  href={AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="yellow"
+                  fullWidth
+                  className="text-center font-semibold"
+                >
+                  Réservez votre rendez-vous
+                </CtaButton>
               </>
             ) : (
               <>
@@ -114,14 +124,14 @@ export default function ConstatInteractif() {
                   {messageAdapte}
                 </p>
                 <CtaButton
-                  href={AMCP_CONTACT_URL}
+                  href={AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="yellow"
                   fullWidth
                   className="text-center font-semibold"
                 >
-                  Nous contacter
+                  Réservez votre rendez-vous
                 </CtaButton>
               </>
             )}

@@ -5,7 +5,7 @@ import ConstatInteractif from "@/components/ConstatInteractif";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
-import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import { AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 const AMCP_PATRIMEMOTION_URL = "https://www.am-courtage-et-patrimoine.fr/patrimemotion";
@@ -30,11 +30,11 @@ const TROIS_BENEFICES = [
 ];
 
 const POUR_QUI = [
-  "Vous hésitez souvent avant d'investir",
-  "Vous voulez sécuriser vos décisions (et votre sommeil)",
-  "Vous avez vécu une mauvaise expérience (perte, stress, pression)",
-  "Vous voulez construire une stratégie cohérente, durable",
-  "Vous souhaitez un conseil patrimonial plus humain",
+  "Vous hésitez souvent\u200b avant d'investir",
+  "Vous voulez sécuriser vos décisions\u200b (et\u00a0votre\u00a0sommeil)",
+  "Vous avez vécu une mauvaise expérience\u200b (perte,\u202fstress,\u202fpression)",
+  "Vous voulez construire\u200b une stratégie cohérente,\u200b durable",
+  "Vous souhaitez\u200b un conseil patrimonial\u200b plus humain",
 ];
 
 const ETAPES = [
@@ -55,6 +55,38 @@ const ETAPES = [
     texte: "Cette restitution sert de base de dialogue afin d'éclairer la réflexion patrimoniale et d'identifier des repères utiles dans la structuration des décisions.",
   },
 ];
+
+/** Styles des 4 étapes « Comment se déroule un bilan » (fond teinte, texte teinte, pastille pleine + chiffre blanc) — logique proche de « Ce que contient la licence ». */
+const ETAPE_BILAN_STYLES = [
+  {
+    panel:
+      "rounded-2xl bg-gradient-to-br from-[#f4ca3a]/20 to-[#f4ca3a]/[0.05] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
+    title: "text-[#f4ca3a]",
+    body: "text-[#f4ca3a]/95",
+    badge: "bg-[#f4ca3a] text-white shadow-md",
+  },
+  {
+    panel:
+      "rounded-2xl bg-gradient-to-br from-[#003662]/[0.10] to-[#003662]/[0.03] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
+    title: "text-[#003662]",
+    body: "text-[#003662]/90",
+    badge: "bg-[#003662] text-white shadow-md",
+  },
+  {
+    panel:
+      "rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.18] to-[#9FB620]/[0.05] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
+    title: "text-[#9FB620]",
+    body: "text-[#9FB620]/95",
+    badge: "bg-[#9FB620] text-white shadow-md",
+  },
+  {
+    panel:
+      "rounded-2xl bg-gradient-to-br from-[#64748b]/16 to-[#64748b]/[0.05] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
+    title: "text-[#64748b]",
+    body: "text-[#64748b]/90",
+    badge: "bg-[#64748b] text-white shadow-md",
+  },
+] as const;
 
 const LIVRABLES = [
   "Votre profil émotionnel patrimonial (dominant + secondaire)",
@@ -110,13 +142,13 @@ export default function ParticuliersPage() {
                     </p>
                     <div className="mt-6">
                       <CtaButton
-                        href="https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget"
+                        href={AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="yellow-elevated"
                         className="text-base font-semibold"
                       >
-                        Réaliser un entretien découverte
+                        Découvrir mon profil
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
@@ -142,6 +174,45 @@ export default function ParticuliersPage() {
           </div>
         </section>
 
+        {/* À qui s'adresse — fond blanc, cartes numérotées (maquette) */}
+        <section className="no-justify bg-white !py-7 md:!py-9">
+          <div className="container mx-auto max-w-6xl px-4 sm:px-5">
+            <h2 className="pe-heading-section mb-6 text-center text-balance text-[#003662] md:mb-8">
+              À qui s&apos;adresse <PatrimEmotionMark suffix=" ?" />
+            </h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+              {POUR_QUI.slice(0, 3).map((label, i) => (
+                <div
+                  key={label}
+                  className="flex items-start gap-4 rounded-2xl border border-[#003662]/18 bg-white p-5 shadow-[0_2px_12px_rgba(0,54,98,0.06)] md:gap-5 md:p-6"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-lg font-bold text-[#003662] shadow-sm md:h-14 md:w-14 md:text-xl">
+                    {i + 1}
+                  </span>
+                  <p className="min-w-0 flex-1 !text-left text-base font-bold leading-[1.55] text-[#003662] antialiased !hyphens-none break-words text-pretty md:text-[1.0625rem] md:leading-[1.6]">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mx-auto mt-4 flex w-full flex-col gap-4 sm:mt-5 sm:flex-row sm:gap-5 lg:mt-5">
+              {POUR_QUI.slice(3).map((label, i) => (
+                <div
+                  key={label}
+                  className="flex min-w-0 w-full flex-1 items-start gap-4 rounded-2xl border border-[#003662]/18 bg-white p-5 shadow-[0_2px_12px_rgba(0,54,98,0.06)] md:gap-5 md:p-6"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-lg font-bold text-[#003662] shadow-sm md:h-14 md:w-14 md:text-xl">
+                    {i + 4}
+                  </span>
+                  <p className="min-w-0 flex-1 !text-left text-base font-bold leading-[1.55] text-[#003662] antialiased !hyphens-none break-words text-pretty md:text-[1.0625rem] md:leading-[1.6]">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Le constat — interactif (cases à cocher) */}
         <ConstatInteractif />
 
@@ -160,15 +231,11 @@ export default function ParticuliersPage() {
               ))}
             </ul>
             <CtaRow>
-              <CtaButton
-                href={PATRIMEMOTION_QUESTIONNAIRE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="white"
-                className="text-base font-semibold"
-              >
-                Recevoir mon bilan PatrimEmotion
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              <CtaButton href="/methode" variant="white" className="group text-base font-semibold">
+                Découvrir la méthode
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </CtaButton>
             </CtaRow>
           </div>
@@ -225,48 +292,43 @@ export default function ParticuliersPage() {
         </section>
 
         {/* Comment ça marche ? — 4 étapes */}
-        <section className="!pt-4 !pb-16 md:!pt-8 md:!pb-24 section-alt-blue">
+        <section className="!pt-14 !pb-16 md:!pt-20 md:!pb-24 section-alt-blue">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="pe-heading-section mb-12 text-center text-[#003662]">
-              Comment se déroule un Bilan <PatrimEmotionMark /> ?
+              Comment se déroule un bilan <PatrimEmotionMark /> ?
             </h2>
             <div className="relative">
               {/* Ligne verticale sur desktop */}
               <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-[#003662]/20" />
               <div className="space-y-8">
-                {ETAPES.map((etape, i) => (
+                {ETAPES.map((etape, i) => {
+                  const s = ETAPE_BILAN_STYLES[i];
+                  return (
                   <div key={i} className="relative flex gap-6 md:gap-8 items-start">
                     <div
-                      className={`shrink-0 z-10 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-bold shadow-lg ${
-                        i === 0
-                          ? "bg-[#fff8df] text-[#f4ca3a]"
-                          : i === 1
-                            ? "bg-[#eaf2ff] text-[#003662]"
-                            : i === 2
-                              ? "bg-[#eef5df] text-[#9FB620]"
-                              : "bg-[#f2f2f2] text-[#1a1a1a]"
-                      }`}
+                      className={`shrink-0 z-10 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-bold ${s.badge}`}
                     >
                       {i + 1}
                     </div>
-                    <div className="flex-1 rounded-2xl bg-white border-2 border-[#003662]/10 p-6 md:p-8 shadow-md hover:shadow-lg hover:border-[#003662]/20 transition-all">
-                      <h4 className="pe-heading-card text-[#003662] mb-3">{etape.titre}</h4>
-                      <p className="pe-body-lead text-[#003662]/90 leading-relaxed">{etape.texte}</p>
+                    <div className={`flex-1 ${s.panel}`}>
+                      <h4 className={`pe-heading-card mb-3 ${s.title}`}>{etape.titre}</h4>
+                      <p className={`pe-body-lead leading-relaxed ${s.body}`}>{etape.texte}</p>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 mt-14">
               <div className="rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-6 text-center">
                 <p className="pe-body-lead text-[#003662] font-semibold leading-relaxed flex items-center justify-center gap-2">
-                  <span className="text-[#9FB620] text-xl shrink-0" aria-hidden>✓</span>
+                  <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>✓</span>
                   <span>Sans jugement, sans pression</span>
                 </p>
               </div>
               <div className="rounded-2xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 p-6 text-center">
                 <p className="pe-body-lead text-[#003662] font-semibold leading-relaxed flex items-center justify-center gap-2">
-                  <span className="text-[#9FB620] text-xl shrink-0" aria-hidden>✓</span>
+                  <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>✓</span>
                   <span>Pédagogique, concret, applicable</span>
                 </p>
               </div>
@@ -291,7 +353,7 @@ export default function ParticuliersPage() {
               </ul>
               <CtaRow spacing="none">
                 <CtaButton
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScfyKONfI4nxClkt696i9sMqUhOizkgqlCVnuvmIaqtgcp6kA/viewform"
+                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="white"

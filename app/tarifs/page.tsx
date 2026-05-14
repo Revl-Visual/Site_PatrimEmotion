@@ -6,7 +6,7 @@ import { CtaRow } from "@/components/CtaRow";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tarifs | PatrimEmotion®",
+  title: "Licences et tarification | PatrimEmotion®",
   description: "Grille tarifaire PatrimEmotion® V2026. Licences LIGHT, CORE, PREMIUM et options (HT).",
 };
 
@@ -57,13 +57,13 @@ export default function TarifsPage() {
           <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="pe-heading-hero text-white mb-4">
-                  <span className="text-[#f4ca3a]">Tarifs</span>
+                <h1 className="pe-heading-hero mb-4 text-balance text-[#f4ca3a]">
+                  Licences et tarification
                 </h1>
-                <p className="pe-body-lead text-white/90 leading-relaxed mb-4">
+                <p className="pe-body-lead pe-lead-centered mb-4 leading-relaxed text-white/90">
                   Grille tarifaire officielle PatrimEmotion® V2026. Licences professionnelles.
                 </p>
-                <p className="text-white/70 text-sm italic">
+                <p className="pe-lead-centered mx-auto max-w-2xl text-sm italic leading-relaxed text-white/70">
                   Tarifs indicatifs HT – hors formation présentielle spécifique et prestations sur devis
                 </p>
               </div>
@@ -75,10 +75,10 @@ export default function TarifsPage() {
         <section id="licences" className="scroll-mt-28 bg-white py-24 md:py-32 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
+              <h2 className="pe-heading-section mb-4 text-balance text-center text-[#003662]">
                 Vue d&apos;ensemble des <span className="text-[#f4ca3a]">licences</span>
               </h2>
-              <p className="pe-body-lead text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-balance leading-relaxed text-[#003662]/80">
                 Choisissez la formule adaptée à la taille et aux besoins de votre cabinet
               </p>
               <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
@@ -94,19 +94,24 @@ export default function TarifsPage() {
                         <th className="px-5 py-4 font-semibold text-base">Utilisateurs inclus</th>
                       </tr>
                     </thead>
-                    <tbody className="text-[#003662]">
+                    <tbody>
                       {[
-                        ["#1a1a1a", "Licence Fondateur", "2 900 €", "—", "12 mois", "Selon CORE"],
+                        ["#1a1a1a", "Licence FONDATEUR", "2 900 €", "—", "12 mois", "Selon CORE"],
                         ["#9FB620", "Licence LIGHT", "1 490 €", "149 €", "12 mois", "1 nominatif"],
                         ["#d4a808", "Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
                         ["#003662", "Licence PREMIUM", "9 800 €", "980 €", "12 mois", "Jusqu'à 15"],
-                        ["#94a3b8", "Institutionnelle / Embedded", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
+                        ["#64748b", "Licence INSTITUTIONNELLE", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
                       ].map((row, i) => (
-                        <tr key={i} className="border-b border-[#003662]/10 last:border-0 hover:bg-[#003662]/5 transition-colors">
+                        <tr
+                          key={i}
+                          className="border-b border-[#003662]/10 text-[#003662] last:border-0 hover:bg-[#003662]/5 transition-colors"
+                        >
                           <td className="px-3 py-4 w-8">
-                            <span className="inline-block w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: row[0] }} aria-hidden />
+                            <span className="inline-block h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: row[0] }} aria-hidden />
                           </td>
-                          <td className="px-5 py-4 font-medium">{row[1]}</td>
+                          <td className="px-5 py-4 font-medium" style={{ color: row[0] }}>
+                            {row[1]}
+                          </td>
                           <td className="px-5 py-4">{row[2]}</td>
                           <td className="px-5 py-4">{row[3]}</td>
                           <td className="px-5 py-4">{row[4]}</td>
@@ -116,8 +121,8 @@ export default function TarifsPage() {
                     </tbody>
                   </table>
                 </div>
-                <p className="px-5 py-3 text-[#003662]/60 text-sm border-t border-[#003662]/10">
-                  Institutionnelle / Embedded (non disponible pour le moment)
+                <p className="border-t border-[#003662]/10 px-5 py-3 text-center text-sm text-[#003662]/60">
+                  INSTITUTIONNELLE (non disponible pour le moment)
                 </p>
               </div>
               <CtaRow>
@@ -151,7 +156,7 @@ export default function TarifsPage() {
                 </div>
                 <div className="p-8 md:p-10 text-[#003662]">
                   <p className="pe-body-lead font-semibold text-[#003662] mb-4 leading-relaxed">
-                    <span className="text-[#f4ca3a]">Tarif</span> 2 900 € HT / an (base CORE)
+                    Tarif 2 900 € HT / an (base CORE)
                   </p>
                   <ul className="space-y-2 pe-body-lead text-[#003662]/90 mb-6 leading-relaxed">
                     <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Licence CORE (« socle opérationnel »)</li>
@@ -184,10 +189,10 @@ export default function TarifsPage() {
         {/* 3 licences en cartes — style "Nos 3 solutions" */}
         <section className="bg-white py-24 md:py-32 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="pe-heading-section text-center text-[#003662] mb-4">
+            <h2 className="pe-heading-section mb-4 text-balance text-center text-[#003662]">
               Choisissez votre <span className="text-[#f4ca3a]">licence</span>
             </h2>
-            <p className="pe-body-lead text-[#003662]/80 text-center mb-16 max-w-2xl mx-auto leading-relaxed">
+            <p className="pe-body-lead pe-lead-centered mx-auto mb-16 max-w-2xl text-balance leading-relaxed text-[#003662]/80">
               LIGHT, CORE ou PREMIUM selon la taille de votre cabinet et vos besoins
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -203,13 +208,13 @@ export default function TarifsPage() {
                   <p className="text-white/90 text-sm mt-1">L&apos;essentiel pour démarrer</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <p className="text-[#003662]/80 text-sm mb-3 flex items-center gap-2">
-                    <span className="text-[#9FB620]">✓</span> Utilisation individuelle – cabinet indépendant
+                  <p className="mb-3 text-sm font-bold text-[#9FB620]">
+                    Utilisation individuelle – cabinet indépendant
                   </p>
                   <div className="mb-4">
-                    <span className="text-2xl font-semibold text-[#003662]">1 490 €</span>
-                    <span className="text-[#003662]/70"> HT / an</span>
-                    <p className="text-sm text-[#003662]/70 mt-0.5">ou 149 € HT / mois (engagement 12 mois)</p>
+                    <span className="text-2xl font-semibold text-[#9FB620]">1 490 €</span>
+                    <span className="font-bold text-[#9FB620]"> HT / an</span>
+                    <p className="mt-0.5 text-sm text-[#003662]/70">ou 149 € HT / mois (engagement 12 mois)</p>
                   </div>
                   <p className="text-[#003662] font-semibold text-sm mb-2">Inclut</p>
                   <ul className="space-y-1.5 text-[#003662]/90 text-sm mb-4 flex-1">
@@ -234,18 +239,21 @@ export default function TarifsPage() {
                   <p className="text-[#003662]/85 text-sm mt-1">Le socle opérationnel (standard pro)</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <p className="text-white/90 text-sm mb-3 flex items-center gap-2">
-                    <span className="text-[#9FB620]">✓</span> Cabinet structuré (2-5 conseillers)
+                  <p className="mb-3 text-sm font-bold text-[#f4ca3a]">
+                    Cabinet structuré (2-5 conseillers)
                   </p>
                   <div className="mb-4">
                     <span className="text-2xl font-semibold text-[#f4ca3a]">3 900 €</span>
-                    <span className="text-white/80"> HT / an</span>
-                    <p className="text-sm text-white/70 mt-0.5">ou 390 € HT / mois (engagement 12 mois)</p>
+                    <span className="font-bold text-[#f4ca3a]"> HT / an</span>
+                    <p className="mt-0.5 text-sm text-white/70">ou 390 € HT / mois (engagement 12 mois)</p>
                   </div>
                   <p className="text-white font-semibold text-sm mb-2">Inclut</p>
                   <ul className="space-y-1.5 text-white/90 text-sm mb-4 flex-1">
                     {CORE_FEATURES.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span>{f}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="shrink-0 text-[#f4ca3a]">✓</span>
+                        {f}
+                      </li>
                     ))}
                   </ul>
                   <p className="text-white/90 text-sm font-medium">Jusqu&apos;à 5 conseillers</p>
@@ -265,16 +273,19 @@ export default function TarifsPage() {
                   <p className="text-white/85 text-sm mt-1">La version avancée</p>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <p className="text-[#003662]/80 text-sm mb-3">Cabinet expert / multisites</p>
+                  <p className="mb-3 text-sm font-bold text-[#003662]">Cabinet expert / multisites</p>
                   <div className="mb-4">
                     <span className="text-2xl font-semibold text-[#003662]">9 800 €</span>
-                    <span className="text-[#003662]/70"> HT / an</span>
-                    <p className="text-sm text-[#003662]/70 mt-0.5">ou 980 € HT / mois (engagement 12 mois)</p>
+                    <span className="font-bold text-[#003662]"> HT / an</span>
+                    <p className="mt-0.5 text-sm text-[#003662]/70">ou 980 € HT / mois (engagement 12 mois)</p>
                   </div>
                   <p className="text-[#003662] font-semibold text-sm mb-2">Inclut</p>
                   <ul className="space-y-1.5 text-[#003662]/90 text-sm mb-4 flex-1">
                     {PREMIUM_FEATURES.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span>{f}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="shrink-0 text-[#003662]">✓</span>
+                        {f}
+                      </li>
                     ))}
                   </ul>
                   <p className="text-[#003662] text-sm font-medium">Jusqu&apos;à 15 conseillers</p>
@@ -321,8 +332,8 @@ export default function TarifsPage() {
         <section className="py-24 md:py-32 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
-                Options <span className="text-[#f4ca3a]">(HT)</span>
+              <h2 className="pe-heading-section mb-4 text-center text-[#003662]">
+                <span className="text-[#f4ca3a]">Options</span> (HT)
               </h2>
               <p className="pe-body-lead pe-lead-centered text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Complétez votre licence selon vos besoins

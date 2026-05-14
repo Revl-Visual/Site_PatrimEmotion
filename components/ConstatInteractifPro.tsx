@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PATRIMEMOTION_DEMO_URL } from "@/lib/amcp";
 import { CtaButton } from "@/components/CtaButton";
 
 const CONSTATS_PRO = [
@@ -90,9 +91,19 @@ export default function ConstatInteractifPro() {
                 <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   Identifiez ce qui vous concerne
                 </h3>
-                <p className="text-[#003662]/80 text-sm text-center leading-relaxed">
+                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed mb-6">
                   Cochez les situations qui résonnent avec votre pratique. L&apos;encart s&apos;adaptera pour vous orienter.
                 </p>
+                <CtaButton
+                  href={PATRIMEMOTION_DEMO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="yellow"
+                  fullWidth
+                  className="text-center font-semibold"
+                >
+                  Demander une démo
+                </CtaButton>
               </>
             ) : (
               <>
@@ -106,11 +117,11 @@ export default function ConstatInteractifPro() {
                 <h3 className="pe-heading-card text-[#003662] text-center mb-3">
                   {titreHumain}
                 </h3>
-                <p className="text-[#003662]/80 text-sm text-center leading-relaxed mb-6">
+                <p className="pe-body-lead text-[#003662]/80 text-center leading-relaxed mb-6">
                   {messageAdapte}
                 </p>
                 <CtaButton
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScJDYDqoi6B59UMs-f2Oj1PzTqHgIjwUTkJgYbvFzhRTtJpTA/viewform"
+                  href={PATRIMEMOTION_DEMO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="yellow"

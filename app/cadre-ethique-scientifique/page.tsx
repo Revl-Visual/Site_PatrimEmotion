@@ -38,13 +38,13 @@ export default function CadreEthiqueScientifiquePage() {
                     <div className="relative w-full max-w-xl" style={{ transform: "perspective(800px) rotateY(-8deg) rotateX(2deg)" }}>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#9FB620] p-6 flex flex-col items-start justify-center min-h-[210px] text-left">
-                          <p className="text-[#003662] font-semibold text-lg mb-2 text-left">Éthique</p>
+                          <p className="text-[#9FB620] font-bold text-2xl mb-2 text-left tracking-tight">Éthique</p>
                           <p className="text-[#003662]/90 text-sm leading-snug text-left hyphens-none break-normal [overflow-wrap:normal]">
                             <strong>Respect</strong> de la personne, <strong>confidentialité</strong>, neutralité. Au cœur de la relation conseiller–client.
                           </p>
                         </div>
                         <div className="bg-white rounded-xl shadow-xl overflow-hidden border-l-4 border-[#f4ca3a] p-6 flex flex-col items-start justify-center min-h-[210px] text-left">
-                          <p className="text-[#003662] font-semibold text-lg mb-2 text-left">Scientifique</p>
+                          <p className="text-[#f4ca3a] font-bold text-2xl mb-2 text-left tracking-tight">Scientifique</p>
                           <p className="text-[#003662]/90 text-sm leading-snug text-left hyphens-none break-normal [overflow-wrap:normal]">
                             <strong>4 piliers</strong> : psychologie des traits, <strong>finance comportementale</strong>, décision sous incertitude, scoring.
                           </p>
@@ -134,7 +134,7 @@ export default function CadreEthiqueScientifiquePage() {
               Finance comportementale
             </h2>
             <p className="pe-body-lead text-[#003662] leading-relaxed mb-8">
-              Les décisions financières ne sont pas <strong className="text-[#003662]">purement rationnelles</strong> : elles sont influencées par des <strong className="text-[#9FB620]">biais</strong> (aversion à la perte, surconfiance, statu quo, heuristiques). PatrimEmotion® <strong className="text-[#9FB620]">cartographie ces tendances</strong> pour mieux piloter son patrimoine. Identifier ces biais permet de décider avec plus de <strong className="text-[#9FB620]">lucidité</strong>.
+              Les décisions financières ne sont pas <strong className="text-[#9FB620]">purement rationnelles</strong> : elles sont influencées par des <strong className="text-[#9FB620]">biais</strong> (aversion à la perte, surconfiance, statu quo, heuristiques). PatrimEmotion® <strong className="text-[#9FB620]">cartographie ces tendances</strong> pour mieux piloter son patrimoine. Identifier ces biais permet de décider avec plus de <strong className="text-[#9FB620]">lucidité</strong>.
             </p>
 
             <h3 className="pe-heading-card text-[#003662] mb-4 text-center">
@@ -240,19 +240,27 @@ export default function CadreEthiqueScientifiquePage() {
                 </h3>
                 <ul className="space-y-2 pe-body-lead text-white leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-white font-semibold shrink-0">✓</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✓
+                    </span>
                     <span>Cohérent avec la psychologie décisionnelle</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white font-semibold shrink-0">✓</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✓
+                    </span>
                     <span>Structuré et interprétable</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white font-semibold shrink-0">✓</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✓
+                    </span>
                     <span>Reproductible</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white font-semibold shrink-0">✓</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✓
+                    </span>
                     <span>Un outil typologique comportemental appliqué au patrimoine</span>
                   </li>
                 </ul>
@@ -263,19 +271,27 @@ export default function CadreEthiqueScientifiquePage() {
                 </h3>
                 <ul className="space-y-2 pe-body-lead text-white/90 leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-white shrink-0">✕</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✕
+                    </span>
                     <span>Un test clinique validé</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white shrink-0">✕</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✕
+                    </span>
                     <span>Un outil normé scientifiquement sur échantillon statistique</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white shrink-0">✕</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✕
+                    </span>
                     <span>Un instrument psychométrique validé académiquement</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-white shrink-0">✕</span>
+                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                      ✕
+                    </span>
                     <span>Un outil prédictif de performance</span>
                   </li>
                 </ul>

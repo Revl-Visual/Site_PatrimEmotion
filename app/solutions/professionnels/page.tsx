@@ -5,6 +5,12 @@ import ConstatInteractifPro from "@/components/ConstatInteractifPro";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import {
+  LICENCE_HERO_BADGE_FRAME_CLASS,
+  LICENCE_HERO_ROW_FONDATEUR,
+  LICENCE_HERO_ROW_INSTITUTIONNEL,
+  LICENCE_HERO_ROW_TROIS,
+} from "@/lib/licenceHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,21 +26,24 @@ const APPROCHE_STRUCTUREE = [
   "Une restitution pédagogique pour éclairer la réflexion patrimoniale",
 ];
 
-const APPORTS_PROFESSIONNELS = [
-  "Un outil de découverte client enrichi.",
-  "Un support pédagogique de dialogue patrimonial.",
-  "Un levier de différenciation dans la relation de conseil.",
-  "Une meilleure continuité entre diagnostic, restitution et accompagnement.",
-  "Une méthode structurée, personnalisable et facilement intégrable.",
+/** Libellés courts — encart « 5 apports concrets pour le conseil » (page Professionnels). */
+const CINQ_APPORTS_METHODE = [
+  "Une analyse comportementale structurée",
+  "Une mise en évidence de profils émotionnels patrimoniaux",
+  "Des supports d'aide à la compréhension et au dialogue patrimonial",
+  "Une lecture globale du patrimoine et des équilibres patrimoniaux",
+  "Un outil d'accompagnement du conseil patrimonial",
 ];
 
 const IMPACTS_ORGANISATIONNELS = [
   "Renforcer la qualité de l'entretien découverte client",
   "Structurer le parcours client",
-  "Faciliter la pédagogie patrimoniale avec des supports livrables",
-  "Soutenir des décisions plus cohérentes dans la durée et faciliter le suivi client",
-  "Plan d'actions formalisé dans le temps",
-  "Une méthode facilement intégrable et personnalisable",
+  "Faciliter la pédagogie patrimoniale avec des supports lisibles",
+  "Soutenir des décisions plus cohérentes dans la durée",
+  "Planifier les actions dans le temps",
+  "Intégration facile et personnalisable de la méthode",
+  "Faciliter le suivi client",
+  "Améliorer la traçabilité des échanges",
 ];
 
 const IMPACTS_RELATIONNELS = [
@@ -43,6 +52,7 @@ const IMPACTS_RELATIONNELS = [
   "Lever les freins et les objections pour faciliter la prise de décision",
   "Renforcer la qualité de la relation",
   "Définir le style d'accompagnement propre au client",
+  "Effectuer une validation contradictoire avec le client",
 ];
 
 const IMPACTS_STRATEGIQUES = [
@@ -50,11 +60,12 @@ const IMPACTS_STRATEGIQUES = [
   "Renforcer la pertinence des stratégies proposées",
   "Se différencier durablement",
   "Créer un effet de levier sur l'ensemble des solutions possibles",
-  "Adopter une approche pédagogique pour renforcer son image",
+  "Adopter une approche pédagogique holistique pour renforcer son image premium",
   "Garder une avance sur l'IA",
 ];
 
 const CADRE_SUR = [
+  "Une méthode AMF Safe",
   "Méthode propriétaire issue de plus de 20 ans d'expérience terrain en conseil patrimonial.",
   "Marque et licence déposées auprès de l'INPI.",
   "Utilisation dans le cadre réglementaire applicable ; PatrimEmotion® complète l’analyse du professionnel sans s’y substituer.",
@@ -101,17 +112,48 @@ export default function ProfessionnelsPage() {
                       </CtaButton>
                     </CtaRow>
                   </div>
-                  <div className="hidden lg:flex justify-center items-center">
-                    <div className="w-full max-w-sm">
-                      <div className="overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
-                        <Image
-                          src="/images/badges/badges_PatrimEmotion.png"
-                          alt="Badges de certification PatrimEmotion"
-                          width={640}
-                          height={480}
-                          className="h-auto w-full"
-                          sizes="(max-width: 1024px) 0px, 384px"
-                        />
+                  <div className="hidden min-h-0 flex-col items-center justify-center lg:flex">
+                    <div
+                      className="flex w-full max-w-md flex-col gap-5 sm:gap-6 lg:max-w-none xl:max-w-lg"
+                      role="group"
+                      aria-label="Formules de licence PatrimEmotion"
+                    >
+                      <div className="flex justify-center">
+                        <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                          <Image
+                            src={LICENCE_HERO_ROW_FONDATEUR.src}
+                            alt={LICENCE_HERO_ROW_FONDATEUR.alt}
+                            fill
+                            className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                            sizes="(max-width: 1024px) 0px, 200px"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid w-full grid-cols-3 gap-x-2 gap-y-3 sm:gap-x-4 sm:gap-y-0 md:gap-x-5">
+                        {LICENCE_HERO_ROW_TROIS.map(({ src, alt }) => (
+                          <div key={src} className="flex min-w-0 justify-center">
+                            <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                              <Image
+                                src={src}
+                                alt={alt}
+                                fill
+                                className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                                sizes="(max-width: 1024px) 0px, 200px"
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex shrink-0 justify-center pt-0.5">
+                        <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                          <Image
+                            src={LICENCE_HERO_ROW_INSTITUTIONNEL.src}
+                            alt={LICENCE_HERO_ROW_INSTITUTIONNEL.alt}
+                            fill
+                            className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                            sizes="(max-width: 1024px) 0px, 200px"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -177,31 +219,40 @@ export default function ProfessionnelsPage() {
                 L&apos;objectif est d&apos;intégrer la lecture comportementale dans votre pratique sans alourdir l&apos;expérience client, avec un parcours clair, séquencé et directement exploitable en rendez-vous.
               </p>
               <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
+                <div className="no-justify rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
                   <h3 className="pe-heading-card text-[#003662] mb-6 text-center">Une approche en 4 étapes</h3>
                   <div className="space-y-4">
                     {APPROCHE_STRUCTUREE.map((item, i) => (
                       <div key={i} className="flex items-start gap-3 rounded-xl bg-[#f7fbe8] border border-[#9FB620]/25 p-4">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#9FB620] text-white font-bold">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#9FB620] text-sm text-white font-bold md:h-10 md:w-10 md:text-base">
                           {i + 1}
                         </span>
-                        <p className="pe-body-lead !text-left [text-align-last:auto] text-[#003662] leading-relaxed">{item}</p>
+                        <p className="pe-body-lead min-w-0 flex-1 !text-left text-[#003662] leading-relaxed !hyphens-none break-words">
+                          {item}
+                        </p>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
+                <div className="no-justify rounded-2xl bg-white/95 p-6 md:p-8 border border-[#8aa61d]/25">
                   <h3 className="pe-heading-card text-[#003662] mb-6 text-center">
-                    Ce que PatrimEmotion® apporte aux professionnels
+                    5 apports concrets pour le conseil
                   </h3>
-                  <ul className="space-y-3">
-                    {APPORTS_PROFESSIONNELS.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
-                        <span className="pe-body-lead !text-left [text-align-last:auto] text-[#003662]/90 leading-relaxed">{item}</span>
-                      </li>
+                  <div className="space-y-4">
+                    {CINQ_APPORTS_METHODE.map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 rounded-xl bg-[#f7fbe8] border border-[#9FB620]/25 p-4"
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#9FB620] text-sm text-white font-bold md:h-10 md:w-10 md:text-base">
+                          {i + 1}
+                        </span>
+                        <p className="pe-body-lead min-w-0 flex-1 !text-left text-[#003662] leading-relaxed !hyphens-none break-words">
+                          {item}
+                        </p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
               <CtaRow spacing="none" className="mt-8 md:mt-10">
@@ -220,9 +271,9 @@ export default function ProfessionnelsPage() {
         </section>
 
         {/* Section 5 : Impacts */}
-        <section className="!pt-8 !pb-10 md:!pt-12 md:!pb-14 bg-white">
+        <section className="!pt-3 !pb-10 md:!pt-5 md:!pb-14 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
+            <h2 className="pe-heading-section text-[#f4ca3a] mb-6 text-center">
               Les bénéfices pour votre cabinet
             </h2>
             <p className="pe-body-lead pe-lead-centered text-[#003662]/90 text-center max-w-4xl mx-auto mb-10">
@@ -234,7 +285,9 @@ export default function ProfessionnelsPage() {
                 <ul className="space-y-3">
                   {IMPACTS_ORGANISATIONNELS.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="text-[#003662] text-lg font-semibold shrink-0 leading-none" aria-hidden>
+                        ✓
+                      </span>
                       <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -245,7 +298,9 @@ export default function ProfessionnelsPage() {
                 <ul className="space-y-3">
                   {IMPACTS_RELATIONNELS.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="text-[#003662] text-lg font-semibold shrink-0 leading-none" aria-hidden>
+                        ✓
+                      </span>
                       <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -256,7 +311,9 @@ export default function ProfessionnelsPage() {
                 <ul className="space-y-3">
                   {IMPACTS_STRATEGIQUES.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#9FB620] shrink-0 font-semibold">•</span>
+                      <span className="text-[#003662] text-lg font-semibold shrink-0 leading-none" aria-hidden>
+                        ✓
+                      </span>
                       <span className="pe-body text-[#003662]/90 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -276,10 +333,7 @@ export default function ProfessionnelsPage() {
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="rounded-2xl bg-[#9FB620] p-8 md:p-12 shadow-xl border-2 border-[#8aa61d]/30">
               <h2 className="pe-heading-section text-white mb-6 text-center">Un cadre sûr</h2>
-              <p className="pe-body-lead !text-left [text-align-last:auto] text-white mb-4">
-                Une méthode AMF Safe
-              </p>
-              <p className="pe-body-lead !text-left [text-align-last:auto] text-white/95 leading-relaxed mb-6">
+              <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-3xl text-balance font-bold leading-relaxed text-white">
                 La méthode s&apos;inscrit dans un usage professionnel encadré. Elle complète votre analyse patrimoniale sans se substituer à vos obligations réglementaires ni à votre responsabilité de conseil.
               </p>
               <ul className="space-y-4">
@@ -302,29 +356,6 @@ export default function ProfessionnelsPage() {
                 </CtaButton>
               </CtaRow>
             </div>
-          </div>
-        </section>
-
-        {/* CTA final */}
-        <section className="py-16 md:py-24 bg-[#003662]">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="pe-heading-section mb-6 text-white max-w-2xl mx-auto">
-              Échangeons sur votre contexte pour identifier le bon niveau de licence et le cadre de mise en œuvre.
-            </h2>
-            <CtaRow layout="split">
-              <CtaButton
-                href={DEVIS_PRO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="yellow-elevated"
-                className="text-base font-semibold"
-              >
-                Demander un devis
-              </CtaButton>
-              <CtaButton href="/licences" variant="white" className="text-base font-semibold">
-                Voir les licences
-              </CtaButton>
-            </CtaRow>
           </div>
         </section>
 

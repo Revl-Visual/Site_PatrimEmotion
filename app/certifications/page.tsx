@@ -66,14 +66,15 @@ export default function CertificationsPage() {
           </div>
         </section>
 
-        <section className="section-alt-blue py-20 md:py-24">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="rounded-[1.75rem] border border-[#003662]/12 bg-white p-7 shadow-[0_16px_44px_-20px_rgba(0,54,98,0.28)] md:p-10">
-              <h2 className="pe-heading-section text-[#003662] mb-8 text-center">Parcours de certification</h2>
-              <div className="relative grid md:grid-cols-3 gap-5 md:gap-6 no-justify">
+        <section className="section-alt-blue py-20 md:py-28">
+          <div className="container mx-auto flex max-w-5xl justify-center px-4">
+            <div className="w-full rounded-[2rem] bg-gradient-to-br from-[#9FB620] via-[#b5cc4e] to-[#8aa61d] p-[3px] shadow-[0_28px_70px_rgba(0,54,98,0.16)]">
+              <div className="rounded-[calc(2rem-3px)] bg-[#f0f7e6] px-7 py-9 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.55)] md:px-10 md:py-11">
+              <h2 className="pe-heading-section mb-8 text-center text-[#003662]">Parcours de certification</h2>
+              <div className="relative grid gap-5 no-justify md:grid-cols-3 md:gap-6">
                 <div
                   aria-hidden
-                  className="hidden md:block absolute left-[16.66%] right-[16.66%] top-9 h-[2px] bg-gradient-to-r from-[#9FB620]/60 via-[#f4ca3a]/70 to-[#9FB620]/60"
+                  className="absolute left-[16.66%] right-[16.66%] top-9 hidden h-[2px] bg-gradient-to-r from-[#9FB620]/50 via-[#9FB620]/80 to-[#9FB620]/50 md:block"
                 />
                 {[
                   ["1", "Formation", "Appropriation de la méthode et du cadre d'usage."],
@@ -82,10 +83,10 @@ export default function CertificationsPage() {
                 ].map(([step, title, desc]) => (
                   <div
                     key={title}
-                    className="relative rounded-2xl border border-[#003662]/10 bg-white p-6 text-left shadow-[0_10px_28px_-14px_rgba(0,54,98,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f4ca3a]/40 hover:shadow-[0_18px_36px_-16px_rgba(0,54,98,0.42)] md:p-7"
+                    className="relative rounded-2xl border border-[#9FB620]/35 bg-white/95 p-6 text-left shadow-[0_10px_28px_-14px_rgba(0,54,98,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9FB620]/55 hover:shadow-[0_18px_36px_-16px_rgba(159,182,32,0.35)] md:p-7"
                   >
                     <div className="mb-4 flex justify-start">
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#003662] text-white text-lg font-semibold shadow-md shadow-[#003662]/30">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#9FB620] text-lg font-semibold text-white shadow-md shadow-[#9FB620]/35">
                         {step}
                       </span>
                     </div>
@@ -96,11 +97,12 @@ export default function CertificationsPage() {
                   </div>
                 ))}
               </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="!pt-8 !pb-32 md:!pt-12 md:!pb-40 bg-white">
+        <section className="bg-white !pb-32 !pt-20 md:!pb-40 md:!pt-28">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="rounded-[2rem] border-2 border-[#f4ca3a] bg-[#fff8df] px-8 py-10 text-center shadow-[0_18px_42px_-22px_rgba(0,54,98,0.28)] md:px-10 md:py-11">
                 <h2 className="pe-heading-section text-[#003662] mb-4">Échanger sur les certifications</h2>

@@ -210,9 +210,6 @@ export default function Footer() {
               <Link href="/charte-ethique" className="hover:text-white transition-colors">
                 Charte éthique
               </Link>
-              <Link href="/cgu" className="hover:text-white transition-colors">
-                CGU
-              </Link>
               <Link href="/securite" className="hover:text-white transition-colors">
                 Sécurité
               </Link>

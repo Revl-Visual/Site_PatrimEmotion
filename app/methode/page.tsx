@@ -5,8 +5,10 @@ import ProfilsFlipCards from "@/components/ProfilsFlipCards";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
-import { PATRIMEMOTION_LIVRE_BLANC_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import { PATRIMEMOTION_LIVRE_EDITEUR_FORM_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
+
+const PATRIMEMOTION_LIVRE_BLANC_GLE_URL = "https://forms.gle/RjV87qPN7wXGqaWJ7";
 
 /** Ancienne vidéo d’accueil — `public/video/video_prez_patrim_emotion.mp4` */
 const VIDEO_PREZ_PATRIM_EMOTION = "/video/video_prez_patrim_emotion.mp4";
@@ -101,13 +103,13 @@ export default function MethodePage() {
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </CtaButton>
                     <CtaButton
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
+                      href={PATRIMEMOTION_LIVRE_BLANC_GLE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       variant="white"
                       className="text-base font-semibold md:mt-1"
                     >
-                      Recevoir le Livre Editeur PatrimEmotion
+                      Recevoir le livre blanc de la méthode
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </CtaButton>
                   </CtaRow>
@@ -132,10 +134,11 @@ export default function MethodePage() {
         </section>
 
         {/* Une approche comportementale */}
-        <section className="bg-white py-10 md:py-14">
+        <section className="bg-white py-5 md:py-7">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
-              Une approche <span className="text-[#f4ca3a]">comportementale</span> appliquée aux <span className="text-[#9FB620]">décisions patrimoniales</span>
+              Une <span className="text-[#f4ca3a]">approche</span> comportementale appliquée aux{" "}
+              <span className="text-[#9FB620]">décisions patrimoniales</span>
             </h2>
             <div className="space-y-6 pe-body-lead text-[#003662]/90 leading-relaxed">
               <p className="pe-lead-centered text-center">
@@ -181,23 +184,33 @@ export default function MethodePage() {
                   </p>
                   <ul className="space-y-3 pe-body-lead text-[#003662]/90 mb-8 max-w-xl mx-auto">
                     <li className="flex items-center gap-3">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
+                      <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>perception du risque</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
+                      <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>rapport personnel à l&apos;argent</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
+                      <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>temporalité des projets</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
+                      <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>expérience de vie</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <span className="text-[#f4ca3a] shrink-0">•</span>
+                      <span className="text-[#003662] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>biais cognitifs et émotionnels</span>
                     </li>
                   </ul>
@@ -222,25 +235,31 @@ export default function MethodePage() {
                   <h3 className="pe-heading-feature mb-6 text-center text-[#003662]">
                     <span className="text-[#f4ca3a]">La démarche</span> <PatrimEmotionMark />
                   </h3>
-                  <p className="pe-body-lead text-[#003662]/90 mb-3 leading-relaxed !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#f4ca3a] mb-3 leading-relaxed !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     La méthode PatrimEmotion® vise à apporter une lecture structurée de ces dimensions comportementales afin d&apos;éclairer les décisions patrimoniales.
                     Elle permet notamment de :
                   </p>
-                  <ul className="space-y-3 pe-body-lead text-[#003662]/90 mb-8 max-w-xl mx-auto">
+                  <ul className="space-y-3 pe-body-lead text-[#f4ca3a] mb-8 max-w-xl mx-auto">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>mieux comprendre la manière dont les décisions patrimoniales sont abordées</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>identifier certaines préférences décisionnelles</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#f4ca3a] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>apporter des repères pour structurer la réflexion patrimoniale</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#003662]/90 leading-relaxed !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#f4ca3a] leading-relaxed !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     PatrimEmotion® constitue ainsi un outil pédagogique d&apos;aide à la compréhension et au dialogue patrimonial.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
@@ -255,36 +274,48 @@ export default function MethodePage() {
                   <h3 className="pe-heading-feature text-[#9FB620] mb-6 text-center">
                     Les fondements de la méthode
                   </h3>
-                  <p className="pe-body-lead text-[#003662]/90 mb-3 !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#4a6510] mb-3 !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     La méthode s&apos;appuie notamment sur des approches issues :
                   </p>
-                  <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#003662]/90 mb-8">
+                  <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#4a6510] mb-8">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>de la psychologie comportementale</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>de l&apos;étude des biais cognitifs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>de l&apos;analyse du rapport à l&apos;argent</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>de la gestion de l&apos;incertitude</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>de la projection dans le temps</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                        ✓
+                      </span>
                       <span>des mécanismes de décision et de délégation</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#003662]/90 !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#4a6510] !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     Ces éléments permettent d&apos;observer certaines dynamiques décisionnelles liées aux choix patrimoniaux.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
@@ -353,13 +384,13 @@ export default function MethodePage() {
             </p>
             <CtaRow className="-mb-1">
               <CtaButton
-                href={PATRIMEMOTION_LIVRE_BLANC_URL}
+                href={PATRIMEMOTION_LIVRE_EDITEUR_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="white"
                 className="text-base font-semibold"
               >
-                Recevoir le Livre Blanc de la méthode
+                Recevoir le livre éditeur PatrimEmotion
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -368,8 +399,8 @@ export default function MethodePage() {
           </div>
         </section>
 
-        {/* Les axes d'analyse */}
-        <section className="section-alt-blue py-16 md:py-24">
+        {/* Les axes d'analyse — padding bas = écart image ↔ CTA pour symétrie verticale */}
+        <section className="section-alt-blue pt-16 md:pt-24 pb-10 md:pb-12">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
               Les 6 axes d&apos;analyse
@@ -406,18 +437,34 @@ export default function MethodePage() {
             <p className="pe-body-lead pe-lead-centered text-[#003662]/90 mb-8 leading-relaxed text-center">
               L&apos;analyse croisée de ces dimensions permet de mettre en évidence certaines cohérences ou tensions dans la manière d&apos;aborder les décisions patrimoniales.
             </p>
-            {/* Image Radar Emotionnel PatrimEmotion — à insérer */}
-            <div className="mx-auto w-fit rounded-2xl bg-white p-3 md:p-4">
-              <div className="relative w-full max-w-3xl overflow-hidden rounded-xl">
-                <Image
-                  src="/images/radar_patrimonial.png"
-                  alt="Radar patrimonial PatrimEmotion"
-                  width={1240}
-                  height={820}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 768px) 100vw, 900px"
-                />
+            {/* Image + CTA : même écart vertical entre image, bouton et bord bas de section */}
+            <div className="flex flex-col items-center gap-10 md:gap-12">
+              <div className="mx-auto w-fit rounded-2xl bg-white p-3 md:p-4">
+                <div className="relative w-full max-w-3xl overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/radar_patrimonial.png"
+                    alt="Radar patrimonial PatrimEmotion"
+                    width={1240}
+                    height={820}
+                    className="h-auto w-full object-contain"
+                    sizes="(max-width: 768px) 100vw, 900px"
+                  />
+                </div>
               </div>
+              <CtaRow spacing="none" className="w-full">
+                <CtaButton
+                  href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="blue"
+                  className="text-base font-semibold shadow-lg shadow-[#003662]/20"
+                >
+                  Réaliser mon bilan
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -428,8 +475,10 @@ export default function MethodePage() {
             <h2 className="pe-heading-section text-[#003662] mb-4 text-center">
               Comment se déroule l&apos;accompagnement ?
             </h2>
-            <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-center text-[#003662]/90 whitespace-nowrap">
-              La démarche <PatrimEmotionMark patrimClassName="text-[#f4ca3a]" /> se déroule généralement en trois étapes :
+            <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-center text-[#003662]/90">
+              La démarche{" "}
+              <PatrimEmotionMark patrimClassName="!text-[#003662]" emotionClassName="!text-[#003662]" /> se déroule
+              généralement en trois étapes :
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-16">
               <div className="rounded-2xl bg-[#b9cf4e] shadow-[0_10px_28px_rgba(0,54,98,0.18)] p-6 md:p-8 text-left">

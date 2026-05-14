@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL } from "@/lib/amcp";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL, PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const LICENCES_URL = "/licences";
 const METHODE_SCIENTIFIQUE_URL = "/methode";
 const PATRIMEMOTION_ARTICLE_URL =
-  "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7418045872833306624?collapsed=1%22";
+  "https://www.linkedin.com/pulse/patrimemotion-une-m%C3%A9thode-innovante-et-unique-bas%C3%A9-sur-monteil--xhspe/";
 
 const METHODE_STRUCTUREE = [
   "structurée et reproductible",
@@ -104,28 +104,34 @@ export default function InstitutionnelsPage() {
       <main className="min-h-screen">
         {/* Hero */}
         <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
-          <div className="hero-encart pt-14 pb-10 md:pt-18 md:pb-14 px-6 md:px-12">
+          <div className="hero-encart px-6 pb-12 pt-16 md:px-12 md:pb-16 md:pt-20">
             <div className="container mx-auto relative z-10">
               <div className="max-w-6xl mx-auto">
                 <h1 className="pe-heading-hero text-white mb-4 text-center">
                   Institutions, réseaux et plateformes
                 </h1>
-                <p className="pe-body-lead pe-lead-centered text-white font-semibold text-center mb-10 leading-relaxed max-w-4xl mx-auto">
+                <p className="pe-body-lead pe-lead-centered text-white font-semibold text-center mb-12 leading-relaxed max-w-4xl mx-auto md:mb-14">
                   Une approche comportementale au service de la relation patrimoniale
                 </p>
-                <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch min-h-[260px] md:min-h-[320px]">
-                  <div>
-                    <div className="space-y-5 pe-body-lead text-white/90 leading-relaxed max-w-2xl">
-                      <p className="text-justify">PatrimEmotion® est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.</p>
-                      <p className="text-justify">Elle vise à apporter une lecture complémentaire de la manière dont les individus perçoivent l&apos;argent, le temps, l&apos;incertitude et les projets patrimoniaux.</p>
-                      <p className="text-justify">Cette approche permet d&apos;éclairer les mécanismes décisionnels qui peuvent influencer les choix patrimoniaux et d&apos;enrichir la compréhension du client dans le cadre d&apos;un accompagnement patrimonial global.</p>
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch min-h-[280px] md:min-h-[340px]">
+                  <div className="no-justify">
+                    <div className="space-y-6 pe-body-lead max-w-2xl text-left text-white/90 leading-relaxed md:space-y-7">
+                      <p className="!hyphens-none break-words !text-left">
+                        PatrimEmotion® est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
+                      </p>
+                      <p className="!hyphens-none break-words !text-left">
+                        Elle vise à apporter une lecture complémentaire de la manière dont les individus perçoivent l&apos;argent, le temps, l&apos;incertitude et les projets patrimoniaux.
+                      </p>
+                      <p className="!hyphens-none break-words !text-left">
+                        Cette approche permet d&apos;éclairer les mécanismes décisionnels qui peuvent influencer les choix patrimoniaux et d&apos;enrichir la compréhension du client dans le cadre d&apos;un accompagnement patrimonial global.
+                      </p>
                     </div>
                   </div>
                   <div className="hidden lg:flex justify-center items-stretch">
                     <div className="w-full max-w-md">
-                      <div className="relative h-full min-h-[340px] overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
+                      <div className="relative h-full min-h-[360px] overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
                         <Image
-                          src="/images/institutionnels_hero.jpg"
+                          src="/images/institutionnels_hero_2.jpeg"
                           alt="Illustration institutionnels PatrimEmotion"
                           fill
                           className="object-cover"
@@ -137,7 +143,7 @@ export default function InstitutionnelsPage() {
                     </div>
                   </div>
                 </div>
-                <CtaRow spacing="none" className="mt-10 justify-center">
+                <CtaRow spacing="none" className="mt-12 justify-center md:mt-14">
                   <CtaButton
                     href={PATRIMEMOTION_ARTICLE_URL}
                     target="_blank"
@@ -163,28 +169,27 @@ export default function InstitutionnelsPage() {
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 max-w-2xl mx-auto">
               {METHODE_STRUCTUREE.map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="text-[#9FB620] text-xl font-semibold shrink-0 mt-0.5">✓</span>
+                  <span className="mt-0.5 shrink-0 text-xl font-semibold text-[#003662]">✓</span>
                   <span className="pe-body-lead font-semibold text-[#003662]/90 leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
             <p className="pe-body-lead pe-lead-centered text-[#003662]/85 text-center mb-10 leading-relaxed max-w-2xl mx-auto md:text-[1.15rem]">
-              Peut être utilisée comme un outil pédagogique d&apos;aide à la compréhension du comportement patrimonial, venant compléter les dispositifs de connaissance client existants.
+              La méthode PatrimEmotion® peut être utilisée comme un outil pédagogique d&apos;aide à la compréhension du comportement patrimonial, venant compléter les dispositifs de connaissance client existants.
             </p>
             <div className="mx-auto mt-4 max-w-5xl">
-              <div className="group block rounded-[2rem] overflow-hidden bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
-                <div className="relative w-full aspect-[16/10]">
-                  <Image
-                    src="/images/methode_institutionnels.jpeg"
-                    alt="Méthode institutionnels PatrimEmotion"
-                    fill
-                    className="object-cover object-[40%_center]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-                  />
-                </div>
+              <div className="group block overflow-hidden rounded-[2rem] bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
+                <Image
+                  src="/images/methode_institutionnels.jpeg"
+                  alt="Méthode institutionnels PatrimEmotion"
+                  width={1600}
+                  height={900}
+                  className="h-auto w-full max-w-full object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+                />
               </div>
             </div>
-            <CtaRow spacing="none" className="mt-8">
+            <CtaRow spacing="none" className="mt-12 md:mt-14">
               <CtaButton
                 href="/images/Carte_mentale_zone_secu_institutionnels.png"
                 target="_blank"
@@ -210,7 +215,7 @@ export default function InstitutionnelsPage() {
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-2xl mx-auto">
               {LECTURE_ANALYSE.map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="text-[#003662]/40 shrink-0 mt-0.5">—</span>
+                  <span className="shrink-0 mt-0.5 font-bold text-[#003662]">—</span>
                   <span className="pe-body-lead text-[#003662]/85 leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -223,8 +228,8 @@ export default function InstitutionnelsPage() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeTPr-JYqXwOzYJ8DFr2ci8Q5po8Xx_62_tG6oQ890eCnZf7Q/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="yellow"
-                className="font-semibold"
+                variant="white"
+                className="!shadow-none border-2 border-[#003662] font-semibold hover:shadow-md"
               >
                 Recevoir le livre blanc institutionnel
               </CtaButton>
@@ -253,7 +258,7 @@ export default function InstitutionnelsPage() {
             <ul className="space-y-4 mb-8 max-w-xl mx-auto">
               {RESTITUTION_POINTS.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-white/50 shrink-0 mt-0.5">—</span>
+                  <span className="shrink-0 mt-0.5 font-bold text-white">—</span>
                   <span className="pe-body-lead text-white/95 leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -276,7 +281,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Positionnement — fond blanc */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="bg-white !pt-16 !pb-8 md:!pt-24 md:!pb-10">
           <div className="container mx-auto px-4 max-w-2xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Positionnement de la méthode PatrimEmotion®
@@ -284,20 +289,31 @@ export default function InstitutionnelsPage() {
             <div className="space-y-8 pe-body-lead text-[#003662]/85 leading-relaxed">
               <p>PatrimEmotion® se positionne comme un outil d&apos;analyse comportementale destiné aux professionnels du patrimoine souhaitant intégrer la dimension humaine et décisionnelle dans leur démarche d&apos;accompagnement.</p>
               <p>La méthode vient compléter les approches patrimoniales traditionnelles en apportant une lecture supplémentaire des mécanismes qui peuvent influencer les décisions patrimoniales.</p>
-              <p>PatrimEmotion® s&apos;utilise parfaitement dans la phase d&apos;entretien découverte du client et ensuite dans le parcours CIF du conseiller.</p>
-              <p>Elle ne se substitue pas aux analyses réglementaires ni aux obligations liées à la connaissance client.</p>
+              <p>PatrimEmotion® s&apos;intègre parfaitement dans la phase d&apos;entretien découverte du client et ensuite dans le parcours CIF du conseiller, ne se substituant pas aux analyses réglementaires ni aux obligations liées à la connaissance client.</p>
               <p>Il s&apos;agit d&apos;une méthode complémentaire du conseil patrimonial, elle ne se substitue pas à MIF II.</p>
+              <p>
+                Les décisions patrimoniales et les recommandations d&apos;investissement relèvent exclusivement de la responsabilité du professionnel habilité dans le cadre réglementaire applicable.
+              </p>
               <p>La méthode PatrimEmotion® ne constitue :</p>
               <ul className="space-y-3 max-w-xl mx-auto">
                 {NI_CONSEIL.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <span className="text-[#003662]/70 shrink-0 mt-0.5 font-semibold">{i + 1}.</span>
+                    <span className="shrink-0 mt-0.5 text-[#003662]/70">{i + 1}.</span>
                     <span className="pe-body-lead text-[#003662]/85 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <CtaRow spacing="none" className="mt-8 md:mt-10">
+            <CtaRow spacing="none" layout="split" className="mt-8 md:mt-10 gap-4 md:gap-6">
+              <CtaButton
+                href={PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="white"
+                className="!shadow-none border-2 border-[#003662] font-semibold hover:shadow-md"
+              >
+                Demander le livre blanc institutionnel
+              </CtaButton>
               <CtaButton
                 href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
@@ -312,26 +328,26 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Sciences comportementales — fond gris léger */}
-        <section className="py-16 md:py-24 section-alt-blue">
+        <section className="section-alt-blue !pt-10 !pb-10 md:!pt-12 md:!pb-12">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-2 text-center md:mb-3">
               Une approche inspirée des sciences comportementales
             </h2>
-            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 text-center mb-6 leading-relaxed md:text-[1.15rem]">
+            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 mb-2 text-center leading-relaxed md:text-[1.15rem]">
               La démarche PatrimEmotion® s&apos;inspire notamment de travaux issus :
             </p>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8 max-w-2xl mx-auto">
+            <ul className="mx-auto mb-2 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-1.5 sm:grid-cols-2 sm:gap-y-2 md:mb-3">
               {["de la psychologie comportementale", "de la psychologie de la décision", "de l'analyse des biais cognitifs", "de la finance comportementale"].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="text-[#003662]/40 shrink-0 mt-0.5">—</span>
+                  <span className="shrink-0 mt-0.5 font-bold text-[#003662]">—</span>
                   <span className="pe-body-lead text-[#003662]/85 leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 text-center mb-10 leading-relaxed md:text-[1.15rem]">
+            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 mb-0 text-center leading-relaxed md:text-[1.15rem]">
               Ces approches permettent d&apos;observer certains mécanismes liés à la manière dont les individus prennent leurs décisions face aux enjeux financiers et patrimoniaux, afin de faciliter et accélérer la prise de décision et renforcer la pertinence du conseil en cas de litige.
             </p>
-            <CtaRow spacing="none" className="mt-2 md:mt-4">
+            <CtaRow spacing="none" className="mt-10 md:mt-12">
               <CtaButton href={METHODE_SCIENTIFIQUE_URL} variant="blue" className="text-base md:text-lg font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl">
                 Découvrir la méthode scientifique
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -341,7 +357,7 @@ export default function InstitutionnelsPage() {
         </section>
 
         {/* Pourquoi intégrer PatrimEmotion® dans votre organisation ? */}
-        <section className="py-16 md:py-24 section-alt-blue">
+        <section className="section-alt-blue !pt-10 !pb-16 md:!pt-12 md:!pb-24">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-12 text-center">
               Pourquoi intégrer PatrimEmotion® dans votre organisation ?

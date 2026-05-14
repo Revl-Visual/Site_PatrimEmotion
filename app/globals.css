@@ -151,6 +151,13 @@ input[type="checkbox"] {
   text-align: center;
 }
 
+/* Page Sécurité : tout le texte centré (neutralise justify / align-left richtext, y compris lg+) */
+.richtext main.securite-texte-tout-centre :where(p, li, h1, h2, h3) {
+  text-align: center !important;
+  text-align-last: center !important;
+  hyphens: manual;
+}
+
 .richtext main .text-right :where(p, li),
 .richtext main :where(p, li).text-right {
   text-align: right;

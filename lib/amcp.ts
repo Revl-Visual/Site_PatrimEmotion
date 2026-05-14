@@ -1,9 +1,17 @@
 /** Formulaire de contact officiel AM Courtage & Patrimoine */
 export const AMCP_CONTACT_URL = "https://www.am-courtage-et-patrimoine.fr/contact";
 
+/** Réservation bilan PatrimEmotion® offert (agenda AMCP) */
+export const AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL =
+  "https://www.am-courtage-et-patrimoine.fr/booking-calendar/bilan-patrimemotion-offert?referral=service_list_widget";
+
 /** Questionnaire Google Forms PatrimEmotion® V2026 (clients AMCP) */
 export const PATRIMEMOTION_QUESTIONNAIRE_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScfyKONfI4nxClkt696i9sMqUhOizkgqlCVnuvmIaqtgcp6kA/viewform";
+
+/** Formulaire recevoir le livre éditeur PatrimEmotion® (ouvrages) */
+export const PATRIMEMOTION_LIVRE_EDITEUR_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform";
 
 /** Formulaire demande Livre blanc de la méthode PatrimEmotion® */
 export const PATRIMEMOTION_LIVRE_BLANC_URL =
@@ -16,6 +24,10 @@ export const PATRIMEMOTION_DEMO_URL =
 /** Formulaire de demande de devis (Gmail) */
 export const PATRIMEMOTION_DEVIS_URL =
   "https://mail.google.com/mail/u/2/?ogbl#label/Suivi+client/FMfcgzQgLPKBMQmCgZbXjRFdSXxRBVrP";
+
+/** Formulaire demande livre blanc institutionnel PatrimEmotion® */
+export const PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL =
+  "https://docs.google.com/forms/d/1557MXwwseLggAcPB1MvavUMxZT-JI-njsOWuSFDDvVE/viewform";
 
 /** Formulaire d'etude du besoin pour les licences PatrimEmotion® */
 export const PATRIMEMOTION_LICENCE_FORM_URL =
