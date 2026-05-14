@@ -5,7 +5,7 @@ import ProfilsFlipCards from "@/components/ProfilsFlipCards";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
-import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
+import { PATRIMEMOTION_LIVRE_BLANC_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 /** Ancienne vidéo d’accueil — `public/video/video_prez_patrim_emotion.mp4` */
@@ -104,7 +104,7 @@ export default function MethodePage() {
                       href="https://docs.google.com/forms/d/e/1FAIpQLSfOrySU_8-rIqNw_YZ9cBGsbCtine9Oridsqg0Mk7HtZGWKyg/viewform"
                       target="_blank"
                       rel="noopener noreferrer"
-                      variant="ghost-on-blue"
+                      variant="white"
                       className="text-base font-semibold md:mt-1"
                     >
                       Recevoir le Livre Editeur PatrimEmotion
@@ -353,7 +353,7 @@ export default function MethodePage() {
             </p>
             <CtaRow className="-mb-1">
               <CtaButton
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeNEWbv3bTjs2eHy9n7bVMQmHUFxHc_hPPylVZJC9-pvaN9bA/viewform"
+                href={PATRIMEMOTION_LIVRE_BLANC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="white"

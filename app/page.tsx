@@ -6,6 +6,7 @@ import VideoCoverPlayer from "@/components/VideoCoverPlayer";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import { PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 
 /** Accueil — `public/video/Émotion_&_Conseil_Patrimonial.mp4` */
 const VIDEO_EMOTION_CONSEIL_PATRIMONIAL =
@@ -218,16 +219,30 @@ export default function Home() {
                   </div>
                 </div>
                 <ReportModelMarquee />
+                <CtaRow>
+                  <CtaButton
+                    href={PATRIMEMOTION_QUESTIONNAIRE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="yellow-elevated"
+                    className="text-base font-semibold"
+                  >
+                    Recevoir mon bilan
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </CtaButton>
+                </CtaRow>
               </div>
             </div>
           </section>
 
           {/* Section 4 : Notre accompagnement - FOND VERT */}
-          <section className="relative pt-24 pb-12 md:pt-32 md:pb-14 transition-colors overflow-hidden">
+          <section className="relative pt-16 pb-12 md:pt-24 md:pb-14 transition-colors overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <h2 className="pe-heading-section text-center text-white mb-4">
-                Découvrir le méthode
+                Découvrir la méthode
               </h2>
               <p className="pe-body-lead text-white/90 text-center mb-16 max-w-2xl mx-auto">
                 Un processus simple en <span className="text-[#003662] font-semibold">4 étapes</span> pour transformer votre relation au patrimoine
@@ -306,7 +321,7 @@ export default function Home() {
               <h2 className="pe-heading-section mb-4 text-center text-[#003662]">
                 À qui s&apos;adresse <PatrimEmotionMark suffix=" ?" />
               </h2>
-              <p className="pe-body-lead text-[#003662]/80 text-center text-justify mb-16 max-w-3xl mx-auto">
+              <p className="pe-body-lead text-[#003662]/80 text-center mb-16 max-w-3xl mx-auto">
                 PatrimEmotion® s&apos;adresse à différents publics souhaitant intégrer une lecture comportementale et émotionnelle dans la compréhension des décisions patrimoniales.
               </p>
               <div className="max-w-6xl mx-auto space-y-6">

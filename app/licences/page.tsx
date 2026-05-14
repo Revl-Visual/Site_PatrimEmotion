@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
@@ -6,8 +7,8 @@ import { CtaRow } from "@/components/CtaRow";
 import {
   AMCP_CONTACT_URL,
   PATRIMEMOTION_DEMO_URL,
-  PATRIMEMOTION_DEVIS_URL,
   PATRIMEMOTION_LICENCE_FORM_URL,
+  PATRIMEMOTION_LIVRE_BLANC_URL,
 } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -18,6 +19,39 @@ export const metadata: Metadata = {
 };
 
 const TARIFS_URL = "/tarifs";
+
+/** Visuels hero — `public/images/licences/` */
+const LICENCE_HERO_IMAGES = [
+  {
+    src: "/images/licences/Licencie_fondateur.png",
+    alt: "Licencié fondateur PatrimEmotion®",
+  },
+  {
+    src: "/images/licences/licencie_certifie.png",
+    alt: "Licencié certifié PatrimEmotion®",
+  },
+  {
+    src: "/images/licences/licencie_confirme.png",
+    alt: "Licencié confirmé PatrimEmotion®",
+  },
+  {
+    src: "/images/licences/cabinet_expert.png",
+    alt: "Cabinet expert PatrimEmotion®",
+  },
+  {
+    src: "/images/licences/licencie_institutionnel.png",
+    alt: "Licencié institutionnel PatrimEmotion®",
+  },
+] as const;
+
+/** Hero : 1) fondateur seul, 2) certifié / confirmé / expert, 3) institutionnel seul */
+const LICENCE_HERO_ROW_FONDATEUR = LICENCE_HERO_IMAGES[0];
+const LICENCE_HERO_ROW_TROIS = LICENCE_HERO_IMAGES.slice(1, 4);
+const LICENCE_HERO_ROW_INSTITUTIONNEL = LICENCE_HERO_IMAGES[4];
+
+/** Même taille pour tous les badges hero (alignée sur la ligne centrale à 3 colonnes) */
+const LICENCE_HERO_BADGE_FRAME_CLASS =
+  "relative h-[92px] w-full max-w-[120px] sm:h-[112px] sm:max-w-[168px] md:h-[124px] md:max-w-[190px] lg:h-[132px] lg:max-w-[200px]";
 
 const POINTS_CLES = [
   "Une méthode structurée et homogène",
@@ -138,23 +172,76 @@ export default function LicencesPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        <section className="-mt-2 md:-mt-3 pt-0 pb-0 px-4">
-          <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-18 px-6 md:px-12">
+        <section className="-mt-2 md:-mt-3 px-4 pb-12 pt-0 md:pb-16">
+          <div className="hero-encart pt-16 pb-14 md:pt-20 md:pb-16 px-6 md:px-12">
             <div className="container mx-auto relative z-10">
-              <div className="max-w-4xl mx-auto text-center">
-                <h1 className="pe-heading-hero mb-4 text-center text-balance">
+              <div className="mx-auto max-w-6xl">
+                <h1 className="pe-heading-hero mb-8 text-balance text-center md:mb-10">
                   <span className="text-white">Devenez Licencié </span>
                   <PatrimEmotionMark />
                 </h1>
-                <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl text-white/90 font-medium mb-6 leading-relaxed">
-                  Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
-                </p>
-                <ul className="mx-auto mb-10 max-w-2xl list-none space-y-2 pe-body-lead leading-relaxed text-center text-white/90">
-                  {POINTS_CLES.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <CtaRow spacing="none">
+
+                <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
+                  <div className="flex h-full min-h-0 flex-col text-left">
+                    <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
+                      Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
+                    </p>
+                    <ul className="list-none space-y-2.5 pe-body-lead leading-relaxed text-white/90">
+                      {POINTS_CLES.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div
+                    className="flex h-full min-h-0 w-full flex-col justify-between gap-6 sm:gap-7 lg:gap-8 lg:mx-0 lg:max-w-none"
+                    role="group"
+                    aria-label="Formules de licence PatrimEmotion"
+                  >
+                    {/* Ligne 1 — Licencié fondateur */}
+                    <div className="flex justify-center">
+                      <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                        <Image
+                          src={LICENCE_HERO_ROW_FONDATEUR.src}
+                          alt={LICENCE_HERO_ROW_FONDATEUR.alt}
+                          fill
+                          className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                          sizes="(max-width: 640px) 28vw, 200px"
+                        />
+                      </div>
+                    </div>
+                    {/* Ligne 2 — Certifié, confirmé, cabinet expert */}
+                    <div className="grid w-full grid-cols-3 gap-x-2 gap-y-3 sm:gap-x-4 sm:gap-y-0 md:gap-x-5">
+                      {LICENCE_HERO_ROW_TROIS.map(({ src, alt }) => (
+                        <div key={src} className="flex min-w-0 justify-center">
+                          <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                            <Image
+                              src={src}
+                              alt={alt}
+                              fill
+                              className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                              sizes="(max-width: 640px) 28vw, 200px"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Ligne 3 — Institutionnel */}
+                    <div className="flex shrink-0 justify-center pt-0.5">
+                      <div className={LICENCE_HERO_BADGE_FRAME_CLASS}>
+                        <Image
+                          src={LICENCE_HERO_ROW_INSTITUTIONNEL.src}
+                          alt={LICENCE_HERO_ROW_INSTITUTIONNEL.alt}
+                          fill
+                          className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                          sizes="(max-width: 640px) 28vw, 200px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <CtaRow spacing="none" layout="split" className="mt-10 justify-center md:mt-12">
                   <CtaButton
                     href={PATRIMEMOTION_DEMO_URL}
                     target="_blank"
@@ -164,13 +251,22 @@ export default function LicencesPage() {
                   >
                     Demander une démo (15 min)
                   </CtaButton>
+                  <CtaButton
+                    href={PATRIMEMOTION_LICENCE_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="green"
+                    className="font-semibold"
+                  >
+                    Faire un devis
+                  </CtaButton>
                 </CtaRow>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#9FB620] py-16 md:py-24 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
+        <section className="relative overflow-hidden bg-[#9FB620] !pb-10 !pt-16 md:!pb-14 md:!pt-24 [clip-path:polygon(0_4%,100%_0,100%_96%,0_100%)] md:[clip-path:polygon(0_6%,100%_0,100%_94%,0_100%)]">
           <div className="container relative z-10 mx-auto max-w-5xl px-4">
             <header className="mb-8 text-center md:mb-10">
               <h2 className="pe-heading-section mx-auto max-w-3xl text-balance text-[#003662]">
@@ -193,10 +289,21 @@ export default function LicencesPage() {
                 </div>
               </li>
             </ul>
+            <CtaRow spacing="none" className="mt-10 justify-center md:mt-12">
+              <CtaButton
+                href={AMCP_CONTACT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="blue"
+                className="font-semibold shadow-md shadow-[#003662]/20 hover:bg-[#004a7a] hover:shadow-lg"
+              >
+                Formulaire de contact
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
-        <section className="section-dark pb-0 pt-24 transition-colors md:pt-32">
+        <section className="section-dark !pb-0 !pt-8 transition-colors md:!pt-10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="pe-heading-section text-[#003662] mb-6 text-center text-balance">
@@ -214,20 +321,23 @@ export default function LicencesPage() {
                   </li>
                 ))}
               </ul>
-              <div className="rounded-2xl border-l-4 border-l-[#9FB620] bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8">
+              <div className="mb-8 rounded-2xl border-l-4 border-l-[#9FB620] bg-gradient-to-br from-[#003662] to-[#004a7a] p-6 md:p-8 md:mb-10">
                 <p className="pe-body-lead text-white/95 leading-relaxed">
                   PatrimEmotion® aide à mieux comprendre ces freins comportementaux afin d&apos;améliorer la qualité de la restitution et la pédagogie de l&apos;échange.
                 </p>
               </div>
-              <CtaRow>
-                <CtaButton
-                  href={AMCP_CONTACT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="green"
-                  className="font-semibold"
-                >
-                  Formulaire de contact
+              <CtaRow spacing="none">
+                <CtaButton href="/methode" variant="yellow-elevated" className="group font-semibold">
+                  Découvrir la méthode
+                  <svg
+                    className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </CtaButton>
               </CtaRow>
             </div>
@@ -238,20 +348,28 @@ export default function LicencesPage() {
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="pe-heading-section mb-8 text-center text-balance text-[#003662]">
                 <PatrimEmotionMark />
-                <span className="text-[#f4ca3a]"> : </span>
+                <span className="text-[#003662]"> : </span>
                 une méthode
-                <span className="text-[#f4ca3a]"> d&apos;</span>
+                <span className="text-[#003662]"> d&apos;</span>
                 <span className="text-[#f4ca3a]">éclairage comportemental</span> appliquée à la relation patrimoniale
               </h2>
               <p className="pe-body-lead pe-lead-centered mx-auto max-w-3xl mb-6 text-center leading-relaxed text-[#003662]/90">
                 PatrimEmotion® est une méthode structurée d&apos;aide à l&apos;entretien et à la restitution, destinée aux professionnels souhaitant adapter leur pédagogie et leur posture.
               </p>
-              <div className="rounded-xl border-2 border-[#f4ca3a]/40 bg-[#f4ca3a]/5 p-6 text-center">
+              <div className="rounded-xl border-2 border-[#f4ca3a]/40 bg-[#f4ca3a]/5 p-6 text-left">
                 <p className="mb-2 font-semibold text-[#003662]">Important</p>
                 <p className="pe-body-lead leading-relaxed text-[#003662]/90">
                   PatrimEmotion® s&apos;inscrit dans une logique pédagogique et méthodologique. Le professionnel demeure seul responsable de ses obligations réglementaires.
                 </p>
               </div>
+              <CtaRow spacing="none" className="mt-8 justify-center md:mt-10">
+                <CtaButton href={`${TARIFS_URL}#licences`} variant="blue" className="group font-semibold">
+                  Les différentes licences
+                  <svg className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>
@@ -276,6 +394,20 @@ export default function LicencesPage() {
                 </li>
               ))}
             </ul>
+            <CtaRow spacing="none" className="justify-center">
+              <CtaButton
+                href={PATRIMEMOTION_LIVRE_BLANC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="yellow-elevated"
+                className="font-semibold"
+              >
+                Demander le livre blanc de la méthode
+                <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </CtaButton>
+            </CtaRow>
           </div>
         </section>
 
@@ -284,22 +416,7 @@ export default function LicencesPage() {
           className="section-alt-blue"
           style={{ paddingTop: 0, paddingBottom: 0 }}
         >
-          <div className="pt-24 pb-12 md:pt-32 md:pb-14">
-            <div className="container mx-auto max-w-6xl px-4">
-              <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
-                Les différents niveaux de licence
-              </h2>
-              <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-2xl text-[#003662]/80 md:mb-10">
-                Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
-              </p>
-              <CtaRow spacing="none" className="text-center">
-                <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
-                  Voir la grille tarifaire
-                </CtaButton>
-              </CtaRow>
-            </div>
-          </div>
-          <div className="bg-white pb-20 pt-12 md:pb-28 md:pt-14">
+          <div className="bg-white pb-16 pt-24 md:pb-20 md:pt-32">
             <div className="container mx-auto max-w-4xl px-4">
               <div className="rounded-[2rem] bg-gradient-to-br from-[#9FB620] via-[#f4ca3a] to-[#9FB620] p-[3px] shadow-[0_28px_70px_rgba(0,54,98,0.14)]">
                 <div className="rounded-[calc(2rem-3px)] bg-white px-7 py-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] md:px-11 md:py-12 lg:px-14 lg:py-16">
@@ -347,6 +464,21 @@ export default function LicencesPage() {
                   </CtaRow>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="pb-12 pt-16 md:pb-14 md:pt-20">
+            <div className="container mx-auto max-w-6xl px-4">
+              <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
+                Les différents niveaux de licence
+              </h2>
+              <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-2xl text-[#003662]/80 md:mb-10">
+                Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
+              </p>
+              <CtaRow spacing="none" className="text-center">
+                <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
+                  Voir la grille tarifaire
+                </CtaButton>
+              </CtaRow>
             </div>
           </div>
         </section>

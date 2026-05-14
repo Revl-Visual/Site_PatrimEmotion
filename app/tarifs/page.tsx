@@ -72,7 +72,7 @@ export default function TarifsPage() {
         </section>
 
         {/* Vue d'ensemble — table des licences */}
-        <section className="bg-white py-24 md:py-32 transition-colors">
+        <section id="licences" className="scroll-mt-28 bg-white py-24 md:py-32 transition-colors">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <h2 className="pe-heading-section text-center text-[#003662] mb-4">
