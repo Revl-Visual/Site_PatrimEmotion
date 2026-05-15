@@ -1,12 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
-function isStudioPath(pathname: string | null): boolean {
-  if (!pathname) return false;
-  return pathname === "/studio" || pathname.startsWith("/studio/");
-}
 
 function isFormFieldTarget(node: EventTarget | null): boolean {
   return node instanceof Element && !!node.closest("input, textarea, select, [contenteditable='true']");
@@ -14,19 +8,14 @@ function isFormFieldTarget(node: EventTarget | null): boolean {
 
 /**
  * Désactive sélection / copie / clic droit / glisser-déposer des images sur le site public.
- * Désactivé sur /studio pour ne pas bloquer Sanity.
  * Limitation : pas une sécurité absolue (réseau, outils dev, captures d’écran).
  */
 export default function ContentProtection() {
-  const pathname = usePathname();
+  useEffect(() => {
+    document.body.classList.add("pe-protect-content");
+  }, []);
 
   useEffect(() => {
-    document.body.classList.toggle("pe-protect-content", !isStudioPath(pathname));
-  }, [pathname]);
-
-  useEffect(() => {
-    if (isStudioPath(pathname)) return;
-
     const onContextMenu = (e: MouseEvent) => {
       e.preventDefault();
     };
@@ -63,7 +52,7 @@ export default function ContentProtection() {
       document.removeEventListener("selectstart", onSelectStart);
       document.removeEventListener("dragstart", onDragStart, true);
     };
-  }, [pathname]);
+  }, []);
 
   return null;
 }

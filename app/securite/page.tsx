@@ -12,7 +12,7 @@ export default function SecuritePage() {
   return (
     <>
       <Header />
-      <main className="securite-texte-tout-centre min-h-screen">
+      <main className="min-h-screen">
         <section className="bg-[#003662] py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
             <h1 className="pe-heading-hero text-white mb-4">

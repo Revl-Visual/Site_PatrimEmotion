@@ -2,22 +2,22 @@
   "name": "patrim-emotion-site",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/postbuild-standalone.mjs",
     "start": "next start",
+    "start:standalone": "node .next/standalone/server.js",
     "lint": "next lint",
     "clean": "node -e \"const fs=require('fs');['.next','node_modules/.cache'].forEach(p=>{try{fs.rmSync(p,{recursive:true,force:true})}catch(e){}})\""
   },
   "dependencies": {
-    "@sanity/image-url": "^1.2.0",
-    "@sanity/vision": "^4.22.0",
     "next": "^15.0.0",
-    "next-sanity": "^11.6.12",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sanity": "^4.22.0",
-    "styled-components": "^6.3.11"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
