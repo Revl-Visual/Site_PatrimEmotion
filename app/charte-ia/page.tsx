@@ -1,34 +1,24 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LegalPageLayout from "@/components/LegalPageLayout";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Charte IA | PatrimEmotion®",
+  title: "Charte d'utilisation de l'IA | PatrimEmotion®",
   description:
-    "Charte d'utilisation de l'intelligence artificielle dans le cadre de la méthode PatrimEmotion® - transparence, données et limites.",
+    "Charte d'utilisation de l'intelligence artificielle – méthode PatrimEmotion®. Conformité, protection des données, limites et engagement éthique.",
 };
 
 export default function CharteIAPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
-              Méthode <PatrimEmotionMark />
-            </p>
-            <h1 className="pe-heading-hero text-white text-center text-balance">
-              Charte d&apos;utilisation de l&apos;<span className="text-[#f4ca3a]">intelligence artificielle</span>
-            </h1>
-          </div>
-        </section>
-
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="space-y-12 pe-body-lead text-[#003662]/90 leading-relaxed">
-              {/* 1 */}
+    <LegalPageLayout
+      title={
+        <>
+          Charte d&apos;utilisation de
+          <br />
+          l&apos;intelligence artificielle
+        </>
+      }
+    >
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-4">1. Objet</h2>
                 <p className="mb-4">
@@ -49,7 +39,7 @@ export default function CharteIAPage() {
                   2. Positionnement de l&apos;IA dans <PatrimEmotionMark />
                 </h2>
                 <p className="mb-4">
-                  L&apos;intelligence artificielle intervient exclusivement comme un outil d&apos;assistance pédagogique et rédactionnelle.
+                  L&apos;intelligence artificielle intervient exclusivement comme un outil d&apos;assistance pédagogique et rédactionnelle
                 </p>
                 <p className="mb-3 font-semibold text-[#003662]">Elle permet :</p>
                 <ul className="list-disc pl-6 space-y-2">
@@ -63,7 +53,7 @@ export default function CharteIAPage() {
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-4">3. Principe fondamental</h2>
                 <p className="mb-4 font-semibold text-[#003662]">
-                  L&apos;IA ne constitue en aucun cas le cœur de la méthode PatrimEmotion®.
+                  L&apos;IA ne constitue en aucun cas le cœur de la méthode PatrimEmotion®
                 </p>
                 <p className="mb-3">La méthode repose sur :</p>
                 <ul className="list-disc pl-6 space-y-2 mb-6">
@@ -90,11 +80,11 @@ export default function CharteIAPage() {
                     "générer automatiquement un profil patrimonial",
                     "produire un scoring comportemental réel",
                     "établir une recommandation financière",
-                    "remplacer l’analyse du conseiller",
+                    "remplacer l'analyse du conseiller",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 items-start">
-                      <span className="text-[#b91c1c] shrink-0 font-bold" aria-hidden>
-                        ×
+                      <span className="text-[#b91c1c] shrink-0" aria-hidden>
+                        ❌
                       </span>
                       <span>{item}</span>
                     </li>
@@ -104,8 +94,8 @@ export default function CharteIAPage() {
                 <ul className="space-y-3">
                   {["humaine", "contextualisée", "validée"].map((item) => (
                     <li key={item} className="flex gap-3 items-start">
-                      <span className="text-[#9FB620] shrink-0 font-bold" aria-hidden>
-                        ✓
+                      <span className="text-[#9FB620] shrink-0" aria-hidden>
+                        ✔
                       </span>
                       <span>{item}</span>
                     </li>
@@ -214,11 +204,9 @@ export default function CharteIAPage() {
                 <h2 className="pe-heading-section text-[#003662] mb-4">9. Information du client</h2>
                 <p className="mb-4">Le client est informé que :</p>
                 <blockquote className="border-l-4 border-[#f4ca3a] bg-[#003662]/5 pl-6 pr-4 py-5 rounded-r-xl text-[#003662]/95 italic">
-                  « La méthode PatrimEmotion® peut s&apos;appuyer sur des outils d&apos;intelligence artificielle à des fins de
-                  structuration et de restitution pédagogique. Ces outils n&apos;ont pas accès aux données personnelles
-                  identifiantes et ne remplacent en aucun cas l&apos;analyse réalisée par votre conseiller.
-                  PatrimEmotion® constitue un outil d&apos;accompagnement et ne se substitue pas aux obligations
-                  réglementaires en matière de conseil. »
+                  « La méthode PatrimEmotion® peut s&apos;appuyer sur des outils d&apos;intelligence artificielle à des fins de structuration et de restitution pédagogique.
+                  Ces outils n&apos;ont pas accès aux données personnelles identifiantes et ne remplacent en aucun cas l&apos;analyse réalisée par votre conseiller.
+                  PatrimEmotion® constitue un outil d&apos;accompagnement et ne se substitue pas aux obligations réglementaires en matière de conseil. »
                 </blockquote>
               </div>
 
@@ -244,11 +232,6 @@ export default function CharteIAPage() {
                   <li>des recommandations des autorités</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    </LegalPageLayout>
   );
 }

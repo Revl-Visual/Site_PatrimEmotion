@@ -1,5 +1,4 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LegalPageLayout from "@/components/LegalPageLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,29 +9,12 @@ export const metadata: Metadata = {
 
 export default function CharteEthiquePage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h1 className="pe-heading-hero text-white text-center text-balance">
-              Charte <span className="text-[#f4ca3a]">éthique</span>
-            </h1>
-          </div>
-        </section>
-
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="rounded-xl border border-[#003662]/15 bg-white p-6 md:p-8 shadow-sm mb-12 text-sm md:text-base text-[#003662]/90 leading-relaxed">
-              <p className="font-semibold text-[#003662] mb-2">Version : V1 – Date : 14/05/2026</p>
+    <LegalPageLayout version="Version 14/05/2026" title="Charte éthique">
               <p>
                 <span className="font-semibold text-[#003662]">Objet :</span> encadrer l&apos;usage de
                 PatrimEmotion® comme approche psychométrique appliquée au conseil patrimonial et financier.
               </p>
-            </div>
 
-            <div className="space-y-12 pe-body-lead text-[#003662]/90 leading-relaxed">
-              {/* 1 */}
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-4">1) Finalité et positionnement</h2>
                 <p className="mb-4">
@@ -261,11 +243,6 @@ export default function CharteEthiquePage() {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    </LegalPageLayout>
   );
 }

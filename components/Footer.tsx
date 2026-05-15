@@ -198,6 +198,9 @@ export default function Footer() {
               <Link href="/mentions-legales" className="hover:text-white transition-colors">
                 Mentions légales
               </Link>
+              <Link href="/cgu" className="hover:text-white transition-colors">
+                CGU
+              </Link>
               <Link href="/cookies" className="hover:text-white transition-colors">
                 Cookies
               </Link>
