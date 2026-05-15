@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
   output: "standalone",
   images: {
     formats: ["image/avif", "image/webp"],
+    localPatterns: [
+      {
+        pathname: "/images/**",
+      },
+    ],
   },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
