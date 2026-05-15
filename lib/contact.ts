@@ -1,0 +1,3 @@
+export const CONTACT_EMAIL = "contact@patrimemotion.fr";
+
+export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;

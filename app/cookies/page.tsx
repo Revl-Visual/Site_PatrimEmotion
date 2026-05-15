@@ -1,4 +1,5 @@
 import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -85,7 +86,10 @@ export default function CookiesPage() {
         <h2 className="pe-heading-section text-[#003662] mb-4">Contact</h2>
         <p>
           Pour toute question relative a cette politique cookies ou au traitement de vos
-          donnees personnelles, vous pouvez contacter : aurelie.monteil@am-courtage-et-patrimoine.fr
+          donnees personnelles, vous pouvez contacter :{" "}
+          <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+            {CONTACT_EMAIL}
+          </a>
         </p>
       </div>
     </LegalPageLayout>

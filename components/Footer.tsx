@@ -3,6 +3,7 @@ import { CtaButton } from "@/components/CtaButton";
 import Image from "next/image";
 import { AMCP_CONTACT_URL } from "@/lib/amcp";
 import { LOGO_SRC } from "@/lib/branding";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -28,8 +29,8 @@ export default function Footer() {
               <p>
                 <strong className="text-[#f4ca3a] font-sans">Email</strong>
                 <br />
-                <a href="mailto:cabinet.amcp@gmail.com" className="hover:text-white hover:underline transition-colors">
-                  cabinet.amcp@gmail.com
+                <a href={CONTACT_MAILTO} className="hover:text-white hover:underline transition-colors">
+                  {CONTACT_EMAIL}
                 </a>
               </p>
               <p>

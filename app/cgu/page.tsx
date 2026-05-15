@@ -1,4 +1,5 @@
 import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,8 +30,8 @@ export default function CGUPage() {
                   <li>Siège social : 10 rue Edgar Degas 80 080 AMIENS</li>
                   <li>
                     Email :{" "}
-                    <a href="mailto:cabinet.amcp@gmail.com" className="text-[#003662] underline hover:text-[#9FB620]">
-                      cabinet.amcp@gmail.com
+                    <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                      {CONTACT_EMAIL}
                     </a>
                   </li>
                   <li>
@@ -215,8 +216,8 @@ export default function CGUPage() {
                 </ul>
                 <p>
                   Toute demande peut être adressée à :{" "}
-                  <a href="mailto:contact@patrimemotion.fr" className="text-[#003662] underline hover:text-[#9FB620]">
-                    contact@patrimemotion.fr
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
                   </a>
                 </p>
               </div>

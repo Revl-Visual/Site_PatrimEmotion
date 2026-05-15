@@ -1,4 +1,5 @@
 import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -115,7 +116,10 @@ export default function PolitiqueConfidentialitePage() {
                   limitation, opposition, portabilité (selon les cas), et retrait du consentement à tout moment.
                 </p>
                 <p>
-                  Pour exercer vos droits : aurelie.monteil@am-courtage-et-patrimoine.fr
+                  Pour exercer vos droits :{" "}
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
+                  </a>
                 </p>
               </div>
 
