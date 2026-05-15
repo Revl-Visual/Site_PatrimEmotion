@@ -7,9 +7,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-hosting.mjs",
+    "build:webpack": "node scripts/build-hosting.mjs --webpack",
+    "build:next": "next build",
     "postbuild": "node scripts/postbuild-standalone.mjs",
-    "start": "next start",
+    "start": "node scripts/start-production.mjs",
+    "start:next": "next start",
     "start:standalone": "node .next/standalone/server.js",
     "lint": "eslint .",
     "clean": "node -e \"const fs=require('fs');['.next','node_modules/.cache'].forEach(p=>{try{fs.rmSync(p,{recursive:true,force:true})}catch(e){}})\""

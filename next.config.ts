@@ -15,6 +15,13 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   output: "standalone",
+  // Hébergement mutualisé (Infomaniak) : limiter RAM / processus pendant `next build`
+  experimental: {
+    cpus: 1,
+    workerThreads: false,
+    staticGenerationMaxConcurrency: 1,
+    staticGenerationMinPagesPerWorker: 100,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     localPatterns: [
