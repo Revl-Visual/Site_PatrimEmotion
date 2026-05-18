@@ -6,7 +6,7 @@ import type { AnchorHTMLAttributes, ReactNode } from "react";
  * La typographie (text-base, text-sm, etc.) reste sur `className` si besoin.
  */
 export const ctaButtonBaseClass =
-  "inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl transition-all duration-200";
+  "inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-3.5 rounded-xl transition-all duration-200 text-center";
 
 export type CtaButtonVariant =
   | "yellow"

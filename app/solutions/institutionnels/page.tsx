@@ -143,7 +143,7 @@ export default function InstitutionnelsPage() {
                   </div>
                   <div className="hidden lg:flex justify-center items-stretch">
                     <div className="w-full max-w-md">
-                      <div className="relative h-full min-h-[360px] overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
+                      <div className="relative h-full min-h-[220px] sm:min-h-[280px] md:min-h-[360px] overflow-hidden rounded-2xl shadow-[0_12px_40px_-8px_rgba(0,54,98,0.35)]">
                         <Image
                           src="/images/institutionnels_hero_2.jpeg"
                           alt="Illustration institutionnels PatrimEmotion"

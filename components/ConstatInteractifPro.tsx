@@ -42,7 +42,7 @@ export default function ConstatInteractifPro() {
         : "Quand plusieurs de ces points se croisent, une approche méthodique fait la différence. La licence PatrimEmotion® vous donne les outils pour accompagner vos clients avec plus de pertinence et de légitimité.";
 
   return (
-    <section className="no-justify bg-white py-16 md:py-24" aria-labelledby="constat-pro-title">
+    <section className="no-justify bg-white py-12 sm:py-16 md:py-24" aria-labelledby="constat-pro-title">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="rounded-2xl bg-[#f4ca3a] p-6 md:p-8 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
           <h2
@@ -61,7 +61,7 @@ export default function ConstatInteractifPro() {
             {CONSTATS_PRO.map((texte, i) => (
               <label
                 key={i}
-                className={`flex items-center gap-4 p-4 rounded-xl bg-white border-l-4 cursor-pointer transition-all shadow-sm hover:shadow-md ${
+                className={`flex items-start gap-3 p-3.5 sm:items-center sm:gap-4 sm:p-4 rounded-xl bg-white border-l-4 cursor-pointer transition-all shadow-sm hover:shadow-md ${
                   checked[i] ? "border-[#f4ca3a] ring-2 ring-[#f4ca3a]/30" : "border-[#003662]/20"
                 }`}
               >
@@ -69,16 +69,16 @@ export default function ConstatInteractifPro() {
                   type="checkbox"
                   checked={checked[i]}
                   onChange={() => toggle(i)}
-                  className="h-5 w-5 rounded border-2 border-[#003662]/40 text-[#f4ca3a] accent-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0"
+                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-2 border-[#003662]/40 text-[#f4ca3a] accent-[#f4ca3a] focus:ring-[#f4ca3a] focus:ring-offset-0 sm:mt-0"
                   style={{ accentColor: "#f4ca3a" }}
                   aria-label={texte}
                 />
-                <span className="text-[#003662] leading-relaxed select-none">{texte}</span>
+                <span className="min-w-0 flex-1 text-[0.9375rem] sm:text-base text-[#003662] leading-relaxed select-none break-words text-pretty">{texte}</span>
               </label>
             ))}
           </div>
 
-          <div className="rounded-2xl bg-white p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#003662]/10 sticky top-24">
+          <div className="rounded-2xl bg-white p-5 sm:p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-[#003662]/10 lg:sticky lg:top-24">
             {count === 0 ? (
               <>
                 <div className="flex justify-center mb-4">

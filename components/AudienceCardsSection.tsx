@@ -9,7 +9,7 @@ type AudienceCardsSectionProps = {
 };
 
 const cardClassName =
-  "flex h-full min-h-[5.5rem] items-start gap-4 rounded-2xl border border-[#003662]/18 bg-white p-5 shadow-[0_2px_12px_rgba(0,54,98,0.06)] md:min-h-[6rem] md:gap-5 md:p-6";
+  "flex h-full min-h-[5rem] items-start gap-3 rounded-2xl border border-[#003662]/18 bg-white p-4 shadow-[0_2px_12px_rgba(0,54,98,0.06)] sm:min-h-[5.5rem] sm:gap-4 sm:p-5 md:min-h-[6rem] md:gap-5 md:p-6";
 
 function cardColumnClass(index: number, total: number): string {
   const remainder = total % 3;
@@ -28,7 +28,7 @@ function cardColumnClass(index: number, total: number): string {
 function AudienceCard({ label, number }: { label: string; number: number }) {
   return (
     <div className={cardClassName}>
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-lg font-bold text-[#003662] shadow-sm md:h-14 md:w-14 md:text-xl">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-base font-bold text-[#003662] shadow-sm sm:h-12 sm:w-12 sm:text-lg md:h-14 md:w-14 md:text-xl">
         {number}
       </span>
       <p className="min-w-0 flex-1 !text-left text-base font-bold leading-[1.55] text-[#003662] antialiased !hyphens-none break-words text-pretty md:text-[1.0625rem] md:leading-[1.6]">

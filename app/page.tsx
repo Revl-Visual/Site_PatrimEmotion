@@ -19,24 +19,24 @@ export default function Home() {
       
       {/* Hero Section — z-index au-dessus de la section « Le constat » qui remonte en dessous */}
       <section className="relative z-30 -mt-2 md:-mt-3 pt-0 pb-0 px-4">
-        <div className="hero-encart relative z-30 pt-16 pb-0 md:pt-20 md:pb-0 px-6 md:px-12">
+        <div className="hero-encart relative z-30 pt-12 pb-0 sm:pt-14 md:pt-20 md:pb-0 px-4 sm:px-6 md:px-12">
           <div className="container mx-auto relative z-30">
             <div className="max-w-6xl mx-auto">
-              <div className="grid gap-12 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0 lg:grid-rows-[auto_auto_auto_auto_auto] lg:items-start">
+              <div className="grid gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0 lg:grid-rows-[auto_auto_auto_auto_auto] lg:items-start">
                 {/* Ligne 1 : baseline (largeur = contenu) */}
-                <span className="pe-eyebrow w-fit max-w-full px-4 py-2 rounded-full bg-[#f4ca3a]/20 text-[#f4ca3a] mb-6 italic lg:col-start-1 lg:row-start-1">
+                <span className="pe-eyebrow mb-2 w-fit max-w-full rounded-full bg-[#f4ca3a]/20 px-4 py-2 italic text-[#f4ca3a] sm:mb-3 lg:col-start-1 lg:row-start-1 lg:mb-4">
                   &quot;Vos émotions s&apos;alignent, votre patrimoine s&apos;élève&quot;
                 </span>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-1" aria-hidden />
                 {/* Ligne 2 : titre */}
-                <h1 className="pe-heading-hero text-white mb-4 lg:col-start-1 lg:row-start-2">
+                <h1 className="pe-heading-hero mb-2 text-white sm:mb-2.5 lg:col-start-1 lg:row-start-2 lg:mb-3">
                   <span className="font-medium">
                     <PatrimEmotionMark />
                   </span>
                 </h1>
                 <div className="hidden lg:block lg:col-start-2 lg:row-start-2" aria-hidden />
                 {/* Lignes 3–4 : texte blanc + mockups alignés sur ce bloc uniquement */}
-                <p className="pe-body-lead text-white font-medium mb-4 max-w-xl lg:col-start-1 lg:row-start-3 lg:self-start">
+                <p className="pe-body-lead mb-2 max-w-xl font-medium text-white sm:mb-2.5 lg:col-start-1 lg:row-start-3 lg:mb-3 lg:self-start">
                   La méthode qui relie personnalité, émotions et décisions patrimoniales.
                 </p>
                 <div
@@ -80,7 +80,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <p className="pe-body-lead text-white/90 mb-8 max-w-xl text-justify lg:col-start-1 lg:row-start-4 lg:self-start">
+                <p className="pe-body-lead mb-6 max-w-xl text-justify text-white/90 sm:mb-7 lg:col-start-1 lg:row-start-4 lg:mb-8 lg:self-start">
                   PatrimEmotion® est une méthode d&apos;analyse psychométrique appliquée au patrimoine.
                   Elle permet de mieux comprendre le rapport à l&apos;argent, les mécanismes émotionnels et les comportements décisionnels afin de construire des stratégies patrimoniales cohérentes, durables et assumées.
                 </p>
@@ -133,8 +133,8 @@ export default function Home() {
                   Elles sont influencées par l&apos;histoire personnelle, les émotions, les biais cognitifs, la perception du risque, la temporalité et le besoin de sécurité ou de liberté.
                 </p>
               </div>
-              <div className="relative bg-gradient-to-br from-[#003662] to-[#004a7a] rounded-2xl p-6 md:p-8 shadow-xl shadow-[#003662]/20 border-l-4 border-[#f4ca3a] pr-16 md:pr-10">
-                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <div className="relative bg-gradient-to-br from-[#003662] to-[#004a7a] rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl shadow-[#003662]/20 border-l-4 border-[#f4ca3a] pr-14 sm:pr-16 md:pr-10">
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                   <svg className="w-6 h-6 text-[#f4ca3a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>

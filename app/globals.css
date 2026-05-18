@@ -105,6 +105,8 @@ body {
   background: #ffffff;
   font-family: var(--font-sans);
   min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Coches natives (cases à cocher) : accent vert marque */
@@ -175,16 +177,49 @@ input[type="checkbox"] {
     * footer = hors <main>
 */
 .site-root main > section:not(:first-of-type) {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .site-root main > section:not(:first-of-type) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 @media (min-width: 768px) {
   .site-root main > section:not(:first-of-type) {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+}
+
+/* Mobile / tablette : lisibilité (justify désactivé, interlignes) */
+@media (max-width: 1023px) {
+  .site-root .text-justify {
+    text-align: left !important;
+    text-align-last: left !important;
+    hyphens: none;
+  }
+
+  .site-root main :where(p, li) {
+    line-height: 1.65;
+  }
+}
+
+/* Conteneurs : marges latérales confortables sur petits écrans */
+.site-root .container {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 640px) {
+  .site-root .container {
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
   }
 }
 
@@ -221,31 +256,31 @@ h1, h2, h3, h4, h5, h6 {
  */
 @layer components {
   .pe-heading-hero {
-    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-[1.12] tracking-tight;
+    @apply text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-[1.15] tracking-tight text-balance;
   }
   .pe-heading-section {
-    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-[1.12] tracking-tight;
+    @apply text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-[1.15] tracking-tight text-balance;
   }
   .pe-heading-card {
-    @apply text-xl md:text-2xl font-serif font-medium;
+    @apply text-lg sm:text-xl md:text-2xl font-serif font-medium text-balance;
   }
   .pe-heading-card-lg {
-    @apply text-2xl md:text-3xl font-serif font-medium;
+    @apply text-xl sm:text-2xl md:text-3xl font-serif font-medium text-balance;
   }
   .pe-heading-tight {
-    @apply text-lg md:text-xl font-serif font-medium;
+    @apply text-base sm:text-lg md:text-xl font-serif font-medium;
   }
   .pe-heading-feature {
-    @apply text-2xl md:text-3xl lg:text-4xl font-serif font-medium leading-[1.12] tracking-tight;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-medium leading-[1.15] tracking-tight text-balance;
   }
   .pe-body-lead {
-    @apply text-lg md:text-xl leading-relaxed;
+    @apply text-base sm:text-lg md:text-xl leading-relaxed;
   }
   .pe-body {
-    @apply text-base leading-relaxed;
+    @apply text-[0.9375rem] sm:text-base leading-relaxed;
   }
   .pe-body-small {
-    @apply text-sm leading-relaxed;
+    @apply text-sm sm:text-sm leading-relaxed;
   }
   .pe-kicker {
     @apply text-sm font-semibold uppercase tracking-wider;
@@ -254,10 +289,44 @@ h1, h2, h3, h4, h5, h6 {
     @apply text-sm font-semibold tracking-wide leading-snug;
   }
   .pe-stat-value {
-    @apply text-3xl md:text-4xl font-bold tabular-nums;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold tabular-nums;
   }
   .pe-stat-label {
     @apply text-sm md:text-base font-medium;
+  }
+
+  /* Padding standard des encarts / cartes sur mobile */
+  .pe-encart-pad {
+    @apply p-5 sm:p-6 md:p-8;
+  }
+
+  /* Tableaux tarifs : défilement tactile + lisibilité */
+  .pe-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .pe-table-scroll table {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .pe-table-scroll table {
+      font-size: 1rem;
+    }
+  }
+
+  .pe-table-scroll th,
+  .pe-table-scroll td {
+    padding: 0.75rem 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .pe-table-scroll th,
+    .pe-table-scroll td {
+      padding: 1rem 1.25rem;
+    }
   }
 }
 
@@ -367,11 +436,25 @@ h1, h2, h3, h4, h5, h6 {
   .hero-encart {
     position: relative;
     background: #003662;
-    border-radius: 2rem;
-    margin: 2rem auto;
+    border-radius: 1.25rem;
+    margin: 0.75rem auto;
     max-width: 1400px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (min-width: 640px) {
+    .hero-encart {
+      border-radius: 1.5rem;
+      margin: 1.25rem auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-encart {
+      border-radius: 2rem;
+      margin: 2rem auto;
+    }
   }
   
   .hero-encart::before {
@@ -386,8 +469,14 @@ h1, h2, h3, h4, h5, h6 {
   .product-encart {
     position: relative;
     background: #003662;
-    border-radius: 2rem;
+    border-radius: 1.25rem;
     overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .product-encart {
+      border-radius: 2rem;
+    }
   }
 
   .product-encart::before {

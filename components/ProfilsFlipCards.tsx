@@ -41,7 +41,7 @@ function ProfilFlipCard({
   }, []);
 
   return (
-    <article className="mx-auto w-full max-w-[220px] sm:max-w-[240px]">
+    <article className="mx-auto w-full max-w-[min(100%,280px)] sm:max-w-[240px]">
       <div className="[perspective:1200px]">
         <button
           type="button"

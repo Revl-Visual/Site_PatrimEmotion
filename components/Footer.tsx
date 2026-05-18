@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 export default function Footer() {
   return (
     <footer className="bg-[#003662] text-white">
-      <div className="container mx-auto px-4 py-14 md:py-20">
+      <div className="container mx-auto px-4 py-10 sm:py-14 md:py-20">
         {/* Bloc principal : logo + contenu en grille */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
           {/* Colonne marque : logo (gros) + slogan + contact */}

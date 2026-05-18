@@ -3,6 +3,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import {
+  TarifsLicencesDesktopTable,
+  TarifsLicencesMobileCards,
+} from "@/components/tarifs/TarifsLicencesTable";
+import {
+  TarifsOptionsDesktopTable,
+  TarifsOptionsMobileCards,
+} from "@/components/tarifs/TarifsOptionsTable";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -81,47 +89,10 @@ export default function TarifsPage() {
               <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-balance leading-relaxed text-[#003662]/80">
                 Choisissez la formule adaptée à la taille et aux besoins de votre cabinet
               </p>
-              <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left min-w-[560px]">
-                    <thead>
-                      <tr className="bg-[#003662] text-white">
-                        <th className="px-5 py-4 font-semibold text-base w-8"></th>
-                        <th className="px-5 py-4 font-semibold text-base">Offre</th>
-                        <th className="px-5 py-4 font-semibold text-base">Tarif annuel HT</th>
-                        <th className="px-5 py-4 font-semibold text-base">Tarif mensuel HT</th>
-                        <th className="px-5 py-4 font-semibold text-base">Engagement</th>
-                        <th className="px-5 py-4 font-semibold text-base">Utilisateurs inclus</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        ["#1a1a1a", "Licence FONDATEUR", "2 900 €", "—", "12 mois", "Selon CORE"],
-                        ["#9FB620", "Licence LIGHT", "1 490 €", "149 €", "12 mois", "1 nominatif"],
-                        ["#f4ca3a", "Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
-                        ["#003662", "Licence PREMIUM", "9 800 €", "980 €", "12 mois", "Jusqu'à 15"],
-                        ["#64748b", "Licence INSTITUTIONNELLE", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
-                      ].map((row, i) => (
-                        <tr
-                          key={i}
-                          className="border-b border-[#003662]/10 text-[#003662] last:border-0 hover:bg-[#003662]/5 transition-colors"
-                        >
-                          <td className="px-3 py-4 w-8">
-                            <span className="inline-block h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: row[0] }} aria-hidden />
-                          </td>
-                          <td className="px-5 py-4 font-medium" style={{ color: row[0] }}>
-                            {row[1]}
-                          </td>
-                          <td className="px-5 py-4">{row[2]}</td>
-                          <td className="px-5 py-4">{row[3]}</td>
-                          <td className="px-5 py-4">{row[4]}</td>
-                          <td className="px-5 py-4">{row[5]}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="border-t border-[#003662]/10 px-5 py-3 text-center text-sm text-[#003662]/60">
+              <div className="overflow-hidden rounded-2xl border border-[#003662]/10 bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)]">
+                <TarifsLicencesMobileCards />
+                <TarifsLicencesDesktopTable />
+                <p className="border-t border-[#003662]/10 px-4 py-3 text-center text-sm text-[#003662]/60 sm:px-5">
                   INSTITUTIONNELLE (non disponible pour le moment)
                 </p>
               </div>
@@ -228,7 +199,7 @@ export default function TarifsPage() {
                     ))}
                   </ul>
                   <p className="text-sm font-medium text-[#9FB620]">1 conseiller nominatif</p>
-                  <p className="mt-2 text-xs text-[#9FB620]">
+                  <p className="mt-2 text-xs sm:text-sm text-[#9FB620] leading-relaxed">
                     Options : utilisateur supp. 390 €/an, formation avancée 490 €, audit restitution 350 €
                   </p>
                 </div>
@@ -262,7 +233,7 @@ export default function TarifsPage() {
                     ))}
                   </ul>
                   <p className="text-sm font-medium text-[#f4ca3a]">Jusqu&apos;à 5 conseillers</p>
-                  <p className="mt-2 text-xs text-[#f4ca3a]">
+                  <p className="mt-2 text-xs sm:text-sm text-[#f4ca3a] leading-relaxed">
                     Options : utilisateur supp. 490 €/an, formation sur site sur devis, audit conformité 790 €
                   </p>
                 </div>
@@ -296,7 +267,7 @@ export default function TarifsPage() {
                     ))}
                   </ul>
                   <p className="text-[#003662] text-sm font-medium">Jusqu&apos;à 15 conseillers</p>
-                  <p className="mt-2 text-xs text-[#003662]/90">Options : utilisateur supp. 590 €/an, intervention événement sur devis, audit méthodologique 1 200 €</p>
+                  <p className="mt-2 text-xs sm:text-sm text-[#003662]/90 leading-relaxed">Options : utilisateur supp. 590 €/an, intervention événement sur devis, audit méthodologique 1 200 €</p>
                 </div>
               </a>
             </div>
@@ -345,37 +316,9 @@ export default function TarifsPage() {
               <p className="pe-body-lead pe-lead-centered text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Complétez votre licence selon vos besoins
               </p>
-              <div className="rounded-2xl shadow-[0_4px_24px_rgba(0,54,98,0.08)] border border-[#003662]/10 overflow-hidden bg-white">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left min-w-[420px]">
-                    <thead>
-                      <tr className="bg-[#003662] text-white">
-                        <th className="px-5 py-4 font-semibold text-base">Option</th>
-                        <th className="px-5 py-4 font-semibold text-base">LIGHT</th>
-                        <th className="px-5 py-4 font-semibold text-base">CORE</th>
-                        <th className="px-5 py-4 font-semibold text-base">PREMIUM</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-[#003662]">
-                      {[
-                        ["Utilisateur supplémentaire / an", "390 €", "490 €", "590 €"],
-                        ["Formation avancée (distanciel)", "490 €", "—", "—"],
-                        ["Audit restitution (qualité restitution)", "350 €", "—", "—"],
-                        ["Formation équipe sur site", "—", "Sur devis (1 200–2 500 €)", "Sur devis"],
-                        ["Audit conformité annuel", "—", "790 €", "—"],
-                        ["Audit méthodologique", "—", "—", "1 200 €"],
-                        ["Intervention événement cabinet", "—", "—", "Sur devis"],
-                      ].map((row, i) => (
-                        <tr key={i} className="border-b border-[#003662]/10 last:border-0 hover:bg-[#003662]/5 transition-colors">
-                          <td className="px-5 py-3.5">{row[0]}</td>
-                          <td className="px-5 py-3.5 font-medium">{row[1]}</td>
-                          <td className="px-5 py-3.5 font-medium">{row[2]}</td>
-                          <td className="px-5 py-3.5 font-medium">{row[3]}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+              <div className="overflow-hidden rounded-2xl border border-[#003662]/10 bg-white shadow-[0_4px_24px_rgba(0,54,98,0.08)]">
+                <TarifsOptionsMobileCards />
+                <TarifsOptionsDesktopTable />
                 <p className="px-5 py-4 text-[#003662]/70 text-sm italic border-t border-[#003662]/10">
                   Les prestations sur devis font l&apos;objet d&apos;un bon de commande spécifique (périmètre, date, livrables, frais éventuels).
                 </p>

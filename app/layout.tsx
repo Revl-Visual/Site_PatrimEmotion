@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import ContentProtection from "@/components/ContentProtection";
 import { LOGO_SRC } from "@/lib/branding";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "PatrimEmotion® - Donner du sens à vos décisions patrimoniales",

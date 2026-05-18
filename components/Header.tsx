@@ -29,19 +29,19 @@ export default function Header() {
       {/* Bandeau 1 : Infos contact (téléphone + email) */}
       <div className="bg-[#003662] text-white py-2 md:py-2.5">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-4 md:gap-8 text-xs sm:text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <a href="tel:+33661546344" className="flex items-center gap-2 hover:text-[#9FB620] transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>06 61 54 63 44</span>
               </a>
-              <a href={CONTACT_MAILTO} className="flex items-center gap-2 hover:text-[#f4ca3a] transition-colors">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <a href={CONTACT_MAILTO} className="flex max-w-[min(100%,18rem)] items-center gap-2 hover:text-[#f4ca3a] transition-colors sm:max-w-none">
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>{CONTACT_EMAIL}</span>
+                <span className="break-all sm:break-normal">{CONTACT_EMAIL}</span>
               </a>
             </div>
           </div>
@@ -58,10 +58,10 @@ export default function Header() {
                 alt="PatrimEmotion"
                 width={300}
                 height={100}
-                className="h-24 md:h-32 w-auto"
+                className="h-20 sm:h-24 md:h-32 w-auto"
               />
             </Link>
-            <p className="text-sm md:text-base font-semibold tracking-wide text-center">
+            <p className="text-xs sm:text-sm md:text-base font-semibold tracking-wide text-center text-balance px-1">
               <span className="text-[#9FB620]">Votre Personnalité.</span>{" "}
               <span className="text-[#003662]">Vos Émotions.</span>{" "}
               <span className="text-[#f4ca3a]">Votre Patrimoine.</span>
@@ -154,7 +154,7 @@ export default function Header() {
             {/* Mobile menu button (visible uniquement sur mobile) */}
             <button
               type="button"
-              className="md:hidden text-[#003662] outline-none focus:outline-none focus-visible:outline-none"
+              className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-[#003662] outline-none focus:outline-none focus-visible:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

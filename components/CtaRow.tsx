@@ -23,8 +23,8 @@ export function CtaRow({
   const top = spacing === "section" ? "mt-10 md:mt-12" : "";
   const flow =
     layout === "split"
-      ? "flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap"
-      : "flex justify-center";
+      ? "flex flex-col items-stretch justify-center gap-3 sm:items-center sm:gap-4 sm:flex-row sm:flex-wrap max-sm:[&_a]:w-full max-sm:[&_a]:max-w-md max-sm:[&_a]:mx-auto"
+      : "flex flex-col items-stretch justify-center max-sm:[&_a]:w-full max-sm:[&_a]:max-w-md max-sm:[&_a]:mx-auto sm:flex-row sm:justify-center";
   const cls = [top, flow, className].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
   return <div className={cls}>{children}</div>;
 }
