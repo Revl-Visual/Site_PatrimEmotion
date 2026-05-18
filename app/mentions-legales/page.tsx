@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,26 +9,18 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h1 className="pe-heading-hero text-white text-center mb-4">
-              Mentions <span className="text-[#f4ca3a]">légales</span>
-            </h1>
-          </div>
-        </section>
-
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="space-y-8 pe-body-lead text-[#003662]/90 leading-relaxed">
+    <LegalPageLayout title="Mentions légales">
               <div>
                 <h2 className="pe-heading-section text-[#003662] mb-4">Éditeur du site</h2>
                 <p>AM Courtage &amp; Patrimoine (AMCP)</p>
                 <p>Siège social : 10 rue Edgar Degas, 80080 Amiens, France</p>
                 <p>Téléphone : 06 61 54 63 44</p>
-                <p>E-mail : aurelie.monteil@am-courtage-et-patrimoine.fr</p>
+                <p>
+                  E-mail :{" "}
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
                 <p>Site : www.am-courtage-et-patrimoine.fr</p>
                 <p>Forme juridique : SAS au capital de 5 000 EUR</p>
                 <p>SIREN : 851 316 513</p>
@@ -94,7 +86,10 @@ export default function MentionsLegalesPage() {
                   de vos donnees.
                 </p>
                 <p>
-                  Pour exercer vos droits : aurelie.monteil@am-courtage-et-patrimoine.fr
+                  Pour exercer vos droits :{" "}
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
+                  </a>
                 </p>
               </div>
 
@@ -138,7 +133,12 @@ export default function MentionsLegalesPage() {
                 <p>
                   Adresse postale : AM Courtage &amp; Patrimoine, 10 rue Edgar Degas, 80080 Amiens
                 </p>
-                <p>E-mail : aurelie.monteil@am-courtage-et-patrimoine.fr</p>
+                <p>
+                  E-mail :{" "}
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
                 <p>Delai indicatif d&apos;accuse de reception : 10 jours</p>
                 <p>Delai indicatif de reponse : 2 mois</p>
               </div>
@@ -157,11 +157,6 @@ export default function MentionsLegalesPage() {
                   attribuee aux juridictions du ressort de la Cour d&apos;appel d&apos;Amiens.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    </LegalPageLayout>
   );
 }

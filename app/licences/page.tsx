@@ -13,6 +13,7 @@ import {
 } from "@/lib/amcp";
 import {
   LICENCE_HERO_BADGE_FRAME_CLASS,
+  LICENCE_HERO_BADGE_IMAGE_SIZE,
   LICENCE_HERO_ROW_FONDATEUR,
   LICENCE_HERO_ROW_INSTITUTIONNEL,
   LICENCE_HERO_ROW_TROIS,
@@ -155,8 +156,8 @@ export default function LicencesPage() {
                   <PatrimEmotionMark />
                 </h1>
 
-                <div className="grid grid-cols-1 gap-x-10 gap-y-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-8 xl:gap-x-14">
-                  <div className="flex min-h-0 flex-col text-left lg:h-full">
+                <div className="grid grid-cols-1 items-center gap-x-10 gap-y-8 lg:grid-cols-2 lg:gap-x-12 xl:gap-x-14">
+                  <div className="flex flex-col justify-center text-left">
                     <p className="pe-body-lead text-white/90 font-medium mb-6 leading-relaxed">
                       Intégrez une méthode patrimoniale premium conçue pour enrichir la qualité des échanges, fluidifier la restitution et renforcer l&apos;adhésion du client.
                     </p>
@@ -168,7 +169,7 @@ export default function LicencesPage() {
                   </div>
 
                   <div
-                    className="flex min-h-0 w-full flex-col gap-6 sm:gap-7 lg:h-full lg:gap-8 lg:mx-0 lg:max-w-none"
+                    className="relative z-10 flex w-full flex-col justify-center gap-6 sm:gap-7 lg:gap-8 lg:mx-0 lg:max-w-none"
                     role="group"
                     aria-label="Formules de licence PatrimEmotion"
                   >
@@ -178,9 +179,11 @@ export default function LicencesPage() {
                         <Image
                           src={LICENCE_HERO_ROW_FONDATEUR.src}
                           alt={LICENCE_HERO_ROW_FONDATEUR.alt}
-                          fill
-                          className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                          sizes="(max-width: 640px) 28vw, 200px"
+                          width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                          height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                          className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                          sizes="(max-width: 640px) 96px, 148px"
+                          priority
                         />
                       </div>
                     </div>
@@ -192,9 +195,10 @@ export default function LicencesPage() {
                             <Image
                               src={src}
                               alt={alt}
-                              fill
-                              className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                              sizes="(max-width: 640px) 28vw, 200px"
+                              width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                              height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                              className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                              sizes="(max-width: 640px) 96px, 148px"
                             />
                           </div>
                         </div>
@@ -206,15 +210,18 @@ export default function LicencesPage() {
                         <Image
                           src={LICENCE_HERO_ROW_INSTITUTIONNEL.src}
                           alt={LICENCE_HERO_ROW_INSTITUTIONNEL.alt}
-                          fill
-                          className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                          sizes="(max-width: 640px) 28vw, 200px"
+                          width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                          height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                          className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                          sizes="(max-width: 640px) 96px, 148px"
                         />
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex justify-center lg:items-center">
+                <div className="mt-8 grid grid-cols-1 gap-4 lg:mt-10 lg:grid-cols-2 lg:gap-x-12 xl:gap-x-14">
+                  <div className="flex justify-center">
                     <CtaButton
                       href={PATRIMEMOTION_DEMO_URL}
                       target="_blank"
@@ -225,7 +232,7 @@ export default function LicencesPage() {
                       Demander une démo (15 min)
                     </CtaButton>
                   </div>
-                  <div className="flex justify-center lg:items-center">
+                  <div className="flex justify-center">
                     <CtaButton
                       href={PATRIMEMOTION_LICENCE_FORM_URL}
                       target="_blank"
@@ -303,7 +310,7 @@ export default function LicencesPage() {
                 </p>
               </div>
               <CtaRow spacing="none">
-                <CtaButton href="/methode" variant="yellow-elevated" className="group font-semibold">
+                <CtaButton href="/methode" variant="green" className="group font-semibold">
                   Découvrir la méthode
                   <svg
                     className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5"
@@ -427,8 +434,8 @@ export default function LicencesPage() {
                         index === 0
                           ? "text-[#003662]/90"
                           : index === 1
-                            ? "text-[#003662]/90"
-                            : "text-[#003662]/90";
+                            ? "text-[#f4ca3a]"
+                            : "text-[#9FB620]";
                       return (
                       <div key={groupe.titreAccent} className={groupe.panelClass}>
                         <h3
@@ -466,17 +473,19 @@ export default function LicencesPage() {
           </div>
           <div className="pb-20 pt-16 md:pb-32 md:pt-20">
             <div className="container mx-auto max-w-6xl px-4">
-              <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
-                Les différents niveaux de licence
-              </h2>
-              <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-2xl text-[#003662]/80 md:mb-10">
-                Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
-              </p>
-              <CtaRow spacing="none" className="text-center">
-                <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
-                  Licences et tarifs
-                </CtaButton>
-              </CtaRow>
+              <div className="rounded-2xl bg-gradient-to-br from-[#003662]/[0.06] to-transparent border border-[#003662]/12 px-5 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
+                <h2 className="pe-heading-section mb-5 text-center text-balance text-[#003662] md:mb-6">
+                  Les différents niveaux de licence
+                </h2>
+                <p className="pe-body-lead pe-lead-centered mx-auto mb-8 max-w-2xl text-[#003662]/80 md:mb-10">
+                  Un système de licences professionnelles graduées pour garantir l&apos;homogénéité de la méthode.
+                </p>
+                <CtaRow spacing="none" className="text-center">
+                  <CtaButton href={TARIFS_URL} variant="yellow" className="font-semibold">
+                    Licences et tarifs
+                  </CtaButton>
+                </CtaRow>
+              </div>
             </div>
           </div>
         </section>

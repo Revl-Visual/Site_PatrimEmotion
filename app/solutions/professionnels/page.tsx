@@ -5,8 +5,10 @@ import ConstatInteractifPro from "@/components/ConstatInteractifPro";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import { AudienceCardsSection } from "@/components/AudienceCardsSection";
 import {
   LICENCE_HERO_BADGE_FRAME_CLASS,
+  LICENCE_HERO_BADGE_IMAGE_SIZE,
   LICENCE_HERO_ROW_FONDATEUR,
   LICENCE_HERO_ROW_INSTITUTIONNEL,
   LICENCE_HERO_ROW_TROIS,
@@ -18,6 +20,16 @@ export const metadata: Metadata = {
   description:
     "Licence PatrimEmotion® pour CGP et courtiers : structurer la relation client, objectiver l'émotionnel, renforcer vos stratégies et vous différencier.",
 };
+
+const POUR_QUI = [
+  "Conseiller en gestion de patrimoine",
+  "Cabinets indépendants",
+  "Courtiers",
+  "Assureurs",
+  "Comptables",
+  "Notaires",
+  "Agents immobiliers",
+];
 
 const APPROCHE_STRUCTUREE = [
   "Un questionnaire comportemental structuré",
@@ -123,9 +135,10 @@ export default function ProfessionnelsPage() {
                           <Image
                             src={LICENCE_HERO_ROW_FONDATEUR.src}
                             alt={LICENCE_HERO_ROW_FONDATEUR.alt}
-                            fill
-                            className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                            sizes="(max-width: 1024px) 0px, 200px"
+                            width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                            height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                            className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                            sizes="(max-width: 1024px) 96px, 148px"
                           />
                         </div>
                       </div>
@@ -136,9 +149,10 @@ export default function ProfessionnelsPage() {
                               <Image
                                 src={src}
                                 alt={alt}
-                                fill
-                                className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                                sizes="(max-width: 1024px) 0px, 200px"
+                                width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                                height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                                className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                                sizes="(max-width: 1024px) 96px, 148px"
                               />
                             </div>
                           </div>
@@ -149,9 +163,10 @@ export default function ProfessionnelsPage() {
                           <Image
                             src={LICENCE_HERO_ROW_INSTITUTIONNEL.src}
                             alt={LICENCE_HERO_ROW_INSTITUTIONNEL.alt}
-                            fill
-                            className="object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
-                            sizes="(max-width: 1024px) 0px, 200px"
+                            width={LICENCE_HERO_BADGE_IMAGE_SIZE.width}
+                            height={LICENCE_HERO_BADGE_IMAGE_SIZE.height}
+                            className="h-full w-full object-contain object-center drop-shadow-[0_12px_36px_rgba(0,0,0,0.32)]"
+                            sizes="(max-width: 1024px) 96px, 148px"
                           />
                         </div>
                       </div>
@@ -162,6 +177,8 @@ export default function ProfessionnelsPage() {
             </div>
           </div>
         </section>
+
+        <AudienceCardsSection items={POUR_QUI} uniformCards />
 
         {/* Constats — interactif */}
         <ConstatInteractifPro />
@@ -273,7 +290,7 @@ export default function ProfessionnelsPage() {
         {/* Section 5 : Impacts */}
         <section className="!pt-3 !pb-10 md:!pt-5 md:!pb-14 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="pe-heading-section text-[#f4ca3a] mb-6 text-center">
+            <h2 className="pe-heading-section text-[#003662] mb-6 text-center">
               Les bénéfices pour votre cabinet
             </h2>
             <p className="pe-body-lead pe-lead-centered text-[#003662]/90 text-center max-w-4xl mx-auto mb-10">

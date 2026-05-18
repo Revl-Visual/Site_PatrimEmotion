@@ -5,6 +5,7 @@ import ConstatInteractif from "@/components/ConstatInteractif";
 import { PatrimEmotionMark } from "@/components/PatrimEmotionMark";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import { AudienceCardsSection } from "@/components/AudienceCardsSection";
 import { AMCP_BILAN_PATRIMEMOTION_OFFERT_BOOKING_URL, PATRIMEMOTION_QUESTIONNAIRE_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -30,11 +31,11 @@ const TROIS_BENEFICES = [
 ];
 
 const POUR_QUI = [
-  "Vous hésitez souvent\u200b avant d'investir",
-  "Vous voulez sécuriser vos décisions\u200b (et\u00a0votre\u00a0sommeil)",
-  "Vous avez vécu une mauvaise expérience\u200b (perte,\u202fstress,\u202fpression)",
-  "Vous voulez construire\u200b une stratégie cohérente,\u200b durable",
-  "Vous souhaitez\u200b un conseil patrimonial\u200b plus humain",
+  "Couples et familles",
+  "Entrepreneurs",
+  "Dirigeants",
+  "Personnes proches de la retraite",
+  "Investisseurs prudents, hésitants ou accompagnés",
 ];
 
 const ETAPES = [
@@ -81,9 +82,9 @@ const ETAPE_BILAN_STYLES = [
   },
   {
     panel:
-      "rounded-2xl bg-gradient-to-br from-[#64748b]/16 to-[#64748b]/[0.05] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
-    title: "text-[#64748b]",
-    body: "text-[#64748b]/90",
+      "rounded-2xl bg-[#e8ecf0] p-6 shadow-sm transition-shadow hover:shadow-md md:p-8",
+    title: "text-[#475569]",
+    body: "text-[#475569]/95",
     badge: "bg-[#64748b] text-white shadow-md",
   },
 ] as const;
@@ -174,44 +175,7 @@ export default function ParticuliersPage() {
           </div>
         </section>
 
-        {/* À qui s'adresse — fond blanc, cartes numérotées (maquette) */}
-        <section className="no-justify bg-white !py-7 md:!py-9">
-          <div className="container mx-auto max-w-6xl px-4 sm:px-5">
-            <h2 className="pe-heading-section mb-6 text-center text-balance text-[#003662] md:mb-8">
-              À qui s&apos;adresse <PatrimEmotionMark suffix=" ?" />
-            </h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-              {POUR_QUI.slice(0, 3).map((label, i) => (
-                <div
-                  key={label}
-                  className="flex items-start gap-4 rounded-2xl border border-[#003662]/18 bg-white p-5 shadow-[0_2px_12px_rgba(0,54,98,0.06)] md:gap-5 md:p-6"
-                >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-lg font-bold text-[#003662] shadow-sm md:h-14 md:w-14 md:text-xl">
-                    {i + 1}
-                  </span>
-                  <p className="min-w-0 flex-1 !text-left text-base font-bold leading-[1.55] text-[#003662] antialiased !hyphens-none break-words text-pretty md:text-[1.0625rem] md:leading-[1.6]">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className="mx-auto mt-4 flex w-full flex-col gap-4 sm:mt-5 sm:flex-row sm:gap-5 lg:mt-5">
-              {POUR_QUI.slice(3).map((label, i) => (
-                <div
-                  key={label}
-                  className="flex min-w-0 w-full flex-1 items-start gap-4 rounded-2xl border border-[#003662]/18 bg-white p-5 shadow-[0_2px_12px_rgba(0,54,98,0.06)] md:gap-5 md:p-6"
-                >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f4ca3a] text-lg font-bold text-[#003662] shadow-sm md:h-14 md:w-14 md:text-xl">
-                    {i + 4}
-                  </span>
-                  <p className="min-w-0 flex-1 !text-left text-base font-bold leading-[1.55] text-[#003662] antialiased !hyphens-none break-words text-pretty md:text-[1.0625rem] md:leading-[1.6]">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <AudienceCardsSection items={POUR_QUI} />
 
         {/* Le constat — interactif (cases à cocher) */}
         <ConstatInteractif />

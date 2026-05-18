@@ -30,4 +30,6 @@ export const LICENCE_HERO_ROW_INSTITUTIONNEL = LICENCE_HERO_IMAGES[4];
 
 /** Même taille pour tous les badges hero (alignée sur la ligne centrale à 3 colonnes) */
 export const LICENCE_HERO_BADGE_FRAME_CLASS =
-  "relative h-[92px] w-full max-w-[120px] sm:h-[112px] sm:max-w-[168px] md:h-[124px] md:max-w-[190px] lg:h-[132px] lg:max-w-[200px]";
+  "relative z-10 mx-auto h-[72px] w-[96px] shrink-0 sm:h-[84px] sm:w-[118px] md:h-[92px] md:w-[132px] lg:h-[100px] lg:w-[148px]";
+
+export const LICENCE_HERO_BADGE_IMAGE_SIZE = { width: 148, height: 100 } as const;

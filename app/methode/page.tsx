@@ -137,14 +137,12 @@ export default function MethodePage() {
         <section className="bg-white py-5 md:py-7">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
-              Une <span className="text-[#f4ca3a]">approche</span> comportementale appliquée aux{" "}
+              Une <span className="text-[#f4ca3a]">approche comportementale</span> appliquée aux{" "}
               <span className="text-[#9FB620]">décisions patrimoniales</span>
             </h2>
             <div className="space-y-6 pe-body-lead text-[#003662]/90 leading-relaxed">
               <p className="pe-lead-centered text-center">
-                <strong>
-                  <PatrimEmotionMark />
-                </strong>{" "}
+                <PatrimEmotionMark />{" "}
                 est une méthode d&apos;analyse comportementale appliquée aux décisions patrimoniales.
               </p>
               <p className="pe-lead-centered text-center">
@@ -232,8 +230,9 @@ export default function MethodePage() {
                 </div>
 
                 <div className="rounded-2xl bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent border border-[#9FB620]/25 px-5 py-7 md:px-8 md:py-8">
-                  <h3 className="pe-heading-feature mb-6 text-center text-[#003662]">
-                    <span className="text-[#f4ca3a]">La démarche</span> <PatrimEmotionMark />
+                  <h3 className="pe-heading-feature mb-6 text-center text-[#f4ca3a]">
+                    La démarche{" "}
+                    <PatrimEmotionMark patrimClassName="!text-[#f4ca3a]" emotionClassName="!text-[#f4ca3a]" />
                   </h3>
                   <p className="pe-body-lead text-[#f4ca3a] mb-3 leading-relaxed !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     La méthode PatrimEmotion® vise à apporter une lecture structurée de ces dimensions comportementales afin d&apos;éclairer les décisions patrimoniales.
@@ -274,48 +273,48 @@ export default function MethodePage() {
                   <h3 className="pe-heading-feature text-[#9FB620] mb-6 text-center">
                     Les fondements de la méthode
                   </h3>
-                  <p className="pe-body-lead text-[#4a6510] mb-3 !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#9FB620] mb-3 !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     La méthode s&apos;appuie notamment sur des approches issues :
                   </p>
-                  <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#4a6510] mb-8">
+                  <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#9FB620] mb-8">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>de la psychologie comportementale</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>de l&apos;étude des biais cognitifs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>de l&apos;analyse du rapport à l&apos;argent</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>de la gestion de l&apos;incertitude</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>de la projection dans le temps</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#5a8018] text-xl font-semibold shrink-0" aria-hidden>
+                      <span className="text-[#9FB620] text-xl font-semibold shrink-0" aria-hidden>
                         ✓
                       </span>
                       <span>des mécanismes de décision et de délégation</span>
                     </li>
                   </ul>
-                  <p className="pe-body-lead text-[#4a6510] !text-left [text-align-last:auto] max-w-2xl mx-auto">
+                  <p className="pe-body-lead text-[#9FB620] !text-left [text-align-last:auto] max-w-2xl mx-auto">
                     Ces éléments permettent d&apos;observer certaines dynamiques décisionnelles liées aux choix patrimoniaux.
                   </p>
                   <div className="flex justify-center pt-10 pb-3 md:pt-12 md:pb-4">
@@ -406,31 +405,33 @@ export default function MethodePage() {
               Les 6 axes d&apos;analyse
             </h2>
             <p className="pe-body-lead pe-lead-centered mb-6 text-center text-[#003662]/90">
-              La méthode <PatrimEmotionMark /> s&apos;appuie sur plusieurs axes d&apos;observation, notamment :
+              La méthode{" "}
+              <PatrimEmotionMark patrimClassName="!text-[#003662]" emotionClassName="!text-[#003662]" />
+              {" "}s&apos;appuie sur plusieurs axes d&apos;observation, notamment :
             </p>
             <ul className="grid md:grid-cols-2 gap-4 pe-body-lead text-[#003662]/90 mb-10">
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>le rapport à l&apos;argent</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>la gestion de l&apos;incertitude</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>la vision et la temporalité des projets</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>le rapport à la sécurité et au contrôle</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>la manière de décider ou de déléguer</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#9FB620] text-xl font-semibold shrink-0">✓</span>
+                <span className="text-[#003662] text-xl font-semibold shrink-0">✓</span>
                 <span>les enjeux de transmission et de sens</span>
               </li>
             </ul>
@@ -478,7 +479,9 @@ export default function MethodePage() {
             <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-center text-[#003662]/90">
               La démarche{" "}
               <PatrimEmotionMark patrimClassName="!text-[#003662]" emotionClassName="!text-[#003662]" /> se déroule
-              généralement en trois étapes :
+              généralement
+              <br />
+              en trois étapes :
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-16">
               <div className="rounded-2xl bg-[#b9cf4e] shadow-[0_10px_28px_rgba(0,54,98,0.18)] p-6 md:p-8 text-left">

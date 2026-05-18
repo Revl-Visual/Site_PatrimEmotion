@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,110 +9,89 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h1 className="pe-heading-hero text-white text-center mb-4">
-              Politique des <span className="text-[#f4ca3a]">cookies</span>
-            </h1>
-          </div>
-        </section>
+    <LegalPageLayout version="Version 17/04/2026" title="Politique des cookies">
+      <p>
+        Cette page vous informe sur l&apos;utilisation des cookies et technologies similaires
+        lors de votre navigation sur le site PatrimEmotion.
+      </p>
 
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="space-y-8 pe-body-lead text-[#003662]/90 leading-relaxed">
-              <p>
-                Derniere mise a jour : 17 avril 2026.
-              </p>
-              <p>
-                Cette page vous informe sur l&apos;utilisation des cookies et technologies similaires
-                lors de votre navigation sur le site PatrimEmotion.
-              </p>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Qu&apos;est-ce qu&apos;un cookie ?</h2>
+        <p>
+          Un cookie est un petit fichier texte depose sur votre terminal (ordinateur, mobile,
+          tablette) lors de la consultation d&apos;un site internet. Il permet notamment de
+          memoriser des informations de navigation pendant une duree donnee.
+        </p>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Qu&apos;est-ce qu&apos;un cookie ?</h2>
-                <p>
-                  Un cookie est un petit fichier texte depose sur votre terminal (ordinateur, mobile,
-                  tablette) lors de la consultation d&apos;un site internet. Il permet notamment de
-                  memoriser des informations de navigation pendant une duree donnee.
-                </p>
-              </div>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Types de cookies utilises</h2>
+        <p>Le site peut utiliser les categories de cookies suivantes :</p>
+        <ul className="mt-4 space-y-3">
+          <li>
+            <strong>Cookies strictement necessaires</strong> : indispensables au fonctionnement
+            technique du site (navigation, securite, acces aux fonctionnalites essentielles).
+          </li>
+          <li>
+            <strong>Cookies de mesure d&apos;audience</strong> : utilises pour comprendre
+            l&apos;utilisation du site et ameliorer les contenus et performances.
+          </li>
+          <li>
+            <strong>Cookies de personnalisation</strong> : permettent d&apos;adapter
+            l&apos;experience utilisateur (ex. preferences d&apos;affichage).
+          </li>
+        </ul>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Types de cookies utilises</h2>
-                <p>
-                  Le site peut utiliser les categories de cookies suivantes :
-                </p>
-                <ul className="mt-4 space-y-3">
-                  <li>
-                    <strong>Cookies strictement necessaires</strong> : indispensables au fonctionnement
-                    technique du site (navigation, securite, acces aux fonctionnalites essentielles).
-                  </li>
-                  <li>
-                    <strong>Cookies de mesure d&apos;audience</strong> : utilises pour comprendre
-                    l&apos;utilisation du site et ameliorer les contenus et performances.
-                  </li>
-                  <li>
-                    <strong>Cookies de personnalisation</strong> : permettent d&apos;adapter
-                    l&apos;experience utilisateur (ex. preferences d&apos;affichage).
-                  </li>
-                </ul>
-              </div>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Base legale et consentement</h2>
+        <p>
+          Les cookies strictement necessaires sont deposes sans consentement prealable.
+          Les autres cookies (audience, personnalisation, etc.) sont soumis a votre
+          consentement prealable lorsque la reglementation l&apos;exige.
+        </p>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Base legale et consentement</h2>
-                <p>
-                  Les cookies strictement necessaires sont deposes sans consentement prealable.
-                  Les autres cookies (audience, personnalisation, etc.) sont soumis a votre
-                  consentement prealable lorsque la reglementation l&apos;exige.
-                </p>
-              </div>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Duree de conservation</h2>
+        <p>
+          Les cookies sont conserves pour une duree limitee, proportionnee a leur finalite
+          et conformement aux exigences legales en vigueur.
+        </p>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Duree de conservation</h2>
-                <p>
-                  Les cookies sont conserves pour une duree limitee, proportionnee a leur finalite
-                  et conformement aux exigences legales en vigueur.
-                </p>
-              </div>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Gerer vos preferences cookies</h2>
+        <p>
+          Vous pouvez a tout moment accepter, refuser ou retirer votre consentement
+          pour les cookies non essentiels via le module de gestion des cookies du site,
+          lorsqu&apos;il est disponible.
+        </p>
+        <p>
+          Vous pouvez egalement configurer votre navigateur pour bloquer ou supprimer
+          les cookies deja deposes.
+        </p>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Gerer vos preferences cookies</h2>
-                <p>
-                  Vous pouvez a tout moment accepter, refuser ou retirer votre consentement
-                  pour les cookies non essentiels via le module de gestion des cookies du site,
-                  lorsqu&apos;il est disponible.
-                </p>
-                <p>
-                  Vous pouvez egalement configurer votre navigateur pour bloquer ou supprimer
-                  les cookies deja deposes.
-                </p>
-              </div>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Parametrage du navigateur</h2>
+        <p>
+          La plupart des navigateurs permettent de gerer les cookies depuis les reglages
+          de confidentialite (suppression, blocage, exceptions). Le refus de certains
+          cookies peut toutefois degrader le fonctionnement de certaines fonctionnalites.
+        </p>
+      </div>
 
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Parametrage du navigateur</h2>
-                <p>
-                  La plupart des navigateurs permettent de gerer les cookies depuis les reglages
-                  de confidentialite (suppression, blocage, exceptions). Le refus de certains
-                  cookies peut toutefois degrader le fonctionnement de certaines fonctionnalites.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="pe-heading-section text-[#003662] mb-4">Contact</h2>
-                <p>
-                  Pour toute question relative a cette politique cookies ou au traitement de vos
-                  donnees personnelles, vous pouvez contacter :
-                  aurelie.monteil@am-courtage-et-patrimoine.fr
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+      <div>
+        <h2 className="pe-heading-section text-[#003662] mb-4">Contact</h2>
+        <p>
+          Pour toute question relative a cette politique cookies ou au traitement de vos
+          donnees personnelles, vous pouvez contacter :{" "}
+          <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+            {CONTACT_EMAIL}
+          </a>
+        </p>
+      </div>
+    </LegalPageLayout>
   );
 }

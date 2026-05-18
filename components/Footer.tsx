@@ -3,6 +3,7 @@ import { CtaButton } from "@/components/CtaButton";
 import Image from "next/image";
 import { AMCP_CONTACT_URL } from "@/lib/amcp";
 import { LOGO_SRC } from "@/lib/branding";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -28,8 +29,8 @@ export default function Footer() {
               <p>
                 <strong className="text-[#f4ca3a] font-sans">Email</strong>
                 <br />
-                <a href="mailto:cabinet.amcp@gmail.com" className="hover:text-white hover:underline transition-colors">
-                  cabinet.amcp@gmail.com
+                <a href={CONTACT_MAILTO} className="hover:text-white hover:underline transition-colors">
+                  {CONTACT_EMAIL}
                 </a>
               </p>
               <p>
@@ -197,6 +198,9 @@ export default function Footer() {
             <nav className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-white/70 order-1 sm:order-2" aria-label="Mentions légales et informations">
               <Link href="/mentions-legales" className="hover:text-white transition-colors">
                 Mentions légales
+              </Link>
+              <Link href="/cgu" className="hover:text-white transition-colors">
+                CGU
               </Link>
               <Link href="/cookies" className="hover:text-white transition-colors">
                 Cookies

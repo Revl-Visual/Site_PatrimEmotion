@@ -238,30 +238,44 @@ export default function CadreEthiqueScientifiquePage() {
                 <h3 className="pe-heading-card text-white mb-4">
                   PatrimEmotion est
                 </h3>
-                <ul className="space-y-2 pe-body-lead text-white leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                <ul className="space-y-3 pe-body-lead text-white">
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✓
                     </span>
-                    <span>Cohérent avec la psychologie décisionnelle</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">Cohérent avec la psychologie décisionnelle</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✓
                     </span>
-                    <span>Structuré et interprétable</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">Structuré et interprétable</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✓
                     </span>
-                    <span>Reproductible</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">Reproductible</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✓
                     </span>
-                    <span>Un outil typologique comportemental appliqué au patrimoine</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">
+                      Un outil typologique comportemental appliqué au patrimoine
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -269,30 +283,46 @@ export default function CadreEthiqueScientifiquePage() {
                 <h3 className="pe-heading-card text-white mb-4">
                   PatrimEmotion n&apos;est pas
                 </h3>
-                <ul className="space-y-2 pe-body-lead text-white/90 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                <ul className="space-y-3 pe-body-lead text-white/90">
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✕
                     </span>
-                    <span>Un test clinique validé</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">Un test clinique validé</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✕
                     </span>
-                    <span>Un outil normé scientifiquement sur échantillon statistique</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">
+                      Un outil normé scientifiquement sur échantillon statistique
+                    </span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✕
                     </span>
-                    <span>Un instrument psychométrique validé académiquement</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">
+                      Un instrument psychométrique validé académiquement
+                    </span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="shrink-0 text-lg font-semibold leading-none text-white" aria-hidden>
+                  <li className="flex items-start gap-3">
+                    <span
+                      className="flex h-[1.625em] w-[1.25em] shrink-0 items-center justify-center font-bold leading-none text-white"
+                      aria-hidden
+                    >
                       ✕
                     </span>
-                    <span>Un outil prédictif de performance</span>
+                    <span className="min-w-0 flex-1 leading-relaxed">Un outil prédictif de performance</span>
                   </li>
                 </ul>
               </div>
@@ -331,14 +361,18 @@ export default function CadreEthiqueScientifiquePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#9FB620] font-semibold shrink-0">✓</span>
-                  <span>Traduction en recommandations stratégiques et suivi</span>
+                  <span>
+                    <strong className="text-[#9FB620]">Traduction en recommandations stratégiques et suivi</strong>
+                  </span>
                 </li>
               </ul>
               <p className="pe-body-lead text-white leading-relaxed mb-6">
-                Des <strong className="text-[#9FB620]">protocoles et supports</strong> (grilles, livrables, scripts d&apos;entretien) sont fournis aux certifiés pour assurer une mise en œuvre homogène et de qualité.
+                Des <strong className="text-[#9FB620]">protocoles et supports</strong>{" "}
+                (grilles, livrables, scripts d&apos;entretien) sont fournis aux certifiés pour assurer une mise en œuvre homogène et de qualité.
               </p>
               <p className="pe-body-lead text-white leading-relaxed">
-                L&apos;objectif : permettre au conseiller d&apos;<strong className="text-[#9FB620]">intégrer la dimension émotionnelle</strong> sans alourdir le processus d&apos;accompagnement, tout en offrant au client une <strong className="text-[#9FB620]">expérience claire et valorisante</strong>.
+                L&apos;objectif : permettre au conseiller d&apos;{" "}
+                <strong className="text-[#9FB620]">intégrer la dimension émotionnelle</strong> sans alourdir le processus d&apos;accompagnement, tout en offrant au client une <strong className="text-[#9FB620]">expérience claire et valorisante</strong>.
               </p>
               <CtaRow spacing="none" className="mt-10 md:mt-12">
                 <CtaButton

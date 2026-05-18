@@ -76,7 +76,7 @@ export default function TarifsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <h2 className="pe-heading-section mb-4 text-balance text-center text-[#003662]">
-                Vue d&apos;ensemble des <span className="text-[#f4ca3a]">licences</span>
+                Vue d&apos;ensemble des <span className="text-[#f4ca3a]">Tarifs</span>
               </h2>
               <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-balance leading-relaxed text-[#003662]/80">
                 Choisissez la formule adaptée à la taille et aux besoins de votre cabinet
@@ -98,7 +98,7 @@ export default function TarifsPage() {
                       {[
                         ["#1a1a1a", "Licence FONDATEUR", "2 900 €", "—", "12 mois", "Selon CORE"],
                         ["#9FB620", "Licence LIGHT", "1 490 €", "149 €", "12 mois", "1 nominatif"],
-                        ["#d4a808", "Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
+                        ["#f4ca3a", "Licence CORE", "3 900 €", "390 €", "12 mois", "Jusqu'à 5"],
                         ["#003662", "Licence PREMIUM", "9 800 €", "980 €", "12 mois", "Jusqu'à 15"],
                         ["#64748b", "Licence INSTITUTIONNELLE", "Ticket 25k–75k €", "—", "Sur devis", "Selon volumétrie"],
                       ].map((row, i) => (
@@ -145,28 +145,28 @@ export default function TarifsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="rounded-2xl border-2 border-[#1a1a1a]/20 bg-white overflow-hidden shadow-xl">
-                <div className="bg-[#1a1a1a] px-6 py-5 flex items-center gap-3">
+                <div className="flex items-center gap-3 bg-[#1a1a1a] px-6 py-5">
                   <span className="text-2xl" aria-hidden>⚫</span>
                   <div>
                     <h2 className="pe-heading-section text-white">
                       Licence Fondateur <span className="text-[#f4ca3a]">(Early Partners)</span>
                     </h2>
-                    <p className="text-white/80 text-sm mt-1">Réservée aux 10 premiers cabinets – lancement réseau</p>
+                    <p className="mt-1 text-sm text-white/80">Réservée aux 10 premiers cabinets – lancement réseau</p>
                   </div>
                 </div>
-                <div className="p-8 md:p-10 text-[#003662]">
-                  <p className="pe-body-lead font-semibold text-[#003662] mb-4 leading-relaxed">
+                <div className="bg-[#e8ecf0] p-8 md:p-10 text-[#1a1a1a]">
+                  <p className="pe-body-lead mb-4 font-semibold leading-relaxed text-[#f4ca3a]">
                     Tarif 2 900 € HT / an (base CORE)
                   </p>
-                  <ul className="space-y-2 pe-body-lead text-[#003662]/90 mb-6 leading-relaxed">
-                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Licence CORE (« socle opérationnel »)</li>
-                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Badge « Licencié Fondateur »</li>
-                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Tarif bloqué 3 ans (voir règle Fondateur)</li>
-                    <li className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span> Intégration des évolutions V2026 (selon contrat)</li>
+                  <ul className="mb-6 space-y-2 pe-body-lead leading-relaxed text-[#1a1a1a]">
+                    <li className="flex items-start gap-2"><span className="shrink-0 text-[#1a1a1a]">✓</span> Licence CORE (« socle opérationnel »)</li>
+                    <li className="flex items-start gap-2"><span className="shrink-0 text-[#1a1a1a]">✓</span> Badge « Licencié Fondateur »</li>
+                    <li className="flex items-start gap-2"><span className="shrink-0 text-[#1a1a1a]">✓</span> Tarif bloqué 3 ans (voir règle Fondateur)</li>
+                    <li className="flex items-start gap-2"><span className="shrink-0 text-[#1a1a1a]">✓</span> Intégration des évolutions V2026 (selon contrat)</li>
                   </ul>
-                  <div className="rounded-xl bg-slate-50 border border-[#003662]/10 p-5">
-                    <p className="pe-body-lead text-[#003662]/90 leading-relaxed">
-                      <span className="font-semibold text-[#003662]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
+                  <div className="rounded-xl bg-white/80 border border-[#1a1a1a]/10 p-5">
+                    <p className="pe-body-lead leading-relaxed text-[#1a1a1a]">
+                      <span className="font-semibold text-[#1a1a1a]">Règle Fondateur</span> – La Licence Fondateur est une licence CORE au tarif préférentiel, <strong>tarif bloqué 3 ans</strong>, réservée aux <strong>10 premiers cabinets</strong>, sous réserve du respect des conditions du Contrat (paiement, usage marque, conformité, limites d&apos;usage).
                     </p>
                   </div>
                   <CtaRow spacing="none" className="mt-6">
@@ -196,100 +196,107 @@ export default function TarifsPage() {
               LIGHT, CORE ou PREMIUM selon la taille de votre cabinet et vos besoins
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* LIGHT */}
+              {/* LIGHT — en-tête vert + corps « Les fondements » */}
               <a
                 href={LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col rounded-2xl bg-white shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full cursor-pointer"
+                className="flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[#9FB620]/35 bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
               >
-                <div className="bg-[#9FB620] px-6 py-4 border-b border-[#8aa61d]">
+                <div className="border-b border-[#8aa61d] bg-[#9FB620] px-6 py-4">
                   <h3 className="pe-heading-card text-white">Licence LIGHT</h3>
-                  <p className="text-white/90 text-sm mt-1">L&apos;essentiel pour démarrer</p>
+                  <p className="mt-1 text-sm text-white/90">L&apos;essentiel pour démarrer</p>
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <p className="mb-3 text-sm font-bold text-[#9FB620]">
-                    Utilisation individuelle – cabinet indépendant
+                <div className="flex flex-1 flex-col bg-gradient-to-br from-[#9FB620]/[0.18] to-[#9FB620]/[0.08] p-6">
+                  <p className="mb-3 text-sm font-bold leading-snug text-[#9FB620]">
+                    Utilisation individuelle
+                    <br />
+                    Cabinet indépendant
                   </p>
                   <div className="mb-4">
                     <span className="text-2xl font-semibold text-[#9FB620]">1 490 €</span>
                     <span className="font-bold text-[#9FB620]"> HT / an</span>
-                    <p className="mt-0.5 text-sm text-[#003662]/70">ou 149 € HT / mois (engagement 12 mois)</p>
+                    <p className="mt-0.5 text-sm text-[#9FB620]">ou 149 € HT / mois (engagement 12 mois)</p>
                   </div>
-                  <p className="text-[#003662] font-semibold text-sm mb-2">Inclut</p>
-                  <ul className="space-y-1.5 text-[#003662]/90 text-sm mb-4 flex-1">
+                  <p className="mb-2 text-sm font-semibold text-[#9FB620]">Inclut</p>
+                  <ul className="mb-4 flex-1 space-y-1.5 text-sm text-[#9FB620]">
                     {LIGHT_FEATURES.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2"><span className="text-[#9FB620] shrink-0">✓</span>{f}</li>
-                    ))}
-                  </ul>
-                  <p className="text-[#003662] text-sm font-medium">1 conseiller nominatif</p>
-                  <p className="text-[#003662]/80 text-xs mt-2">Options : utilisateur supp. 390 €/an, formation avancée 490 €, audit restitution 350 €</p>
-                </div>
-              </a>
-
-              {/* CORE — mise en avant */}
-              <a
-                href={LICENCE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col rounded-2xl bg-[#003662] shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full relative cursor-pointer"
-              >
-                <div className="bg-[#f4ca3a] px-6 py-4 border-b border-[#dcb026]">
-                  <h3 className="pe-heading-card text-[#003662]">Licence CORE</h3>
-                  <p className="text-[#003662]/85 text-sm mt-1">Le socle opérationnel (standard pro)</p>
-                </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <p className="mb-3 text-sm font-bold text-[#f4ca3a]">
-                    Cabinet structuré (2-5 conseillers)
-                  </p>
-                  <div className="mb-4">
-                    <span className="text-2xl font-semibold text-[#f4ca3a]">3 900 €</span>
-                    <span className="font-bold text-[#f4ca3a]"> HT / an</span>
-                    <p className="mt-0.5 text-sm text-white/70">ou 390 € HT / mois (engagement 12 mois)</p>
-                  </div>
-                  <p className="text-white font-semibold text-sm mb-2">Inclut</p>
-                  <ul className="space-y-1.5 text-white/90 text-sm mb-4 flex-1">
-                    {CORE_FEATURES.map((f, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="shrink-0 text-[#f4ca3a]">✓</span>
+                        <span className="shrink-0 text-xl font-semibold text-[#9FB620]" aria-hidden>✓</span>
                         {f}
                       </li>
                     ))}
                   </ul>
-                  <p className="text-white/90 text-sm font-medium">Jusqu&apos;à 5 conseillers</p>
-                  <p className="text-white/70 text-xs mt-2">Options : utilisateur supp. 490 €/an, formation sur site sur devis, audit conformité 790 €</p>
+                  <p className="text-sm font-medium text-[#9FB620]">1 conseiller nominatif</p>
+                  <p className="mt-2 text-xs text-[#9FB620]">
+                    Options : utilisateur supp. 390 €/an, formation avancée 490 €, audit restitution 350 €
+                  </p>
                 </div>
               </a>
 
-              {/* PREMIUM */}
+              {/* CORE — en-tête jaune + corps « La démarche » */}
               <a
                 href={LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col rounded-2xl bg-white shadow-md overflow-hidden transition-all hover:shadow-xl hover:scale-[1.02] h-full cursor-pointer"
+                className="relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[#9FB620]/25 bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
               >
-                <div className="bg-[#003662] px-6 py-4 border-b border-[#002949]">
-                  <h3 className="pe-heading-card text-white">Licence PREMIUM</h3>
-                  <p className="text-white/85 text-sm mt-1">La version avancée</p>
+                <div className="border-b border-[#dcb026] bg-[#f4ca3a] px-6 py-4">
+                  <h3 className="pe-heading-card text-[#003662]">Licence CORE</h3>
+                  <p className="mt-1 text-sm text-[#003662]/85">Le socle opérationnel (standard pro)</p>
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
+                <div className="flex flex-1 flex-col bg-gradient-to-br from-[#9FB620]/[0.08] to-transparent p-6">
+                  <p className="mb-3 text-sm font-bold text-[#f4ca3a]">Cabinet structuré (2-5 conseillers)</p>
+                  <div className="mb-4">
+                    <span className="text-2xl font-semibold text-[#f4ca3a]">3 900 €</span>
+                    <span className="font-bold text-[#f4ca3a]"> HT / an</span>
+                    <p className="mt-0.5 text-sm text-[#f4ca3a]">ou 390 € HT / mois (engagement 12 mois)</p>
+                  </div>
+                  <p className="mb-2 text-sm font-semibold text-[#f4ca3a]">Inclut</p>
+                  <ul className="mb-4 flex-1 space-y-1.5 text-sm text-[#f4ca3a]">
+                    {CORE_FEATURES.map((f, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="shrink-0 text-xl font-semibold text-[#f4ca3a]" aria-hidden>✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm font-medium text-[#f4ca3a]">Jusqu&apos;à 5 conseillers</p>
+                  <p className="mt-2 text-xs text-[#f4ca3a]">
+                    Options : utilisateur supp. 490 €/an, formation sur site sur devis, audit conformité 790 €
+                  </p>
+                </div>
+              </a>
+
+              {/* PREMIUM — en-tête bleu + corps « Le constat » */}
+              <a
+                href={LICENCE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[#003662]/10 bg-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl"
+              >
+                <div className="border-b border-[#002949] bg-[#003662] px-6 py-4">
+                  <h3 className="pe-heading-card text-white">Licence PREMIUM</h3>
+                  <p className="mt-1 text-sm text-white/85">La version avancée</p>
+                </div>
+                <div className="flex flex-1 flex-col bg-gradient-to-br from-[#003662]/[0.05] to-transparent p-6">
                   <p className="mb-3 text-sm font-bold text-[#003662]">Cabinet expert / multisites</p>
                   <div className="mb-4">
                     <span className="text-2xl font-semibold text-[#003662]">9 800 €</span>
                     <span className="font-bold text-[#003662]"> HT / an</span>
-                    <p className="mt-0.5 text-sm text-[#003662]/70">ou 980 € HT / mois (engagement 12 mois)</p>
+                    <p className="mt-0.5 text-sm text-[#003662]/90">ou 980 € HT / mois (engagement 12 mois)</p>
                   </div>
-                  <p className="text-[#003662] font-semibold text-sm mb-2">Inclut</p>
-                  <ul className="space-y-1.5 text-[#003662]/90 text-sm mb-4 flex-1">
+                  <p className="mb-2 text-sm font-semibold text-[#003662]">Inclut</p>
+                  <ul className="mb-4 flex-1 space-y-1.5 text-sm text-[#003662]/90">
                     {PREMIUM_FEATURES.map((f, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="shrink-0 text-[#003662]">✓</span>
+                        <span className="shrink-0 text-xl font-semibold text-[#003662]" aria-hidden>✓</span>
                         {f}
                       </li>
                     ))}
                   </ul>
                   <p className="text-[#003662] text-sm font-medium">Jusqu&apos;à 15 conseillers</p>
-                  <p className="text-[#003662]/80 text-xs mt-2">Options : utilisateur supp. 590 €/an, intervention événement sur devis, audit méthodologique 1 200 €</p>
+                  <p className="mt-2 text-xs text-[#003662]/90">Options : utilisateur supp. 590 €/an, intervention événement sur devis, audit méthodologique 1 200 €</p>
                 </div>
               </a>
             </div>
@@ -332,8 +339,8 @@ export default function TarifsPage() {
         <section className="py-24 md:py-32 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
-              <h2 className="pe-heading-section mb-4 text-center text-[#003662]">
-                <span className="text-[#f4ca3a]">Options</span> (HT)
+              <h2 className="pe-heading-section mb-4 text-center text-[#f4ca3a]">
+                Options (HT)
               </h2>
               <p className="pe-body-lead pe-lead-centered text-[#003662]/80 text-center mb-12 max-w-2xl mx-auto leading-relaxed">
                 Complétez votre licence selon vos besoins

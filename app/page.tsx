@@ -224,7 +224,7 @@ export default function Home() {
                     href={PATRIMEMOTION_QUESTIONNAIRE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    variant="yellow-elevated"
+                    variant="green"
                     className="text-base font-semibold"
                   >
                     Recevoir mon bilan
@@ -241,7 +241,7 @@ export default function Home() {
           <section className="relative pt-16 pb-12 md:pt-24 md:pb-14 transition-colors overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]" />
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-              <h2 className="pe-heading-section text-center text-white mb-4">
+              <h2 className="pe-heading-section text-center text-[#003662] mb-4">
                 Découvrir la méthode
               </h2>
               <p className="pe-body-lead text-white/90 text-center mb-16 max-w-2xl mx-auto">
@@ -325,37 +325,39 @@ export default function Home() {
                 PatrimEmotion® s&apos;adresse à différents publics souhaitant intégrer une lecture comportementale et émotionnelle dans la compréhension des décisions patrimoniales.
               </p>
               <div className="max-w-6xl mx-auto space-y-6">
-                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-neutral-50/80 border-l-4 border-[#f4ca3a] border border-neutral-100 hover:border-[#f4ca3a]/50 hover:shadow-lg hover:shadow-[#f4ca3a]/10 transition-all duration-300">
+                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-[#f4ca3a]/10 border-l-4 border-[#f4ca3a] border border-[#f4ca3a]/20 hover:border-[#f4ca3a]/50 hover:shadow-lg hover:shadow-[#f4ca3a]/10 transition-all duration-300">
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#f4ca3a]/20 border-2 border-[#f4ca3a]/40 shadow-sm flex items-center justify-center text-2xl shrink-0">👤</div>
                   </div>
                   <div className="lg:col-span-9 lg:pr-6">
-                    <h3 className="pe-heading-card text-[#003662] mb-2">Particuliers, dirigeants et professions libérales</h3>
-                    <p className="pe-body text-[#003662]/90 mb-2 text-justify">
-                      Pour les personnes souhaitant mieux comprendre la manière dont leurs émotions influencent leurs décisions patrimoniales.
+                    <h3 className="pe-heading-card text-[#f4ca3a] mb-2">Particuliers, dirigeants et professions libérales</h3>
+                    <p className="pe-body text-[#f4ca3a]/90 mb-2 text-justify">
+                      Pour celles et ceux qui souhaitent mieux comprendre la manière dont leurs émotions, leurs besoins de sécurité, leur rapport au temps et leur vision de la transmission influencent leurs décisions patrimoniales.
                     </p>
-                    <p className="pe-body text-[#003662]/90 text-justify">
-                      La démarche PatrimEmotion® permet de mettre en lumière vos préférences décisionnelles et votre rapport à l&apos;incertitude, à la sécurité et à la projection dans le temps. Selon l&apos;accompagnement choisi, Indice et Profil Émotionnel Patrimonial, Rapport PatrimEmotion® ou Bilan complet, un outil pédagogique pour éclairer vos décisions.
+                    <p className="pe-body text-[#f4ca3a]/90 text-justify">
+                      La démarche PatrimEmotion® met en lumière vos préférences décisionnelles, votre rapport à l&apos;incertitude, à la sécurité et à la projection dans le temps. Selon l&apos;accompagnement choisi, elle peut donner lieu à un Indice et Profil Émotionnel Patrimonial, à un Rapport PatrimEmotion® ou à un Bilan complet, afin d&apos;éclairer vos choix et de construire un accompagnement patrimonial plus cohérent, plus humain et plus durable.
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
-                    <CtaButton href="/solutions/particuliers" variant="yellow" className="font-semibold">
+                    <CtaButton href="/solutions/particuliers" variant="yellow" className="font-semibold !text-white">
                       Découvrir
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </CtaButton>
                   </div>
                 </div>
-                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-neutral-50/80 border-l-4 border-[#9FB620] border border-neutral-100 hover:border-[#9FB620]/50 hover:shadow-lg hover:shadow-[#9FB620]/10 transition-all duration-300">
+                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-[#9FB620]/10 border-l-4 border-[#9FB620] border border-[#9FB620]/20 hover:border-[#9FB620]/50 hover:shadow-lg hover:shadow-[#9FB620]/10 transition-all duration-300">
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#9FB620]/20 border-2 border-[#9FB620]/40 shadow-sm flex items-center justify-center text-2xl shrink-0">💼</div>
                   </div>
                   <div className="lg:col-span-9 lg:pr-6">
-                    <h3 className="pe-heading-card text-[#003662] mb-2">Professionnels du patrimoine</h3>
-                    <p className="pe-body text-[#003662]/90 mb-2 text-justify">
-                      Pour les conseillers, CGP, assureurs, experts-comptables souhaitant intégrer une lecture comportementale structurée et une prise en compte des biais dans la relation client.
+                    <h3 className="pe-heading-card text-[#9FB620] mb-2">
+                      Professionnels du patrimoine, du droit, de l&apos;immobilier, de l&apos;assurance et de la comptabilité
+                    </h3>
+                    <p className="pe-body text-[#9FB620]/90 mb-2 text-justify">
+                      Pour les conseillers en gestion de patrimoine, professionnels du droit, de l&apos;immobilier, de l&apos;assurance, de la comptabilité, du conseil aux dirigeants et de l&apos;accompagnement patrimonial souhaitant intégrer une lecture comportementale structurée dans leur relation client.
                     </p>
-                    <p className="pe-body text-[#003662]/90 text-justify">
-                      La licence PatrimEmotion® enrichit la connaissance client et améliore la qualité du dialogue patrimonial, avec plusieurs niveaux selon vos besoins.
+                    <p className="pe-body text-[#9FB620]/90 text-justify">
+                      La licence PatrimEmotion® permet d&apos;enrichir la connaissance client, d&apos;identifier certains biais décisionnels, d&apos;améliorer la qualité du dialogue patrimonial et d&apos;adapter l&apos;accompagnement selon le fonctionnement émotionnel et décisionnel du client, avec plusieurs niveaux d&apos;usage selon les besoins du professionnel.
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
@@ -365,17 +367,19 @@ export default function Home() {
                     </CtaButton>
                   </div>
                 </div>
-                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-neutral-50/80 border-l-4 border-[#003662] border border-neutral-100 hover:border-[#003662]/50 hover:shadow-lg hover:shadow-[#003662]/10 transition-all duration-300">
+                <div className="group grid lg:grid-cols-12 gap-6 items-center rounded-2xl p-6 md:p-8 bg-[#003662]/5 border-l-4 border-[#003662] border border-[#003662]/20 hover:border-[#003662]/50 hover:shadow-lg hover:shadow-[#003662]/10 transition-all duration-300">
                   <div className="lg:col-span-1 flex justify-center lg:justify-start">
                     <div className="w-14 h-14 rounded-xl bg-[#003662]/10 border-2 border-[#003662]/30 shadow-sm flex items-center justify-center text-2xl shrink-0">🏢</div>
                   </div>
                   <div className="lg:col-span-9 lg:pr-6">
-                    <h3 className="pe-heading-card text-[#003662] mb-2">Institutions et plateformes</h3>
+                    <h3 className="pe-heading-card text-[#003662] mb-2">
+                      Institutions, plateformes et réseaux patrimoniaux
+                    </h3>
                     <p className="pe-body text-[#003662]/90 mb-2 text-justify">
-                      Pour les acteurs institutionnels, réseaux patrimoniaux ou plateformes souhaitant une approche comportementale structurée et reproductible dans leurs parcours clients.
+                      Pour les banques privées, compagnies d&apos;assurance, mutuelles, plateformes patrimoniales, réseaux de conseillers, établissements financiers, acteurs immobiliers institutionnels et organismes de formation souhaitant intégrer une approche comportementale structurée dans leur parcours clients.
                     </p>
                     <p className="pe-body text-[#003662]/90 text-justify">
-                      Déploiement en solution intégrée, licence marque blanche ou module d&apos;aide pour compléter vos outils existants avec un éclairage comportemental et pédagogique.
+                      PatrimEmotion® peut être déployée sous forme de solution intégrée, de licence institutionnelle, de marque blanche ou de module complémentaire, afin d&apos;enrichir l&apos;entretien découverte, la pédagogie client, la formation des conseillers et la qualité de l&apos;accompagnement, sans se substituer aux obligations réglementaires propres à chaque acteur.
                     </p>
                   </div>
                   <div className="lg:col-span-2 flex justify-center lg:justify-end lg:pl-10">
@@ -406,14 +410,14 @@ export default function Home() {
       </div>
 
       {/* Section Demander une démo - Fond vert */}
-      <section className="-mt-4 md:-mt-6 py-16 md:py-24 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
+      <section className="-mt-4 md:-mt-6 pb-16 md:pb-24 mb-0 relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2),0_4px_15px_rgba(0,0,0,0.15)]" style={{ clipPath: 'polygon(0 8%, 100% 0%, 100% 98%, 0% 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-br from-[#9FB620] via-[#a5c023] to-[#8aa61d]"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 pt-32 md:pt-44">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
                 <h2 className="pe-heading-section text-white mb-4">
-                  Prêt à <span className="text-[#003662]">échanger ?</span>
+                  Prêt à échanger ?
                 </h2>
                 <p className="pe-body-lead text-white/90 mb-6">
                   Prenez contact avec un expert pour découvrir comment <span className="text-[#003662] font-semibold">PatrimEmotion®</span> peut transformer votre relation au patrimoine.

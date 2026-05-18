@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LegalPageLayout from "@/components/LegalPageLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,20 +9,15 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <section className="bg-[#003662] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h1 className="pe-heading-hero text-white text-center mb-4">
-              Politique de <span className="text-[#f4ca3a]">confidentialité</span>
-            </h1>
-          </div>
-        </section>
-
-        <section className="section-alt-blue py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="space-y-8 pe-body-lead text-[#003662]/90 leading-relaxed">
+    <LegalPageLayout
+      title={
+        <>
+          Politique de
+          <br />
+          confidentialité
+        </>
+      }
+    >
               <p>
                 AM Courtage &amp; Patrimoine, en tant que responsable de traitement, accorde une importance
                 particulière à la protection de vos données personnelles.
@@ -121,7 +116,10 @@ export default function PolitiqueConfidentialitePage() {
                   limitation, opposition, portabilité (selon les cas), et retrait du consentement à tout moment.
                 </p>
                 <p>
-                  Pour exercer vos droits : aurelie.monteil@am-courtage-et-patrimoine.fr
+                  Pour exercer vos droits :{" "}
+                  <a href={CONTACT_MAILTO} className="text-[#003662] underline hover:text-[#9FB620]">
+                    {CONTACT_EMAIL}
+                  </a>
                 </p>
               </div>
 
@@ -140,11 +138,6 @@ export default function PolitiqueConfidentialitePage() {
                   réglementaires ou techniques. Nous vous invitons à la consulter régulièrement.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    </LegalPageLayout>
   );
 }

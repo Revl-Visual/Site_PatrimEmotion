@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
+import { AudienceCardsSection } from "@/components/AudienceCardsSection";
 import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL, PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
@@ -17,6 +18,19 @@ const LICENCES_URL = "/licences";
 const METHODE_SCIENTIFIQUE_URL = "/methode";
 const PATRIMEMOTION_ARTICLE_URL =
   "https://www.linkedin.com/pulse/patrimemotion-une-m%C3%A9thode-innovante-et-unique-bas%C3%A9-sur-monteil--xhspe/";
+const PARCOURS_CLIENT_DOC_URL = "/Docs/fiche_patrimemotion_parcours_cif-2.html";
+
+const POUR_QUI = [
+  "Banques Privées",
+  "Réseaux bancaires",
+  "Compagnies d'assurance et mutuelles",
+  "Plateformes patrimoniales et financières",
+  "Réseaux de CGP, courtiers et mandataires",
+  "Sociétés de gestion et Asset Managers",
+  "Promoteurs, opérateurs immobiliers et plateformes immobilières",
+  "Organismes de formations et écoles spécialisées",
+  "Directions innovation, conformité et expérience client",
+];
 
 const METHODE_STRUCTUREE = [
   "structurée et reproductible",
@@ -160,8 +174,10 @@ export default function InstitutionnelsPage() {
           </div>
         </section>
 
+        <AudienceCardsSection items={POUR_QUI} className="!pb-6 md:!pb-7" />
+
         {/* Une méthode structurée et intégrable — fond blanc */}
-        <section className="pt-16 !pb-10 md:pt-24 md:!pb-14 bg-white">
+        <section className="pt-10 !pb-10 md:pt-14 md:!pb-14 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="pe-heading-section text-[#003662] mb-10 text-center">
               Une méthode structurée, intégrable et personnalisable
@@ -177,18 +193,22 @@ export default function InstitutionnelsPage() {
             <p className="pe-body-lead pe-lead-centered text-[#003662]/85 text-center mb-10 leading-relaxed max-w-2xl mx-auto md:text-[1.15rem]">
               La méthode PatrimEmotion® peut être utilisée comme un outil pédagogique d&apos;aide à la compréhension du comportement patrimonial, venant compléter les dispositifs de connaissance client existants.
             </p>
-            <div className="mx-auto mt-4 max-w-5xl">
+          </div>
+          <div className="container mx-auto mt-4 max-w-6xl px-4 lg:max-w-7xl">
               <div className="group block overflow-hidden rounded-[2rem] bg-white shadow-[0_12px_40px_-12px_rgba(0,54,98,0.25)]">
                 <Image
                   src="/images/methode_institutionnels.jpeg"
                   alt="Méthode institutionnels PatrimEmotion"
                   width={1600}
                   height={900}
-                  className="h-auto w-full max-w-full object-contain"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+                  quality={95}
+                  unoptimized
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 92vw, 1600px"
                 />
               </div>
-            </div>
+          </div>
+          <div className="container mx-auto px-4 max-w-3xl">
             <CtaRow spacing="none" className="mt-12 md:mt-14">
               <CtaButton
                 href="/images/Carte_mentale_zone_secu_institutionnels.png"
@@ -271,7 +291,7 @@ export default function InstitutionnelsPage() {
                 href={PATRIMEMOTION_DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="yellow"
+                variant="white"
                 className="font-semibold"
               >
                 Demander une démo
@@ -294,15 +314,17 @@ export default function InstitutionnelsPage() {
               <p>
                 Les décisions patrimoniales et les recommandations d&apos;investissement relèvent exclusivement de la responsabilité du professionnel habilité dans le cadre réglementaire applicable.
               </p>
-              <p>La méthode PatrimEmotion® ne constitue :</p>
-              <ul className="space-y-3 max-w-xl mx-auto">
-                {NI_CONSEIL.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <span className="shrink-0 mt-0.5 text-[#003662]/70">{i + 1}.</span>
-                    <span className="pe-body-lead text-[#003662]/85 leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <p className="mb-2">La méthode PatrimEmotion® ne constitue :</p>
+                <ul className="mx-auto max-w-xl space-y-1">
+                  {NI_CONSEIL.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="shrink-0 text-[#003662]/70">{i + 1}.</span>
+                      <span className="pe-body-lead leading-snug text-[#003662]/85">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <CtaRow spacing="none" layout="split" className="mt-8 md:mt-10 gap-4 md:gap-6">
               <CtaButton
@@ -330,13 +352,13 @@ export default function InstitutionnelsPage() {
         {/* Sciences comportementales — fond gris léger */}
         <section className="section-alt-blue !pt-10 !pb-10 md:!pt-12 md:!pb-12">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="pe-heading-section text-[#003662] mb-2 text-center md:mb-3">
+            <h2 className="pe-heading-section text-[#003662] mb-8 text-center">
               Une approche inspirée des sciences comportementales
             </h2>
-            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 mb-2 text-center leading-relaxed md:text-[1.15rem]">
+            <p className="pe-body-lead pe-lead-centered font-semibold text-[#003662]/85 mb-8 text-center leading-relaxed md:text-[1.15rem]">
               La démarche PatrimEmotion® s&apos;inspire notamment de travaux issus :
             </p>
-            <ul className="mx-auto mb-2 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-1.5 sm:grid-cols-2 sm:gap-y-2 md:mb-3">
+            <ul className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-1.5 sm:grid-cols-2 sm:gap-y-2">
               {["de la psychologie comportementale", "de la psychologie de la décision", "de l'analyse des biais cognitifs", "de la finance comportementale"].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <span className="shrink-0 mt-0.5 font-bold text-[#003662]">—</span>
@@ -446,13 +468,26 @@ export default function InstitutionnelsPage() {
                 <p className="text-[#003662]/90 text-justify">PatrimEmotion® propose d&apos;intégrer cette dimension comportementale afin d&apos;améliorer la compréhension des mécanismes décisionnels et d&apos;enrichir la relation entre le professionnel et son client.</p>
               </div>
             </div>
-            <CtaRow className="-mb-4 min-h-[3.5rem] items-center text-center">
+            <CtaRow
+              spacing="none"
+              layout="split"
+              className="-mb-4 mt-10 md:mt-12 min-h-[3.5rem] items-center justify-center gap-4 md:gap-6"
+            >
               <CtaButton
                 href="/tarifs"
                 variant="blue-navy"
                 className="text-base font-semibold shadow-lg shadow-[#003662]/20 hover:shadow-xl"
               >
                 Voir les tarifs
+              </CtaButton>
+              <CtaButton
+                href={PARCOURS_CLIENT_DOC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="white"
+                className="text-base font-semibold !shadow-none border-2 border-[#003662] hover:shadow-md"
+              >
+                Découvrir le parcours client
               </CtaButton>
             </CtaRow>
           </div>

@@ -1,4 +1,0 @@
-# Fichiers à ne pas compter dans la "langue" du dépôt GitHub
-# (le site est en Next.js + TypeScript + Tailwind, pas en HTML)
-Dev_Ressources/* linguist-documentation
-*.html linguist-documentation
