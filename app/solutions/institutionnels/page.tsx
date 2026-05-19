@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { CtaButton } from "@/components/CtaButton";
 import { CtaRow } from "@/components/CtaRow";
 import { AudienceCardsSection } from "@/components/AudienceCardsSection";
-import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL, PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL } from "@/lib/amcp";
+import { AMCP_CONTACT_URL, PATRIMEMOTION_DEMO_URL, PATRIMEMOTION_LICENCE_FORM_URL } from "@/lib/amcp";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -328,13 +328,13 @@ export default function InstitutionnelsPage() {
             </div>
             <CtaRow spacing="none" layout="split" className="mt-8 md:mt-10 gap-4 md:gap-6">
               <CtaButton
-                href={PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL}
+                href={PARCOURS_CLIENT_DOC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="white"
                 className="!shadow-none border-2 border-[#003662] font-semibold hover:shadow-md"
               >
-                Demander le livre blanc institutionnel
+                Découvrir le parcours client
               </CtaButton>
               <CtaButton
                 href={PATRIMEMOTION_LICENCE_FORM_URL}
@@ -481,13 +481,13 @@ export default function InstitutionnelsPage() {
                 Voir les tarifs
               </CtaButton>
               <CtaButton
-                href={PARCOURS_CLIENT_DOC_URL}
+                href={PATRIMEMOTION_LICENCE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="white"
                 className="text-base font-semibold !shadow-none border-2 border-[#003662] hover:shadow-md"
               >
-                Découvrir le parcours client
+                Demander ma licence
               </CtaButton>
             </CtaRow>
           </div>

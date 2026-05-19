@@ -29,6 +29,10 @@ export const PATRIMEMOTION_DEVIS_URL =
 export const PATRIMEMOTION_LIVRE_BLANC_INSTITUTIONNEL_FORM_URL =
   "https://docs.google.com/forms/d/1557MXwwseLggAcPB1MvavUMxZT-JI-njsOWuSFDDvVE/viewform";
 
-/** Formulaire d'etude du besoin pour les licences PatrimEmotion® */
+/** Formulaire « Demande de licence PatrimEmotion® » (confirmation du périmètre retenu) */
 export const PATRIMEMOTION_LICENCE_FORM_URL =
+  "https://docs.google.com/forms/d/1CXHXyWAJUPrppqNpRquBp-YiYDMQH0YdTl7OlPJDP0I/viewform";
+
+/** Formulaire devis / étude de besoin (CTA « Faire un devis », distinct de la demande de licence) */
+export const PATRIMEMOTION_LICENCE_DEVIS_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd9lGfavCwwP547D-iYKthIfvM_O8MesFoamQZACQY4FJUjAA/viewform";

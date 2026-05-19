@@ -4,343 +4,279 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PatrimEmotion® — Parcours Client & Cadre CIF</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0d1b2a;
-    --navy-mid: #152338;
-    --navy-light: #1e3352;
-    --gold: #c9a84c;
-    --gold-light: #e2c97e;
-    --gold-pale: #f5e9c8;
-    --white: #fdfbf7;
-    --text-light: #c8d0da;
-    --border: rgba(201,168,76,0.3);
+    --blue-deep:   #1a3558;   /* bleu foncé titres */
+    --blue-mid:    #2b5282;   /* bleu moyen liens / accents */
+    --blue-light:  #e8f0f9;   /* bleu très pâle fond cartes */
+    --blue-subtle: #f0f5fc;   /* fond page général */
+    --gold:        #b8933a;   /* or accent */
+    --gold-light:  #d4a94e;
+    --gold-pale:   #fdf6e3;   /* fond doux or */
+    --text-dark:   #1a2b3c;   /* texte principal */
+    --text-mid:    #3d5470;   /* texte secondaire */
+    --text-light:  #607590;   /* texte tertiaire */
+    --white:       #ffffff;
+    --border:      #c8d8ec;
+    --border-gold: #d4a94e44;
+    --green:       #1e7a53;
+    --green-bg:    #eaf5f0;
+    --red:         #a0282a;
+    --red-bg:      #fdf0f0;
+    --radius:      8px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    min-height: 100vh;
-    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--blue-subtle);
+    color: var(--text-dark);
+    line-height: 1.65;
+    font-size: 14px;
   }
 
-  /* PAGE LAYOUT */
+  /* ── PAGE ── */
   .page {
-    max-width: 1000px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 60px 40px;
+    padding: 56px 36px 72px;
   }
 
-  /* HEADER */
+  /* ── HEADER ── */
   .header {
     text-align: center;
-    margin-bottom: 60px;
-    position: relative;
+    margin-bottom: 56px;
   }
-  .header::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 28px auto 0;
-  }
-  .header-label {
-    font-family: 'Montserrat', sans-serif;
+  .header-eyebrow {
     font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 4px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    font-weight: 300;
-    color: var(--white);
+    font-size: 46px;
+    font-weight: 400;
+    color: var(--blue-deep);
     line-height: 1.1;
+    margin-bottom: 14px;
   }
-  .header h1 span {
-    color: var(--gold);
+  .header h1 em {
     font-style: italic;
+    color: var(--gold);
   }
   .header-sub {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
-    color: var(--text-light);
-    letter-spacing: 1.5px;
-    margin-top: 14px;
+    color: var(--text-mid);
+    letter-spacing: 0.3px;
+  }
+  .header-line {
+    width: 64px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--blue-mid));
+    margin: 20px auto 0;
+    border-radius: 2px;
   }
   .header-badge {
     display: inline-block;
-    margin-top: 20px;
-    padding: 5px 18px;
+    margin-top: 18px;
+    padding: 4px 16px;
     border: 1px solid var(--border);
-    border-radius: 2px;
+    border-radius: 20px;
     font-size: 10px;
     letter-spacing: 2px;
-    color: var(--gold-light);
+    color: var(--text-mid);
     text-transform: uppercase;
+    background: var(--white);
   }
 
-  /* SECTION TITLES */
+  /* ── SECTION ── */
   .section {
-    margin-bottom: 50px;
+    margin-bottom: 52px;
   }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--gold-light);
-    letter-spacing: 0.5px;
-    margin-bottom: 24px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
+  .section-header {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--border);
   }
-  .section-title .num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 2px;
-    background: rgba(201,168,76,0.1);
-    padding: 3px 10px;
-    border-radius: 2px;
-    border: 1px solid var(--border);
-  }
-
-  /* PARCOURS — TIMELINE VERTICAL */
-  .timeline {
-    position: relative;
-    padding-left: 30px;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 1px;
-    background: linear-gradient(180deg, var(--gold) 0%, rgba(201,168,76,0.1) 100%);
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -34px;
-    top: 10px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--navy-mid);
-    border: 2px solid var(--gold);
-    flex-shrink: 0;
-  }
-  .timeline-item.highlight::before {
-    background: var(--gold);
-    width: 10px;
-    height: 10px;
-    left: -35px;
-    box-shadow: 0 0 8px rgba(201,168,76,0.5);
-  }
-  .timeline-step {
+  .section-num {
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1.5px;
-    color: var(--gold);
-    text-transform: uppercase;
-    min-width: 22px;
-    padding-top: 2px;
-  }
-  .timeline-content {
-    flex: 1;
-    padding: 10px 16px;
-    border-radius: 3px;
-    background: var(--navy-mid);
-    border-left: 2px solid transparent;
-  }
-  .timeline-item.highlight .timeline-content {
-    border-left-color: var(--gold);
-    background: rgba(201,168,76,0.07);
-  }
-  .timeline-content strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
+    letter-spacing: 2px;
     color: var(--white);
-    margin-bottom: 4px;
-    letter-spacing: 0.3px;
+    background: var(--blue-mid);
+    padding: 3px 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
   }
-  .timeline-content p {
-    font-size: 11.5px;
-    color: var(--text-light);
-    font-weight: 300;
-    line-height: 1.5;
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--blue-deep);
   }
-  .tag {
-    display: inline-block;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-top: 6px;
-  }
-  .tag-gold { background: rgba(201,168,76,0.15); color: var(--gold-light); border: 1px solid var(--border); }
-  .tag-green { background: rgba(80,180,120,0.12); color: #7ddaaa; border: 1px solid rgba(80,180,120,0.2); }
-  .tag-red { background: rgba(220,80,80,0.1); color: #e89090; border: 1px solid rgba(220,80,80,0.2); }
 
-  /* GRILLE 3 COLONNES */
+  /* ── GRID 3 ── */
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-bottom: 50px;
   }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
   .card {
-    background: var(--navy-mid);
+    background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 24px 20px;
     position: relative;
-    overflow: hidden;
   }
-  .card::before {
-    content: '';
+  .card-top-bar {
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), transparent);
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-mid), var(--gold-light));
+    border-radius: var(--radius) var(--radius) 0 0;
   }
   .card-icon {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 12px;
     display: block;
   }
   .card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
-    color: var(--gold-light);
+    font-weight: 600;
+    color: var(--blue-deep);
     margin-bottom: 10px;
-    font-weight: 400;
   }
   .card-text {
-    font-size: 11.5px;
-    color: var(--text-light);
-    font-weight: 300;
-    line-height: 1.7;
+    font-size: 13px;
+    color: var(--text-mid);
+    font-weight: 400;
+    line-height: 1.65;
   }
+  .card-text strong { color: var(--blue-deep); font-weight: 600; }
 
-  /* GRILLE 2 COL */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 50px;
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
   }
-
-  /* TABLEAU SYNTHESE */
-  .synth-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 50px;
-    font-size: 12px;
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 16px;
+    bottom: 16px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--blue-mid) 0%, var(--border) 100%);
+    border-radius: 2px;
   }
-  .synth-table thead tr {
-    background: rgba(201,168,76,0.1);
+  .tl-item {
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
   }
-  .synth-table th {
-    padding: 12px 16px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
+  .tl-dot {
+    position: absolute;
+    left: -29px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+  }
+  .tl-item.hl .tl-dot {
+    background: var(--gold);
+    border-color: var(--gold);
+    width: 12px;
+    height: 12px;
+    left: -30px;
+    box-shadow: 0 0 0 3px rgba(184,147,58,0.15);
+  }
+  .tl-step {
     font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--blue-mid);
+    min-width: 20px;
+    padding-top: 14px;
+  }
+  .tl-body {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    border-left: 3px solid transparent;
+  }
+  .tl-item.hl .tl-body {
+    border-left-color: var(--gold);
+    background: var(--gold-pale);
+  }
+  .tl-title {
     font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--blue-deep);
+    margin-bottom: 4px;
   }
-  .synth-table td {
-    padding: 11px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: var(--text-light);
-    font-weight: 300;
+  .tl-desc {
+    font-size: 12.5px;
+    color: var(--text-mid);
+    line-height: 1.55;
   }
-  .synth-table tr:hover td {
-    background: rgba(255,255,255,0.02);
-    color: var(--white);
-  }
-  .synth-table td:first-child {
-    color: var(--white);
-    font-weight: 500;
-  }
-  .check { color: #7ddaaa; }
-  .cross { color: #e89090; }
+  .tl-item.hl .tl-desc { color: var(--text-dark); }
 
-  /* BLOC ALERTE */
-  .alert {
-    border-radius: 4px;
-    padding: 20px 24px;
-    margin-bottom: 20px;
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-  .alert-red {
-    background: rgba(220,80,80,0.07);
-    border-left: 3px solid rgba(220,80,80,0.5);
-    color: #ebbcbc;
-  }
-  .alert-green {
-    background: rgba(80,180,120,0.07);
-    border-left: 3px solid rgba(80,180,120,0.4);
-    color: #aadec6;
-  }
-  .alert-gold {
-    background: rgba(201,168,76,0.06);
-    border-left: 3px solid var(--gold);
-    color: var(--gold-pale);
-  }
-  .alert strong {
-    display: block;
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    letter-spacing: 1px;
     font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-top: 7px;
   }
-  .alert-red strong { color: #e89090; }
-  .alert-green strong { color: #7ddaaa; }
-  .alert-gold strong { color: var(--gold); }
+  .tag-gold { background: rgba(184,147,58,0.12); color: var(--gold); border: 1px solid rgba(184,147,58,0.3); }
+  .tag-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(30,122,83,0.2); }
+  .tag-red { background: var(--red-bg); color: var(--red); border: 1px solid rgba(160,40,42,0.2); }
+  .tag-blue { background: var(--blue-light); color: var(--blue-mid); border: 1px solid var(--border); }
 
-  /* BLOCS EN LIGNE */
+  /* ── BLOCS 4 ── */
   .blocs-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 50px;
+    gap: 14px;
   }
   .bloc {
-    background: var(--navy-mid);
+    background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 16px;
+    border-radius: var(--radius);
+    padding: 22px 16px;
     text-align: center;
+  }
+  .bloc.accent {
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
   }
   .bloc-num {
     font-family: 'Cormorant Garamond', serif;
@@ -349,112 +285,173 @@
     letter-spacing: 2px;
     font-style: italic;
     margin-bottom: 8px;
+    display: block;
   }
   .bloc-title {
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--white);
+    letter-spacing: 0.8px;
+    color: var(--blue-deep);
     margin-bottom: 8px;
   }
+  .bloc.accent .bloc-title { color: var(--blue-mid); }
   .bloc-desc {
-    font-size: 10.5px;
+    font-size: 11px;
     color: var(--text-light);
-    font-weight: 300;
+    line-height: 1.55;
+  }
+  .bloc-accent-note {
+    font-size: 9.5px;
+    color: var(--gold);
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  /* ── ALERTS ── */
+  .alert {
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .alert-title {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .alert-red { background: var(--red-bg); border-left: 3px solid var(--red); color: #5c1516; }
+  .alert-red .alert-title { color: var(--red); }
+  .alert-green { background: var(--green-bg); border-left: 3px solid var(--green); color: #13452e; }
+  .alert-green .alert-title { color: var(--green); }
+  .alert-gold { background: var(--gold-pale); border-left: 3px solid var(--gold); color: #5c3d0a; }
+  .alert-gold .alert-title { color: var(--gold); }
+
+  /* ── TABLE ── */
+  .synth-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .synth-table thead tr { background: var(--blue-deep); }
+  .synth-table th {
+    padding: 13px 18px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .synth-table td {
+    padding: 11px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+  }
+  .synth-table tr:last-child td { border-bottom: none; }
+  .synth-table tr:hover td { background: var(--blue-light); }
+  .synth-table td:first-child { color: var(--text-dark); font-weight: 500; }
+  .check { color: var(--green); font-weight: 600; }
+  .cross { color: var(--red); font-weight: 600; }
+
+  /* ── LISTE ── */
+  ul.styled { list-style: none; padding: 0; }
+  ul.styled li {
+    padding: 7px 0 7px 16px;
+    position: relative;
+    font-size: 13px;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
     line-height: 1.5;
   }
-
-  /* FORMULE FINALE */
-  .formule {
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 36px 40px;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-  }
-  .formule::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 4px;
-    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07), transparent 60%);
-    pointer-events: none;
-  }
-  .formule-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.7;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  .formule-text em {
-    color: var(--gold-light);
-    font-style: normal;
-  }
-  .formule-source {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    margin-top: 16px;
-  }
-
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid var(--border);
-  }
-  .footer p {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: rgba(200,208,218,0.4);
-    text-transform: uppercase;
-  }
-  .footer strong {
-    color: var(--gold);
-  }
-
-  /* DIVIDER */
-  .divider {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 0 auto 50px;
-  }
-
-  /* LISTE STYLÉE */
-  ul.styled {
-    list-style: none;
-    padding: 0;
-  }
-  ul.styled li {
-    padding: 6px 0 6px 18px;
-    position: relative;
-    font-size: 12px;
-    color: var(--text-light);
-    font-weight: 300;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
+  ul.styled li:last-child { border-bottom: none; }
   ul.styled li::before {
     content: '—';
     position: absolute;
     left: 0;
     color: var(--gold);
-    font-size: 10px;
+    font-size: 11px;
   }
-  ul.styled li:last-child { border-bottom: none; }
 
-  /* PRINT SAFE */
-  @media print {
-    body { background: white; color: #111; }
-    .header h1 { color: #111; }
+  /* ── FORMULE ── */
+  .formule {
+    background: var(--blue-deep);
+    border-radius: var(--radius);
+    padding: 40px 48px;
+    text-align: center;
+    margin-bottom: 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .formule::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .formule-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .formule-text em {
+    color: var(--gold-light);
+    font-style: normal;
+    font-weight: 400;
+  }
+  .formule-source {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue-mid), var(--gold));
+    margin: 0 auto 52px;
+    border-radius: 2px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+  .footer strong { color: var(--blue-mid); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .grid-3, .blocs-row { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .header h1 { font-size: 34px; }
+    .page { padding: 32px 20px 48px; }
+    .formule { padding: 30px 24px; }
+    .formule-text { font-size: 18px; }
   }
 </style>
 </head>
@@ -462,195 +459,201 @@
 
 <div class="page">
 
-  <!-- HEADER -->
+  <!-- ══ HEADER ══ -->
   <div class="header">
-    <div class="header-label">AM Courtage & Patrimoine — Document interne</div>
-    <h1><span>PatrimEmotion®</span><br>& Parcours Client CIF</h1>
+    <div class="header-eyebrow">AM Courtage & Patrimoine · Document de référence</div>
+    <h1><em>PatrimEmotion®</em><br>& Parcours Client CIF</h1>
     <p class="header-sub">De la stratégie comportementale appliquée au patrimoine</p>
-    <span class="header-badge">Version V2026 · AMF Safe</span>
+    <div class="header-line"></div>
+    <span class="header-badge">Version V2026 · AMF-Safe · Usage interne et pédagogique</span>
   </div>
 
-  <!-- SECTION 1 : POSITIONNEMENT -->
+  <!-- ══ 01 — POSITIONNEMENT ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">01</span>
-      Positionnement de PatrimEmotion®
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Positionnement de PatrimEmotion®</h2>
     </div>
-
     <div class="grid-3">
       <div class="card">
+        <div class="card-top-bar"></div>
         <span class="card-icon">🧭</span>
-        <div class="card-title">Un outil de compréhension</div>
-        <p class="card-text">PatrimEmotion® s'insère <strong style="color:var(--white)">en amont et en transversal</strong>, pas comme un livrable réglementaire. Il éclaire le "pourquoi réel" derrière les objectifs déclarés.</p>
+        <div class="card-title">Outil de compréhension</div>
+        <p class="card-text">PatrimEmotion® s'insère <strong>en amont et en transversal</strong> du parcours, pas comme un livrable réglementaire. Il éclaire le « pourquoi réel » derrière les objectifs déclarés.</p>
       </div>
       <div class="card">
+        <div class="card-top-bar"></div>
         <span class="card-icon">🤝</span>
-        <div class="card-title">Un outil de relation</div>
-        <p class="card-text">Outil de <strong style="color:var(--white)">fidélisation</strong>, d'<strong style="color:var(--white)">anti-erreur comportementale</strong> et de différenciation marché. Répond à : <em style="color:var(--gold-pale)">"Comment ce client doit être accompagné ?"</em></p>
+        <div class="card-title">Outil de relation</div>
+        <p class="card-text">Outil de <strong>fidélisation</strong> et d'<strong>anti-erreur comportementale</strong>. Répond à la question : <em>« Comment ce client doit-il être accompagné pour que ça fonctionne ? »</em></p>
       </div>
       <div class="card">
+        <div class="card-top-bar"></div>
         <span class="card-icon">⚖️</span>
         <div class="card-title">Jamais réglementaire</div>
-        <p class="card-text">N'est pas un profil investisseur MIF II. Ne se substitue pas au recueil CIF. Ne constitue pas une recommandation financière. Vocation exclusivement <strong style="color:var(--white)">pédagogique</strong>.</p>
+        <p class="card-text">N'est pas un profil investisseur MIF II. Ne se substitue pas au recueil CIF. Ne constitue pas une recommandation financière. Vocation exclusivement <strong>pédagogique</strong>.</p>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 2 : PARCOURS OPTIMAL -->
+  <!-- ══ 02 — PARCOURS ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">02</span>
-      Parcours Client Optimal
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Parcours Client Optimal</h2>
     </div>
-
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-step">1</div>
-        <div class="timeline-content">
-          <strong>Prise de contact</strong>
-          <p>Premier échange, cadrage de la relation</p>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">1</div>
+        <div class="tl-body">
+          <div class="tl-title">Prise de contact</div>
+          <div class="tl-desc">Premier échange, cadrage de la relation</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">2</div>
-        <div class="timeline-content">
-          <strong>Entretien découverte patrimonial</strong>
-          <p>Situation familiale, professionnelle, fiscale, juridique, financière · Objectifs, contraintes, horizon, expérience, besoins</p>
-          <span class="tag tag-gold">Couche 1 : déclaratif classique</span>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">2</div>
+        <div class="tl-body">
+          <div class="tl-title">Entretien découverte patrimonial</div>
+          <div class="tl-desc">Situation familiale, professionnelle, fiscale, juridique, financière · Objectifs, contraintes, horizon, expérience, besoins</div>
+          <span class="tag tag-blue">Couche 1 : déclaratif classique</span>
         </div>
       </div>
-      <div class="timeline-item highlight">
-        <div class="timeline-step">3</div>
-        <div class="timeline-content">
-          <strong>Module PatrimEmotion®</strong>
-          <p>Lecture comportementale et émotionnelle · Argent — Temps — Risque — Sécurité — Transmission — Incertitude · Identification des biais, moteurs, incohérences</p>
+
+      <div class="tl-item hl"><div class="tl-dot"></div>
+        <div class="tl-step">3</div>
+        <div class="tl-body">
+          <div class="tl-title">Module PatrimEmotion®</div>
+          <div class="tl-desc">Lecture comportementale et émotionnelle · Argent — Temps — Risque — Sécurité — Transmission — Incertitude · Identification des biais, moteurs, incohérences</div>
           <span class="tag tag-gold">Clé différenciante</span>
         </div>
       </div>
-      <div class="timeline-item highlight">
-        <div class="timeline-step">4</div>
-        <div class="timeline-content">
-          <strong>Restitution pédagogique PatrimEmotion®</strong>
-          <p>Profil émotionnel patrimonial · Style d'accompagnement · Préférences de structuration financière · Points de vigilance comportementaux</p>
-          <span class="tag tag-gold">Restitution orale → puis annexe PDF</span>
+
+      <div class="tl-item hl"><div class="tl-dot"></div>
+        <div class="tl-step">4</div>
+        <div class="tl-body">
+          <div class="tl-title">Restitution pédagogique PatrimEmotion®</div>
+          <div class="tl-desc">Profil émotionnel patrimonial · Style d'accompagnement · Préférences de structuration financière · Points de vigilance comportementaux</div>
+          <span class="tag tag-gold">Restitution orale → puis envoi de l'annexe PDF</span>
         </div>
       </div>
-      <div class="timeline-item highlight">
-        <div class="timeline-step">5</div>
-        <div class="timeline-content">
-          <strong>Remise de l'Annexe PatrimEmotion® ← ICI</strong>
-          <p>Document pédagogique complémentaire · Non réglementaire · AMF-Safe · Validation contradictoire par le client (Confirmé / Nuancé / Contesté)</p>
-          <span class="tag tag-green">Moment idéal : après restitution, avant recommandation</span>
+
+      <div class="tl-item hl"><div class="tl-dot"></div>
+        <div class="tl-step">5</div>
+        <div class="tl-body">
+          <div class="tl-title">📌 Remise de l'Annexe PatrimEmotion® — moment clé</div>
+          <div class="tl-desc">Document pédagogique complémentaire · Non réglementaire · AMF-Safe · Validation contradictoire client : Confirmé / Nuancé / Contesté</div>
+          <span class="tag tag-green">Après la restitution — avant toute recommandation</span>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">6</div>
-        <div class="timeline-content">
-          <strong>Analyse patrimoniale holistique</strong>
-          <p>Croisement : situation objective · objectifs exprimés · contraintes réglementaires · cohérence comportementale (lecture PatrimEmotion® intégrée)</p>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">6</div>
+        <div class="tl-body">
+          <div class="tl-title">Analyse patrimoniale holistique</div>
+          <div class="tl-desc">Croisement : situation objective · objectifs exprimés · contraintes réglementaires · cohérence comportementale PatrimEmotion®</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">7</div>
-        <div class="timeline-content">
-          <strong>Cadrage réglementaire CIF — Lettre de mission</strong>
-          <p>Recueil des informations réglementaires · Profil investisseur · Connaissance / expérience / objectifs / tolérance au risque</p>
-          <span class="tag tag-gold">Clause PatrimEmotion® à intégrer</span>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">7</div>
+        <div class="tl-body">
+          <div class="tl-title">Cadrage réglementaire CIF — Lettre de mission</div>
+          <div class="tl-desc">Recueil des informations réglementaires · Profil investisseur · Connaissance / expérience / objectifs / tolérance au risque</div>
+          <span class="tag tag-blue">Clause PatrimEmotion® pédagogique à intégrer</span>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">8</div>
-        <div class="timeline-content">
-          <strong>Préconisations patrimoniales et financières</strong>
-          <p>Solutions étudiées · Avantages / risques / coûts / horizon · Justification de l'adéquation</p>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">8</div>
+        <div class="tl-body">
+          <div class="tl-title">Préconisations patrimoniales et financières</div>
+          <div class="tl-desc">Solutions étudiées · Avantages / risques / coûts / horizon · Justification de l'adéquation</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">9</div>
-        <div class="timeline-content">
-          <strong>Rapport d'adéquation CIF</strong>
-          <p>Document réglementaire distinct · Fondé sur les informations CIF obligatoires · PatrimEmotion® = éclairage pédagogique complémentaire, jamais critère autonome</p>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">9</div>
+        <div class="tl-body">
+          <div class="tl-title">Rapport d'adéquation CIF</div>
+          <div class="tl-desc">Document réglementaire distinct · Fondé sur les informations CIF obligatoires · PatrimEmotion® = éclairage pédagogique complémentaire uniquement</div>
           <span class="tag tag-red">PatrimEmotion® n'est jamais nommé comme outil décisionnel ici</span>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-step">10</div>
-        <div class="timeline-content">
-          <strong>Mise en œuvre et suivi</strong>
-          <p>Points réguliers · Ajustements · Validation contradictoire · Traçabilité</p>
+
+      <div class="tl-item"><div class="tl-dot"></div>
+        <div class="tl-step">10</div>
+        <div class="tl-body">
+          <div class="tl-title">Mise en œuvre et suivi</div>
+          <div class="tl-desc">Points réguliers · Ajustements · Validation contradictoire · Traçabilité</div>
         </div>
       </div>
+
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- SECTION 3 : LES 4 BLOCS -->
+  <!-- ══ 03 — 4 BLOCS ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">03</span>
-      Les 4 Blocs Fonctionnels
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Les 4 Blocs Fonctionnels</h2>
     </div>
-
     <div class="blocs-row">
       <div class="bloc">
-        <div class="bloc-num">Bloc 1</div>
+        <span class="bloc-num">Bloc 1</span>
         <div class="bloc-title">Compréhension</div>
-        <div class="bloc-desc">Situation client · Objectifs · PatrimEmotion®</div>
+        <div class="bloc-desc">Situation client · Objectifs déclarés · Module PatrimEmotion®</div>
       </div>
-      <div class="bloc" style="border-color:rgba(201,168,76,0.5);">
-        <div class="bloc-num">Bloc 2</div>
-        <div class="bloc-title" style="color:var(--gold-light);">Traduction</div>
-        <div class="bloc-desc">Style d'accompagnement · Style de portefeuille<br><em style="color:var(--gold);font-size:9.5px;">Innovation PatrimEmotion®</em></div>
+      <div class="bloc accent">
+        <span class="bloc-num">Bloc 2</span>
+        <div class="bloc-title">Traduction</div>
+        <div class="bloc-desc">Style d'accompagnement · Style de portefeuille</div>
+        <div class="bloc-accent-note">Innovation PatrimEmotion®</div>
       </div>
       <div class="bloc">
-        <div class="bloc-num">Bloc 3</div>
+        <span class="bloc-num">Bloc 3</span>
         <div class="bloc-title">Analyse</div>
         <div class="bloc-desc">Fiscale · Juridique · Financière</div>
       </div>
       <div class="bloc">
-        <div class="bloc-num">Bloc 4</div>
+        <span class="bloc-num">Bloc 4</span>
         <div class="bloc-title">CIF</div>
         <div class="bloc-desc">Profil investisseur · Recommandation · Rapport d'adéquation</div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 4 : CE QU'IL FAUT FAIRE / NE PAS FAIRE -->
+  <!-- ══ 04 — CONDUITE ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">04</span>
-      Ligne de Conduite AMF-Safe
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Ligne de Conduite AMF-Safe</h2>
     </div>
-
-    <div class="grid-2">
-      <div>
-        <div class="alert alert-red">
-          <strong>❌ À ne jamais faire</strong>
-          Intégrer PatrimEmotion® comme "profil investisseur" · Utiliser le score comme base de recommandation financière · Le mentionner comme outil de conformité · Remettre l'annexe avec le rapport d'adéquation · Écrire "ce profil implique une allocation à X% actions"
-        </div>
+    <div class="grid-2" style="margin-bottom:16px;">
+      <div class="alert alert-red">
+        <span class="alert-title">❌ À ne jamais faire</span>
+        Intégrer PatrimEmotion® comme « profil investisseur » · Utiliser le score comme base de recommandation · Le mentionner comme outil de conformité · Remettre l'annexe avec le rapport d'adéquation · Écrire « ce profil implique une allocation à X% actions »
       </div>
-      <div>
-        <div class="alert alert-green">
-          <strong>✔️ Ce qu'il faut faire</strong>
-          Placer PatrimEmotion® en amont de la recommandation · Utiliser un vocabulaire AMF-Safe · Maintenir une logique "outil d'aide" · Séparer clairement l'annexe des documents CIF · Valider contradictoirement avec le client
-        </div>
+      <div class="alert alert-green">
+        <span class="alert-title">✔ Ce qu'il faut faire</span>
+        Placer PatrimEmotion® en amont de la recommandation · Utiliser un vocabulaire AMF-Safe · Maintenir une logique « outil d'aide » · Séparer clairement l'annexe des documents CIF · Valider contradictoirement avec le client
       </div>
     </div>
-
     <div class="alert alert-gold">
-      <strong>📌 Ligne rouge absolue</strong>
-      PatrimEmotion® n'est pas un produit, n'est pas une allocation, c'est une logique de mise en œuvre. Il comprend le client. L'analyse patrimoniale structure la stratégie. Le CIF justifie réglementairement la recommandation.
+      <span class="alert-title">📌 Ligne rouge absolue</span>
+      PatrimEmotion® n'est pas un produit, n'est pas une allocation — c'est une logique de mise en œuvre. <strong>PatrimEmotion® comprend le client. L'analyse patrimoniale structure la stratégie. Le CIF justifie réglementairement la recommandation.</strong>
     </div>
   </div>
 
-  <!-- SECTION 5 : SYNTHESE TABLEAU -->
+  <!-- ══ 05 — TABLEAU ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">05</span>
-      Tableau de Synthèse — Rôles & Zones
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Tableau de Synthèse — Rôles & Zones</h2>
     </div>
-
     <table class="synth-table">
       <thead>
         <tr>
@@ -660,61 +663,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Entretien découverte</td>
-          <td>Comprendre le "pourquoi réel"</td>
-          <td><span class="check">✔ Recommandé</span></td>
-        </tr>
-        <tr>
-          <td>Annexe pédagogique</td>
-          <td>Support de restitution et de dialogue</td>
-          <td><span class="check">✔ Recommandé</span></td>
-        </tr>
-        <tr>
-          <td>Relation client / suivi</td>
-          <td>Fluidifier la communication, ajuster</td>
-          <td><span class="check">✔ Recommandé</span></td>
-        </tr>
-        <tr>
-          <td>Analyse patrimoniale holistique</td>
-          <td>Calibrer comportementalement la stratégie</td>
-          <td><span class="check">✔ Recommandé</span></td>
-        </tr>
-        <tr>
-          <td>Lettre de mission CIF</td>
-          <td>Clause pédagogique à intégrer</td>
-          <td><span class="tag tag-gold" style="font-size:9px;">Clause spécifique</span></td>
-        </tr>
-        <tr>
-          <td>Rapport d'adéquation CIF</td>
-          <td>Mention neutre possible, sans nommer l'outil</td>
-          <td><span class="tag tag-gold" style="font-size:9px;">Formulation Safe</span></td>
-        </tr>
-        <tr>
-          <td>Profil investisseur / MIF II</td>
-          <td>—</td>
-          <td><span class="cross">❌ Jamais</span></td>
-        </tr>
-        <tr>
-          <td>Recommandation financière</td>
-          <td>—</td>
-          <td><span class="cross">❌ Jamais outil décisionnel</span></td>
-        </tr>
+        <tr><td>Entretien découverte</td><td>Comprendre le « pourquoi réel »</td><td><span class="check">✔ Recommandé</span></td></tr>
+        <tr><td>Annexe pédagogique</td><td>Support de restitution et de dialogue</td><td><span class="check">✔ Recommandé</span></td></tr>
+        <tr><td>Relation client / suivi</td><td>Fluidifier la communication, ajuster</td><td><span class="check">✔ Recommandé</span></td></tr>
+        <tr><td>Analyse patrimoniale holistique</td><td>Calibrer comportementalement la stratégie</td><td><span class="check">✔ Recommandé</span></td></tr>
+        <tr><td>Lettre de mission CIF</td><td>Clause pédagogique à intégrer</td><td><span class="tag tag-gold" style="font-size:9px;">Clause spécifique</span></td></tr>
+        <tr><td>Rapport d'adéquation CIF</td><td>Mention neutre possible, sans nommer l'outil</td><td><span class="tag tag-blue" style="font-size:9px;">Formulation safe</span></td></tr>
+        <tr><td>Profil investisseur / MIF II</td><td>—</td><td><span class="cross">❌ Jamais</span></td></tr>
+        <tr><td>Recommandation financière</td><td>—</td><td><span class="cross">❌ Jamais outil décisionnel</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- SECTION 6 : STYLES -->
+  <!-- ══ 06 — STYLES ══ -->
   <div class="section">
-    <div class="section-title">
-      <span class="num">06</span>
-      Styles d'Accompagnement & de Portefeuille
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Styles d'Accompagnement & de Portefeuille</h2>
     </div>
-
     <div class="grid-2">
       <div class="card">
+        <div class="card-top-bar"></div>
         <div class="card-title">Style d'accompagnement</div>
-        <p class="card-text" style="margin-bottom:12px;">Répond à : <em style="color:var(--gold-pale)">"Comment ce client doit être accompagné ?"</em></p>
+        <p class="card-text" style="margin-bottom:12px;font-style:italic;color:var(--text-light);">« Comment ce client doit-il être accompagné ? »</p>
         <ul class="styled">
           <li>Besoin de cadre vs autonomie</li>
           <li>Besoin de pédagogie vs synthèse</li>
@@ -724,8 +695,9 @@
         </ul>
       </div>
       <div class="card">
+        <div class="card-top-bar"></div>
         <div class="card-title">Style de portefeuille</div>
-        <p class="card-text" style="margin-bottom:12px;">Répond à : <em style="color:var(--gold-pale)">"Quelle structure sera soutenable émotionnellement ?"</em></p>
+        <p class="card-text" style="margin-bottom:12px;font-style:italic;color:var(--text-light);">« Quelle structure sera soutenable émotionnellement ? »</p>
         <ul class="styled">
           <li>Progressif / par étapes</li>
           <li>Sécurisé / amorti</li>
@@ -738,7 +710,7 @@
     </div>
   </div>
 
-  <!-- FORMULE FINALE -->
+  <!-- ══ FORMULE ══ -->
   <div class="formule">
     <div class="formule-text">
       « Nous ne construisons pas seulement une stratégie adaptée à votre situation —<br>
@@ -747,13 +719,13 @@
     <p class="formule-source">Positionnement premium AMCP · PatrimEmotion®</p>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <div class="footer">
-    <p><strong>AM Courtage & Patrimoine</strong> · Aurélie Monteil · ORIAS n°19004843 · CNCEF n°D0190209 · RCS Amiens 851 316 513</p>
-    <p style="margin-top:6px;">PatrimEmotion® est une méthode pédagogique d'analyse comportementale appliquée au patrimoine — Document interne V2026</p>
+    <p><strong>AM Courtage & Patrimoine</strong> · Aurélie Monteil · CIF · IAS · IOB · ORIAS n°19004843</p>
+    <p>PatrimEmotion® est une méthode pédagogique d'analyse comportementale appliquée au patrimoine.</p>
+    <p style="margin-top:6px;color:#aab8c8;">Ce document ne constitue pas un conseil financier ni un document réglementaire. · V2026</p>
   </div>
 
 </div>
-
 </body>
 </html>

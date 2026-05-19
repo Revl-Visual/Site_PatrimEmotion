@@ -84,7 +84,7 @@ export default function TarifsPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <h2 className="pe-heading-section mb-4 text-balance text-center text-[#003662]">
-                Vue d&apos;ensemble des <span className="text-[#f4ca3a]">Tarifs</span>
+                Vue d&apos;ensemble des <span className="text-[#f4ca3a]">tarifs</span>
               </h2>
               <p className="pe-body-lead pe-lead-centered mx-auto mb-12 max-w-2xl text-balance leading-relaxed text-[#003662]/80">
                 Choisissez la formule adaptée à la taille et aux besoins de votre cabinet
