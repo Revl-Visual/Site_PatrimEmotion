@@ -405,8 +405,8 @@ export default function InstitutionnelsPage() {
                   <ul className="space-y-2 mb-4">
                     {LEVIER_AMELIORATION.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#9FB620] shrink-0 font-bold">•</span>
-                        <span className="text-[#003662]/90 text-justify">{item}</span>
+                        <span className="text-[#003662] shrink-0 font-bold">•</span>
+                        <span className="text-[#003662]/90 text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -419,8 +419,8 @@ export default function InstitutionnelsPage() {
                   <ul className="space-y-2 mb-4">
                     {OUTIL_PEDAGOGIQUE_POINTS.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#9FB620] shrink-0 font-bold">•</span>
-                        <span className="text-[#003662]/90 text-justify">{item}</span>
+                        <span className="text-[#003662] shrink-0 font-bold">•</span>
+                        <span className="text-[#003662]/90 text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -439,8 +439,8 @@ export default function InstitutionnelsPage() {
                   <ul className="grid gap-2 mb-4">
                     {INTEGRATION_ENVIRONNEMENTS.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#9FB620] shrink-0 font-bold">•</span>
-                        <span className="text-[#003662]/90 text-justify">{item}</span>
+                        <span className="text-[#003662] shrink-0 font-bold">•</span>
+                        <span className="text-[#003662]/90 text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -453,8 +453,8 @@ export default function InstitutionnelsPage() {
                   <ul className="grid sm:grid-cols-2 gap-2 mb-4">
                     {METHODE_REPRODUCTIBLE.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#9FB620] shrink-0 font-bold">•</span>
-                        <span className="text-[#003662]/90 text-justify">{item}</span>
+                        <span className="text-[#003662] shrink-0 font-bold">•</span>
+                        <span className="text-[#003662]/90 text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
